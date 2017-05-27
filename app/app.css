@@ -1,0 +1,213 @@
+@media screen and (min-width: 480px) {
+
+    body {
+        font: 14px/22px 'Times New Roman', "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #666;
+        background: #ABCDEF;/*#eae6d1;*/
+        width: 100%;
+    }
+
+    h1 {
+
+        /*background: url(../images/naishologo.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        /*font-family: "Javanese Text";
+        font-size: 56px;
+        font-weight: 900;
+        color: aquamarine;
+        float: left;
+        text-indent: 13%;*/
+
+    }
+
+    h2 {
+        font-size: 24px;
+        color: black;
+        text-decoration: underline;
+    }
+
+    h3, h4, h5, h6 {
+        color: #666666;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    th {
+        text-align: left;
+        padding: 5px 10px;
+        border-bottom: 1px solid #e5e5e5;
+        color: #444;
+    }
+
+    td {
+        text-align: left;
+        padding: 5px 10px;
+        border-bottom: 1px solid #e5e5e5;
+        border-right: 1px solid #ffcc00;
+    }
+
+    header {
+        padding-top: 25px;
+        padding-bottom: 40px;
+        position: relative;
+        float: inherit;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        background: url(../images/lotosfondo.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 76px;
+
+    }
+
+    .banner {
+        position: relative;
+        float: inherit;
+        height: 50px;
+        /*background: #ffcc00;*/
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        top: -25px;
+        /*border: 1px solid #f0b500;*/
+        border-radius: 5px 5px 5px 5px;
+    }
+
+    .wrapper {
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    section {
+        width: 70%;
+        padding-left: 3%;
+        padding-right: 3%;
+        position: relative;
+        float: right;
+        background:#FFFACD;
+        border-radius: 3px;
+        border: 1px solid #cbcbcb;
+    }
+
+    nav {
+        width: 20%;
+        position: relative;
+        float: left;
+        text-align: justify; /*right;*/
+        font-weight: bold;
+        /*text-decoration: underline;*/
+    }
+
+    a {
+        color: #3399cc;
+        text-decoration: none;
+    }
+
+    nav ul {
+        list-style: none;
+        font-size: 14px;
+        line-height: 24px;
+        display: block;
+    }
+
+    nav ul a {
+        color: #666;
+    }
+
+    nav ul a:hover {
+        color: #999;
+    }
+
+    img[alt=diagram1] {
+        width: 50%;
+    }
+
+    .subsection {
+        border: 0;
+        background: transparent url("../images/hr.gif") bottom center repeat-x;
+        padding-bottom: 20px;
+    }
+
+    .subsection:last-of-type {
+        border: 0;
+        padding-bottom: 20px;
+        background: transparent;
+    }
+
+    .banner .button {
+        border: 1px solid #dba500;
+        border-radius: 5px;
+        background-color: #ffe788;
+        margin-top: 7px;
+        line-height: 14px;
+        color: #333;
+        display: inline-block;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .banner #logo {
+        position: relative;
+        float: right;
+        height: 36px;
+        width: 36px;
+        right: 7px;
+        top: 7px;
+        display: block;
+        background: url(../images/simbolo.jpg);
+    }
+
+    .banner #logo1 {
+        background: url(../images/naishologo.png);
+        /*background-repeat: no-repeat;
+        background-position: center center;*/
+        height: 225px;
+        width: 400px;
+        right: 7px;
+        top: 7px;
+        display: block;
+        margin-left: 400px;
+        margin-right: 600px;
+        margin-top: -50px;
+    }
+    .img-responsive {
+        display: inline-block;
+        height: auto;
+        max-width: 100%;
+    }
+    /* Navigation */
+    .navbar-center {
+        margin: 0 auto;
+        display: table;
+        table-layout: auto;
+        float: none;
+        width: 100%;
+    }
+    .navbar-center > li {
+        display: table-cell;
+        float: none;
+        text-align: center;
+    }
+
+    .navbar-default .navbar-center > .active > a,
+    .navbar-default .navbar-center > .active > a:hover {
+        color: #428bca;
+        background-color: transparent;
+    }
+
+    .navbar-default .navbar-center > li > a:hover {
+        color: #777;
+    }
+
+    .navbar-nav > li > a {
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-size: 20px;
+    }
