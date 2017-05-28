@@ -1,4 +1,6 @@
+
 'use strict';
+
 // Initialize the Firebase SDK
 var config = {
     apiKey: "AIzaSyB25qzSL59ESy04SBFhwbXJVdCjEKEFapc",
@@ -14,20 +16,16 @@ firebase.initializeApp(config);
 angular.module('myApp', [
     "firebase",
     'ngRoute',
-    'ngMap',
-    'myApp.detailsView',
+    'myApp.users',
+    'myApp.homeView',
     'myApp.loginView',
     'myApp.authentication',
-    'myApp.users',
-    'myApp.usersListView',
-    'myApp.chatView',
     'myApp.userProfileView',
-    'myApp.userRegistrationView',
-    'myApp.fileUpload'
+    'myApp.userRegistrationView'
 ])
     .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
-        $routeProvider.otherwise({redirectTo: ''});
+        $routeProvider.otherwise({redirectTo: '/homeView'});
     }])
     .run(["$rootScope", "$location", function($rootScope, $location) {
         $rootScope.$on("$routeChangeError", function(event, next, previous, error) {
@@ -53,3 +51,8 @@ angular.module('myApp', [
                 return false;
         }
     }]);
+/*.config(function($routeProvider){
+ $routeProvider.when("/utenti",{...})
+ .when("/utenti/:userId",{...})
+ .otherwise({redirectTo:"/utenti"});
+ })*/

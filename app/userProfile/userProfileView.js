@@ -19,19 +19,15 @@ angular.module('myApp.userProfileView', ['ngRoute'])
   })
 }])
 
-.controller('userProfileCtrl', ['$scope', '$rootScope', 'UsersChatService', 'Users', 'currentAuth', '$firebaseAuth', '$location', function($scope, $rootScope, UsersChatService, Users, currentAuth, $firebaseAuth, $location) {
+.controller('userProfileCtrl', ['$scope', '$rootScope', /*'UsersChatService',*/ 'Users', 'currentAuth', '$firebaseAuth', '$location', function($scope, $rootScope, /*UsersChatService,*/ Users, currentAuth, $firebaseAuth, $location) {
     $scope.dati={};
-    //set the variable that is used in the main template to show the active button
     $rootScope.dati.currentView = "userProfile";
-    $scope.dati.user = UsersChatService.getUserInfo(currentAuth.uid);
+    //$scope.dati.user = UsersChatService.getUserInfo(currentAuth.uid);
 
 
-    // function called when the "logout" button will be pressed
+    // Function: form submission
     $scope.logout = function () {
-
-        //save the new status in the database (we do it before the actual logout because we can write in the database only if the user is logged in)
         Users.registerLogout(currentAuth.uid);
-        //sign out
         $firebaseAuth().$signOut();
         $firebaseAuth().$onAuthStateChanged(function(firebaseUser) {
             if (firebaseUser) {
