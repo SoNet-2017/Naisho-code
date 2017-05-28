@@ -19,6 +19,7 @@ angular.module('myApp', [
     'myApp.users',
     'myApp.homeView',
     'myApp.loginView',
+    'myApp.users',
     'myApp.authentication',
     'myApp.userProfileView',
     'myApp.userRegistrationView'

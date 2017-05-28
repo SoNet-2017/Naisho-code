@@ -58,10 +58,7 @@ form {
         border-radius: 15px;
     -webkit-border-radius: 15px;
 }
-radio.form-group{
-    width: 10px;
-    height: 10px;
-}
+
 
 .login{
     cursor:pointer;

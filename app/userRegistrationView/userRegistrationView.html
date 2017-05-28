@@ -1,5 +1,5 @@
 <div class="alert alert-danger alert-dismissible" role="alert" ng-if="error">Login failed! {{ error.message }}</div>
-
+<link rel="stylesheet" href="../styles/custom.css"/>
 <div id="box">
     <form id="frmRegister" role="form" ng-submit="signUp()">
         <h2>Registrati</h2>
@@ -18,8 +18,8 @@
         </div>
         <div class="form-group">
             <label>Sesso</label>
-            <input type="radio" name="sex" value="M" class="form-control" class="radio" placeholder="sex" ng-model="user.type" /> M
-            <input type="radio" name="sex" value="F" class="form-control" class="radio" placeholder="sex" ng-model="user.type" /> F
+            <input type="radio" name="sex" value="M"  class="radio" placeholder="sex" ng-model="user.type"/>M
+            <input type="radio" name="sex" value="F"  class="radio" placeholder="sex" ng-model="user.type"/>F
         </div>
         <div class="form-group">
             <label for="txtEmail">Email*</label>
@@ -35,13 +35,12 @@
         </div>
         <div class="form-group">
             <label>Sei già buddista?</label>
-            <input type="radio" name="type" value="Sì" class="form-control" class="radio" placeholder="type" ng-model="user.type" /> Sì
-            <input type="radio" name="type" value="No" class="form-control" class="radio" placeholder="type" ng-model="user.type" /> No<br>
+            <input type="radio" name="type" value="Sì"  class="radio" placeholder="type" ng-model="user.type"/>Sì
+            <input type="radio" name="type" value="No"  class="radio" placeholder="type" ng-model="user.type"/>No
         </div>
-        <button type="submit" class="btn btn-success center-block">Registrati</button>
-        oppure
-        <a href="www.facebook.it">Registrati tramite Facebook</a>
+        <button type="submit" class="btn btn-success center-block">Iscriviti</button>
         <br>
-        <a href="www.twitter.it">Registrati tramite Twitter</a>
+        <p>     oppure    <a href="www.facebook.it">Registrati tramite Facebook</a>  o   <a href="www.twitter.it">Registrati tramite Twitter</a></p>
+
     </form>
 </div>

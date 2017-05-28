@@ -1,6 +1,6 @@
 body {
     background: url("../images/imgSfondo.png");
-    padding-top: 100px;  }
+    padding-top: 40px;  }
 
 
 .overlay{
@@ -80,16 +80,20 @@ img.media-object{
     width: 80px;
     height: 80px;
 }
-/*Aggiungi evento*/
 
 
-#addEv{
+
+#addFriend{
     content:url("../images/Add.gif ");
 }
 
+#modificaProfilo{
+    color:white;
+    background-color:#3903ff ;
+}
 
-#boxev1{
-    margin-left: 40px;
+#boxdati{
+    margin-left: 10px;
     left: 0px;
     float: left;
     padding-top: 15px;
@@ -104,7 +108,7 @@ img.media-object{
     padding-bottom: 60%;
 }
 
-#boxev2{
+/*#boxev2{
 
     padding-top: 15px;
     opacity: .80;
@@ -117,7 +121,7 @@ img.media-object{
     z-index:+300;
     padding-bottom: 60%;
 }
-
+*/
 
 /*Login view*/
 
@@ -148,10 +152,7 @@ form.frmLogin {
     height: 120px;
     width: 250px;
     margin-left: 27%;
-
-
 }
-
 
 #titolo{
     font-family: Andalus;
@@ -162,14 +163,10 @@ form.frmLogin {
 }
 .form-group {
     margin-top: 15px;
+    margin-left: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px;
     -webkit-border-radius: 15px;
-}
-
-radio.form-group{
-    width: 10px;
-    height: 10px;
 }
 
 .login{
