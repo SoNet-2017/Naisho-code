@@ -1,6 +1,8 @@
 body {
     background: url("../images/imgSfondo.png");
-    padding-top: 40px;  }
+    padding-top: 0px;
+
+}
 
 
 .overlay{
@@ -15,6 +17,7 @@ body {
     opacity: .6;
     filter: alpha(opacity=60);
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";	}
+
 .navbar{
     border-bottom-width: 0px;
     background: rgba(154, 202, 229, 0.52);
@@ -51,7 +54,7 @@ body {
     margin-left: -250px;
     width: 500px;
     height: 900px;
-    background-color:#FFF;
+    background-color: #9acae5;
     z-index:+300;
     padding-bottom: 60%;
 }
@@ -134,7 +137,8 @@ img.media-object{
     margin-left: -250px;
     width: 500px;
     height: 450px;
-    background-color:#FFF;
+    background-color: transparent;
+    /*background-color:#FFF;*/
     z-index:+300;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
@@ -148,7 +152,7 @@ form.frmLogin {
 }
 
 .logoNaisho{
-    content:url("../images/logonaisho.png");
+    content:url("../images/logonaisho2.png");
     height: 120px;
     width: 250px;
     margin-left: 27%;
@@ -183,7 +187,7 @@ input.form-control {
     -moz-border-radius: 15px;
     border-radius: 15px;
     -webkit-border-radius: 15px;
-    background-color: rgba(57, 3, 255, 0.25);
+    background-color: rgb(255, 255, 255);
     font: bold 24px/45px Helvetica, Sans-Serif;
     letter-spacing: -1px;
 }
