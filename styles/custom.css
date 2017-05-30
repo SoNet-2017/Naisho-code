@@ -1,12 +1,17 @@
 body {
-    background: url("../images/imgSfondo.png");
+    background-image: url("../images/imgSfondo.png");
     padding-top: 0px;
-
+    background-attachment:scroll;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
 
 
 .overlay{
-    background:#000;
+   /* background:#000;*/
     position:fixed;
     top:0px;
     bottom:0px;
@@ -63,7 +68,7 @@ fieldset{
 }
 
 .form-control{
-    color: #FFFFFF;
+    color: rgba(0, 0, 0, 0.4);
     width: 350px;
     background: #3903ff;
     background: rgba(57, 3, 255, 0.6);
@@ -110,7 +115,17 @@ img.media-object{
     z-index:+300;
     padding-bottom: 60%;
 }
-
+#contenitoreFrase {
+    opacity: .80;
+    position: fixed;
+    top: 75px;
+    left: 0px;
+    width: 100%;
+    height: 100px;  /*  NON RIESCO A METTERE UN DIV CON ALTEZZA MASSIMA 100 PX*/
+    background-color: #FFF;
+    z-index: +300;
+    padding-bottom: 60%;
+}
 /*#boxev2{
 
     padding-top: 15px;
@@ -162,7 +177,7 @@ form.frmLogin {
     font-family: Andalus;
     text-align: center;
     font-size: 40px;
-    color : #3903ff;
+    color : #ffffff;
 
 }
 .form-group {
@@ -203,22 +218,28 @@ input.form-control {
     letter-spacing: -1px;
 }
 
-.link{
+.link {
+    text-align: center;
+    padding-top: 38.5px;
+}
+.link2 {
     text-align: center;
     padding-top: 38.5px;
 }
 
 
+.link a:link{
+    color: #ffffff;
+    }
 
+.link2 a:link{
+    color: #3903ff;
+    text-decoration: underline;
+  }
 
-
-
-
-
-
-
-
-
+h2{
+    text-align: center;
+}
 
 
 

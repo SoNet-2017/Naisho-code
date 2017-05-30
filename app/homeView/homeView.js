@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.homeView', ['ngRoute','myApp.evento'])
+angular.module('myApp.homeView', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/homeView', {
@@ -19,7 +19,7 @@ angular.module('myApp.homeView', ['ngRoute','myApp.evento'])
   })
 }])
 
-    .controller('View1Ctrl', ['$scope','Evento',function($scope,Evento) {
+    .controller('View1Ctrl', ['$scope','Frase',function($scope, Frase) {
             $scope.dati={};
-            $scope.dati.eventos = Evento.getData();
+            $scope.dati.frase = Frase.getData();
     }]);
