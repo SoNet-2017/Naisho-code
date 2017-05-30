@@ -22,4 +22,17 @@ angular.module('myApp.homeView', ['ngRoute'])
     .controller('View1Ctrl', ['$scope','Frase',function($scope, Frase) {
             $scope.dati={};
             $scope.dati.frase = Frase.getData();
+
+
+
+       /* //noinspection JSAnnotator
+        $scope.shownav-bar=function () {
+            var x = document.getElementById("topBarHome");
+            if (x.className.indexOf("w3-show") == -1)
+                x.className += " w3-show";
+            else
+                x.className = x.className.replace(" w3-show", "");
+        };
+
+*/
     }]);

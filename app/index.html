@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="app.css"/>
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- Angular -->
     <script src="../lib/angular/angular.min.js"></script>
     <script src="../lib/angular/angular-route.min.js"></script>
@@ -51,35 +51,10 @@
 
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../styles/custom.css"/>
-
-
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<body ng-app="myApp" ng-controller="MainCtrl">
-<header class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <ul class="nav navbar-nav navbar-center">
-                <li ng-class="{'active' : dati.currentView === 'home'}"><a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-                <li class="USRP" ng-class="{'active' : dati.currentView === 'userProfile'}" ng-if="isLogged()"><a class="navbar-user" href="#!/userProfile"><span class="glyphicon glyphicon-user"></span></a></li>
 
-            </ul>
-        </div>
-    </div>
-</header>
-
-<div class="overlay">
-</div>
-
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="container-fluid" ng-view>
-            </div>
-        </div>
-    </div>
-</div>
+<body style="background-color: #636466" ng-app="myApp" ng-view>
 
 </body>
 </html>

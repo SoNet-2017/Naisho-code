@@ -1,5 +1,17 @@
-body {
-    background-image: url("../images/imgSfondo.png");
+body{background-image: url("../images/imgSfondo.png");}
+#log {
+      padding-top: 0px;
+      background-attachment:scroll;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      -moz-background-size: cover;
+      -webkit-background-size: cover;
+      background-size: cover;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+  }
+#registrazione {
     padding-top: 0px;
     background-attachment:scroll;
     background-repeat: no-repeat;
@@ -7,21 +19,21 @@ body {
     -moz-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
-
-
-.overlay{
-   /* background:#000;*/
-    position:fixed;
-    top:0px;
-    bottom:0px;
-    left:0px;
-    right:0px;
-    z-index:100;
-    /*Trasperenza cross browser*/
-    opacity: .6;
-    filter: alpha(opacity=60);
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";	}
+#box{
+    padding-top: 15px;
+    opacity: .80;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    margin-left: -250px;
+    width: 500px;
+    height: 900px;
+    padding-bottom: 60%;
+}
 
 .navbar{
     border-bottom-width: 0px;
@@ -42,29 +54,6 @@ body {
 }
 .usrp{
     float: right;
-}
-.reg{
-    font-size: 36px;
-    color: #000000;
-    padding-bottom: 15px;
-}
-
-
-#box{
-    padding-top: 15px;
-    opacity: .80;
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    margin-left: -250px;
-    width: 500px;
-    height: 900px;
-    background-color: #9acae5;
-    z-index:+300;
-    padding-bottom: 60%;
-}
-fieldset{
-    padding-top: 95px;
 }
 
 .form-control{
@@ -95,11 +84,11 @@ img.media-object{
     content:url("../images/Add.gif ");
 }
 
-#modificaProfilo{
+/*#modificaProfilo{
     color:white;
     background-color:#3903ff ;
 }
-
+*/
 #boxdati{
     margin-left: 10px;
     left: 0px;
@@ -109,8 +98,8 @@ img.media-object{
     position: absolute;
     top: -25px;
     left: 0%;
-    width: 400px;
-    height: 900px;
+    width: 100%;
+    height: 75%;
     background-color:#FFF;
     z-index:+300;
     padding-bottom: 60%;
@@ -141,7 +130,7 @@ img.media-object{
 }
 */
 
-/*Login view*/
+/*Login view
 
 #box2{
     top: 300px;
@@ -153,12 +142,14 @@ img.media-object{
     width: 500px;
     height: 450px;
     background-color: transparent;
-    /*background-color:#FFF;*/
+    background-color:#FFF;
     z-index:+300;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border-radius: 15px;
 }
+*/
+
 
 
 form.frmLogin {
@@ -208,7 +199,7 @@ input.form-control {
 }
 
 #btlog {
-
+    width: auto;
     height: 46px;
     padding:0px;
     border:0px;
@@ -242,7 +233,6 @@ h2{
 }
 
 
-
 .navbar-center {
     margin: 0 auto;
     display: table;
@@ -272,50 +262,4 @@ h2{
     font-size: 20px;
 }
 
-/* Header
-.navbar-header h1 {
-    margin: 0;
-    text-align: center;
-    width: 100%;
-    position: absolute;
-    color: #333;
-}
 
-.navbar-nav {
-    list-style: none;
-    margin: 0;
-}
-
-.media-object {
-    width: 100px;
-}
-
-/* Navigation
-.navbar-center {
-    margin: 0 auto;
-    display: table;
-    table-layout: auto;
-    float: none;
-    width: 100%;
-}
-.navbar-center > li {
-    display: table-cell;
-    float: none;
-    text-align: center;
-}
-
-.navbar-default .navbar-center > .active > a,
-.navbar-default .navbar-center > .active > a:hover {
-    color: #428bca;
-    background-color: transparent;
-}
-
-.navbar-default .navbar-center > li > a:hover {
-    color: #777;
-}
-
-.navbar-nav > li > a {
-    padding-bottom: 15px;
-    padding-top: 15px;
-    font-size: 20px;
-}*/
