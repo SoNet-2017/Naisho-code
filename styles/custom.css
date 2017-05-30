@@ -23,9 +23,9 @@ body{background-image: url("../images/imgSfondo.png");}
     justify-content:center;
     align-items:center;
 }
+/* box registrazione*/
 #box{
     padding-top: 15px;
-    opacity: .80;
     position: absolute;
     top: -25px;
     left: 50%;
@@ -177,6 +177,7 @@ form.frmLogin {
     -moz-border-radius: 15px;
     border-radius: 15px;
     -webkit-border-radius: 15px;
+    color:#FFFFFF;
 }
 
 .login{
@@ -212,10 +213,12 @@ input.form-control {
 .link {
     text-align: center;
     padding-top: 38.5px;
+    color:white;
 }
 .link2 {
     text-align: center;
-    padding-top: 38.5px;
+    padding-top: 0px;
+    color:white;
 }
 
 
@@ -224,13 +227,13 @@ input.form-control {
     }
 
 .link2 a:link{
-    color: #3903ff;
+    color: #ffffff;
     text-decoration: underline;
   }
 
 h2{
-    text-align: center;
-}
+    color: #FFFFFF;
+    }
 
 
 .navbar-center {
