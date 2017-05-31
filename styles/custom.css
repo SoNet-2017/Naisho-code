@@ -1,4 +1,9 @@
-body{background-image: url("../images/imgSfondo.png");}
+body{
+    background-image: url("../images/imgSfondo.png");
+    background-size: cover;
+    background-attachment: scroll;
+
+}
 #log {
       padding-top: 0px;
       background-attachment:scroll;
