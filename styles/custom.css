@@ -198,6 +198,20 @@ input.form-control {
     font: bold 24px/45px Helvetica, Sans-Serif;
     letter-spacing: -1px;
 }
+.input-group{
+    width: 600px;
+    height: 46px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 20%;
+    margin-left: 50%;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    letter-spacing: -1px;
+}
 
 #btlog {
     width: auto;
@@ -229,7 +243,13 @@ input.form-control {
 .link2 a:link{
     color: #ffffff;
     text-decoration: underline;
+
+
   }
+.loghi {
+    height: 30px;
+    width: 30px;
+}
 
 h2{
     color: #FFFFFF;
