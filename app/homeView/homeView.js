@@ -18,7 +18,7 @@ angular.module('myApp.homeView', ['ngRoute'])
       }
   })
 }])
-    .controller('homePageCtrl', ['$scope', 'Frase','$location', 'Auth', '$firebaseObject','Users', 'currentAuth', '$firebaseAuth', function ($scope,Frase,$location, Auth, $firebaseObject, Users, currentAuth, $firebaseAuth) {
+    .controller('homeCtrl', ['$scope', 'Frase','$location', 'Auth', '$firebaseObject','Users', 'currentAuth', '$firebaseAuth', function ($scope,Frase,$location, Auth, $firebaseObject, Users, currentAuth, $firebaseAuth) {
         $scope.dati={};
         $scope.auth=Auth;
 
@@ -30,7 +30,21 @@ angular.module('myApp.homeView', ['ngRoute'])
                 x.className = x.className.replace(" w3-show", "");
         };
 
+        var ref = firebase.database().ref("frasi/frase");
+        ref.once("value")
+            .then(function(snapshot) {
 
+                var data = snapshot.val();
+                var id=data.id;
+                var dati = new Date();
+                var a=dati.getDate();
+                var b=dati.getMonth();
+                var c= 'a'+'b';
+                for (var i = 0; i < $scope.dati.frase.length; i++) {
+                    if(id=c){$scope.Frase = data.frase;}
+                }
+            document.getElementById(fraseDelGiorno).innerHTML=$scope.Frase;
+            });
 
         $scope.logout = function () {
             Users.registerLogout(currentAuth.uid);

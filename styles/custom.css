@@ -108,6 +108,9 @@ body{
 #userLinkHome{
     color: #ffffff;
 }
+#newsIcon{
+    color: #ffffff;
+}
 #OffIcon{
     color:#FFFFFF;
 }
@@ -216,8 +219,7 @@ img.media-object{
     height: 100px;  /*  NON RIESCO A METTERE UN DIV CON ALTEZZA MASSIMA 100 PX*/
     background-color: #FFF;
     z-index: +300;
-    padding-bottom: 60%;
-}
+    }
 /*#boxev2{
 
     padding-top: 15px;
@@ -366,12 +368,8 @@ input.form-control {
 h2{
     color: #FFFFFF;
     margin-left: 120px;
-
-
-
-
-    }
-
+   }
+/*
 
 .navbar-center {
     margin: 0 auto;
@@ -401,6 +399,7 @@ h2{
     padding-top: 15px;
     font-size: 20px;
 }
+*/
 .w3-large{
     color:#FFFFFF;
     margin-top: 25px;
