@@ -310,7 +310,9 @@ input.form-control {
     background-color: rgb(255, 255, 255);
     font: bold 24px/45px Helvetica, Sans-Serif;
     letter-spacing: -1px;
-    margin-left:-50px;
+    margin-left:-10px;
+    border:none;
+
 }
 .input-group{
     width: 400px;
@@ -412,7 +414,13 @@ h2{
 }
 
 /*icona lente*/
-.glyphicon{
+.btn{
    border:0px;
 
+
 }
+
+
+
+
+
