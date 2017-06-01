@@ -18,38 +18,32 @@ angular.module('myApp.homeView', ['ngRoute'])
       }
   })
 }])
-    .controller('homeCtrl', ['$scope', 'Frase','$location', 'Auth', '$firebaseObject','Users', 'currentAuth', '$firebaseAuth', function ($scope,Frase,$location, Auth, $firebaseObject, Users, currentAuth, $firebaseAuth) {
+    .controller('homeCtrl', ['$scope', '$location', 'Auth', '$firebaseObject','Users', 'currentAuth', '$firebaseAuth', function ($scope,$location, Auth, $firebaseObject, Users, currentAuth, $firebaseAuth) {
         $scope.dati={};
         $scope.auth=Auth;
 
-      $scope.showmenu=function () {
-         document.getElementById("menu").style.display='block';
-        };
-
-       /* $scope.showSearchItem=function () {
+        $scope.showSearchItem=function () {
             var x = document.getElementById("typeSearchContentHome");
-            if (x.className.indexOf("w3-show") == -1)
+            if (x.className.indexOf("w3-show") == -1) {
                 x.className += " w3-show";
-            else
+            }
+            else {
                 x.className = x.className.replace(" w3-show", "");
+            }
         };
-*/
-        var ref = firebase.database().ref("frasi/frase");
-        ref.once("value")
-            .then(function(snapshot) {
+        var dati = new Date();
+        var a=dati.getDate();
+        var b=dati.getMonth();
+        var c= 'a'+'b';
+        var ref = firebase.database().ref().child("frasi/"+c+"/frase");
+        $scope.dati.soka = $firebaseObject(ref);
+        $scope.dati.soka.$loaded().then(function () {
 
-                var data = snapshot.val();
-                var id=data.id;
-                var dati = new Date();
-                var a=dati.getDate();
-                var b=dati.getMonth();
-                var c= 'a'+'b';
-                for (var i = 0; i < $scope.dati.frase.length; i++) {
-                    if(id=c){$scope.Frase = data.frase;}
-                }
-            document.getElementById(fraseDelGiorno).innerHTML=$scope.Frase;
-            });
+            document.getElementById("fraseDelGiorno").innerHTML = $scope.dati.soka;
+        });
 
+
+        
         $scope.logout = function () {
             Users.registerLogout(currentAuth.uid);
             $firebaseAuth().$signOut();
@@ -63,10 +57,6 @@ angular.module('myApp.homeView', ['ngRoute'])
 
 
         };
-        $scope.logout = function () {
-            $location.path("/userProfileView");
-        }
-
 
           /* //noinspection JSAnnotator
         $scope.shownav-bar=function () {
