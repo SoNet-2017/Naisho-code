@@ -30,8 +30,6 @@ angular.module('myApp.homeView', ['ngRoute'])
                 x.className = x.className.replace(" w3-show", "");
         };
 
-
-
         $scope.logout = function () {
             Users.registerLogout(currentAuth.uid);
             $firebaseAuth().$signOut();
