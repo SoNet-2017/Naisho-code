@@ -305,6 +305,7 @@ input.form-control {
     background-color: rgb(255, 255, 255);
     font: bold 24px/45px Helvetica, Sans-Serif;
     letter-spacing: -1px;
+    margin-left:-50px;
 }
 .input-group{
     width: 600px;
@@ -319,6 +320,7 @@ input.form-control {
     background-color: rgb(255, 255, 255);
     font: bold 24px/45px Helvetica, Sans-Serif;
     letter-spacing: -1px;
+    margin-left:30%;
 }
 
 #btlog {
