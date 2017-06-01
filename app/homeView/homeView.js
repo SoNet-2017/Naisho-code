@@ -41,6 +41,8 @@ angular.module('myApp.homeView', ['ngRoute'])
 
             document.getElementById("fraseDelGiorno").innerHTML = $scope.dati.soka;
         });
+
+
         
         $scope.logout = function () {
             Users.registerLogout(currentAuth.uid);
