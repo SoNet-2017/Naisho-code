@@ -19,10 +19,23 @@ angular.module('myApp.homeView', ['ngRoute'])
   })
 }])
 
-    .controller('View1Ctrl', ['$scope','Frase',function($scope, Frase) {
-            $scope.dati={};
-            $scope.dati.frase = Frase.getData();
+    .controller('View1Ctrl','$scope', 'Frase', function($scope, Frase) {
+        var ref = firebase.database().ref("frasi/frase");
+        ref.once("value")
+            .then(function(snapshot) {
 
+                var data = snapshot.val();
+                var id=data.id;
+                var dati = new Date();
+                var a=dati.getDate();
+                var b=dati.getMonth();
+                var c= 'a'+'b';
+                for (var i = 0; i < $scope.dati.frase.length; i++) {
+                    if(data=c){$scope.Frase = data.frase;}
+                }
+
+            });
+    });
 
 
        /* //noinspection JSAnnotator
@@ -35,4 +48,3 @@ angular.module('myApp.homeView', ['ngRoute'])
         };
 
 */
-    }]);
