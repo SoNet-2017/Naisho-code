@@ -313,7 +313,7 @@ input.form-control {
     margin-left:-50px;
 }
 .input-group{
-    width: 600px;
+    width: 400px;
     height: 46px;
     margin-top: 15px;
     margin-left: 15px;
@@ -325,7 +325,7 @@ input.form-control {
     background-color: rgb(255, 255, 255);
     font: bold 24px/45px Helvetica, Sans-Serif;
     letter-spacing: -1px;
-    margin-left:30%;
+    margin-left:20%;
 }
 
 #btlog {
@@ -411,4 +411,8 @@ h2{
 
 }
 
+/*icona lente*/
+.glyphicon{
+   border:0px;
 
+}
