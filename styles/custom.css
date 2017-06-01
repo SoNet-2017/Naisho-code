@@ -219,12 +219,34 @@ img.media-object{
     opacity: .80;
     position: fixed;
     top: 75px;
-    left: 0px;
-    width: 100%;
+    left: 5%;
+    width: 90%;
     height: 25%;
     background-color: #FFF;
     z-index: +300;
     }
+
+#bodyHome {
+    opacity: .80;
+    position: fixed;
+    top: 180px;
+    left: 5%;
+    width: 90%;
+    height: 55%;
+    background-color: #FFF;
+    z-index: +300;
+}
+
+#menu {
+    opacity: .80;
+    position: fixed;
+    top: 75px;
+    left: 0px;
+    width: 20%;
+    height: 100%;
+    background-color: #9acae5;
+    z-index: +300;
+}
 /*#boxev2{
 
     padding-top: 15px;

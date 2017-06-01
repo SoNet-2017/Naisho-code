@@ -24,28 +24,23 @@
 
 </div>
 
-
 <div id="ContainerHome">
-    <div class=" w3-container w3-card-2" id="menu">
-        <menu type="context" >
-            <menu label="Profilo Personale">
-                <menuitem label="Twitter" icon="glyphicon glyphicon-user w3-large"
-                          onclick="showPersonalProfile();">
-                </menuitem>
-                <menuitem label="Prega" icon="ico_facebook.png"
-                          onclick="window.open('//facebook.com/sharer/sharer.php?u='+window.location.href);">
-                </menuitem>
-            </menu>
-            <menuitem label="Email This Page"
-                      onclick="window.location='mailto:?body='+window.location.href;"></menuitem>
-        </menu>
+    <div class=" w3-container" id="menu">
+        <ul >
+            <a href="#"> <li> Profilo Personale <i ng-click="showPersonalProfile()" class="glyphicon glyphicon-user w3-large"></i> </li></a>
+            <a href="#"> <li> Prega <i ng-click="showPrega()" class="glyphicon glyphicon-user w3-large"></i> </li></a>
+            <a href="#"> <li> Calendario/Eventi/Forum <i ng-click="showCalendar()" class="glyphicon glyphicon-user w3-large"></i> </li></a>
+            <a href="#"> <li> Chat <i ng-click="showChat()" class="glyphicon glyphicon-user w3-large"></i> </li></a>
+            <a href="#"> <li> Tutor <i ng-click="showTutor()" class="glyphicon glyphicon-user w3-large"></i> </li></a>
+        </ul>
     </div>
+
 <div class="w3-container" id="contenitoreFrase">
     <p id="fraseDelGiorno"></p>
 </div>
 
 
-<div id="bodyHome" class="w3-container w3-col l12 s12 m12">
+<div class="w3-container" id="bodyHome" >
 
 </div>
 </div>
