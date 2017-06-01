@@ -22,10 +22,9 @@ angular.module('myApp.homeView', ['ngRoute'])
         $scope.dati={};
         $scope.auth=Auth;
 
-       /* $scope.showmenu=function () {
-         document.getElementById("menu").style.display;
+      $scope.showmenu=function () {
+         document.getElementById("menu").style.display='block';
         };
-*/
 
        /* $scope.showSearchItem=function () {
             var x = document.getElementById("typeSearchContentHome");
