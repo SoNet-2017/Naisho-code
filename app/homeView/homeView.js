@@ -22,19 +22,19 @@ angular.module('myApp.homeView', ['ngRoute'])
         $scope.dati={};
         $scope.auth=Auth;
 
-        $scope.showmenu=function () {
-            var x = document.getElementById("menu").style.display="flex";
+       /* $scope.showmenu=function () {
+         document.getElementById("menu").style.display;
         };
+*/
 
-
-        $scope.showSearchItem=function () {
+       /* $scope.showSearchItem=function () {
             var x = document.getElementById("typeSearchContentHome");
             if (x.className.indexOf("w3-show") == -1)
                 x.className += " w3-show";
             else
                 x.className = x.className.replace(" w3-show", "");
         };
-
+*/
         var ref = firebase.database().ref("frasi/frase");
         ref.once("value")
             .then(function(snapshot) {
