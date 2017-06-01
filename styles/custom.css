@@ -37,12 +37,13 @@ body{
     position: absolute;
     top: -25px;
     left: 50%;
-    margin-left: -250px;
+    margin-left: -160px;
     width: 500px;
     height: 900px;
     padding-bottom: 60%;
 }
 
+/*
 .navbar{
     border-bottom-width: 0px;
     background: rgba(154, 202, 229, 0.52);
@@ -63,6 +64,97 @@ body{
 .usrp{
     float: right;
 }
+*/
+
+/*home*/
+.w3-top{
+    overflow: visible;
+}
+
+#topBarHome{
+    background-color: transparent;
+    /*Per centrare il contenuto*/
+    display:flex;
+    align-items:center;
+    height: 60px;
+}
+
+#userNameHome{
+    font-family: "Helvetica";
+}
+
+#logoBarImgHome{
+    content: url("../images/logonaisho2.png");
+    width: 100px;
+    height: 50px;
+}
+
+#logoBarImgContainerHome{
+    position: absolute;
+    right: 0px;
+    margin-right: 20px;
+}
+
+#logoBarHome{
+    position: absolute;
+    right: 50px;
+    margin-right: 20px;
+}
+
+#homeLinkHome{
+    color: #ffffff;
+}
+
+#userLinkHome{
+    color: #ffffff;
+}
+
+
+#searchItemHome{
+    max-width: 30%;
+}
+
+#bodyHome{
+    margin-top: 100px;
+}
+
+#sideUserHome{
+    /*Per centrare il contenuto*/
+    text-align: center;
+    align-items:center;
+    vertical-align: middle;
+    background-color: #b7c3b8;
+    padding-bottom: 20px;
+}
+
+#userNameAndLastHome{
+    color: #fff;
+    font-family: "Helvetica";
+}
+
+#userPhotoHome{
+    content: url("../images/user.png");
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 7px;
+}
+
+#sideUserHome a {
+    color: #fff;
+    font-size: 15pt;
+    position: relative;
+
+}
+
+#sideUserHome a:hover{
+    color: #636466;
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*fine home*/
 
 .form-control{
     color: rgba(0, 0, 0, 0.4);
@@ -185,8 +277,16 @@ form.frmLogin {
     -moz-border-radius: 15px;
     border-radius: 15px;
     -webkit-border-radius: 15px;
-    color:#FFFFFF;
+    color: #FFFFFF;
+
+
 }
+.btn {
+    margin-left: 145px;
+
+}
+
+
 
 .login{
     text-align: center;
@@ -241,6 +341,7 @@ input.form-control {
     text-align: center;
     padding-top: 0px;
     color:white;
+    margin-left: -140px;
 }
 
 
@@ -261,6 +362,11 @@ input.form-control {
 
 h2{
     color: #FFFFFF;
+    margin-left: 120px;
+
+
+
+
     }
 
 
@@ -291,6 +397,14 @@ h2{
     padding-bottom: 15px;
     padding-top: 15px;
     font-size: 20px;
+}
+.w3-large{
+    color:#FFFFFF;
+    margin-top: 25px;
+    margin-left: 100px;
+    letter-spacing:10px;
+
+
 }
 
 
