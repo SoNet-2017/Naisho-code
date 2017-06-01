@@ -1,7 +1,8 @@
 <div class="w3-container w3-bar w3-top w3-card-2" id="topBarHome">
 
-    <a class="w3-bar-item w3-button" id="homeIcon"><i class="glyphicon glyphicon-home w3-large"></i></a>
-    <a class="w3-bar-item w3-button" id="userIcon"><i class="glyphicon glyphicon-user w3-large"></i></a>
+    <a ng-click="showmenu()" class="w3-bar-item w3-button" id="menuIcon"><i class="glyphicon glyphicon-menu-hamburger w3-large"></i></a>
+    <a class="w3-bar-item w3-button" id="homeIcon" onclick="window.location.reload();"><i class="glyphicon glyphicon-home w3-large"></i></a>
+    <!--<a class="w3-bar-item w3-button" id="userIcon"><i class="glyphicon glyphicon-user w3-large"></i></a>-->
     <a class="w3-bar-item w3-button" id="newsIcon"><i class="glyphicon glyphicon-bell w3-large"></i></a>
     <a class="w3-bar-item w3-button" id="geoIcon"><i class="glyphicon glyphicon-map-marker w3-large"></i></a>
     <a href="#" ng-click="logout()" class="w3-bar-item w3-button"  id="OffIcon"><i class="glyphicon glyphicon-off w3-large"></i></a>
@@ -16,6 +17,20 @@
         </div>
     </form>
 
+   <div class=" w3-container w3-card-2" id="menu">
+    <menu type="context" >
+        <menu label="Profilo Personale">
+            <menuitem label="Twitter" icon="glyphicon glyphicon-user w3-large"
+                      onclick="showPersonalProfile();">
+            </menuitem>
+            <menuitem label="Prega" icon="ico_facebook.png"
+                      onclick="window.open('//facebook.com/sharer/sharer.php?u='+window.location.href);">
+            </menuitem>
+        </menu>
+        <menuitem label="Email This Page"
+                  onclick="window.location='mailto:?body='+window.location.href;"></menuitem>
+    </menu>
+   </div>
 
     <div id="logoBarImgContainerHome">
         <img class="w3-content" id="logoBarImgHome" alt="logo">
