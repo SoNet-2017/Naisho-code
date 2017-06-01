@@ -22,6 +22,11 @@ angular.module('myApp.homeView', ['ngRoute'])
         $scope.dati={};
         $scope.auth=Auth;
 
+        $scope.showmenu=function () {
+            var x = document.getElementById("menu").style.display="flex";
+        };
+
+
         $scope.showSearchItem=function () {
             var x = document.getElementById("typeSearchContentHome");
             if (x.className.indexOf("w3-show") == -1)
@@ -59,6 +64,10 @@ angular.module('myApp.homeView', ['ngRoute'])
 
 
         };
+        $scope.logout = function () {
+            $location.path("/userProfileView");
+        }
+
 
           /* //noinspection JSAnnotator
         $scope.shownav-bar=function () {
