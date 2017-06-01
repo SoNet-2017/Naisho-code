@@ -332,7 +332,7 @@ input.form-control {
     background-color: rgb(255, 255, 255);
     font: bold 24px/45px Helvetica, Sans-Serif;
     letter-spacing: -1px;
-    margin-left:20%;
+    margin-left:120%; /*per spostare barra search*/
 }
 
 #btlog {
