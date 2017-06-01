@@ -71,6 +71,11 @@ body{
     overflow: visible;
 }
 
+#menu{
+    float:left;
+    position:fixed;
+}
+
 #topBarHome{
     background-color: transparent;
     /*Per centrare il contenuto*/
