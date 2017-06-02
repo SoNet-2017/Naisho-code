@@ -39,16 +39,15 @@ angular.module('myApp.homeView', ['ngRoute'])
         console.log(b);
         var c= "0"+a+"0"+b;
         console.log(c);
-        var ref = firebase.database().ref().child("frasi/"+c+"/frase");
+        var ref = firebase.database().ref().child("frasi/"+c+"");
         $scope.soka = $firebaseObject(ref);
         $scope.soka.$loaded().then(function () {
-            var f=$scope.soka;
-            document.getElementById("fraseDelGiorno").innerHTML = f;
-            //document.write($scope.soka);
-            console.log(f);
+           
+            document.getElementById("fraseDelGiorno").innerHTML = $scope.soka.frase;
+            console.log($scope.soka.frase);
         });
 
-        
+
         //logout
         $scope.logout = function () {
             Users.registerLogout(currentAuth.uid);
