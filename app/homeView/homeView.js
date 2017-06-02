@@ -33,16 +33,22 @@ angular.module('myApp.homeView', ['ngRoute'])
         };
         // funzione frase del giorno
         var dato = new Date();
-        var a=dato.getDate();
+        var a =dato.getDate();
+        if (String(a).length == 1) {
+            a = "0"+a;
+        }
         console.log(a);
         var b=dato.getMonth();
+        if (String(b).length == 1) {
+            b = "0"+b;
+        }
         console.log(b);
-        var c= "0"+a+"0"+b;
+        var c= a+b;
         console.log(c);
         var ref = firebase.database().ref().child("frasi/"+c+"");
         $scope.soka = $firebaseObject(ref);
         $scope.soka.$loaded().then(function () {
-           
+
             document.getElementById("fraseDelGiorno").innerHTML = $scope.soka.frase;
             console.log($scope.soka.frase);
         });
