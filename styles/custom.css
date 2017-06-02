@@ -79,8 +79,9 @@ body{
     width: 250px;
     height:550px;
     line-height:50px;	/* Interlinea */
-    background-color: #2903b5;
+    background-color:#445588;
     z-index: +1000;
+
 }
 
 .menu ul{
@@ -90,17 +91,20 @@ body{
     list-style-type:none;
     margin:0;
     padding:0;
+
 }
 .menu ul li{
-    margin-top:10px;
+    margin-top:40px;/*spazio tra le varie funzionalità*/
     border-left: 10px solid transparent;
+
 }
 
 .menu ul li:first-child{
-    margin-top:50px;
+    margin-top:40px;/*spaziotrainiziofinestra e prima funzione*/
 }
 .menu ul li:hover{
     background: #9acae5;
+
    }
 
 .menu ul li a{
@@ -124,6 +128,14 @@ body{
     left:200px;
     top:10px;
     z-index: +1000;
+}
+.glyphicon {
+    text-align: left;
+    color: #fff;
+    text-decoration:none ;
+    padding: 10px 0;
+    display: flex;
+
 }
 
 
