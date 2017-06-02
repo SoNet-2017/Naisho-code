@@ -1,6 +1,6 @@
 <div class="w3-container w3-bar w3-top w3-card-2" id="topBarHome">
 
-    <a ng-click="showmenu()" class="w3-bar-item w3-button" id="menuIcon"><i class="glyphicon glyphicon-menu-hamburger w3-large"></i></a>
+    <a class="w3-bar-item w3-button" id="menuButton" ng-click="show()"><i class="glyphicon glyphicon-menu-hamburger w3-large"></i></a>
     <a class="w3-bar-item w3-button" id="homeIcon" onclick="window.location.reload();"><i class="glyphicon glyphicon-home w3-large"></i></a>
     <!--<a class="w3-bar-item w3-button" id="userIcon"><i class="glyphicon glyphicon-user w3-large"></i></a>-->
     <a class="w3-bar-item w3-button" id="newsIcon"><i class="glyphicon glyphicon-bell w3-large"></i></a>
@@ -23,25 +23,42 @@
     </div>
 
 </div>
-
-<div id="ContainerHome">
-    <div class=" w3-container" id="menu">
-        <ul >
-            <a href="#"> <li> Profilo Personale <i ng-click="showPersonalProfile()" class="glyphicon glyphicon-user w3-large"></i> </li></a>
-            <a href="#"> <li> Prega <i ng-click="showPrega()" class="glyphicon glyphicon-user w3-large"></i> </li></a>
-            <a href="#"> <li> Calendario/Eventi/Forum <i ng-click="showCalendar()" class="glyphicon glyphicon-user w3-large"></i> </li></a>
-            <a href="#"> <li> Chat <i ng-click="showChat()" class="glyphicon glyphicon-user w3-large"></i> </li></a>
-            <a href="#"> <li> Tutor <i ng-click="showTutor()" class="glyphicon glyphicon-user w3-large"></i> </li></a>
-        </ul>
-    </div>
-
-<div class="w3-container" id="contenitoreFrase">
-    <p id="fraseDelGiorno"></p>
+<div class="menu" id="menu">
+    <a class="closeButton" ng-click="close()"><i class="glyphicon glyphicon-remove-circle w3-large"></i></a>
+    <ul >
+        <li> <a href="userProfileView.html"> Profilo Personale <i class="glyphicon glyphicon-user w3-large"></i> </a></li>
+        <li> <a href="pregaView.html"> Prega <i ng-click="showPrega()" class="glyphicon glyphicon-user w3-large"></i> </a></li>
+        <li> <a href="CalendarView.html"> Calendario/Eventi/Forum <i class="glyphicon glyphicon-user w3-large"></i> </a></li>
+        <li> <a href="chatView.html"> Chat <i  class="glyphicon glyphicon-user w3-large"></i> </a></li>
+        <li> <a href="tutorView.html"> Tutor <i  class="glyphicon glyphicon-user w3-large"></i> </a></li>
+    </ul>
 </div>
 
+<div id="ContainerHome">
+ <!--
+    <div class="menu" id="menu">
+         <div class="closeButton"><a class="icon-close"></a></div>
+        <ul >
+            <li> <a href="#"> Profilo Personale <i ng-click="showPersonalProfile()" class="glyphicon glyphicon-user w3-large"></i> </a></li>
+            <li> <a href="#"> Prega <i ng-click="showPrega()" class="glyphicon glyphicon-user w3-large"></i> </a></li>
+            <li> <a href="#"> Calendario/Eventi/Forum <i ng-click="showCalendar()" class="glyphicon glyphicon-user w3-large"></i> </a></li>
+            <li> <a href="#"> Chat <i ng-click="showChat()" class="glyphicon glyphicon-user w3-large"></i> </a></li>
+            <li> <a href="#"> Tutor <i ng-click="showTutor()" class="glyphicon glyphicon-user w3-large"></i> </a></li>
+        </ul>
+    </div>
+-->
+<div class="w3-container" id="contenitoreFrase">
+    <p id="fraseDelGiorno">{{dati.soka}}</p>
+</div>
+
+    <div class="w3-container" id="eventi" >
+
+    </div>
 
 <div class="w3-container" id="bodyHome" >
 
 </div>
+
+
 </div>
 

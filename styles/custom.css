@@ -71,10 +71,60 @@ body{
     overflow: visible;
 }
 
-#menu{
-    float:left;
-    position:fixed;
+#menu {
+    list-style-type:none;
+    position: absolute;
+    top: 75px;
+    left: -250px;
+    width: 250px;
+    line-height:15px;	/* Interlinea */
+    background-color: #2903b5;
+    z-index: +1000;
 }
+
+.menu ul{
+    width:100%;
+    float:left;
+    margin-top:50px;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+.menu ul li{
+    margin-top:10px;
+    border-left: 10px solid transparent;
+}
+
+.menu ul li:first-child{
+    margin-top:50px;
+}
+.menu ul li:hover{
+    background: #9acae5;
+   }
+
+.menu ul li a{
+    text-align: left;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 0;
+    display: block;
+}
+/*menuButton*/
+#menuButton a{
+    cursor:pointer;
+    transition:all 0.2s;
+}
+
+/*close button*/
+.closeButton{
+    font-size:5px;
+    color:#fff;
+    position:absolute;
+    left:180px;
+    top:20px;
+    z-index: +1000;
+}
+
 
 #topBarHome{
     background-color: transparent;
@@ -98,6 +148,9 @@ body{
     position: absolute;
     right: 0px;
     margin-right: 20px;
+}
+#ContainerHome{
+    z-index:200;
 }
 
 #logoBarHome{
@@ -165,6 +218,33 @@ body{
     border-radius: 5px;
     cursor: pointer;
 }
+#contenitoreFrase,#bodyHome,#eventi{
+    opacity: .80;
+    position: fixed;
+    background-color: #FFF;
+    z-index: +300;
+    background-attachment:scroll;
+}
+#contenitoreFrase {
+    top: 75px;
+    left: 5%;
+    width: 90%;
+    height: 15%;
+    }
+
+#bodyHome {
+    top: 35%;
+    left: 5%;
+    width: 90%;
+    height: 50%;
+    }
+
+#eventi {
+    top: 30%;
+    left: 5%;
+    width: 90%;
+    height: 15%;
+    }
 /*fine home*/
 
 .form-control{
@@ -215,38 +295,8 @@ img.media-object{
     z-index:+300;
     padding-bottom: 60%;
 }
-#contenitoreFrase {
-    opacity: .80;
-    position: fixed;
-    top: 75px;
-    left: 5%;
-    width: 90%;
-    height: 25%;
-    background-color: #FFF;
-    z-index: +300;
-    }
 
-#bodyHome {
-    opacity: .80;
-    position: fixed;
-    top: 180px;
-    left: 5%;
-    width: 90%;
-    height: 55%;
-    background-color: #FFF;
-    z-index: +300;
-}
 
-#menu {
-    opacity: .80;
-    position: fixed;
-    top: 75px;
-    left: 0px;
-    width: 20%;
-    height: 100%;
-    background-color: #9acae5;
-    z-index: +300;
-}
 /*#boxev2{
 
     padding-top: 15px;

@@ -31,6 +31,7 @@ angular.module('myApp.homeView', ['ngRoute'])
                 x.className = x.className.replace(" w3-show", "");
             }
         };
+        // funzione frase del giorno
         var dati = new Date();
         var a=dati.getDate();
         var b=dati.getMonth();
@@ -42,8 +43,7 @@ angular.module('myApp.homeView', ['ngRoute'])
             document.getElementById("fraseDelGiorno").innerHTML = $scope.dati.soka;
         });
 
-
-        
+        //logout
         $scope.logout = function () {
             Users.registerLogout(currentAuth.uid);
             $firebaseAuth().$signOut();
@@ -54,18 +54,12 @@ angular.module('myApp.homeView', ['ngRoute'])
                     $location.path("/loginView");
                 }
             });
-
-
         };
-
-          /* //noinspection JSAnnotator
-        $scope.shownav-bar=function () {
-            var x = document.getElementById("topBarHome");
-            if (x.className.indexOf("w3-show") == -1)
-                x.className += " w3-show";
-            else
-                x.className = x.className.replace(" w3-show", "");
-        };
-
-*/
+       // menu a comparsa
+        $scope.show = function () {
+            document.getElementById("menu").style.left = "0px";
+        }
+        $scope.close= function()  {
+            document.getElementById("menu").style.left = "-250px";
+        }
     }]);
