@@ -77,7 +77,8 @@ body{
     top: 75px;
     left: -250px;
     width: 250px;
-    line-height:15px;	/* Interlinea */
+    height:550px;
+    line-height:50px;	/* Interlinea */
     background-color: #2903b5;
     z-index: +1000;
 }
@@ -120,8 +121,8 @@ body{
     font-size:5px;
     color:#fff;
     position:absolute;
-    left:180px;
-    top:20px;
+    left:200px;
+    top:10px;
     z-index: +1000;
 }
 
