@@ -16,7 +16,7 @@ angular.module('myApp.homeView', ['ngRoute'])
           }]
 
       }
-  })
+  });
 }])
     .controller('homeCtrl', ['$scope', '$location', 'Auth', '$firebaseObject','Users', 'currentAuth', '$firebaseAuth', function ($scope,$location, Auth, $firebaseObject, Users, currentAuth, $firebaseAuth) {
         $scope.dati={};
@@ -32,17 +32,23 @@ angular.module('myApp.homeView', ['ngRoute'])
             }
         };
         // funzione frase del giorno
-        var dati = new Date();
-        var a=dati.getDate();
-        var b=dati.getMonth();
-        var c= 'a'+'b';
+        var dato = new Date();
+        var a=dato.getDate();
+        console.log(a);
+        var b=dato.getMonth();
+        console.log(b);
+        var c= "0"+a+"0"+b;
+        console.log(c);
         var ref = firebase.database().ref().child("frasi/"+c+"/frase");
-        $scope.dati.soka = $firebaseObject(ref);
-        $scope.dati.soka.$loaded().then(function () {
-
-            document.getElementById("fraseDelGiorno").innerHTML = $scope.dati.soka;
+        $scope.soka = $firebaseObject(ref);
+        $scope.soka.$loaded().then(function () {
+            var f=$scope.soka;
+            document.getElementById("fraseDelGiorno").innerHTML = f;
+            //document.write($scope.soka);
+            console.log(f);
         });
 
+        
         //logout
         $scope.logout = function () {
             Users.registerLogout(currentAuth.uid);
@@ -58,8 +64,8 @@ angular.module('myApp.homeView', ['ngRoute'])
        // menu a comparsa
         $scope.show = function () {
             document.getElementById("menu").style.left = "0px";
-        }
+        };
         $scope.close= function()  {
             document.getElementById("menu").style.left = "-250px";
-        }
+        };
     }]);
