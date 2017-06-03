@@ -1,0 +1,48 @@
+<div class="alert alert-danger alert-dismissible" role="alert" ng-if="error">Login failed! {{ error.message }}</div>
+<link rel="stylesheet" href="../styles/custom.css"/>
+<div id="registrazione">
+<div id="box">
+    <form id="frmRegister" role="form" ng-submit="signUp()">
+        <h2> Registrati</h2>
+
+        <div class="form-group">
+            <label for="txtName">Nome*</label>
+            <input type="text" class="form-control" id="txtName" placeholder="Inserisci il nome" name="name" ng-model="user.name" />
+        </div>
+        <div class="form-group">
+            <label for="txtSurname">Cognome*</label>
+            <input type="text" class="form-control" id="txtSurname" placeholder="Inserisci il cognome" name="surname" ng-model="user.surname" />
+        </div>
+        <div class="form-group">
+            <label for="txtEmail">Data di Nascita</label>
+            <input type="date" class="form-control" id="txtDatadiNascita" placeholder="Inserisci Data di Nascita" name="DatadiNascita" ng-model="user.DatadiNascita" />
+        </div>
+        <div class="form-group">
+            <label>Sesso</label>
+            <input type="radio" name="sex" value="M"  class="form-check-input" placeholder="sex" ng-model="user.type"/>M
+            <input type="radio" name="sex" value="F"  class="form-check-input" placeholder="sex" ng-model="user.type"/>F
+        </div>
+        <div class="form-group">
+            <label for="txtEmail">Email*</label>
+            <input type="email" class="form-control" id="txtEmail" placeholder="Inserisci email" name="email" ng-model="user.email" />
+        </div>
+        <div class="form-group">
+            <label for="txtPass">Password*</label>
+            <input type="password" class="form-control" id="txtPass" placeholder="Password" name="password" ng-model="user.password" />
+        </div>
+        <div class="form-group">
+            <label for="txtPass2">Conferma Password</label>
+            <input type="password" class="form-control" id="txtPass2" placeholder="Conferma password" name="password2" ng-model="user.password2" />
+        </div>
+        <div class="form-group">
+            <label>Sei già buddista?</label>
+            <input type="radio" name="type" value="Sì"  class="form-check-input" placeholder="type" ng-model="user.type"/>Sì
+            <input type="radio" name="type" value="No"  class="form-check-input" placeholder="type" ng-model="user.type"/>No
+        </div>
+        <button type="submit" class="btn btn-success center-block">Iscriviti</button>
+        <br>
+        <p class="link2">oppure registrati tramite:   <a href="www.facebook.it"><img class="loghi" src="../images/iconafacebook.png"></a>  o   <a href="www.twitter.it"><img class="loghi"src="../images/iconatwitter.png"></a></p>
+
+    </form>
+</div>
+</div>
