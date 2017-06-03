@@ -20,13 +20,15 @@ angular.module('myApp', [
     'myApp.homeView',
     'myApp.loginView',
     'myApp.users',
+    'myApp.usersListView',
+    'myApp.chatView',
     'myApp.authentication',
     'myApp.userProfileView',
     'myApp.userRegistrationView'
 ])
     .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
-        $routeProvider.otherwise({redirectTo: '/loginView'});
+        $routeProvider.otherwise({redirectTo: '/homeView'});
     }])
     .run(["$rootScope", "$location", function($rootScope, $location) {
         $rootScope.$on("$routeChangeError", function(event, next, previous, error) {
@@ -37,13 +39,12 @@ angular.module('myApp', [
             }
         });
     }])
-    /*.controller('MainCtrl', ['$scope', '$rootScope', '$firebaseAuth', function($scope, $rootScope, $firebaseAuth) {
+    .controller('MainCtrl', ['$scope', '$rootScope', '$firebaseAuth', function($scope, $rootScope, $firebaseAuth) {
         //this controller only declares a function to get information about the user status (logged in / out)
         //it is used to show menu buttons only when the user is logged
 
         //set the variable that is used in the main template to show the active button
         $rootScope.dati = {};
-        $rootScope.dati.currentView = 'home';
         $scope.isLogged = function()
         {
             if ($firebaseAuth().$getAuth())

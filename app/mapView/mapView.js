@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('myApp.usersListView', ['ngRoute'])
+angular.module('myApp.mapView', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/usersList', {
-            templateUrl: 'usersListView/usersListView.html',
-            controller: 'usersListViewCtrl',
+        $routeProvider.when('/map/', {
+            templateUrl: 'mapView/mapView.html',
+            controller: 'mapViewCtrl',
             resolve: {
                 // controller will not be loaded until $requireSignIn resolves
                 // Auth refers to our $firebaseAuth wrapper in the factory below
@@ -18,10 +18,10 @@ angular.module('myApp.usersListView', ['ngRoute'])
             }
         })
     }])
-    .controller('usersListViewCtrl', ['$scope', '$rootScope', '$routeParams', 'UserList', 'currentAuth',
-        function($scope, $rootScope, $routeParams, UserList, currentAuth) {
+    .controller('mapViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth',
+        function($scope, $rootScope, $routeParams, currentAuth){
+            //initialize variables
             $scope.dati = {};
-                       //get the list of all the users registered to our application
-            $scope.dati.availableUsers = UserList.getListOfUsers();
-            $scope.dati.userId = currentAuth.uid;
+
+
         }]);

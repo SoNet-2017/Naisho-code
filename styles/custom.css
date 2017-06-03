@@ -77,8 +77,7 @@ body{
     top: 75px;
     left: -250px;
     width: 250px;
-    height:550px;
-    line-height:50px;	/* Interlinea */
+    line-height:35px;	/* Interlinea */
     background-color:#445588;
     z-index: +1000;
 
@@ -135,17 +134,16 @@ body{
     text-decoration:none ;
     padding: 10px 0;
     display: flex;
-
 }
 
 
 #topBarHome{
     background-color: transparent;
-    /*Per centrare il contenuto*/
+    /*Per posizionare il contenuto*/
     display:flex;
     align-items:right;
     height: 60px;
-}
+    }
 
 #userNameHome{
     font-family: "Helvetica";
@@ -496,17 +494,14 @@ h2{
 */
 .w3-large{
     color:#FFFFFF;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-left: 10px;
-    letter-spacing:10px;
-
+    letter-spacing:5px;
 }
 
 /*icona lente*/
 .btn{
    border:0px;
-
-
 }
 
 
