@@ -143,6 +143,7 @@ body{
     display:flex;
     align-items:right;
     height: 60px;
+    z-index: 500;
     }
 
 #userNameHome{
@@ -230,11 +231,12 @@ body{
     cursor: pointer;
 }
 #contenitoreFrase,#bodyHome,#eventi{
-    opacity: .80;
     position: fixed;
-    background-color: #FFF;
+    background-color: transparent;
     z-index: +300;
     background-attachment:scroll;
+    text-align: justify;
+    align-content: space-between;
 }
 #contenitoreFrase {
     top: 75px;
@@ -242,6 +244,12 @@ body{
     width: 90%;
     height: 15%;
     }
+#frasedelgiorno{
+    padding-top: 1em;
+    color:white;
+    font-size: 15px;
+    font-style: italic;
+}
 
 #bodyHome {
     top: 35%;

@@ -24,7 +24,12 @@ angular.module('myApp', [
     'myApp.chatView',
     'myApp.authentication',
     'myApp.userProfileView',
-    'myApp.userRegistrationView'
+    'myApp.userRegistrationView',
+   // 'myApp.tutorView',
+    //'myApp.pregaView',
+//    'myApp.mapView',
+   // 'myApp.editProfileView',
+  //  'myApp.calendarView'
 ])
     .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
