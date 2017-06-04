@@ -53,24 +53,4 @@ angular.module('myApp.homeView', ['ngRoute'])
             console.log($scope.soka.frase);
         });
 
-
-        //logout
-        $scope.logout = function () {
-            Users.registerLogout(currentAuth.uid);
-            $firebaseAuth().$signOut();
-            $firebaseAuth().$onAuthStateChanged(function(firebaseUser) {
-                if (firebaseUser) {
-                    console.log("User is yet signed in as:", firebaseUser.uid);
-                } else {
-                    $location.path("/loginView");
-                }
-            });
-        };
-       // menu a comparsa
-        $scope.show = function () {
-            document.getElementById("menu").style.left = "0px";
-        };
-        $scope.close= function()  {
-            document.getElementById("menu").style.left = "-250px";
-        };
     }]);

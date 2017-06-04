@@ -14,7 +14,6 @@ angular.module('myApp.userProfileView', ['ngRoute'])
               // If the promise is rejected, it will throw a $routeChangeError (see above)
               return Auth.$requireSignIn();
           }]
-
       }
   })
 }])
