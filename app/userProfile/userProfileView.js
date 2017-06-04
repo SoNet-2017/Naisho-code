@@ -24,18 +24,5 @@ angular.module('myApp.userProfileView', ['ngRoute'])
     $scope.dati.user = UsersChatService.getUserInfo(currentAuth.uid);
 
 
-    // Function: form submission
-    $scope.logout = function () {
-        Users.registerLogout(currentAuth.uid);
-        $firebaseAuth().$signOut();
-        $firebaseAuth().$onAuthStateChanged(function(firebaseUser) {
-            if (firebaseUser) {
-                console.log("User is yet signed in as:", firebaseUser.uid);
-            } else {
-                $location.path("/loginView");
-            }
-        });
 
-
-    };
 }]);

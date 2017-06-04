@@ -1,18 +1,28 @@
-<div id="boxdati">
+<h1><b>Profilo personale</b></h1>
+<div id="profilo1">
     <div class="row">
     <div class="col-xs-12">
-        <h1>Pagina personale</h1>
+
         <div class="page-header">
-            <h1>{{dati.user.name}} <br>{{dati.user.surname}}</h1>
+            <img src="../images/user.png" id="userIcon" alt="immagine del profilo">
+            <h1>{{dati.user.name}} <br>{{dati.user.surname}} <br> {{dati.user.DataDiNascita}} </h1>
         </div>
-        <p>
-            <span class="glyphicon glyphicon-envelope"></span> {{dati.user.email}}
-        </p>
-
-        <a href="#!editProfile" class="w3-bar-item w3-button"><i class="glyphicon glyphicon-pencil"></i> Modifica Profilo</a>
-        <a href="#" ng-click="logout()" class="w3-bar-item w3-button"><i class="glyphicon glyphicon-off"></i> Disconnetti</a>
-
+        <div class="clear"></div>
+        <div id="profile-bar">
+        <a href="#!editProfile" id="changeImg">Cambia immagine</a>
+        <a href="#!editProfile" ><i class="glyphicon glyphicon-pencil" id="edit"></i> Modifica Profilo</a>
+        <a href="#!prega" ><i class="glyphicon glyphicon-pencil" id="prega"></i> Prega</a>
+       <!-- <a href="#" ng-click="logout()" class="w3-bar-item w3-button"><i class="glyphicon glyphicon-off"></i> Disconnetti</a> -->
+        </div>
     </div>
+    </div>
+
+</div>
+<div id="profilo2">
+    <div class="row">
+        <div class="col-xs-12">
+
+        </div>
     </div>
 
 </div>
