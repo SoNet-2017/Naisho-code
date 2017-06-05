@@ -1,4 +1,9 @@
-<div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{googleMapsUrl}}" class="col-md-8">
+<div class="menu" id="menu">
+    <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{googleMapsUrl}}" class="col-md-8">
     <ng-map center="45.071087, 7.686567" zoom="12">
         <marker ng-repeat="pos in dati.vm.positions" position="{{pos.lat}},{{pos.lng}}"></marker>
     </ng-map>
+</div>
+<div class="col-xs-12 col-md-4">
+</div>
+</div>
