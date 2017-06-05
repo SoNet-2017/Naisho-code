@@ -298,6 +298,21 @@ img.media-object{
     padding: inherit;
 }
 
+/*Prega*/
+.clear1 {
+    clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
 #prega, #changeImg,#edit{
     color:#3903FF;
     width: inherit;

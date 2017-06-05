@@ -3,7 +3,7 @@
 angular.module('myApp.pregaView', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/prega/', {
+        $routeProvider.when('/pregaView/', {
             templateUrl: 'pregaView/pregaView.html',
             controller: 'pregaViewCtrl',
             resolve: {
