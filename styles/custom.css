@@ -112,7 +112,7 @@ body{
 .glyphicon {
     text-align: left;
     color: #fff;
-    text-decoration:none ;
+    text-decoration:none;
     padding: 10px 0;
     display: flex;
 }
@@ -132,15 +132,16 @@ body{
 }
 
 #logoBarImgHome{
-    content: url("../images/logonaisho2.png");
-    width: 100px;
-    height: 50px;
+    content: url("../images/logonaisho.png");
+    width: 200px;/* dimensioni logo nella barra della home*/
+    height: 70px;
 }
 
 #logoBarImgContainerHome{
     position: absolute;
     right: 0px;
-    margin-right: 20px;
+    margin-right: 40px;/*per spostare logonaisho nella barra della home*/
+    margin-top:10px;
 }
 #ContainerHome{
     z-index:200;
@@ -302,6 +303,21 @@ img.media-object{
     padding: inherit;
 }
 
+/*Prega*/
+.clear1 {
+    clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
 #prega, #changeImg,#edit{
     color:#3903FF;
     width: inherit;
@@ -345,6 +361,7 @@ form.frmLogin {
 }
 .btn {
     margin-left: 145px;
+    height:46px;/* altezza barra sotto search*/
 
 }
 
@@ -372,6 +389,7 @@ input.form-control {
     margin-left:-10px;
     border:none;
 
+
 }
 .input-group{
     width: 400px;
@@ -387,6 +405,7 @@ input.form-control {
     font: bold 24px/45px Helvetica, Sans-Serif;
     letter-spacing: -1px;
     margin-left:120%; /*per spostare barra search*/
+
 }
 
 #btlog {
@@ -439,11 +458,14 @@ h2{
     margin-left: 10px;
     letter-spacing:5px;
     text-decoration: none;
+
 }
 
 /*icona lente*/
 .btn{
-   border:0px;
+   border-radius:15px;
+
+
 }
 
 /*chat*/
