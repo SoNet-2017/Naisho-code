@@ -11,25 +11,26 @@ angular.module('myApp.userRegistrationView', ['ngRoute'])
 
 .controller('UserRegistrationCtrl', ['$scope', '$rootScope', 'Auth', 'Users', '$location', function($scope, $rootScope, Auth, Users, $location) {
     $scope.user={};
-    $rootScope.dati.currentView = "home";
 
     $scope.signUp = function() {
-        if ($scope.user.password!= '' && $scope.user.password === $scope.user.password2) {
+        if ($scope.user.password!= '' && $scope.user.password === $scope.user.password2 && $scope.user.name!= '' && $scope.user.surname!= '' && $scope.user.email!= '' ) {
             Auth.$createUserWithEmailAndPassword($scope.user.email, $scope.user.password)
                 .then(function (firebaseUser) {
                     Auth.$signInWithEmailAndPassword($scope.user.email, $scope.user.password).then(function(internalFirebaseUser) {
                         var userId = internalFirebaseUser.uid;
-                        Users.registerNewUserInfo(userId, $scope.user.name, $scope.user.surname, $scope.user.email,$scope.user.type);
+                        Users.registerNewUserInfo(userId, $scope.user.name, $scope.user.surname, $scope.user.email,$scope.user.type,$scope.user.DatadiNascita,$scope.user.sex);
                         Users.registerLogin(userId, $scope.user.email);
-                        // login successful: redirect to the pizza list
+                        // login successful: redirect to the home
                         $location.path("/homeView");
                     }).catch(function(error) {
                         $scope.error = error;
                         console.log(error.message);
+                        $location.path("/userRegistrationView");
                     });
                 }).catch(function (error) {
                     $scope.error = error;
                     console.log(error.message);
+                $location.path("/userRegistrationView");
             });
         }
     };

@@ -42,29 +42,10 @@ body{
     height: 900px;
     padding-bottom: 60%;
 }
-
-/*
-.navbar{
-    border-bottom-width: 0px;
-    background: rgba(154, 202, 229, 0.52);
-
-
+.alert{
+    margin-top: 40%;
+    width: inherit;
 }
-.navbar-brand{
-    content:url("../images/logonaisho2.png");
-    width: 150px;
-    height: 75px;
-}
-.navbar-user{
-    content: url("../images/user.png");
-    height: 75px;
-    width: 150px;
-    float: right;
-}
-.usrp{
-    float: right;
-}
-*/
 
 /*home*/
 .w3-top{
@@ -77,8 +58,7 @@ body{
     top: 75px;
     left: -250px;
     width: 250px;
-    height:550px;
-    line-height:50px;	/* Interlinea */
+    line-height:35px;	/* Interlinea */
     background-color:#445588;
     z-index: +1000;
 
@@ -132,35 +112,36 @@ body{
 .glyphicon {
     text-align: left;
     color: #fff;
-    text-decoration:none ;
+    text-decoration:none;
     padding: 10px 0;
     display: flex;
-
 }
 
 
 #topBarHome{
     background-color: transparent;
-    /*Per centrare il contenuto*/
+    /*Per posizionare il contenuto*/
     display:flex;
     align-items:right;
     height: 60px;
-}
+    z-index: 1000;
+    }
 
 #userNameHome{
     font-family: "Helvetica";
 }
 
 #logoBarImgHome{
-    content: url("../images/logonaisho2.png");
-    width: 100px;
-    height: 50px;
+    content: url("../images/logonaisho.png");
+    width: 200px;/* dimensioni logo nella barra della home*/
+    height: 70px;
 }
 
 #logoBarImgContainerHome{
     position: absolute;
     right: 0px;
-    margin-right: 20px;
+    margin-right: 40px;/*per spostare logonaisho nella barra della home*/
+    margin-top:10px;
 }
 #ContainerHome{
     z-index:200;
@@ -204,39 +185,13 @@ body{
     padding-bottom: 20px;
 }
 
-#userNameAndLastHome{
-    color: #fff;
-    font-family: "Helvetica";
-}
-
-#userPhotoHome{
-    content: url("../images/user.png");
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
-    padding: 10px 10px 10px 10px;
-    border-radius: 7px;
-}
-
-#sideUserHome a {
-    color: #fff;
-    font-size: 15pt;
-    position: relative;
-
-}
-
-#sideUserHome a:hover{
-    color: #636466;
-    background-color: transparent;
-    border-radius: 5px;
-    cursor: pointer;
-}
 #contenitoreFrase,#bodyHome,#eventi{
-    opacity: .80;
     position: fixed;
-    background-color: #FFF;
+    background-color: transparent;
     z-index: +300;
     background-attachment:scroll;
+    text-align: justify;
+    align-content: space-between;
 }
 #contenitoreFrase {
     top: 75px;
@@ -244,6 +199,12 @@ body{
     width: 90%;
     height: 15%;
     }
+#frasedelgiorno{
+    padding-top: 1em;
+    color:white;
+    font-size: 15px;
+    font-style: italic;
+}
 
 #bodyHome {
     top: 35%;
@@ -293,59 +254,102 @@ img.media-object{
     background-color:#3903ff ;
 }
 */
-#boxdati{
+/**profilo personale*/
+
+.clear {
+    clear: both;
+}
+
+#profilo1{
     margin-left: 10px;
-    left: 0px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
     float: left;
-    padding-top: 15px;
-    opacity: .80;
-    position: absolute;
-    top: -25px;
     left: 0%;
-    width: 100%;
-    height: 75%;
+    width: 30%;
     background-color:#FFF;
-    z-index:+300;
-    padding-bottom: 60%;
-}
-
-
-/*#boxev2{
-
-    padding-top: 15px;
-    opacity: .80;
-    position: absolute;
-    top: -25px;
-    left: 35%;
-    width: 62.5%;
-    height: 900px;
-    background-color:#FFF;
-    z-index:+300;
-    padding-bottom: 60%;
-}
-*/
-
-/*Login view
-
-#box2{
-    top: 300px;
-    opacity: .80;
-    position: absolute;
-    left: 50%;
-    margin-top: -225px;
-    margin-left: -250px;
-    width: 500px;
-    height: 450px;
-    background-color: transparent;
-    background-color:#FFF;
-    z-index:+300;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
+    position: relative;
+    display:block;
+    float :left;
     border-radius: 15px;
 }
-*/
+#profilo2{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 10px;
+    float: left;
+    width: 65%;
+    background-color:#FFF;
+    display:block;
+    border-radius: 15px;
+    height:30em;
+}
+#profilo1 h1{
+    font-size: initial;
+    padding-top:5px;
+    color:black;
+    line-height: inherit;
+}
+ h1{
+     padding-top: 75px;
+     color: white;
+     font-size:30px;
+     margin-left: 10px;
+ }
+
+#userIcon{
+    float:left;
+    padding: inherit;
+}
+
+/*Prega*/
+.clear1 {
+    clear: both;
+}
 
 
+
+
+
+
+
+
+
+
+
+
+#changeImg {
+    color: #3903FF;
+    width: inherit;
+    margin-left: -300px;
+    margin-top:10px;
+
+}
+
+#edit,#prega {
+    color: #3903FF;
+    width: inherit;
+    margin-left: 150px;
+
+}
+
+
+
+
+
+  /*bisogna centrare le icone*/
+
+
+#prega:hover, #changeImg:hover,#edit:hover{
+    opacity:0.5;
+}
+
+#profile-bar{
+    text-align: center;
+    padding-top: 15px;
+    margin-left:10px;
+}
 
 form.frmLogin {
     margin-right: 20%;
@@ -373,11 +377,10 @@ form.frmLogin {
     border-radius: 15px;
     -webkit-border-radius: 15px;
     color: #FFFFFF;
-
-
 }
 .btn {
     margin-left: 145px;
+    height:46px;/* altezza barra sotto search*/
 
 }
 
@@ -386,10 +389,12 @@ form.frmLogin {
 .login{
     text-align: center;
     margin-top: 15px;
+    margin-left: 20px;
     background: #3903ff;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border-radius: 15px;
+    width: 300px;
 }
 input.form-control {
     width: 300px;
@@ -402,6 +407,7 @@ input.form-control {
     letter-spacing: -1px;
     margin-left:-10px;
     border:none;
+
 
 }
 .input-group{
@@ -418,6 +424,7 @@ input.form-control {
     font: bold 24px/45px Helvetica, Sans-Serif;
     letter-spacing: -1px;
     margin-left:120%; /*per spostare barra search*/
+
 }
 
 #btlog {
@@ -463,54 +470,47 @@ h2{
     color: #FFFFFF;
     margin-left: 120px;
    }
-/*
 
-.navbar-center {
-    margin: 0 auto;
-    display: table;
-    table-layout: auto;
-    float: none;
-    width: 100%;
-}
-.navbar-center > li {
-    display: table-cell;
-    float: none;
-    text-align: center;
-}
-
-.navbar-default .navbar-center > .active > a,
-.navbar-default .navbar-center > .active > a:hover {
-    color: #428bca;
-    background-color: transparent;
-}
-
-.navbar-default .navbar-center > li > a:hover {
-    color: #777;
-}
-
-.navbar-nav > li > a {
-    padding-bottom: 15px;
-    padding-top: 15px;
-    font-size: 20px;
-}
-*/
 .w3-large{
     color:#FFFFFF;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-left: 10px;
-    letter-spacing:10px;
+    letter-spacing:5px;
+    text-decoration: none;
 
 }
 
 /*icona lente*/
 .btn{
-   border:0px;
+   border-radius:15px;
 
 
 }
 
+/*chat*/
+.userList {
+    margin-top:90px;
+    border-radius: 15px;
+    padding:5px;
+    background-color: white;
+    text-align: center;
+    font-size: inherit;
+}
 
+.userList p{
+    color:black;
+}
 
+#chat {
+    margin-top:90px;
+    border-radius: 15px;
+    padding:5px;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    font-size: inherit;
+    text-decoration-color: #0f0f0f;
+}
 
 
 
