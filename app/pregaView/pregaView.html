@@ -1,22 +1,11 @@
-<!--<h4 style="font-weight:bold">Chat with {{dati.interlocutor.email}}</h4>
-<div class="row">
-    <div class="col-xs-12 col-md-4">
-        <div id="messagesDiv">
-            <div ng-repeat="msg in dati.messages  | orderBy:orderProp" ng-if="[dati.userId, dati.recipientUserId].indexOf(msg.sender) > -1 && [dati.userId, dati.recipientUserId].indexOf(msg.receiver) > -1 ">
-                <em>{{msg.utctime}} - {{msg.senderName}}</em>: {{msg.text}}
-            </div>
-        </div>
-        {{dati.userInfo.email}}: <input type="text" ng-model="dati.msg" ng-keydown="addMessage($event)" placeholder="Message...">
-    </div>
-</div>-->
-<h1><b>Prega</b></h1>
+<h3><b>Prega</b></h3>
 <div id="prega1">
     <div class="row1">
         <div class="col1-xs-12">
 
             <div class="page-header1">
                 <img src="../images/user.png" id="userIcon" alt="immagine del profilo">
-                <h1>{{dati.user.name}} <br>{{dati.user.surname}} <br> {{dati.user.DataDiNascita}} </h1>
+                <h3>{{dati.user.name}} <br>{{dati.user.surname}} <br> {{dati.user.DataDiNascita}} </h3>
             </div>
             <div class="clear1"></div>
             <div id="prega-bar">

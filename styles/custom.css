@@ -319,13 +319,28 @@ img.media-object{
 
 
 
-
-
-#prega, #changeImg,#edit{
-    color:#3903FF;
+#changeImg {
+    color: #3903FF;
     width: inherit;
+    margin-left: -300px;
+    margin-top:10px;
+
+}
+
+#edit,#prega {
+    color: #3903FF;
+    width: inherit;
+    margin-left: 150px;
+
+}
+
+
+
+
+
   /*bisogna centrare le icone*/
-   }
+
+
 #prega:hover, #changeImg:hover,#edit:hover{
     opacity:0.5;
 }
@@ -333,6 +348,7 @@ img.media-object{
 #profile-bar{
     text-align: center;
     padding-top: 15px;
+    margin-left:10px;
 }
 
 form.frmLogin {
