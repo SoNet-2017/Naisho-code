@@ -254,7 +254,7 @@ img.media-object{
     background-color:#3903ff ;
 }
 */
-/**profilo personale*/
+/*profilo personale*/
 
 .clear {
     clear: both;
@@ -311,18 +311,10 @@ img.media-object{
 
 
 
-
-
-
-
-
-
-
-
 #changeImg {
     color: #3903FF;
     width: inherit;
-    margin-left: -300px;
+    margin-left: 50px;
     margin-top:10px;
 
 }
@@ -331,7 +323,7 @@ img.media-object{
     color: #3903FF;
     width: inherit;
     margin-left: 150px;
-
+    margin-top:10px;
 }
 
 
@@ -423,7 +415,7 @@ input.form-control {
     background-color: rgb(255, 255, 255);
     font: bold 24px/45px Helvetica, Sans-Serif;
     letter-spacing: -1px;
-    margin-left:120%; /*per spostare barra search*/
+    margin-left:80%; /*per spostare barra search*/
 
 }
 
