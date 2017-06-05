@@ -15,7 +15,7 @@
     <script src="../lib/angular/angular.min.js"></script>
     <script src="../lib/angular/angular-route.min.js"></script>
     <script src="../lib/angular/angular-resource.min.js"></script>
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../lib/angular/jquery-1.11.1.min.js"></script>
 
     <!-- Bootstrap -->
     <script src="../lib/bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
@@ -44,7 +44,7 @@
     <script src="userProfile/userProfileView.js"></script>
 
     <script src="pregaView/pregaView.js"></script>
-
+    <script src="geoView/geoView.js"></script>
 
 
 
@@ -67,7 +67,7 @@
         <a class="w3-bar-item w3-button" id="homeIcon" href="#!home" onclick="window.refreshView()"  ><i class="glyphicon glyphicon-home w3-large"></i></a>
         <!--<a class="w3-bar-item w3-button" id="userIcon"><i class="glyphicon glyphicon-user w3-large"></i></a>-->
         <a class="w3-bar-item w3-button" id="newPsIcon" ><i class="glyphicon glyphicon-bell w3-large"></i></a>
-        <a class="w3-bar-item w3-button" id="geoIcon" ><i class="glyphicon glyphicon-map-marker w3-large"></i></a>
+        <a class="w3-bar-item w3-button" id="geoIcon" ng-class="{'active' : dati.currentView === 'geoView'}"><a href="#!/geoView" ><i class="glyphicon glyphicon-map-marker w3-large"></i></a>
         <a ng-click="logout()" class="w3-bar-item w3-button"  id="OffIcon" ><i class="glyphicon glyphicon-off w3-large"></i></a>
         <form id="search" >
             <div class="input-group">
