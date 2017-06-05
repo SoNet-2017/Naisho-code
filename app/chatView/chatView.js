@@ -23,7 +23,7 @@ angular.module('myApp.chatView', ['ngRoute'])
             //initialize variables
             $scope.dati = {};
             //set the variable that is used in the main template to show the active button
-            $rootScope.dati.currentView = "chat";
+           // $rootScope.dati.currentView = "chat";
             //get the id of the current user and of the one that was selected to chat with
             $scope.dati.userId = currentAuth.uid;
             $scope.dati.recipientUserId = $routeParams.recipientUserId;

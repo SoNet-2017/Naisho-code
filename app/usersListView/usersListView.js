@@ -21,7 +21,7 @@ angular.module('myApp.usersListView', ['ngRoute'])
     .controller('usersListViewCtrl', ['$scope', '$rootScope', '$routeParams', 'UserList', 'currentAuth',
         function($scope, $rootScope, $routeParams, UserList, currentAuth) {
             $scope.dati = {};
-                       //get the list of all the users registered to our application
+            //get the list of all the users registered to our application
             $scope.dati.availableUsers = UserList.getListOfUsers();
             $scope.dati.userId = currentAuth.uid;
         }]);
