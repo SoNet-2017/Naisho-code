@@ -1,6 +1,15 @@
-<h4>Select a user to chat with: </h4>
+<div class="userlist" id="userlist">
+<h4>Utenti connessi: </h4>
 <p ng-repeat="user in testValue=(dati.availableUsers | filter:{logged:true} | filter:{$id: '!' + dati.userId})">
     <a href="#!/chat/{{user.$id}}">{{user.email}}</a>
 </p>
-<p ng-show="!testValue.length">No available users</p>
+<p ng-show="!testValue.length">Non ci sono altri utenti connessi</p>
 
+</div>
+<div class="userlist" id="userlist2">
+    <h4>Tutti gli utenti: </h4>
+    <p ng-repeat="user in testValue=(dati.availableUsers  | filter:{$id: '!' + dati.userId})">
+        <a href="#!/chat/{{user.$id}}">{{user.email}}</a>
+    </p>
+
+</div>

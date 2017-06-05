@@ -42,6 +42,10 @@ body{
     height: 900px;
     padding-bottom: 60%;
 }
+.alert{
+    margin-top: 40%;
+    width: inherit;
+}
 
 /*home*/
 .w3-top{
@@ -467,8 +471,30 @@ h2{
 
 }
 
+/*chat*/
+.userList {
+    margin-top:90px;
+    border-radius: 15px;
+    padding:5px;
+    background-color: white;
+    text-align: center;
+    font-size: inherit;
+}
 
+.userList p{
+    color:black;
+}
 
+#chat {
+    margin-top:90px;
+    border-radius: 15px;
+    padding:5px;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    font-size: inherit;
+    text-decoration-color: #0f0f0f;
+}
 
 
 
