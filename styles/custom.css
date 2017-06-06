@@ -307,6 +307,75 @@ img.media-object{
 .clear1 {
     clear: both;
 }
+#prega1{
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    float: left;
+    left: 0%;
+    width: 30%;
+    background-color:#FFF;
+    position: relative;
+    display:block;
+    float :left;
+    border-radius: 15px;
+}
+
+
+h3{
+    padding-top: 75px;
+    color: white;
+    font-size:30px;
+    margin-left: 10px;
+}
+
+#userIcon{
+    float:left;
+    padding: inherit;
+}
+
+
+
+
+/*Cronometro*/
+*{
+    margin: 0;
+    padding: 0;
+}
+#contenitore{
+    margin: 10px auto;
+    width: 540px;
+    height: 115px;
+}
+.orologio{
+    float: left;
+    font-size: 80px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #363431;
+}
+.bottone{
+    outline: none;
+    border: 1px solid #363431;
+    color: white;
+    width: 128px;
+    height: 30px;
+    text-shadow: 0px -1px 1px black;
+    font-size: 20px;
+    border-radius: 5px;
+    font-family: Helvetica;
+    cursor: pointer;
+    background-image: linear-gradient(#235dad, #1f97b7);
+}
+.bottone:active{
+    background-image: linear-gradient(#235dad, #1f97b7);
+}
+.bottone:hover{
+    box-shadow: 0px 0px 14px #1f97b7;
+}
+
+
+
 
 
 
