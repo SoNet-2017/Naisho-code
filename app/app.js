@@ -85,3 +85,6 @@ angular.module('myApp', [
  .when("/utenti/:userId",{...})
  .otherwise({redirectTo:"/utenti"});
  })*/
+
+
+
