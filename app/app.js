@@ -26,8 +26,8 @@ angular.module('myApp', [
     'myApp.userProfileView',
     'myApp.userRegistrationView',
    // 'myApp.tutorView',
-    //'myApp.pregaView',
-//    'myApp.mapView',
+    'myApp.pregaView',
+ //  'myApp.mapView',
    // 'myApp.editProfileView',
   //  'myApp.calendarView'
 ])
