@@ -573,13 +573,6 @@ h2{
     text-decoration-color: #0f0f0f;
 }
 
-.google-maps {
-    position: relative;
-    padding-bottom: 75%; /*Definisco l'aspect ratio */
-    height: 0;
-    overflow: hidden;
-}
-
 
 
 
