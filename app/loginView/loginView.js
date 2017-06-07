@@ -20,6 +20,8 @@ angular.module('myApp.loginView', ['ngRoute'])
             $scope.firebaseUser = null;
             $scope.error = null;
             $scope.auth.$signInWithEmailAndPassword($scope.user.email, $scope.user.password).then(function(firebaseUser) {
+                var userId = firebaseUser.uid;
+                Users.registerLogin(userId, $scope.user.email);
                 // login successful: redirect to HOME
                 $location.path("/homeView");
             }).catch(function(error) {

@@ -23,70 +23,69 @@ angular.module('myApp.pregaView', ['ngRoute'])
             //initialize variables
             $scope.dati = {};
 
-
+            /*cronometro*/
+            var centesimi = 0;
+            var secondi = 0;
+            var minuti = 0;
+            var ore = 0;
+            function start () {
+                var control;
+                control = setInterval(cronometro,10);
+                document.getElementById("Iniziare").disabled = true;
+                document.getElementById("Fermarsi").disabled = false;
+                document.getElementById("Continuare").disabled = true;
+                document.getElementById("Ripartire").disabled = false;
+            }
+            function stop () {
+                clearInterval(control);
+                document.getElementById("Fermarsi").disabled = true;
+                document.getElementById("Continuare").disabled = false;
+            }
+            function reset() {
+                clearInterval(control);
+                centesimi = 0;
+                secondi= 0;
+                minuti= 0;
+                ore = 0;
+                document.getElementById("Centesimi").innerHTML = ":00";
+                document.getElementById("Secondi").innerHTML = ":00";
+                document.getElementById("Minuti").innerHTML = ":00";
+                document.getElementById("Ore").innerHTML = "00";
+                document.getElementById("Iniziare").disabled = false;
+                document.getElementById("Fermarsi").disabled = true;
+                document.getElementById("Continuare").disabled = true;
+                document.getElementById("Ripartire").disabled = true;
+            }
+            function cronometro () {
+                if (centesimi < 99) {
+                    centesimi++;
+                    if (centesimi< 10) { centesimi = "0"+centesimi }
+                    document.getElementById("Centesimi").innerHTML = ":"+centesimi;
+                }
+                if (centesimi === 99) {
+                    centesimi = -1;
+                }
+                if (centesimi === 0) {
+                    secondi ++;
+                    if (secondi < 10) { secondi = "0"+secondi}
+                    document.getElementById("Secondi").innerHTML = ":"+secondi;
+                }
+                if (secondi === 59) {
+                    secondi= -1;
+                }
+                if ( (centesimi === 0)&&(secondi=== 0) ) {
+                    minuti++;
+                    if (minuti < 10) { minuti = "0"+minuti }
+                    document.getElementById("Minuti").innerHTML = ":"+minuti;
+                }
+                if (minuti === 59) {
+                    minuti = -1;
+                }
+                if ( (centesimi=== 0)&&(secondi === 0)&&(minuti === 0) ) {
+                    ore ++;
+                    if (ore < 10) { ore = "0"+ore}
+                    document.getElementById("Ore").innerHTML = ore;
+                }
+            }
         }]);
 
-/*cronometro*/
-var centesimi = 0;
-var secondi = 0;
-var minuti = 0;
-var ore = 0;
-function start () {
-    var control;
-    control = setInterval(cronometro,10);
-    document.getElementById("Iniziare").disabled = true;
-    document.getElementById("Fermarsi").disabled = false;
-    document.getElementById("Continuare").disabled = true;
-    document.getElementById("Ripartire").disabled = false;
-}
-function stop () {
-    clearInterval(control);
-    document.getElementById("Fermarsi").disabled = true;
-    document.getElementById("Continuare").disabled = false;
-}
-function reset() {
-    clearInterval(control);
-    centesimi = 0;
-    secondi= 0;
-    minuti= 0;
-    ore = 0;
-    Centesimi.innerHTML = ":00";
-    Secondi.innerHTML = ":00";
-    Minuti.innerHTML = ":00";
-    Ore.innerHTML = "00";
-    document.getElementById("Iniziare").disabled = false;
-    document.getElementById("Fermarsi").disabled = true;
-    document.getElementById("Continuare").disabled = true;
-    document.getElementById("Ripartire").disabled = true;
-}
-function cronometro () {
-    if (centesimi < 99) {
-        centesimi++;
-        if (centesimi< 10) { centesimi = "0"+centesimi }
-        Centesimi.innerHTML = ":"+centesimi;
-    }
-    if (centesimi === 99) {
-        centesimi = -1;
-    }
-    if (centesimi === 0) {
-        secondi ++;
-        if (secondi < 10) { secondi = "0"+secondi}
-        Secondi.innerHTML = ":"+secondi;
-    }
-    if (secondi === 59) {
-        secondi= -1;
-    }
-    if ( (centesimi === 0)&&(secondi=== 0) ) {
-        minuti++;
-        if (minuti < 10) { minuti = "0"+minuti }
-        Minuti.innerHTML = ":"+minuti;
-    }
-    if (minuti === 59) {
-        minuti = -1;
-    }
-    if ( (centesimi=== 0)&&(secondi === 0)&&(minuti === 0) ) {
-        ore ++;
-        if (ore < 10) { ore = "0"+ore}
-        Ore.innerHTML = ore;
-    }
-}
