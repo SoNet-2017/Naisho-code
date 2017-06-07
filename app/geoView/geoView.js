@@ -16,7 +16,7 @@ angular.module('myApp.geoView', ['ngRoute'])
                 }]
 
             }
-        })
+        });
     }])
     .controller('geoViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth',
         function($scope, $rootScope, $routeParams, currentAuth){
