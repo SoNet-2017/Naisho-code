@@ -6,3 +6,4 @@ angular.module('myApp.fileUpload', [
 ])
 
 .value('version', '0.1');
+

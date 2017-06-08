@@ -32,6 +32,7 @@ angular.module('myApp', [
    // 'myApp.editProfileView',
   //  'myApp.calendarView'
 ])
+
     .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
         $routeProvider.otherwise({redirectTo: '/homeView'});

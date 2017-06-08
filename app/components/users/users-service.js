@@ -23,6 +23,7 @@ angular.module('myApp.users.usersService', [])
                 ref.update({
                     logged: false
                 });
+
             },
             registerNewUserInfo: function (userId, name, surname, email, type, DataDiNascita, sex) {
                 //add the user to list of users and set the logged value to true

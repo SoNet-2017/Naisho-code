@@ -11,6 +11,7 @@ angular.module('myApp.users.usersChatService', [])
                 return $firebaseArray(ref);
             },
 
+
             getUserInfo: function(userId) {
                 var userRef = firebase.database().ref().child("users").child(userId);
                 return $firebaseObject(userRef);
