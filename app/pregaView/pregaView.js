@@ -18,44 +18,19 @@ angular.module('myApp.pregaView', ['ngRoute'])
             }
         })
     }])
-    .controller('pregaViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth',
-        function($scope, $rootScope, $routeParams, currentAuth){
+    .controller('pregaViewCtrl', ['$scope',
+        function($scope){
             //initialize variables
             $scope.dati = {};
 
-            /*cronometro*/
-            var centesimi = 0;
-            var secondi = 0;
-            var minuti = 0;
-            var ore = 0;
-            function start () {
-                var control;
-                control = setInterval(cronometro,10);
-                document.getElementById("Iniziare").disabled = true;
-                document.getElementById("Fermarsi").disabled = false;
-                document.getElementById("Continuare").disabled = true;
-                document.getElementById("Ripartire").disabled = false;
-            }
-            function stop () {
-                clearInterval(control);
-                document.getElementById("Fermarsi").disabled = true;
-                document.getElementById("Continuare").disabled = false;
-            }
-            function reset() {
-                clearInterval(control);
-                centesimi = 0;
-                secondi= 0;
-                minuti= 0;
-                ore = 0;
-                document.getElementById("Centesimi").innerHTML = ":00";
-                document.getElementById("Secondi").innerHTML = ":00";
-                document.getElementById("Minuti").innerHTML = ":00";
-                document.getElementById("Ore").innerHTML = "00";
-                document.getElementById("Iniziare").disabled = false;
-                document.getElementById("Fermarsi").disabled = true;
-                document.getElementById("Continuare").disabled = true;
-                document.getElementById("Ripartire").disabled = true;
-            }
+
+
+
+/*cronometro*/
+var centesimi = 0;
+var secondi = 0;
+var minuti = 0;
+var ore = 0;
             function cronometro () {
                 if (centesimi < 99) {
                     centesimi++;
@@ -87,5 +62,34 @@ angular.module('myApp.pregaView', ['ngRoute'])
                     document.getElementById("Ore").innerHTML = ore;
                 }
             }
-        }]);
+function start () {
+    var control;
+    control = setInterval(cronometro,10);
+    document.getElementById("Iniziare").disabled = true;
 
+    document.getElementById("Fermarsi").disabled = false;
+    document.getElementById("Continuare").disabled = true;
+    document.getElementById("Ripartire").disabled = false;
+}
+function stop () {
+    clearInterval(control);
+    document.getElementById("Fermarsi").disabled = true;
+    document.getElementById("Continuare").disabled = false;
+}
+function reset() {
+    clearInterval(control);
+    centesimi = 0;
+    secondi= 0;
+    minuti= 0;
+    ore = 0;
+    Centesimi.innerHTML = ":00";
+    Secondi.innerHTML = ":00";
+    Minuti.innerHTML = ":00";
+    Ore.innerHTML = "00";
+    document.getElementById("Iniziare").disabled = false;
+    document.getElementById("Fermarsi").disabled = true;
+    document.getElementById("Continuare").disabled = true;
+    document.getElementById("Ripartire").disabled = true;
+}
+
+    }]);

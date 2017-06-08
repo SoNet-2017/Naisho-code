@@ -27,6 +27,7 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.pizza'])
     function($scope, $rootScope, $routeParams, SinglePizza) {
         //initialize variables
         $scope.dati = {};
+
         $scope.dati.vm = this;
         $scope.dati.vm.positions = [];
         //set the variable that is used in the main template to show the active button

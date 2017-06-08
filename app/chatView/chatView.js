@@ -16,6 +16,7 @@ angular.module('myApp.chatView', ['ngRoute'])
                 }]
 
             }
+
         })
     }])
     .controller('chatViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth', 'UsersChatService',

@@ -8,3 +8,4 @@ angular.module('myApp.users', [
 ])
 
 .value('version', '0.1');
+

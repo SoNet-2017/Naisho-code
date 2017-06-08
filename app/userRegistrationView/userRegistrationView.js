@@ -12,6 +12,7 @@ angular.module('myApp.userRegistrationView', ['ngRoute'])
 .controller('UserRegistrationCtrl', ['$scope', '$rootScope', 'Auth', 'Users', '$location', function($scope, $rootScope, Auth, Users, $location) {
     $scope.user={};
 
+
     $scope.signUp = function() {
         if ($scope.user.password!= '' && $scope.user.password === $scope.user.password2 ) {
             Auth.$createUserWithEmailAndPassword($scope.user.email, $scope.user.password)
