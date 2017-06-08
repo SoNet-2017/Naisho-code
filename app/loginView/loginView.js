@@ -9,7 +9,7 @@ angular.module('myApp.loginView', ['ngRoute'])
         });
     }])
 
-    .controller('LoginCtrl', ['$scope', 'Auth', '$location', '$log', function($scope, Auth, $location, $log,$firebaseObject, Users) {
+    .controller('LoginCtrl', ['$scope', 'Auth', '$location', '$log', 'Users', function($scope, Auth, $location, $log,Users) {
         $scope.user={};
         $scope.dati={};
         $scope.auth = Auth; //acquires authentication from app.js (if it was done)

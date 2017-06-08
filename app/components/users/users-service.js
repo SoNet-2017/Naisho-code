@@ -16,6 +16,8 @@ angular.module('myApp.users.usersService', [])
             },
             registerLogout: function (userId)
             {
+                console.log("ciao");
+                console.log(userId);
                 var ref = firebase.database().ref().child("users").child(userId);
                 // create a synchronized array
                 ref.update({
