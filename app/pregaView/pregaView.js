@@ -72,6 +72,7 @@ angular.module('myApp.pregaView', ['ngRoute'])
     document.getElementById("Fermarsi").disabled = true;
     document.getElementById("Continuare").disabled = false;
 }
+
             $scope.reset =function() {
     clearInterval(control);
     var centesimi = 0;
