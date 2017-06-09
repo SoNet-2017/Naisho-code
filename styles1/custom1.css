@@ -1,0 +1,8 @@
+body{
+    background: url(../images/sfondoschiarito.png) no-repeat 50% 0 fixed;height: 0px;position:relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
