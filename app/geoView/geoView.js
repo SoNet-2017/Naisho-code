@@ -26,7 +26,7 @@ angular.module('myApp.geoView', ['ngRoute'])
             $scope.dati.vm = this;
             $scope.dati.vm.positions = [];
 //set the variable that is used in the main template to show the active button
-//$rootScope.dati.currentView = "home";
+$rootScope.dati.currentView = "geoView";
 //get the list of available pizzas
 //$scope.dati.pizzas = Pizza.getData();
             $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qAQOEvZs2XlUUu3ziu-nrDX-WWZXap4";

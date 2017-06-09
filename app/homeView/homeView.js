@@ -18,9 +18,10 @@ angular.module('myApp.homeView', ['ngRoute'])
       }
   });
 }])
-    .controller('homeCtrl', ['$scope', '$location', 'Auth', '$firebaseObject','Users', 'currentAuth', '$firebaseAuth', function ($scope,$location, Auth, $firebaseObject, Users, currentAuth, $firebaseAuth) {
+    .controller('homeCtrl', ['$scope', '$location', 'Auth', '$firebaseObject','Users', 'currentAuth', '$firebaseAuth','$rootScope', function ($scope,$location, Auth, $firebaseObject, Users, currentAuth, $firebaseAuth,$rootScope) {
         $scope.dati={};
         $scope.auth=Auth;
+
 
         $scope.showSearchItem=function () {
             var x = document.getElementById("typeSearchContentHome");
