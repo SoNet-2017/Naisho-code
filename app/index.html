@@ -65,7 +65,7 @@
 <header>
     <div class="w3-container w3-bar w3-top w3-card-2" id="topBarHome" ng-if="isLogged()">
 
-        <a class="w3-bar-item w3-button" id="menuButton" ng-click="show()" ><i class="glyphicon glyphicon-menu-hamburger w3-large"></i></a>
+       <a class="w3-bar-item w3-button" id="menuButton" ng-click="show()" ><i class="glyphicon glyphicon-menu-hamburger w3-large"></i></a>
        <a class="w3-bar-item w3-button" id="homeIcon" href="#!home" ><i class="glyphicon glyphicon-home w3-large"></i></a>
         <!--<a class="w3-bar-item w3-button" id="userIcon"><i class="glyphicon glyphicon-user w3-large"></i></a>-->
         <a class="w3-bar-item w3-button" id="newPsIcon" ><i class="glyphicon glyphicon-bell w3-large"></i></a>
@@ -89,11 +89,11 @@
         <div class="menu" id="menu">
             <a class="closeButton" ng-click="close()"><i class="glyphicon glyphicon-remove-circle w3-large"></i></a>
             <ul >
-                <li> <a href="#!/userProfile"><img src="../images/iconaprofilopersonale.png">Profilo Personale </a></li>
-                <li> <a href="#!/pregaView"><img src="../images/iconapregabianca.png">Prega</a>  </li>
-                <li> <a href="#!/calendarView"> <img src="../images/iconacalendario.png">Calendario/Eventi/Forum  </a></li>
-                <li> <a href="#!/usersListView"> <img src="../images/iconachat.png">Chat  </a></li>
-                <li> <a href="#!/tutorView"> <img src="../images/iconatutor.png">Tutor </a></li>
+                <li> <a href="#!/userProfile"><img src="../images/iconaprofilopersonale.png" ng-click="close()">Profilo Personale </a></li>
+                <li> <a href="#!/pregaView"><img src="../images/iconapregabianca.png" ng-click="close()">Prega</a>  </li>
+                <li> <a href="#!/calendarView"> <img src="../images/iconacalendario.png" ng-click="close()">Calendario/Eventi/Forum  </a></li>
+                <li> <a href="#!/usersListView"> <img src="../images/iconachat.png" ng-click="close()">Chat  </a></li>
+                <li> <a href="#!/tutorView"> <img src="../images/iconatutor.png" ng-click="close()">Tutor </a></li>
             </ul>
         </div>
     </div>

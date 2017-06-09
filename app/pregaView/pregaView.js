@@ -28,6 +28,7 @@ angular.module('myApp.pregaView', ['ngRoute'])
             var secondi = 0;
             var minuti = 0;
             var ore = 0;
+            var control;
             $scope.cronometro =function() {
                 if (centesimi < 99) {
                     centesimi++;
@@ -59,9 +60,10 @@ angular.module('myApp.pregaView', ['ngRoute'])
                     document.getElementById("Ore").innerHTML = ore;
                 }
             }
+
             $scope.start =function() {
-    var control;
-    control = setInterval(cronometro,10);
+
+    control = setInterval($scope.cronometro(),10);
     document.getElementById("Iniziare").disabled = true;
 
     document.getElementById("Fermarsi").disabled = false;
