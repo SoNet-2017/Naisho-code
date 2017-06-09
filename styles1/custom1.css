@@ -1,8 +1,557 @@
 body{
-    background: url(../images/sfondoschiarito.png) no-repeat 50% 0 fixed;height: 0px;position:relative;
+    background: url(../images/sfondoarancione.png) no-repeat 50% 0 fixed;height: 0px;position:relative;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 
 }
+/*home*/
+.w3-top{
+    overflow: visible;
+}
+
+#menu {
+    list-style-type:none;
+    position: absolute;
+    top: 75px;
+    left: -250px;
+    width: 250px;
+    line-height:35px;	/* Interlinea */
+    background-color:#445588;
+    z-index: +1000;
+
+
+}
+
+.menu ul{
+    width:100%;
+    float:left;
+    margin-top:50px;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+
+}
+.menu ul li{
+    margin-top:30px;/*spazio tra le varie funzionalità*/
+    border-left: 10px solid transparent;
+
+}
+
+.menu ul li:first-child{
+    margin-top:40px;/*spaziotrainiziofinestra e prima funzione*/
+}
+.menu ul li:hover{
+    background: #9acae5;
+
+}
+
+.menu ul li a{
+    text-align: left;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 0;
+    display: block;
+}
+/*menuButton*/
+#menuButton a{
+    cursor:pointer;
+    transition:all 0.2s;
+}
+
+/*close button*/
+.closeButton{
+    font-size:5px;
+    color:#fff;
+    position:absolute;
+    left:200px;
+    top:10px;
+    z-index: +1000;
+}
+.glyphicon {
+    text-align: left;
+    color: #fff;
+    text-decoration:none;
+    padding: 10px 0;
+    display: flex;
+}
+
+
+#topBarHome{
+    background-color: transparent;
+    /*Per posizionare il contenuto*/
+    display:flex;
+    align-items:right;
+    height: 60px;
+    z-index: 1000;
+}
+
+#userNameHome{
+    font-family: "Helvetica";
+}
+
+#logoBarImgHome{
+    content: url("../images/logonaisho.png");
+    width: 200px;/* dimensioni logo nella barra della home*/
+    height: 70px;
+}
+
+#logoBarImgContainerHome{
+    position: absolute;
+    right: 0px;
+    margin-right: 40px;/*per spostare logonaisho nella barra della home*/
+    margin-top:10px;
+}
+#ContainerHome{
+    z-index:200;
+
+
+}
+
+#logoBarHome{
+    position: absolute;
+    right: 50px;
+    margin-right: 20px;
+}
+
+#homeLinkHome{
+    color: #ffffff;
+}
+
+#userLinkHome{
+    color: #ffffff;
+}
+#newsIcon{
+    color: #ffffff;
+}
+#OffIcon{
+    color:#FFFFFF;
+}
+
+
+#searchItemHome{
+    max-width: 30%;
+}
+
+#bodyHome{
+    margin-top: 100px;
+}
+
+#sideUserHome{
+    /*Per centrare il contenuto*/
+    text-align: center;
+    align-items:center;
+    vertical-align: middle;
+    background-color: #b7c3b8;
+    padding-bottom: 20px;
+}
+
+#contenitoreFrase,#bodyHome,#eventi{
+    position: fixed;
+    background-color: transparent;
+    z-index: +300;
+    background-attachment:scroll;
+    text-align: justify;
+    align-content: space-between;
+}
+#contenitoreFrase {
+    top: 75px;
+    left: 5%;
+    width: 90%;
+    height: 15%;
+}
+#frasedelgiorno{
+    padding-top: 1em;
+    color:white;
+    font-size: 15px;
+    font-style: italic;
+}
+
+#bodyHome {
+    top: 35%;
+    left: 5%;
+    width: 90%;
+    height: 50%;
+
+}
+
+
+
+#eventi {
+    top: 30%;
+    left: 5%;
+    width: 90%;
+    height: 15%;
+}
+/*fine home*/
+
+.form-control{
+    color: rgba(0, 0, 0, 0.4);
+    width: 350px;
+    background: #3903ff;
+    background: rgba(57, 3, 255, 0.6);
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+}
+label{
+    text-align: left;
+}
+
+.LinkList{
+    float: right;
+    padding-right: 10px;
+}
+img.media-object{
+    width: 80px;
+    height: 80px;
+}
+
+
+
+#addFriend{
+    content:url("../images/Add.gif ");
+}
+
+/*#modificaProfilo{
+    color:white;
+    background-color:#3903ff ;
+}
+*/
+/*profilo personale*/
+
+.clear {
+    clear: both;
+}
+
+#profilo1{
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    float: left;
+    left: 0%;
+    width: 30%;
+    background-color:#FFF;
+    position: relative;
+    display:block;
+    float :left;
+    border-radius: 15px;
+}
+#profilo2{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 10px;
+    float: left;
+    width: 65%;
+    background-color:#FFF;
+    display:block;
+    border-radius: 15px;
+    height:30em;
+}
+#profilo1 h1{
+    font-size: initial;
+    padding-top:5px;
+    color:black;
+    line-height: inherit;
+}
+h1{
+    padding-top: 75px;
+    color: white;
+    font-size:30px;
+    margin-left: 10px;
+}
+
+#userIcon{
+    float:left;
+    padding: inherit;
+}
+
+/*Prega*/
+.clear1 {
+    clear: both;
+}
+#prega1{
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    float: left;
+    left: 0%;
+    width: 30%;
+    background-color:#FFF;
+    position: relative;
+    display:block;
+    float :left;
+    border-radius: 15px;
+}
+
+
+h3{
+    padding-top: 75px;
+    color: white;
+    font-size:30px;
+    margin-left: 10px;
+}
+
+#userIcon{
+    float:left;
+    padding: inherit;
+}
+
+
+
+
+
+/*Cronometro*/
+*{
+    margin: 0;
+    padding: 0;
+}
+#contenitore{
+    margin: 10px auto;
+    width: 540px;
+    height: 115px;
+}
+.orologio{
+    float: left;
+    font-size: 80px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #363431;
+}
+.bottone{
+    outline: none;
+    border: 1px solid #363431;
+    color: white;
+    width: 128px;
+    height: 30px;
+    text-shadow: 0px -1px 1px black;
+    font-size: 20px;
+    border-radius: 5px;
+    font-family: Helvetica;
+    cursor: pointer;
+    background-image: linear-gradient(#235dad, #1f97b7);
+}
+.bottone:active{
+    background-image: linear-gradient(#235dad, #1f97b7);
+}
+.bottone:hover{
+    box-shadow: 0px 0px 14px #1f97b7;
+}
+
+
+
+
+
+
+
+#changeImg {
+    color: #3903FF;
+    width: inherit;
+    margin-left: 50px;
+    margin-top:10px;
+
+}
+
+#edit{
+    color: #3903FF;
+    width: inherit;
+    margin-left: 150px;
+    margin-top:10px;
+}
+#prega,#tutor{
+    background-color: #3903FF;
+    width: 10%;
+    margin-left: 100px;
+    margin-top:10px;
+}
+
+
+
+
+
+/*bisogna centrare le icone*/
+
+
+#prega:hover, #changeImg:hover,#edit:hover{
+    opacity:0.5;
+}
+
+#profile-bar{
+    text-align: center;
+    padding-top: 15px;
+    margin-left:10px;
+}
+
+form.frmLogin {
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+.logoNaisho{
+    content:url("../images/logonaisho2.png");
+    height: 200px;
+    width: 350px;
+    margin-left: -5%;
+}
+
+#titolo{
+    font-family: Andalus;
+    text-align: center;
+    font-size: 40px;
+    color : #ffffff;
+
+}
+.form-group {
+    margin-top: 15px;
+    margin-left: 30px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    color: #FFFFFF;
+}
+.btn {
+    margin-left: 145px;
+    height:46px;/* altezza barra sotto search*/
+
+}
+
+
+
+.login{
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 20px;
+    background: #3903ff;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    width: 300px;
+}
+input.form-control {
+    width: 300px;
+    height: 46px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    letter-spacing: -1px;
+    margin-left:-10px;
+    border:none;
+
+
+}
+.input-group{
+    width: 400px;
+    height: 46px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 20%;
+    margin-left: 50%;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    letter-spacing: -1px;
+    margin-left:80%; /*per spostare barra search*/
+
+}
+
+#btlog {
+    width: auto;
+    height: 46px;
+    padding:0px;
+    border:0px;
+    background: #3903ff;
+    color: #FFFFFF;
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    letter-spacing: -1px;
+}
+
+.link {
+    text-align: center;
+    padding-top: 38.5px;
+    color:white;
+}
+.link2 {
+    text-align: center;
+    padding-top: 0px;
+    color:white;
+    margin-left: -140px;
+}
+
+
+.link a:link{
+    color: #ffffff;
+}
+
+.link2 a:link{
+    color: #ffffff;
+    text-decoration: underline;
+
+
+}
+.loghi {
+    height: 30px;
+    width: 30px;
+}
+
+h2{
+    color: #FFFFFF;
+    margin-left: 120px;
+}
+
+.w3-large{
+    color:#FFFFFF;
+    margin-top: 15px;
+    margin-left: 10px;
+    letter-spacing:5px;
+    text-decoration: none;
+
+}
+
+/*icona lente*/
+.btn{
+    border-radius:15px;
+
+
+}
+
+/*chat*/
+.userList {
+    margin-top:90px;
+    border-radius: 15px;
+    padding:5px;
+    background-color: white;
+    text-align: center;
+    font-size: inherit;
+}
+
+.userList p{
+    color:black;
+}
+
+#chat {
+    margin-top:90px;
+    border-radius: 15px;
+    padding:5px;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    font-size: inherit;
+    text-decoration-color: #0f0f0f;
+}
+
+.google-maps {
+    position: relative;
+    padding-bottom: 75%; /*Definisco l'aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+
+
+
