@@ -21,35 +21,35 @@ angular.module('myApp.pregaView', ['ngRoute'])
     .controller('pregaViewCtrl', ['$scope',
         function($scope){
             //initialize variables
-            $scope.dati = {};
+           // $scope.dati = {};
 
             /*cronometro*/
             var centesimi = 0;
-            var secondi = 0;
+            var secondi = 55;
             var minuti = 0;
             var ore = 0;
             $scope.cronometro =function() {
                 if (centesimi < 99) {
                     centesimi++;
-                    if (centesimi< 10) { centesimi = "0"+centesimi }
+                    if (centesimi< 10) { centesimi = "0"+centesimi; }
                     document.getElementById("Centesimi").innerHTML = ":"+centesimi;
                 }
                 if (centesimi === 99) {
-                    centesimi = -1;
+                    centesimi = 0;
                 }
                 if (centesimi === 0) {
                     secondi ++;
-                    if (secondi < 10) { secondi = "0"+secondi}
+                    if (secondi < 10) { secondi = "0"+secondi;}
                     document.getElementById("Secondi").innerHTML = ":"+secondi;
                 }
                 if (secondi === 59) {
-                    secondi= -1;
-                }
+                    secondi= 0;
+
                 if ( (centesimi === 0)&&(secondi=== 0) ) {
                     minuti++;
-                    if (minuti < 10) { minuti = "0"+minuti }
+                    if (minuti < 10) { minuti = "0"+minuti; }
                     document.getElementById("Minuti").innerHTML = ":"+minuti;
-                }
+                }}
                 if (minuti === 59) {
                     minuti = -1;
                 }
@@ -68,21 +68,21 @@ angular.module('myApp.pregaView', ['ngRoute'])
     document.getElementById("Ripartire").disabled = false;
 }
             $scope.stop =function() {
-    clearInterval(control);
+    clearInterval($scope.control);
     document.getElementById("Fermarsi").disabled = true;
     document.getElementById("Continuare").disabled = false;
 }
 
             $scope.reset =function() {
-    clearInterval(control);
+    clearInterval($scope.control);
     var centesimi = 0;
     var secondi= 0;
     var minuti= 0;
     var ore = 0;
-                document.getElementById("Centesimi").innerHTML = ":00";
-                document.getElementById("Secondi").innerHTML = ":00";
-                document.getElementById("Minuti").innerHTML = ":00";
-                document.getElementById("Ore").innerHTML = "00";
+    document.getElementById("Centesimi").innerHTML = ":00";
+    document.getElementById("Secondi").innerHTML = ":00";
+    document.getElementById("Minuti").innerHTML = ":00";
+    document.getElementById("Ore").innerHTML = "00";
     document.getElementById("Iniziare").disabled = false;
     document.getElementById("Fermarsi").disabled = true;
     document.getElementById("Continuare").disabled = true;
