@@ -83,6 +83,7 @@ angular.module('myApp', [
         // menu a comparsa
         $scope.show = function () {
             document.getElementById("menu").style.left = "0px";
+
         };
         $scope.close= function()  {
             document.getElementById("menu").style.left = "-250px";

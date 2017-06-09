@@ -62,6 +62,7 @@ body{
     background-color:#445588;
     z-index: +1000;
 
+
 }
 
 .menu ul{
@@ -74,7 +75,7 @@ body{
 
 }
 .menu ul li{
-    margin-top:40px;/*spazio tra le varie funzionalità*/
+    margin-top:30px;/*spazio tra le varie funzionalità*/
     border-left: 10px solid transparent;
 
 }
