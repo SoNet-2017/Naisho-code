@@ -60,8 +60,7 @@ angular.module('myApp.pregaView', ['ngRoute'])
                 }
             }
             $scope.start =function() {
-    var control;
-    control = setInterval(cronometro,10);
+                $scope.control = setInterval($scope.cronometro,10);
     document.getElementById("Iniziare").disabled = true;
 
     document.getElementById("Fermarsi").disabled = false;
@@ -75,14 +74,14 @@ angular.module('myApp.pregaView', ['ngRoute'])
 }
             $scope.reset =function() {
     clearInterval(control);
-    centesimi = 0;
-    secondi= 0;
-    minuti= 0;
-    ore = 0;
-    Centesimi.innerHTML = ":00";
-    Secondi.innerHTML = ":00";
-    Minuti.innerHTML = ":00";
-    Ore.innerHTML = "00";
+    var centesimi = 0;
+    var secondi= 0;
+    var minuti= 0;
+    var ore = 0;
+                document.getElementById("Centesimi").innerHTML = ":00";
+                document.getElementById("Secondi").innerHTML = ":00";
+                document.getElementById("Minuti").innerHTML = ":00";
+                document.getElementById("Ore").innerHTML = "00";
     document.getElementById("Iniziare").disabled = false;
     document.getElementById("Fermarsi").disabled = true;
     document.getElementById("Continuare").disabled = true;
