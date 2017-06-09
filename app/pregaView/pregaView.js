@@ -23,12 +23,12 @@ angular.module('myApp.pregaView', ['ngRoute'])
             //initialize variables
             $scope.dati = {};
 
-/*cronometro*/
-var centesimi = 0;
-var secondi = 0;
-var minuti = 0;
-var ore = 0;
-            function cronometro () {
+            /*cronometro*/
+            var centesimi = 0;
+            var secondi = 0;
+            var minuti = 0;
+            var ore = 0;
+            $scope cronometro()=function() {
                 if (centesimi < 99) {
                     centesimi++;
                     if (centesimi< 10) { centesimi = "0"+centesimi }
