@@ -389,10 +389,16 @@ h3{
 
 }
 
-#edit,#prega {
+#edit{
     color: #3903FF;
     width: inherit;
     margin-left: 150px;
+    margin-top:10px;
+}
+#prega,#tutor{
+    background-color: #3903FF;
+    width: 10%;
+    margin-left: 100px;
     margin-top:10px;
 }
 
