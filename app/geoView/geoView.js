@@ -16,15 +16,16 @@ angular.module('myApp.geoView', ['ngRoute'])
                 }]
 
             }
-        })
+        });
     }])
 
-    .controller('geoViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth',
-        function($scope, $rootScope, $routeParams, currentAuth){
+    .controller('geoViewCtrl', ['$scope', '$rootScope',
+        function($scope, $rootScope){
 //initialize variables
             $scope.dati = {};
             $scope.dati.vm = this;
             $scope.dati.vm.positions = [];
+
 //set the variable that is used in the main template to show the active button
 $rootScope.dati.currentView = "geoView";
 //get the list of available pizzas
@@ -37,7 +38,7 @@ $rootScope.dati.currentView = "geoView";
                 $scope.geo = navigator.geolocation.getCurrentPosition(function(position) {
                     var pos = $scope.dati.vm.positions.push({lat: position.coords.latitude, lng: position.coords.longitude});
 
-                })
+                });
 //}
 //});
         }]);
