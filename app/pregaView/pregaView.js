@@ -25,7 +25,7 @@ angular.module('myApp.pregaView', ['ngRoute'])
 
             /*cronometro*/
             var centesimi = 0;
-            var secondi = 55;
+            var secondi = 0;
             var minuti = 0;
             var ore = 0;
             $scope.cronometro =function() {
@@ -61,8 +61,8 @@ angular.module('myApp.pregaView', ['ngRoute'])
             }
             $scope.start =function() {
                 $scope.control = setInterval($scope.cronometro,10);
-    document.getElementById("Iniziare").disabled = true;
 
+    document.getElementById("Iniziare").disabled = true;
     document.getElementById("Fermarsi").disabled = false;
     document.getElementById("Continuare").disabled = true;
     document.getElementById("Ripartire").disabled = false;

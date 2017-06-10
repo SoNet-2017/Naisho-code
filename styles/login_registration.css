@@ -19,6 +19,35 @@ body{
     justify-content:center;
     align-items:center;
 }
+#registrazione {
+    padding-top: 0px;
+    background-attachment:scroll;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+/* box registrazione*/
+
+#box{
+    padding-top: 15px;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    margin-left: -160px;
+    width: 500px;
+    height: 900px;
+    padding-bottom: 60%;
+}
+.alert{
+    margin-top: 40%;
+    width: inherit;
+}
+
 /*home*/
 .w3-top{
     overflow: visible;
@@ -201,12 +230,15 @@ body{
 
 .form-control{
     color: rgba(0, 0, 0, 0.4);
-    width: 350px;
-    background: #3903ff;
-    background: rgba(57, 3, 255, 0.6);
+    width: 300px;
+    /* background: #3903ff;
+    background: rgba(57, 3, 255, 0.6);*/
+    background: white;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border-radius: 15px;
+    height:46px;
+    margin-left:-10px ;
 }
 label{
     text-align: left;
@@ -453,9 +485,8 @@ input.form-control {
     letter-spacing: -1px;
     margin-left:-10px;
     border:none;
-
-
 }
+
 .input-group{
     width: 400px;
     height: 46px;

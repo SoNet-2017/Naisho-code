@@ -18,6 +18,15 @@
             <label for="txtEmail">Data di Nascita</label>
             <input type="date" class="form-control" id="txtDatadiNascita" placeholder="Inserisci Data di Nascita" name="DatadiNascita" ng-model="user.DatadiNascita" />
         </div>
+        <div class="form-group">
+        <label for="selTipo">Sesso</label>
+        <select  class="form-control" id="selTipo" placeholder="sesso" name="sesso" ng-model="user.type" />
+        <option>Uomo</option>
+        <option>Donna</option>
+        <option>Ragazzo</option>
+        <option>Ragazza</option>
+        </select>
+        </div>
        <!-- <div class="form-group">
             <label>Sesso</label>
             <input type="radio" name="sex" value="M"  class="form-check-input" placeholder="sex" ng-model="user.sex"/>M
@@ -34,6 +43,13 @@
         <div class="form-group">
             <label for="txtPass2">Conferma Password*</label>
             <input type="password" class="form-control" id="txtPass2" placeholder="Conferma password" name="password2" ng-model="user.password2" />
+        </div>
+        <div class="form-group">
+            <label for="selBuddista">Sei già Buddista</label>
+            <select  class="form-control" id="selBuddista" placeholder="buddista" name="buddista" ng-model="user.buddista" />
+            <option >Sì</option>
+            <option>No</option>
+            </select>
         </div>
        <!-- <div class="form-group">
             <label>Sei già buddista?</label>
