@@ -79,6 +79,7 @@ angular.module('myApp.pregaView', ['ngRoute'])
 
             $scope.reset =function() {
     clearInterval($scope.control);
+    clearInterval($scope.cronometro);
     var centesimi = 0;
     var secondi= 0;
     var minuti= 0;
