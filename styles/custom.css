@@ -1,12 +1,12 @@
 body{
-    background: url(../images/imgSfondo2.png) no-repeat 50% 0 fixed;height: 0px;position:relative;
+    background: url(../images/sfondoarancione.png) no-repeat 50% 0 fixed;height: 0px;position:relative;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 
 }
-#log {
+/*#log {
 
      padding-top: 0px;
       background-attachment:scroll;
@@ -19,6 +19,57 @@ body{
       justify-content:center;
       align-items:center;
   }
+
+.login{
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 20px;
+    background: #3903ff;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    width: 300px;
+}
+*/
+input.form-control {
+    width: 300px;
+    height: 46px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    letter-spacing: -1px;
+    margin-left:-10px;
+    border:none;
+
+
+}
+.input-group{
+    width: 400px;
+    height: 46px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 20%;
+    margin-left: 50%;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    letter-spacing: -1px;
+    margin-left:80%;} /*per spostare barra search*/
+/*
+#btlog {
+    width: auto;
+    height: 46px;
+    padding:0px;
+    border:0px;
+    background: #3903ff;
+    color: #FFFFFF;
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    letter-spacing: -1px;
+}
 #registrazione {
     padding-top: 0px;
     background-attachment:scroll;
@@ -30,8 +81,9 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-}
+}*/
 /* box registrazione*/
+/*
 #box{
     padding-top: 15px;
     position: absolute;
@@ -46,7 +98,7 @@ body{
     margin-top: 40%;
     width: inherit;
 }
-
+*/
 /*home*/
 .w3-top{
     overflow: visible;
@@ -56,13 +108,12 @@ body{
     list-style-type:none;
     position: absolute;
     top: 75px;
-    left: -250px;
+    left: -2%;
     width: 250px;
     line-height:35px;	/* Interlinea */
     background-color:#445588;
     z-index: +1000;
-
-
+    display: none;
 }
 
 .menu ul{
@@ -460,57 +511,6 @@ form.frmLogin {
 
 
 
-.login{
-    text-align: center;
-    margin-top: 15px;
-    margin-left: 20px;
-    background: #3903ff;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
-    border-radius: 15px;
-    width: 300px;
-}
-input.form-control {
-    width: 300px;
-    height: 46px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    background-color: rgb(255, 255, 255);
-    font: bold 24px/45px Helvetica, Sans-Serif;
-    letter-spacing: -1px;
-    margin-left:-10px;
-    border:none;
-
-
-}
-.input-group{
-    width: 400px;
-    height: 46px;
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-right: 20%;
-    margin-left: 50%;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    background-color: rgb(255, 255, 255);
-    font: bold 24px/45px Helvetica, Sans-Serif;
-    letter-spacing: -1px;
-    margin-left:80%; /*per spostare barra search*/
-
-}
-
-#btlog {
-    width: auto;
-    height: 46px;
-    padding:0px;
-    border:0px;
-    background: #3903ff;
-    color: #FFFFFF;
-    font: bold 24px/45px Helvetica, Sans-Serif;
-    letter-spacing: -1px;
-}
 
 .link {
     text-align: center;
@@ -557,7 +557,6 @@ h2{
 /*icona lente*/
 .btn{
    border-radius:15px;
-
 
 }
 

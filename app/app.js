@@ -82,11 +82,12 @@ angular.module('myApp', [
 
         // menu a comparsa
         $scope.show = function () {
-            document.getElementById("menu").style.left = "0px";
-
+            //document.getElementById("menu").style.left = "0px";
+            document.getElementById("menu").style.display="flex";
         };
         $scope.close= function()  {
-            document.getElementById("menu").style.left = "-250px";
+            //document.getElementById("menu").style.left = "-250px";
+            document.getElementById("menu").style.display="none";
         };
     }]);
 /*.config(function($routeProvider){
