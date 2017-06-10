@@ -16,7 +16,6 @@ angular.module('myApp.users.usersService', [])
             },
             registerLogout: function (userId)
             {
-                console.log("ciao");
                 console.log(userId);
                 var ref = firebase.database().ref().child("users").child(userId);
                 // create a synchronized array
@@ -25,17 +24,17 @@ angular.module('myApp.users.usersService', [])
                 });
 
             },
-            registerNewUserInfo: function (userId, name, surname, email) {
+            registerNewUserInfo: function (userId, name, surname, email,type,Buddista, DataDiNascita) {
                 //add the user to list of users and set the logged value to true
                 var ref = firebase.database().ref().child("users").child(userId);
                 // create a synchronized array
                 ref.set({
                     name: name,
                     surname: surname,
-                    email: email
-                    //type: type,
-                   // sex: sex,
-                    //DataDiNascita: DataDiNascita
+                    email: email,
+                    type: type,
+                    buddista: Buddista,
+                    DataDiNascita: DataDiNascita
                 });
             }
         };

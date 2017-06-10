@@ -1,4 +1,3 @@
-
 'use strict';
 
 // Initialize the Firebase SDK
@@ -29,8 +28,8 @@ angular.module('myApp', [
     'myApp.tutorView',
     'myApp.pregaView',
     'myApp.geoView',
-   // 'myApp.editProfileView',
-  'myApp.calendarView'
+    'myApp.editProfileView',
+    'myApp.calendarView'
 ])
 
     .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

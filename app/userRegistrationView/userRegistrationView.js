@@ -20,18 +20,20 @@ angular.module('myApp.userRegistrationView', ['ngRoute'])
                     //create a new user with specified email and password
                     Auth.$signInWithEmailAndPassword($scope.user.email, $scope.user.password).then(function(internalFirebaseUser) {
                         var userId = internalFirebaseUser.uid;
-                        Users.registerNewUserInfo(userId, $scope.user.name, $scope.user.surname,$scope.user.email,$scope.user.DataDiNascita);
+                        Users.registerNewUserInfo(userId, $scope.user.name, $scope.user.surname,$scope.user.email,$scope.user.DataDiNascita,$scope.user.type,$scope.user.buddista);
                         Users.registerLogin(userId, $scope.user.email);
                         // login successful: redirect to the home
                         $location.path("/homeView");
                     }).catch(function(error) {
                         $scope.error = error;
                         console.log(error.message);
+                        $location.path("/userRegistrationView");
 
                     });
                 }).catch(function (error) {
                     $scope.error = error;
                     console.log(error.message);
+                $location.path("/userRegistrationView");
 
             });
         }
