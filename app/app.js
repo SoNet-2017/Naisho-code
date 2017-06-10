@@ -26,11 +26,11 @@ angular.module('myApp', [
     'myApp.authentication',
     'myApp.userProfileView',
     'myApp.userRegistrationView',
-   // 'myApp.tutorView',
+    'myApp.tutorView',
     'myApp.pregaView',
     'myApp.geoView',
    // 'myApp.editProfileView',
-  //  'myApp.calendarView'
+  'myApp.calendarView'
 ])
 
     .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
