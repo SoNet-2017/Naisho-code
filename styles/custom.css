@@ -239,19 +239,26 @@ input.form-control {
     padding-bottom: 20px;
 }
 
-#contenitoreFrase,#bodyHome,#eventi{
+#bodyHome,#eventi{
     position: fixed;
-    background-color: transparent;
+    background-color:white;
     z-index: +300;
     background-attachment:scroll;
     text-align: justify;
     align-content: space-between;
+    border-radius: 15px;
 }
 #contenitoreFrase {
     top: 75px;
     left: 5%;
     width: 90%;
     height: 15%;
+    position: fixed;
+    background-color: transparent;
+    z-index: +300;
+    background-attachment:scroll;
+    text-align: justify;
+    align-content: space-between;
     }
 #frasedelgiorno{
     padding-top: 1em;
