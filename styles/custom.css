@@ -385,8 +385,12 @@ img.media-object{
     float :left;
     border-radius: 15px;
 }
-
-
+#prega1 h3{
+    font-size: initial;
+    padding-top:5px;
+    color:black;
+    line-height: inherit;
+}
 h3{
     padding-top: 75px;
     color: white;
@@ -394,11 +398,32 @@ h3{
     margin-left: 10px;
 }
 
-#userIcon{
-    float:left;
-    padding: inherit;
-}
 
+
+#immaginegong{
+    margin-left: 15%;
+    margin-top:8%;
+
+
+}
+#salva{
+    margin-left:50%;
+    margin-top:-20%;
+    font-family: "Helvetica ", serif;
+    color:#FFFFFF;
+}
+#visualizza{
+     margin-left:70%;
+     margin-top:-20%;
+     font-family: "Helvetica ", serif;
+     color:#FFFFFF;
+ }
+#pubblica{
+    margin-left:80%;
+    margin-top:-20%;
+    font-family: "Helvetica ", serif;
+    color:#FFFFFF;
+}
 
 
 
@@ -410,14 +435,16 @@ h3{
 }
 #contenitore{
     margin: 10px auto;
-    width: 540px;
+    width:  540px;
     height: 115px;
+    margin-left:40%;
+    margin-top:-25%;
 }
 .orologio{
-    float: left;
-    font-size: 80px;
+    float:left;
+    font-size: 98px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #363431;
+    color: oldlace;
 }
 .bottone{
     outline: none;

@@ -28,6 +28,7 @@ angular.module('myApp.pregaView', ['ngRoute'])
             var secondi = 0;
             var minuti = 0;
             var ore = 0;
+
             document.getElementById("Centesimi").innerHTML = ":00";
             document.getElementById("Secondi").innerHTML = ":00";
             document.getElementById("Minuti").innerHTML = ":00";
