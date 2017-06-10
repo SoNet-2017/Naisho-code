@@ -33,9 +33,12 @@ $rootScope.dati.currentView = "geoView";
 //only when all data will be loaded, the map will be created
 //$scope.dati.pizzas.$loaded().then(function () {
 //  for (var i = 0; i < $scope.dati.pizzas.length; i++) {
-            var lat = 45.071087 + (Math.random() / 100);
-            var lng = 7.686567 + (Math.random() / 100);
-            $scope.dati.vm.positions.push({lat: lat, lng: lng});
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = $scope.dati.vm.positions.push({lat: position.coords.latitude, lng: position.coords.longitude});
+
+                })
+            };
 //}
 //});
         }]);

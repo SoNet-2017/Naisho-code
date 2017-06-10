@@ -13,7 +13,8 @@
 </div>
 
 <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{googleMapsUrl}}" class="google-maps">
-    <ng-map center="45.071087, 7.686567" zoom="12">
+    <ng-map ng-repeat="pos in dati.vm.positions" center="[{{pos.lat}}, {{pos.lng}}]" zoom="15">
+
         <marker ng-repeat="pos in dati.vm.positions" position="{{pos.lat}},{{pos.lng}}"></marker>
     </ng-map>
 </div>
