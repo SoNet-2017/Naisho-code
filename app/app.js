@@ -17,6 +17,7 @@ angular.module('myApp', [
     'ngRoute',
     'ngMap',
     'myApp.users',
+    'myApp.evento',
     'myApp.homeView',
     'myApp.loginView',
     'myApp.users',

@@ -22,7 +22,17 @@
 </div>
 
     <div class="w3-container" id="eventi" >
+        <ul class="media-list" id="elencoEventi">
+            <li class="media" ng-repeat="evento in dati.eventi ">
+                <a href="#!/detailsEvento/{{evento.ID}}">
 
+                    <div  class="eventiHome">
+                        <h4 class="media-heading"><strong>{{evento.Titolo}}</strong></h4>
+                        <p>{{evento.Data}}</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
     </div>
 
 <div class="w3-container" id="bodyHome" >
