@@ -406,27 +406,39 @@ h3{
 
 
 }
+/*
 #salva{
     margin-left:50%;
-    margin-top:-20%;
+    margin-top:10%;
     font-family: "Helvetica ", serif;
     color:#FFFFFF;
 }
 #visualizza{
      margin-left:70%;
-     margin-top:-20%;
+     margin-top:0%;
      font-family: "Helvetica ", serif;
      color:#FFFFFF;
  }
 #pubblica{
     margin-left:80%;
-    margin-top:-20%;
+    margin-top:0%;
     font-family: "Helvetica ", serif;
     color:#FFFFFF;
 }
+*/
+.salva-visualizza-pubblica{
+    font-family: "Helvetica ", serif;
+    color:#FFFFFF;
+    }
 
+#salva-visualizza-pubblica{
+    margin-left: 40%;
+    margin-top: 10%;
+}
 
-
+.salva-visualizza-pubblica a{
+    color:white;
+}
 
 /*Cronometro*/
 *{
