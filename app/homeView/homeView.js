@@ -18,10 +18,11 @@ angular.module('myApp.homeView', ['ngRoute'])
       }
   });
 }])
-    .controller('homeCtrl', ['$scope', '$location', 'Auth', '$firebaseObject','Users', 'currentAuth', '$firebaseAuth','$rootScope', function ($scope,$location, Auth, $firebaseObject, Users, currentAuth, $firebaseAuth,$rootScope) {
+    .controller('homeCtrl', ['$scope', '$location', 'Auth', '$firebaseObject','Users', 'currentAuth', '$firebaseAuth','$rootScope','Evento', function ($scope,$location, Auth, $firebaseObject, Users, currentAuth, $firebaseAuth,$rootScope, Evento) {
         $scope.dati={};
         $scope.auth=Auth;
-
+        $scope.dati.evm = this;
+        $scope.dati.evm.positions = [];
 
         $scope.showSearchItem=function () {
             var x = document.getElementById("typeSearchContentHome");
@@ -38,20 +39,34 @@ angular.module('myApp.homeView', ['ngRoute'])
         if (String(a).length == 1) {
             a = "0"+a;
         }
-        console.log(a);
+        //console.log(a);
         var b=dato.getMonth();
         if (String(b).length == 1) {
             b = "0"+b;
         }
-        console.log(b);
+        //console.log(b);
         var c= a+b;
-        console.log(c);
+        //console.log(c);
         var ref = firebase.database().ref().child("frasi/"+c+"");
         $scope.soka = $firebaseObject(ref);
         $scope.soka.$loaded().then(function () {
 
             document.getElementById("fraseDelGiorno").innerHTML = $scope.soka.frase;
-            console.log($scope.soka.frase);
+            //console.log($scope.soka.frase);
         });
 
+        // eventi nella home
+        //e=giorno+mese+anno
+        var d=dato.getFullYear();
+        var e=c+d;
+        console.log(e);
+        $scope.dati.eventi = Evento.getData();
+        $scope.dati.eventi.$loaded().then(function () {
+            for (var i = 0; i < $scope.dati.eventi.length; i++) {
+                var lat = 45.071087 + (Math.random() / 100);
+                var lng = 7.686567 + (Math.random() / 100);
+                $scope.dati.evm.positions.push({lat: lat, lng: lng});
+            }
+        });
+        console.log($scope.dati.eventi);
     }]);

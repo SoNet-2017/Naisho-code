@@ -248,6 +248,23 @@ input.form-control {
     align-content: space-between;
     border-radius: 15px;
 }
+
+/*eventi nella home*/
+
+ul#elencoEventi li{
+    font-size: 15px;
+    padding-top:5px;
+    float:left;
+    width:inherit;
+}
+div.media-body {
+    width:inherit;
+    margin: 30%;
+}
+.eventiHome:not:first-child {
+    margin-left:10%;
+}
+
 #contenitoreFrase {
     top: 75px;
     left: 5%;
