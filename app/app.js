@@ -23,6 +23,7 @@ angular.module('myApp', [
     'myApp.users',
     'myApp.usersListView',
     'myApp.chatView',
+    'myApp.addEventoView',
     'myApp.authentication',
     'myApp.userProfileView',
     'myApp.userRegistrationView',
