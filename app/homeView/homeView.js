@@ -71,13 +71,13 @@ angular.module('myApp.homeView', ['ngRoute'])
         });
         console.log($scope.dati.eventi);
         $scope.dati.eventi.$loaded().then(function () {
-          for (var evento in $scope.dati.eventi){
-            if (b<=evento.Mese) {
-                if(a<=evento.Giorno)
-                $scope.dati.eventiDaMostrare.push({evento: evento})
+          for (var i=0;i< $scope.dati.eventi.length; i++){
+              if (b<=$scope.dati.eventi[i].Mese) {
+                if(a<=$scope.dati.eventi[i].Giorno)
+                $scope.dati.eventiDaMostrare.push($scope.dati.eventi[i])
             }
           }
 
         });
-        console.log($scope.dati.eventiDaMostrare);
+        //console.log($scope.dati.eventiDaMostrare);
     }]);

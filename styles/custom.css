@@ -186,7 +186,7 @@ input.form-control {
 #logoBarImgHome{
     content: url("../images/logonaisho.png");
     width: 200px;/* dimensioni logo nella barra della home*/
-    height: 70px;
+    height: 60px;
 }
 
 #logoBarImgContainerHome{
@@ -230,14 +230,6 @@ input.form-control {
     margin-top: 100px;
 }
 
-#sideUserHome{
-    /*Per centrare il contenuto*/
-    text-align: center;
-    align-items:center;
-    vertical-align: middle;
-    background-color: #b7c3b8;
-    padding-bottom: 20px;
-}
 
 #bodyHome,#eventi{
     position: fixed;
@@ -256,14 +248,13 @@ ul#elencoEventi li{
     padding-top:5px;
     float:left;
     width:inherit;
+    margin-left: 20px;
 }
 div.media-body {
     width:inherit;
     margin: 30%;
 }
-.eventiHome:not:first-child {
-    margin-left:10%;
-}
+
 
 #contenitoreFrase {
     top: 75px;
