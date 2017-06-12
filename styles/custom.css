@@ -289,7 +289,7 @@ div.media-body {
     top: 30%;
     left: 5%;
     width: 90%;
-    height: 15%;
+    min-height: 15%;
     }
 /*fine home*/
 
@@ -315,12 +315,23 @@ img.media-object{
     height: 80px;
 }
 
-
-
-#addFriend{
-    content:url("../images/Add.gif ");
+#frmAddEvento{
+    margint-top:75px;
+    margin-left:35%;
+    width: inherit;
+    padding: inherit;
 }
 
+#frmAddEvento h2{
+    margin-top: 75px;
+    margin-left: 15px;
+    }
+#frmAddEvento button {
+    float: left;
+    margin-left: 75px;
+    padding: 5px;
+
+}
 /*#modificaProfilo{
     color:white;
     background-color:#3903ff ;

@@ -49,9 +49,10 @@ angular.module('myApp.addEventoView', ['ngRoute'])
                 $scope.fileToUpload = fileList[0];
             };
             //function that will create the new record  in the Firebase storage
-            var mese=$scope.dati.data.getMonth();
-            mese=mese+1;
-            var giorno=$scope.dati.data.getDay();
+           // var mese=$scope.dati.data.getMonth();
+            //mese=mese+1;
+
+           // var giorno=$scope.dati.data.getDay();
 
             $scope.finalEventoAddition = function()
             {
