@@ -1,0 +1,35 @@
+<div  ng-controller="addEventoViewCtrl as $ctrl">
+    <div class="alert alert-success alert-dismissible" role="alert" ng-if="dati.feedback">{{ dati.feedback }}</div>
+    <div class="alert alert-danger alert-dismissible" role="alert" ng-if="dati.error">{{ dati.error }}</div>
+
+    <form id="frmAddPizza" role="form" ng-submit="addEvento()">
+        <h2>Crea un nuovo evento</h2>
+
+        <div class="form-group">
+            <label for="txtTitolo">Titolo</label>
+            <input type="text" class="form-control" id="txtTitolo" placeholder="Inserisci un titolo" name="titolo" ng-model="dati.titolo" />
+        </div>
+        <div class="form-group">
+            <label for="txtDescrizione">Descrizione</label>
+            <input type="text" class="form-control" id="txtDescrizione" placeholder="Inserisci una breve descrizione" name="descrizione" ng-model="dati.descrizione" />
+        </div>
+        <div class="form-group">
+            <label for="txtCitta">Città</label>
+            <input type="text" class="form-control" id="txtCitta" placeholder="Inserisci la città" name="indirizzo" ng-model="dati.citta" />
+        </div>
+        <div class="form-group">
+            <label for="txtIndirizzo">Indirizzo</label>
+            <input type="text" class="form-control" id="txtIndirizzo" placeholder="Inserisci l'indirizzo" name="indirizzo" ng-model="dati.indirizzo" />
+        </div>
+        <div class="form-group">
+            <label for="txtData">Data</label>
+            <input type="date" class="form-control" id="txtData" placeholder="Inserisci la data" name="ora" ng-model="dati.data" />
+        </div>
+        <div class="form-group">
+            <label for="txtOra">Ora</label>
+            <input type="text" class="form-control" id="txtOra" placeholder="Inserisci l'ora, usando ':' come separatore" name="ora" ng-model="dati.ora" />
+        </div>
+        <button type="submit" class="btn btn-success center-block">Crea</button>
+        <button type="reset" class="btn btn-success center-block">Annulla<a href="!#calendar"></a></button>
+    </form>
+</div>

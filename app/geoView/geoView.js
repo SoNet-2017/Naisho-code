@@ -19,8 +19,8 @@ angular.module('myApp.geoView', ['ngRoute'])
         });
     }])
 
-    .controller('geoViewCtrl', ['$scope', '$rootScope', 'InsertGeocoordService',
-        function($scope, $rootScope,InsertGeocoordService){
+    .controller('geoViewCtrl', ['$scope', '$rootScope',
+        function($scope, $rootScope){
 //initialize variables
             $scope.dati = {};
             $scope.dati.vm = this;
