@@ -23,7 +23,7 @@ angular.module('myApp', [
     'myApp.users',
     'myApp.usersListView',
     'myApp.chatView',
-    'myApp.addEventoView',
+    //'myApp.addEventoView',
     'myApp.authentication',
     'myApp.userProfileView',
     'myApp.userRegistrationView',
@@ -31,7 +31,7 @@ angular.module('myApp', [
     'myApp.pregaView',
     'myApp.geoView',
     'myApp.editProfileView',
-    'myApp.calendarView'
+    //'myApp.calendarView'
 ])
 
     .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

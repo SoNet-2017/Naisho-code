@@ -13,12 +13,12 @@ angular.module('myApp.users.usersGeocoordInsertService', [])
                     address: address
                 });
             },
-            updatecoordinate: function ($firebaseUser) {
+            updatecoordinate: function (userId) {
                 //add the user to list of users and set the logged value to true
-                var ref = firebase.database().ref().child("users").child($firebaseUser.uid);
+                var ref = firebase.database().ref().child("users").child(userId);
                 // create a synchronized array
                 ref.update({
-                    id: $firebaseUser.uid
+                    id: userId
                 });
             }
         };
