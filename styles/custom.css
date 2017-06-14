@@ -93,12 +93,12 @@ input.form-control {
     width: 500px;
     height: 900px;
     padding-bottom: 60%;
-}
+}*/
 .alert{
-    margin-top: 40%;
+    margin-top: 70px;
     width: inherit;
 }
-*/
+
 /*home*/
 .w3-top{
     overflow: visible;
@@ -291,13 +291,27 @@ div.media-body {
     width: 90%;
     min-height: 15%;
     }
+
+#detail{
+    margin-top:30%;
+    width:80%;
+    font-size:20px;
+    background: white;
+    border-radius: 15px;
+    margin-left: 10%;
+}
+#mappa{
+    margin-top:10%;
+    height:150px;
+    width:80%;
+    margin-left:10%;
+}
 /*fine home*/
 
 .form-control{
     color: rgba(0, 0, 0, 0.4);
-    width: 350px;
-    background: #3903ff;
-    background: rgba(57, 3, 255, 0.6);
+    width: 300px;
+    background-color: white;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border-radius: 15px;
@@ -315,18 +329,18 @@ img.media-object{
     height: 80px;
 }
 
-#frmAddEvento{
+.frmModifiche{
     margint-top:75px;
     margin-left:35%;
     width: inherit;
     padding: inherit;
 }
 
-#frmAddEvento h2{
+.frmModifiche h2{
     margin-top: 75px;
     margin-left: 15px;
     }
-#frmAddEvento button {
+.frmModifiche button {
     float: left;
     margin-left: 75px;
     padding: 5px;
@@ -425,6 +439,7 @@ h3{
 
 
 }
+
 /*
 #salva{
     margin-left:50%;
@@ -528,10 +543,6 @@ h3{
     margin-top:-20%;
     text-space: 10 px;
 }
-
-
-
-
 
   /*bisogna centrare le icone*/
 

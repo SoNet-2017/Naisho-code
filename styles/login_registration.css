@@ -255,10 +255,6 @@ img.media-object{
 
 
 
-#addFriend{
-    content:url("../images/Add.gif ");
-}
-
 /*#modificaProfilo{
     color:white;
     background-color:#3903ff ;
@@ -405,23 +401,7 @@ h3{
     margin-left: 150px;
     margin-top:10px;
 }
-#prega,#tutor{
-    background-color: #3903FF;
-    width: 10%;
-    margin-left: 100px;
-    margin-top:10px;
-}
 
-
-
-
-
-/*bisogna centrare le icone*/
-
-
-#prega:hover, #changeImg:hover,#edit:hover{
-    opacity:0.5;
-}
 
 #profile-bar{
     text-align: center;

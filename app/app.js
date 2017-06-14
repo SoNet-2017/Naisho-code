@@ -20,6 +20,7 @@ angular.module('myApp', [
     'myApp.evento',
     'myApp.homeView',
     'myApp.loginView',
+    'myApp.detailsView',
     'myApp.usersListView',
     'myApp.chatView',
     'myApp.addEventoView',
@@ -30,6 +31,7 @@ angular.module('myApp', [
     'myApp.pregaView',
     'myApp.geoView',
     'myApp.editProfileView',
+    'myApp.fileUpload',
     'myApp.calendarView'
 ])
 

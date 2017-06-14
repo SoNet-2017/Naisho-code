@@ -37,6 +37,15 @@ angular.module('myApp.users.usersService', [])
                     buddista: Buddista
 
                 });
+            },
+
+            updateUser: function (userId) {
+                //add the user to list of users and set the logged value to true
+                var ref = firebase.database().ref().child("users").child(userId);
+                // create a synchronized array
+                ref.update({
+                    id: userId
+                });
             }
         };
     });

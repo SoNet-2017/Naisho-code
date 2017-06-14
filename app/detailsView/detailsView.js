@@ -34,9 +34,11 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento'])
         //$rootScope.dati.currentView = "home";
         //get the information of the evento with Id like the one that was passed in the URL path
         $scope.dati.evento = SingleEvento.getSingleEvento($routeParams.eventoID);
+        console.log($scope.dati.evento);
         $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qAQOEvZs2XlUUu3ziu-nrDX-WWZXap4";
         //when the information about the pizza will be loaded, then the map will be created adding a marker in the location
         $scope.dati.evento.$loaded().then(function () {
+            console.log($scope.dati.evento);
             var address = $scope.dati.evento.Indirizzo;
             $scope.dati.evm.positions.push({Indirizzo: address});
         });
