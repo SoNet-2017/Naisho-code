@@ -37,10 +37,13 @@ angular.module('myApp.geoView', ['ngRoute'])
                 $scope.pos.lat = position.coords.latitude;
                 $scope.pos.lng = position.coords.longitude;
 
+                console.log("userId utente da geoview:", userId);
+                InsertGeocoordService.insertNewcoordinate($scope.address, userId);
+                $scope.address = [$scope.pos.lat, $scope.pos.lng];
+                console.log("coordinate utente da geoview:", $scope.address);
 
             });
-            InsertGeocoordService.insertNewcoordinate($scope.address, userId);
-            $scope.address = [$scope.pos.lat, $scope.pos.lng];
+
         }]);
 
 

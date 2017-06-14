@@ -8,11 +8,12 @@ angular.module('myApp.users.usersGeocoordInsertService', [])
         var coordinate = {
             insertNewcoordinate: function (address, userId) {
                 //add the user to list of users and set the logged value to true
-                var ref = firebase.database().ref().child("users").child(userId);
+                var ref = firebase.database().ref().child("users"+userId+"");//.child(userId);
                 // create a synchronized array
                 return $firebaseArray(ref).$add({
                     address: address
                 });
+                
             //},
             //updatecoordinate: function (userId) {
                 //add the user to list of users and set the logged value to true
