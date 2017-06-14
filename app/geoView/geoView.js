@@ -3,7 +3,7 @@
 angular.module('myApp.geoView', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/geoView/', {
+        $routeProvider.when('/geoView/' , {
             templateUrl: 'geoView/geoView.html',
             controller: 'geoViewCtrl',
             resolve: {
@@ -19,34 +19,31 @@ angular.module('myApp.geoView', ['ngRoute'])
         });
     }])
 
-    .controller('geoViewCtrl', ['$scope', '$rootScope',
-        function($scope, $rootScope){
+    .controller('geoViewCtrl', ['$scope', '$rootScope','InsertGeocoordService', '$firebaseAuth',
+        function($scope, $rootScope, InsertGeocoordService, $firebaseAuth){
 //initialize variables
             $scope.dati = {};
-            $scope.dati.vm = this;
-            $scope.dati.vm.positions = [];
-            var ctrl=this;
+            $scope.address= [];
+            $scope.pos = {};
 
-           // ctrl.onChange = function onChange(fileList) {
-             //   $scope.fileToUpload = fileList[0];
-            //};
+
 
 //set the variable that is used in the main template to show the active button
             $rootScope.dati.currentView = "geoView";
+            var userId = $firebaseAuth().$getAuth().uid;
             $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qAQOEvZs2XlUUu3ziu-nrDX-WWZXap4";
             $scope.geo = navigator.geolocation.getCurrentPosition(function(position) {
-                    var pos = $scope.dati.vm.positions.push({lat: position.coords.latitude, lng: position.coords.longitude});
-               // InsertGeocoordService.insertNewcoordinate($scope.address).then(function(ref) {
-                 //   var userId = ref.key;
-                   // InsertGeocoordService.updatecoordinate(userId);
-                    //$scope.address = pos;
-                //});
-                });
 
+                $scope.pos.lat = position.coords.latitude;
+                $scope.pos.lng = position.coords.longitude;
 
+                console.log("userId utente da geoview:", userId);
+                InsertGeocoordService.insertNewcoordinate($scope.address, userId);
+                $scope.address = [$scope.pos.lat, $scope.pos.lng];
+                console.log("coordinate utente da geoview:", $scope.address);
 
-//}
-//});
+            });
+
         }]);
 
 
