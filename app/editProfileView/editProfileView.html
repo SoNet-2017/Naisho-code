@@ -2,14 +2,14 @@
     <div class="alert alert-success alert-dismissible" role="alert" ng-if="dati.feedback">{{ dati.feedback }}</div>
     <div class="alert alert-danger alert-dismissible" role="alert" ng-if="dati.error">{{ dati.error }}</div>
 <div id="editProfile">
-    <form role="form" ng-submit="salvamodifiche()">
+    <form class="frmModifiche" role="form" ng-submit="salvamodifiche()">
         <h2> Modifica il tuo profilo</h2>
-        <div>
-        <button>Carica immagine</button>
+        <div class="form-group">
+            <label>Carica immagine</label>
             <file-upload on-change="$ctrl.onChange">
             </file-upload>
         </div>
-
+<br>
         <div class="form-group">
             <label for="nuovoName">Nome</label>
             <input type="text" class="form-control" id="nuovoName" placeholder="Inserisci il nome" name="name" ng-model="user.name" />
@@ -24,11 +24,7 @@
         </div>
 
         <div class="form-group">
-            <label for="txtPass">Password</label>
-            <input type="password" class="form-control" id="txtPass" placeholder="Password" name="password" ng-model="user.password" />
-        </div>
-        <div class="form-group">
-            <label for="txtPass">Nuova Password</label>
+            <label for="nuovaPass">Nuova Password</label>
             <input type="password" class="form-control" id="nuovaPass" placeholder="Password" name="password" ng-model="user.nuovapassword" />
         </div>
         <div class="form-group">
@@ -36,17 +32,21 @@
             <input type="password" class="form-control" id="nuovaPass2" placeholder="Conferma password" name="password2" ng-model="user.nuovapassword2" />
         </div>
         <div class="form-group">
-            <label>Sei buddista?</label>
-            <input type="radio" name="type" value="Sì"  class="form-check-input" placeholder="type" ng-model="user.nuovotype"/>Sì
-            <input type="radio" name="type" value="No"  class="form-check-input" placeholder="type" ng-model="user.nuovotype"/>No
+            <label for="selBuddista">Sei già Buddista?</label>
+            <select  class="form-control" id="selBuddista" placeholder="buddista" name="buddista" ng-model="user.buddista" />
+            <option >Sì</option>
+            <option>No</option>
+            </select>
         </div>
         <div class="form-group">
-            <label>Vuoi fare da tutor?</label>
-            <input type="radio" name="tutor" value="Sì"  class="form-check-input" placeholder="sex" ng-model="user.tutor"/>Sì
-            <input type="radio" name="tutor" value="No"  class="form-check-input" placeholder="sex" ng-model="user.tutor"/>No
+            <label for="essereTutor">Vuoi fare da Tutor?</label>
+            <select  class="form-control" id="essereTutor" placeholder="buddista" name="buddista" ng-model="user.tutor" />
+            <option >Sì</option>
+            <option>No</option>
+            </select>
         </div>
         <button type="submit" class="btn btn-success center-block">Modifica</button>
-        <button type="reset" class="btn center-block"><a href="#!userProfileView">Annulla</a> </button>
+        <button type="reset" class="btn center-block"><a href="#!userProfile">Annulla</a> </button>
         <br>
 
 

@@ -23,6 +23,7 @@ angular.module('myApp.homeView', ['ngRoute'])
         $scope.auth=Auth;
         $scope.dati.evm = this;
         $scope.dati.evm.positions = [];
+        $scope.dati.eventiDaMostrare=[];
 
         $scope.showSearchItem=function () {
             var x = document.getElementById("typeSearchContentHome");
@@ -41,6 +42,7 @@ angular.module('myApp.homeView', ['ngRoute'])
         }
         //console.log(a);
         var b=dato.getMonth();
+        b=b+1;
         if (String(b).length == 1) {
             b = "0"+b;
         }
@@ -58,8 +60,7 @@ angular.module('myApp.homeView', ['ngRoute'])
         // eventi nella home
         //e=giorno+mese+anno
         var d=dato.getFullYear();
-        var e=c+d;
-        console.log(e);
+
         $scope.dati.eventi = Evento.getData();
         $scope.dati.eventi.$loaded().then(function () {
             for (var i = 0; i < $scope.dati.eventi.length; i++) {
@@ -68,5 +69,15 @@ angular.module('myApp.homeView', ['ngRoute'])
                 $scope.dati.evm.positions.push({lat: lat, lng: lng});
             }
         });
-        console.log($scope.dati.eventi);
+       // console.log($scope.dati.eventi);
+        $scope.dati.eventi.$loaded().then(function () {
+          for (var i=0;i< $scope.dati.eventi.length; i++){
+              if (b<=$scope.dati.eventi[i].Mese) {
+                if(a<=$scope.dati.eventi[i].Giorno)
+                $scope.dati.eventiDaMostrare.push($scope.dati.eventi[i])
+            }
+          }
+
+        });
+        //console.log($scope.dati.eventiDaMostrare);
     }]);
