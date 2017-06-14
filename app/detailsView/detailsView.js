@@ -3,7 +3,7 @@
 angular.module('myApp.detailsView', ['ngRoute','myApp.evento'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/detailsEvento/:eventoID', {
+  $routeProvider.when('/details/:eventoID', {
     templateUrl: 'detailsView/detailsView.html',
     controller: 'detailsViewCtrl',
       resolve: {
@@ -32,11 +32,11 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento'])
         $scope.dati.evm.positions = [];
         //set the variable that is used in the main template to show the active button
         //$rootScope.dati.currentView = "home";
-        //get the information of the pizza with Id like the one that was passed in the URL path
+        //get the information of the evento with Id like the one that was passed in the URL path
         $scope.dati.evento = SingleEvento.getSingleEvento($routeParams.eventoID);
         $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qAQOEvZs2XlUUu3ziu-nrDX-WWZXap4";
-        //when the information about the pizza will be loaded, then the map will be created adding a marker in the Pizzeria location
-        $scope.dati.eventi.$loaded().then(function () {
+        //when the information about the pizza will be loaded, then the map will be created adding a marker in the location
+        $scope.dati.evento.$loaded().then(function () {
             var address = $scope.dati.evento.Indirizzo;
             $scope.dati.evm.positions.push({Indirizzo: address});
         });

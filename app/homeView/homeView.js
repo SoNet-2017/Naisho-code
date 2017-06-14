@@ -69,7 +69,7 @@ angular.module('myApp.homeView', ['ngRoute'])
                 $scope.dati.evm.positions.push({lat: lat, lng: lng});
             }
         });
-        console.log($scope.dati.eventi);
+       // console.log($scope.dati.eventi);
         $scope.dati.eventi.$loaded().then(function () {
           for (var i=0;i< $scope.dati.eventi.length; i++){
               if (b<=$scope.dati.eventi[i].Mese) {

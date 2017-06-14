@@ -45,15 +45,15 @@ angular.module('myApp.addEventoView', ['ngRoute'])
                 }
             };
             //initialize the function that will be called when a new file will be specified by the user
-            ctrl.onChange = function onChange(fileList) {
-                $scope.fileToUpload = fileList[0];
-            };
+           // ctrl.onChange = function onChange(fileList) {
+             //   $scope.fileToUpload = fileList[0];
+            //};
             //function that will create the new record  in the Firebase storage
            // var mese=$scope.dati.data.getMonth();
             //mese=mese+1;
 
            // var giorno=$scope.dati.data.getDay();
-
+            console.log($scope.dati.data);
             $scope.finalEventoAddition = function()
             {
                 InsertEventoService.insertNewEvento( $scope.dati.titolo, $scope.dati.descrizione, $scope.dati.citta,$scope.dati.indirizzo, giorno, mese, $scope.dati.ora).then(function(ref) {

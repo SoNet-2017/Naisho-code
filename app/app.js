@@ -20,7 +20,6 @@ angular.module('myApp', [
     'myApp.evento',
     'myApp.homeView',
     'myApp.loginView',
-    'myApp.users',
     'myApp.usersListView',
     'myApp.chatView',
     'myApp.addEventoView',

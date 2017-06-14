@@ -15,17 +15,17 @@ angular.module('myApp.evento.insertEventoService', [])
                     Descrizione: descrizione,
                     Citta: citta,
                     Indirizzo: indirizzo,
-                    Giono: giorno,
+                    Giorno: giorno,
                     Mese:mese,
                     Ora:ora
                 });
             },
             updateEvento: function (eventoId) {
                 //add the user to list of users and set the logged value to true
-                var ref = firebase.database().ref().child("eventi").child(eventoId);
+                var ref = firebase.database().ref().child("eventi").child(eventoID);
                 // create a synchronized array
                 ref.update({
-                    id: eventoId
+                    "id": eventoID
                 });
             }
         };
