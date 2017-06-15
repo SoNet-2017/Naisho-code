@@ -35,7 +35,6 @@ angular.module('myApp.users.usersService', [])
                     Nascita: Nascita,
                     type: type,
                     buddista: Buddista
-
                 });
             },
 

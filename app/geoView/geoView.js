@@ -23,7 +23,7 @@ angular.module('myApp.geoView', ['ngRoute'])
         function($scope, $rootScope, InsertGeocoordService, $firebaseAuth){
 //initialize variables
             $scope.dati = {};
-            $scope.address= [];
+            $scope.address= {};
             $scope.pos = {};
 
 
@@ -38,8 +38,8 @@ angular.module('myApp.geoView', ['ngRoute'])
                 $scope.pos.lng = position.coords.longitude;
 
                 console.log("userId utente da geoview:", userId);
+                $scope.address = {lat: $scope.pos.lat, lng: $scope.pos.lng};
                 InsertGeocoordService.insertNewcoordinate($scope.address, userId);
-                $scope.address = [$scope.pos.lat, $scope.pos.lng];
                 console.log("coordinate utente da geoview:", $scope.address);
 
             });

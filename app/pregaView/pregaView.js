@@ -73,7 +73,7 @@ angular.module('myApp.pregaView', ['ngRoute'])
     document.getElementById("Continuare").disabled = true;
     document.getElementById("Ripartire").disabled = false;
 
-}
+};
 
 
 
@@ -81,7 +81,7 @@ angular.module('myApp.pregaView', ['ngRoute'])
     clearInterval($scope.control);
     document.getElementById("Fermarsi").disabled = true;
     document.getElementById("Continuare").disabled = false;
-}
+};
 
             $scope.reset =function() {
     clearInterval($scope.control);
@@ -98,6 +98,22 @@ angular.module('myApp.pregaView', ['ngRoute'])
     document.getElementById("Fermarsi").disabled = true;
     document.getElementById("Continuare").disabled = true;
     document.getElementById("Ripartire").disabled = true;
-}
+};
+
+            var status = 0;
+            $scope.Play=function(id) {
+                var audio = $("#"+id);
+                if(status === 0 || status === 2)
+                {
+                    if(status === 0) audio.attr("src=../Audio/suonogong.mp3");
+                    audio[0].play();
+                    $("#play").attr("class","glyphicon glyphicon-pause aligned")
+                    status = 1;
+                } else if(status === 1) {
+                    audio[0].pause();
+                    $("#play").attr("class","glyphicon glyphicon-play aligned")
+                    status = 2;
+                }
+            };
 
     }]);
