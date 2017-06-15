@@ -19,13 +19,13 @@ angular.module('myApp', [
     'myApp.users',
     'myApp.evento',
     'myApp.post',
+   // 'myApp,forum',
     'myApp.homeView',
     'myApp.loginView',
     'myApp.detailsView',
     'myApp.usersListView',
     'myApp.chatView',
     'myApp.addEventoView',
-    'myApp.addPostView',
     'myApp.authentication',
     'myApp.userProfileView',
     'myApp.userRegistrationView',
@@ -36,7 +36,9 @@ angular.module('myApp', [
     'myApp.fileUpload',
     'myApp.calendarView',
     'myApp.singlePostView',
-    'myApp.addPostView'
+    'myApp.addPostView',
+   // 'myApp.singleForumView',
+   // 'myApp.addForumView'
 ])
 
     .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

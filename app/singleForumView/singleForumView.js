@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('myApp.singlePostView', ['ngRoute','myApp.post'])
+angular.module('myApp.singleForumView', ['ngRoute','myApp.forum'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/singlePost/:postID', {
-    templateUrl: 'singlePostView/singlePostView.html',
-    controller: 'singlePostViewCtrl',
+  $routeProvider.when('/singleForum/:forumID', {
+    templateUrl: 'singleForumView/singleForumView.html',
+    controller: 'singleForumViewCtrl',
       resolve: {
           // controller will not be loaded until $requireSignIn resolves
           // Auth refers to our $firebaseAuth wrapper in the factory below
@@ -23,13 +23,11 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post'])
     // followed by the function itself.
     //When using this type of annotation, take care to keep the annotation array
     // in sync with the parameters in the function declaration.
-.controller('singlePostViewCtrl', ['$scope', '$rootScope', '$routeParams', 'SinglePost','UsersChatService',
-    function($scope, $rootScope, $routeParams, SinglePost,UsersChatService) {
+.controller('singleForumViewCtrl', ['$scope', '$rootScope', '$routeParams', 'SingleForum',
+    function($scope, $rootScope, $routeParams, SingleForum) {
         //initialize variables
         $scope.dati = {};
 
-
-        $scope.dati.post = SinglePost.getSinglePost($routeParams.postID);
-        console.log( $scope.dati.post );
-        $scope.dati.userPost=UsersChatService.getUserInfo($scope.dati.post.userPost);
+        $scope.dati.forum = SingleForum.getSingleForum($routeParams.forumID);
+        ;
     }]);

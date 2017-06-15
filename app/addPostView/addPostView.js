@@ -23,42 +23,57 @@ angular.module('myApp.addPostView', ['ngRoute'])
         function($scope, $rootScope, InsertPostService, $firebaseStorage) {
             //initialize variables
             $scope.dati = {};
-            //set the variable that is used in the main template to show the active button
-            //$rootScope.dati.currentView = "addPizza";
+
             $scope.dati.feedback = "";
             var ctrl = this;
+            $scope.fileToUpload = null;
+            $scope.imgPath= "";
 
             //define the function that will actually create a new record in the database
             $scope.addEvento = function() {
                 //check if the user inserted all the required information
                 if ($scope.dati.contenuto!= undefined && $scope.dati.contenuto!="" ) {
                     $scope.dati.error = "";
+                    if ($scope.fileToUpload != null) {
+                        //get the name of the file
+                        var fileName = $scope.fileToUpload.name;
+                        //specify the path in which the file should be saved on firebase
+                        var storageRef = firebase.storage().ref("postImg/" + fileName);
+                        $scope.storage = $firebaseStorage(storageRef);
+                        var uploadTask = $scope.storage.$put($scope.fileToUpload);
+                        uploadTask.$complete(function (snapshot) {
+                            $scope.imgPath = snapshot.downloadURL;
+                            $scope.finalPostAddition();
+                        });
+                        uploadTask.$error(function (error) {
+                            $scope.dati.error = error + " Non hai inserito alcuna immagine";
+                            //add the pizza in any case (without the image)
+                            $scope.finalPostAddition();
+                        });
+                    }
+                    else {
+                        //do not add the image
+                        $scope.finalPostAddition();
 
-                    $scope.finalPostAddition();
-
+                    }
                 }
+
                 else
                 {
                     //write an error message to the user
                     $scope.dati.error = "Non hai inserito nessun contenuto da condividere!";
                 }
             };
-            //initialize the function that will be called when a new file will be specified by the user
-           // ctrl.onChange = function onChange(fileList) {
-             //   $scope.fileToUpload = fileList[0];
-            //};
-            //function that will create the new record  in the Firebase storage
-           // var mese=$scope.dati.data.getMonth();
-            //mese=mese+1;
+            ctrl.onChange = function onChange(fileList) {
+                $scope.fileToUpload = fileList[0];
+            };
 
-           // var giorno=$scope.dati.data.getDay();
-            console.log($scope.dati.data);
             $scope.finalPostAddition = function()
             {
                 InsertPostService.insertNewPost(  $scope.dati.contenuto).then(function(ref) {
-                    var eventoId = ref.key;
+                    var postId = ref.key;
 
-                    InsertEventoService.updateEvento(eventoId);
+                    InsertPostService.updatePost(postId);
                     $scope.dati.feedback = "Il post è stato condiviso";
                     $scope.dati.contenuto = "";
 
