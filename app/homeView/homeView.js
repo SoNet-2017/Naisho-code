@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.homeView', ['ngRoute','myApp.evento'])
+angular.module('myApp.homeView', ['ngRoute','myApp.evento','myApp.post'])
 
               .config(['$routeProvider', function($routeProvider) {
                   $routeProvider.when('/homeView', {
@@ -18,12 +18,13 @@ angular.module('myApp.homeView', ['ngRoute','myApp.evento'])
       }
   });
 }])
-    .controller('homeCtrl', ['$scope', '$location', 'Auth', '$firebaseObject','Users', 'currentAuth', '$firebaseAuth','$rootScope','Evento', function ($scope,$location, Auth, $firebaseObject, Users, currentAuth, $firebaseAuth,$rootScope, Evento) {
+    .controller('homeCtrl', ['$scope', '$location', 'Auth', '$firebaseObject','Users', 'currentAuth', '$firebaseAuth','$rootScope','Evento','Post', function ($scope,$location, Auth, $firebaseObject, Users, currentAuth, $firebaseAuth,$rootScope, Evento,Post) {
         $scope.dati={};
         $scope.auth=Auth;
         $scope.dati.evm = this;
         $scope.dati.evm.positions = [];
         $scope.dati.eventiDaMostrare=[];
+        $scope.dati.post=[];
 
         $scope.showSearchItem=function () {
             var x = document.getElementById("typeSearchContentHome");
@@ -57,7 +58,7 @@ angular.module('myApp.homeView', ['ngRoute','myApp.evento'])
             //console.log($scope.soka.frase);
         });
 
-        // eventi nella home
+        // funzione eventi nella home
         //e=giorno+mese+anno
         var d=dato.getFullYear();
 
@@ -79,5 +80,8 @@ angular.module('myApp.homeView', ['ngRoute','myApp.evento'])
           }
 
         });
-        //console.log($scope.dati.eventiDaMostrare);
+
+        //funzione post nella home
+        $scope.dati.posts = Post.getData();
+
     }]);

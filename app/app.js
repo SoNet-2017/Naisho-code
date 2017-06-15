@@ -18,12 +18,14 @@ angular.module('myApp', [
     'ngMap',
     'myApp.users',
     'myApp.evento',
+    'myApp.post',
     'myApp.homeView',
     'myApp.loginView',
     'myApp.detailsView',
     'myApp.usersListView',
     'myApp.chatView',
     'myApp.addEventoView',
+    'myApp.addPostView',
     'myApp.authentication',
     'myApp.userProfileView',
     'myApp.userRegistrationView',
@@ -32,7 +34,9 @@ angular.module('myApp', [
     'myApp.geoView',
     'myApp.editProfileView',
     'myApp.fileUpload',
-    'myApp.calendarView'
+    'myApp.calendarView',
+    'myApp.singlePostView',
+    'myApp.addPostView'
 ])
 
     .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

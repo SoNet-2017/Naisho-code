@@ -35,7 +35,14 @@
     </div>
 
 <div class="w3-container" id="bodyHome" >
-
+    <li class="media" ng-repeat="post in dati.posts">
+        <a href="#!/detailsPost/:{{post.ID}}">
+            <div  class="postHome">
+                <h4 class="media-heading"><strong>{{post.userPost}}</strong></h4>
+                <p>{{post.contenuto}}</p>
+            </div>
+        </a>
+    </li>
 </div>
 
 
