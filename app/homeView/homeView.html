@@ -36,13 +36,23 @@
 
 <div class="w3-container" id="bodyHome" >
     <li class="media" ng-repeat="post in dati.posts">
-        <a href="#!/singlePost/:{{post.ID}}">
+        <a href="#!/singlePost/:{{post.Id}}">
             <div  class="postHome">
                 <h4 class="media-heading"><strong>{{post.userPost}}</strong></h4>
                 <p>{{post.contenuto}}</p>
             </div>
         </a>
     </li>
+<!--
+    <li class="media" ng-repeat="forum in dati.forum">
+        <a href="#!/singleForum/:{{forum.Id}}">
+            <div  class="postHome">
+                <h4 class="media-heading"><strong>{{forum.titolo}}</strong></h4>
+                <p>{{forum.argomento}}</p>
+            </div>
+        </a>
+    </li>
+-->
 </div>
 
 

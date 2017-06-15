@@ -31,8 +31,7 @@ angular.module('myApp.addForumView', ['ngRoute'])
             //define the function that will actually create a new record in the database
             $scope.addForum = function() {
                 //check if the user inserted all the required information
-                if ($scope.dati.indirizzo!= undefined && $scope.dati.indirizzo!="" && $scope.dati.titolo!= undefined && $scope.dati.titolo!="" && $scope.dati.descrizione!=undefined && $scope.dati.descrizione!=""
-                    && $scope.dati.citta!=undefined && $scope.dati.citta!="" && $scope.dati.ora!=undefined && $scope.dati.ora!="") {
+                if ($scope.dati.titolo!= undefined && $scope.dati.titolo!="" && $scope.dati.argomento!= undefined && $scope.dati.argomento!="" ) {
                     $scope.dati.error = "";
 
                     $scope.finalForumAddition();
@@ -44,29 +43,17 @@ angular.module('myApp.addForumView', ['ngRoute'])
                     $scope.dati.error = "Hai dimenticato di inserire informazioni importanti!";
                 }
             };
-            //initialize the function that will be called when a new file will be specified by the user
-           // ctrl.onChange = function onChange(fileList) {
-             //   $scope.fileToUpload = fileList[0];
-            //};
-            //function that will create the new record  in the Firebase storage
-           // var mese=$scope.dati.data.getMonth();
-            //mese=mese+1;
 
-           // var giorno=$scope.dati.data.getDay();
-            console.log($scope.dati.data);
             $scope.finalForumAddition = function()
             {
-                InsertForumService.insertNewForum( $scope.dati.titolo, $scope.dati.descrizione, $scope.dati.citta,$scope.dati.indirizzo, giorno, mese, $scope.dati.ora).then(function(ref) {
+                InsertForumService.insertNewForum( $scope.dati.titolo, $scope.dati.argomento).then(function(ref) {
                     var eventoId = ref.key;
 
-                    InsertForumService.updateForum(eventoId);
-                    $scope.dati.feedback = "Congratulazioni, hai creato un evento";
-                    $scope.dati.indirizzo = "";
+                    InsertForumService.updateForum(forumId);
+                    $scope.dati.feedback = "Congratulazioni, hai creato un forum";
                     $scope.dati.titolo = "";
-                    $scope.dati.descrizione = "";
-                    $scope.dati.ora = "";
-                    $scope.dati.citta = "";
-                    $scope.dati.data = "";
+                    $scope.dati.argomento = "";
+
                 });
             }
         }]);

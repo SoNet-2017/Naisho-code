@@ -6,8 +6,13 @@
         <h2>Crea un nuovo post</h2>
 
         <div class="form-group">
-            <label for="txtTitolo">Titolo</label>
-            <input type="text" class="form-control" id="txtTitolo" placeholder="Inserisci un titolo" name="titolo" ng-model="dati.titolo" />
+            <label for="txtTitolo">Contenuto</label>
+            <input type="textArea" class="form-control" id="txtTitolo" placeholder="Inserisci un post" name="titolo" ng-model="dati.contenuto" />
+        </div>
+        <div class="form-group">
+            <label>Carica immagine</label>
+            <file-upload on-change="$ctrl.onChange">
+            </file-upload>
         </div>
 
         <button type="submit" class="btn btn-success center-block">Condividi</button>

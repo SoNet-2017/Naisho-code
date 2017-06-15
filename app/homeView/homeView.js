@@ -84,4 +84,6 @@ angular.module('myApp.homeView', ['ngRoute','myApp.evento','myApp.post'])
         //funzione post nella home
         $scope.dati.posts = Post.getData();
 
+//funzione post nella home
+  //      $scope.dati.forum = Forum.getData();
     }]);
