@@ -23,12 +23,13 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post'])
     // followed by the function itself.
     //When using this type of annotation, take care to keep the annotation array
     // in sync with the parameters in the function declaration.
-.controller('singlePostViewCtrl', ['$scope', '$rootScope', '$routeParams', 'SinglePost',
-    function($scope, $rootScope, $routeParams, SinglePost) {
+.controller('singlePostViewCtrl', ['$scope', '$rootScope', '$routeParams', 'SinglePost','UsersChatService',
+    function($scope, $rootScope, $routeParams, SinglePost,UsersChatService) {
         //initialize variables
         $scope.dati = {};
 
 
         $scope.dati.post = SinglePost.getSinglePost($routeParams.postID);
-
+        console.log( $scope.dati.post );
+        $scope.dati.userPost=UsersChatService.getUserInfo($scope.dati.post.userPost);
     }]);

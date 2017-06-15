@@ -17,7 +17,7 @@ angular.module('myApp.post.insertPostService', [])
             },
             updatePost: function (postId) {
                 //add the user to list of users and set the logged value to true
-                var ref = firebase.database().ref().child("posts").child(postID);
+                var ref = firebase.database().ref().child("posts").child(postId);
                 // create a synchronized array
                 ref.update({
                     "id": postID
