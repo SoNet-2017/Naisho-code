@@ -1,7 +1,7 @@
 'use strict';
 
 //The service implemented in this module will get information about a single pizza: the one specified by the Id passed as argument of the function
-angular.module('myApp.post.singleForumService', [])
+angular.module('myApp.forum.singleForumService', [])
 
     .factory('SingleForum', function($firebaseObject) {
         var singleForumService = {

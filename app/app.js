@@ -19,7 +19,7 @@ angular.module('myApp', [
     'myApp.users',
     'myApp.evento',
     'myApp.post',
-   // 'myApp,forum',
+    'myApp.forum',
     'myApp.homeView',
     'myApp.loginView',
     'myApp.detailsView',
@@ -37,8 +37,8 @@ angular.module('myApp', [
     'myApp.calendarView',
     'myApp.singlePostView',
     'myApp.addPostView',
-   // 'myApp.singleForumView',
-   // 'myApp.addForumView'
+    'myApp.singleForumView',
+    'myApp.addForumView'
 ])
 
     .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

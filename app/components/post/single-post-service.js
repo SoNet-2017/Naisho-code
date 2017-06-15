@@ -9,6 +9,7 @@ angular.module('myApp.post.singlePostService', [])
                 var ref = firebase.database().ref().child("posts").child(postId);
                 // download the data into a local object
                 return $firebaseObject(ref);
+                console.log(ref);
             }
         };
         return singlePostService;
