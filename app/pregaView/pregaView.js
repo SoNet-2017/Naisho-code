@@ -105,7 +105,8 @@ angular.module('myApp.pregaView', ['ngRoute'])
                 var audio = $("#"+id);
                 if(status === 0 || status === 2)
                 {
-                    if(status === 0) audio.attr("src=../Audio/suonogong.mp3");
+                    if(status === 0)  {audio.attr("src=../Audio/suonogong.mp3");
+                    }
                     audio[0].play();
                     $("#play").attr("class","glyphicon glyphicon-pause aligned")
                     status = 1;

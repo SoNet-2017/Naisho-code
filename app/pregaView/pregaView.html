@@ -10,9 +10,9 @@
         <div class="orologio" id="Minuti"> : 00 </div>
         <div class="orologio" id="Secondi"> : 00 </div>
         <div class="orologio" id="Centesimi"> : 00 </div>
-        <audio id="sound1"  ></audio>
+        <audio id="sound1" src="../Audio/suonogong.mp3" ></audio>
 
-    <input   type="button"  class ="bottone"   id="Iniziare" value="Inizia &#9658;" ng-click="start();Play(sound1)">
+    <input   type="button"  class ="bottone"   id="Iniziare" value="Inizia &#9658;" ng-click="start(); Play('sound1')">
       <input type="button" class="bottone" id="Fermarsi" value="Interrompi &#8718;" ng-click="stop()" disabled>
        <input type="button" class="bottone" id="Continuare" value="Riprendi &#8634;" ng-click="start(sound1)" disabled>
        <input type="button" class="bottone" id="Ripartire" value="Reset &#8635;" ng-click="reset()" disabled>
