@@ -28,6 +28,7 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento'])
         //initialize variables
         $scope.dati = {};
         $scope.address=[];
+        $scope.result=[];
 
         $scope.dati.evm = this;
         $scope.dati.evm.positions = [];
@@ -41,7 +42,21 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento'])
         $scope.dati.evento.$loaded().then(function () {
             console.log($scope.dati.evento);
             $scope.address = $scope.dati.evento.Indirizzo;
-            $scope.dati.evm.positions.push({Indirizzo: $scope.address});
+            // If adress is not supplied, use default value 'Ferrol, Galicia, Spain'
+           // address = address || 'Ferrol, Galicia, Spain';
+            // Initialize the Geocoder
+            $scope.geocoder = new google.maps.Geocoder();
+            if ($scope.geocoder) {
+                $scope.geocoder.geocode({
+                    'address': $scope.address
+                },
+                    $scope.cambia=function (results, status) {
+                    if (status === google.maps.GeocoderStatus.OK) {
+                        $scope.dati.positions = {lat: results.geometry.location.lat() , lng: results.geometry.location.lng()};
+                    }
+                });
+            }
+            $scope.dati.evm.positions.push({Indirizzo: $scope.dati.positions});
             console.log($scope.address);
         });
     }]);
