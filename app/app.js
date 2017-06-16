@@ -97,6 +97,14 @@ angular.module('myApp', [
             //document.getElementById("menu").style.left = "-250px";
             document.getElementById("menu").style.display="none";
         };
+        $scope.search=function(){
+            
+
+
+
+
+
+        };
     }]);
 /*.config(function($routeProvider){
  $routeProvider.when("/utenti",{...})

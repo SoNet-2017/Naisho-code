@@ -104,6 +104,21 @@ input.form-control {
     overflow: visible;
 }
 
+.geobudda{
+    font-family: "Helvetica";
+    font-size:10px;
+
+    color: #fff;
+    margin-top:50px;
+    margin-left:-18px;
+    line-height:0.5px;
+
+
+
+}
+
+
+
 #menu {
     border-radius:30px;
 
@@ -167,7 +182,7 @@ input.form-control {
     text-align: left;
     color: #fff;
     text-decoration:none;
-    padding: 5px 5;
+    padding: 5px 0;
     display: flex;
 }
 
@@ -180,6 +195,7 @@ input.form-control {
     align-items:right;
     height: 65px;
     z-index: 1000;
+   
     }
 
 #userNameHome{
