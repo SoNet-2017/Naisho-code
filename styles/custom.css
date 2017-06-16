@@ -443,7 +443,7 @@ h3{
 #immaginegong{
     margin-left: 15%;
     margin-top:8%;
-    
+
 
 }
 
@@ -593,7 +593,7 @@ form.frmLogin {
 }
 .btn {
     margin-left: 145px;
-    height:46px;/* altezza barra sotto search*/
+    height:46.5px;/* altezza barra sotto search*/
 
 }
 
@@ -645,6 +645,7 @@ h2{
 /*icona lente*/
 .btn{
    border-radius:15px;
+   background-color: #dddddd;
 
 }
 
