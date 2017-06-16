@@ -48,7 +48,7 @@ input.form-control {
 .input-group{
     width: 400px;
     height: 46px;
-    margin-top: 15px;
+    margin-top: 9px;/*barra search*/
     margin-left: 15px;
     margin-right: 20%;
     margin-left: 50%;
@@ -105,13 +105,15 @@ input.form-control {
 }
 
 #menu {
+    border-radius:30px;
+
     list-style-type:none;
     position: absolute;
-    top: 75px;
-    left: -2%;
+    top: 69px;
+    left: 0.2%;
     width: 250px;
     line-height:35px;	/* Interlinea */
-    background-color:#445588;
+    background-color:rgb(116,134,179);
     z-index: +1000;
     display: none;
 }
@@ -158,24 +160,25 @@ input.form-control {
     color:#fff;
     position:absolute;
     left:200px;
-    top:10px;
+    top:1px;
     z-index: +1000;
 }
 .glyphicon {
     text-align: left;
     color: #fff;
     text-decoration:none;
-    padding: 10px 0;
+    padding: 5px 5;
     display: flex;
 }
 
 
 #topBarHome{
     background-color: transparent;
+    border-radius:15px;
     /*Per posizionare il contenuto*/
     display:flex;
     align-items:right;
-    height: 60px;
+    height: 65px;
     z-index: 1000;
     }
 
@@ -187,6 +190,7 @@ input.form-control {
     content: url("../images/logonaisho.png");
     width: 200px;/* dimensioni logo nella barra della home*/
     height: 60px;
+    margin-top:-6px;
 }
 
 #logoBarImgContainerHome{
@@ -224,6 +228,8 @@ input.form-control {
 
 #searchItemHome{
     max-width: 30%;
+
+
 }
 
 #bodyHome{
@@ -311,6 +317,7 @@ div.media-body {
 .form-control{
     color: rgba(0, 0, 0, 0.4);
     width: 300px;
+
     background-color: white;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
@@ -436,7 +443,7 @@ h3{
 #immaginegong{
     margin-left: 15%;
     margin-top:8%;
-
+    
 
 }
 
