@@ -104,46 +104,54 @@
 <header>
     <div class="w3-container w3-bar w3-top w3-card-2" id="topBarHome" ng-if="isLogged()">
 
-       <a class="w3-bar-item w3-button" id="menuButton" ng-click="show()" ><i class="glyphicon glyphicon-menu-hamburger w3-large"></i></a>
-       <a class="w3-bar-item w3-button" id="homeIcon" href="#!home" ><i class="glyphicon glyphicon-home w3-large"></i></a>
+
+
+        <!--<  <li> <a class="menu" id="menuButton" ng-click="show()" ><img src="../images/menù40-45.png" ></a>  </li>-->
+        <a class="w3-bar-item w3-button" id="menuButton" ng-click="show()" ><i class="glyphicon glyphicon-menu-hamburger w3-large"></i></a>
+        <!--   <li> <a class="casa" id="homeIcon" href="#!/home"><img src="../images/iconacasa.png" ></a>  </li>-->
+      <a class="w3-bar-item w3-button" id="homeIcon" href="#!home" ><i class="glyphicon glyphicon-home w3-large"></i></a>
         <!--<a class="w3-bar-item w3-button" id="userIcon"><i class="glyphicon glyphicon-user w3-large"></i></a>-->
-        <a class="w3-bar-item w3-button" id="newPsIcon" ><i class="glyphicon glyphicon-bell w3-large"></i></a>
-        <li> <a class="geobudda" id="geoIcon" href="#!/geoView"><img src="../images/buddino3.png" ><br>Trova Buddisti</a>  </li>
-       <!-- <a class="w3-bar-item w3-button" id="geoIcon"  href="#!geoView" ><i class="glyphicon glyphicon-map-marker w3-large"></i></a>-->
-        <a ng-click="logout()" class="w3-bar-item w3-button"  id="OffIcon" ><i class="glyphicon glyphicon-off w3-large"></i></a>
+        <!-- <li> <a class="notifica" id="newPsIcon" ><img src="../images/campanello.png" ></a>  </li>-->
 
-        <form id="search" >
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                        <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
+       <a class="w3-bar-item w3-button" id="newPsIcon" ><i class="glyphicon glyphicon-bell w3-large"></i></a>
+         <li> <a class="geobudda" id="geoIcon" href="#!/geoView"><img src="../images/buddino30.png" ><br>Trova Buddisti</a>  </li>
+        <!--    <a class="w3-bar-item w3-button" id="geoIcon"  href="#!geoView" ><i class="glyphicon glyphicon-map-marker w3-large"></i></a>-->
+           <a ng-click="logout()" class="w3-bar-item w3-button"  id="OffIcon" ><i class="glyphicon glyphicon-off w3-large"></i></a>
+            <!--  <a ng-click="logout()" class="esci"  id="OffIcon" ><img src="../images/logout4045.png"></a>-->
 
-        <div id="logoBarImgContainerHome" >
-            <img class="w3-content" id="logoBarImgHome" alt="logo">
-        </div>
-        <div class="menu" id="menu">
-            <a class="closeButton" ng-click="close()"><i class="glyphicon glyphicon-remove-circle w3-large"></i></a>
-            <ul >
-                <li> <a href="#!/userProfile"><img src="../images/iconaprofilopersonale.png" ng-click="close()">Profilo Personale </a></li>
-                <li> <a href="#!/pregaView"><img src="../images/iconapregabianca.png" ng-click="close()">Prega</a>  </li>
-                <li> <a href="#!/calendar"> <img src="../images/iconacalendario.png" ng-click="close()">Calendario/Eventi/Forum  </a></li>
-                <li> <a href="#!/usersList"> <img src="../images/iconachat.png" ng-click="close()">Chat  </a></li>
-                <li> <a href="#!/tutor"> <img src="../images/iconatutor.png" ng-click="close()">Tutor </a></li>
-            </ul>
-        </div>
-    </div>
-</header>
 
-<div class="container-fluid"  ng-view>
+         <form id="search" >
+             <div class="input-group">
+                 <input type="text" class="form-control" placeholder="Search">
+                 <div class="input-group-btn">
+                     <button class="btn btn-default" type="submit">
+                         <i class="glyphicon glyphicon-search"></i>
+                     </button>
+                 </div>
+             </div>
+         </form>
 
-</div>
+         <div id="logoBarImgContainerHome" >
+             <img class="w3-content" id="logoBarImgHome" alt="logo">
+         </div>
+         <div class="menu" id="menu">
+             <a class="closeButton" ng-click="close()"><i class="glyphicon glyphicon-remove-circle w3-large"></i></a>
+             <ul >
+                 <li> <a href="#!/userProfile"><img src="../images/iconaprofilopersonale.png" ng-click="close()">Profilo Personale </a></li>
+                 <li> <a href="#!/pregaView"><img src="../images/iconapregabianca.png" ng-click="close()">Prega</a>  </li>
+                 <li> <a href="#!/calendar"> <img src="../images/iconacalendario.png" ng-click="close()">Calendario/Eventi/Forum  </a></li>
+                 <li> <a href="#!/usersList"> <img src="../images/iconachat.png" ng-click="close()">Chat  </a></li>
+                 <li> <a href="#!/tutor"> <img src="../images/iconatutor.png" ng-click="close()">Tutor </a></li>
+             </ul>
+         </div>
+     </div>
+ </header>
 
-</body>
-</html>
+ <div class="container-fluid"  ng-view>
+
+ </div>
+
+ </body>
+ </html>
 
 

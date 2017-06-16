@@ -109,12 +109,9 @@ input.form-control {
     font-size:10px;
 
     color: #fff;
-    margin-top:50px;
-    margin-left:-18px;
-    line-height:0.5px;
-
-
-
+    margin-top:-20px;
+    margin-left:-8px;
+    line-height:2px;
 }
 
 
@@ -195,7 +192,7 @@ input.form-control {
     align-items:right;
     height: 65px;
     z-index: 1000;
-   
+
     }
 
 #userNameHome{
@@ -287,7 +284,7 @@ div.media-body {
     background-color: transparent;
     z-index: +300;
     background-attachment:scroll;
-    text-align: justify;
+    text-align: center;
     align-content: space-between;
     }
 #frasedelgiorno{
