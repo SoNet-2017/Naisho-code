@@ -86,6 +86,7 @@ angular.module('myApp.pregaView', ['ngRoute'])
             $scope.reset =function() {
     clearInterval($scope.control);
     clearInterval($scope.cronometro);
+    
     var centesimi = 0;
     var secondi= 0;
     var minuti= 0;
@@ -115,6 +116,8 @@ angular.module('myApp.pregaView', ['ngRoute'])
                     $("#play").attr("class","glyphicon glyphicon-play aligned")
                     status = 2;
                 }
+
             };
+
 
     }]);
