@@ -16,19 +16,30 @@
 <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{googleMapsUrl}}" class="google-maps">
 
 
-    <ng-map center="{{pos.lat}}, {{pos.lng}}" zoom="15">
+    <ng-map center="{{pos.lat}}, {{pos.lng}}" zoom="12">
+
         <marker position="{{pos.lat}},{{pos.lng}}"></marker>
-    </ng-map>
-</div>
+        <marker position="{{lat}},{{lng}}"></marker>
+
+        <!-- <div ng-repeat="user in Value=(dati.listaUtenti | filter:{logged:true} | filter:{$id: '!' + dati.userId})"
+              ng-options="user.address for (user.$id , user.address) in Value" >
+          <marker position="{{user.address.lat}},{{user.address.lng}}">></marker>
+         </div>-->
+      </ng-map>
 
 
-<!--<div id="profilo2">
-    <div class="row">
-        <div class="col-xs-12">
 
-        </div>
-    </div>
 
-</div>-->
+  </div>
+
+
+  <!--<div id="profilo2">
+      <div class="row">
+          <div class="col-xs-12">
+
+          </div>
+      </div>
+
+  </div>-->
 
 
