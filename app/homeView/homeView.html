@@ -24,7 +24,7 @@
     <div class="w3-container" id="eventi" >
         <ul class="media-list" id="elencoEventi">
             <li class="media" ng-repeat="evento in dati.eventiDaMostrare">
-                <a href="#!/details/:{{evento.ID}}">
+                <a href="#!/details/{{evento.ID}}">
                     <div  class="eventiHome">
                         <h4 class="media-heading"><strong>{{evento.Titolo}}</strong></h4>
                         <p>{{evento.Giorno}} - {{evento.Mese}}</p>
@@ -36,7 +36,7 @@
    <a herf="#!/addPost"> <button id="condividi">Condividi</button></a>
 <div class="w3-container" id="bodyHome" >
     <li class="media" ng-repeat="post in dati.posts">
-        <a href="#!/singlePost/:{{post.Id}}">
+        <a href="#!/singlePost/{{post.Id}}">
             <div  class="postHome">
                 <h4 class="media-heading"><strong>{{post.userPost}}</strong></h4>
                 <p>{{post.contenuto}}</p>

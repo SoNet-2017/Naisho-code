@@ -1,32 +1,37 @@
 <link rel="stylesheet" href="../styles/custom.css"/>
 <h1><b>Profilo personale</b></h1>
-<div id="profilo1">
+<div id="profilo1" >
     <div class="row">
-    <div class="col-xs-12">
+         <div class="col-xs-12">
 
-        <div class="page-header">
+            <div class="page-header">
             <img src="../images/user.png" id="userIcon" alt="immagine del profilo">
-            <h1>{{dati.user.name}} <br>{{dati.user.surname}} <br> {{dati.user.DataDiNascita}} </h1>
-        </div>
+            <h1>{{dati.user.name}} <br>{{dati.user.surname}} <br> {{dati.user.email}} </h1>
+            </div>
         <div class="clear"></div>
-        <div id="profile-bar">
+            <div id="profile-bar">
         <a href="#!editProfile" id="changeImg">Cambia immagine</a>
         <a href="#!editProfile" ><i class="glyphicon glyphicon-pencil" id="edit"> Modifica Profilo</i></a>
         <a href="#!pregaView" ><img src="../images/iconapregablu.png" id="prega"  >Prega</a>
             <a href="#!tutorView" ><img src="../images/iconatutorblu.png" id="tutor"> Tutor</a>
 
        <!-- <a href="#" ng-click="logout()" class="w3-bar-item w3-button"><i class="glyphicon glyphicon-off"></i> Disconnetti</a> -->
+            </div>
         </div>
-    </div>
     </div>
 
 </div>
-<div id="profilo2">
-    <div class="row">
-        <div class="col-xs-12">
 
-        </div>
-    </div>
+<div id="profilo2" class="container">
+   <li class="media" ng-repeat="forum in dati.forum">
+                <a href="#!/singleForum/{{forum.id}}">
+                    <div  class="forumHome">
+                        <h4 class="media-heading"><strong>{{forum.titolo}}</strong></h4>
+                        <p>{{forum.argomento}}</p>
+                        <!--<span><button class="mi piace">Mi Piace</button><button class="commenta">Commenta</button></span>-->
+                    </div>
+                </a>
+    </li>
 
 </div>
 

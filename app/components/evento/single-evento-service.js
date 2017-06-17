@@ -7,6 +7,7 @@ angular.module('myApp.evento.singleEventoService', [])
         var singleEventoService = {
             getSingleEvento: function (eventoId) {
                 var ref = firebase.database().ref().child("eventi").child(eventoId);
+                console.log(ref);
                 // download the data into a local object
                 return $firebaseObject(ref);
             }

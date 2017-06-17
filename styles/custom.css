@@ -16,7 +16,15 @@ body{
 #commento{
     display: none;
 }
-/*#log {
+/*#log {<li class="media" ng-repeat="post in dati.posts">
+        <a href="#!/singlePost/{{post.Id}}">
+            <div  class="postHome">
+                <h4 class="media-heading"><strong>{{post.userPost}}</strong></h4>
+                <p>{{post.contenuto}}</p>
+                <!--<span><button class="mi piace">Mi Piace</button><button class="commenta">Commenta</button></span>-->
+            </div>
+        </a>
+    </li>
 
      padding-top: 0px;
       background-attachment:scroll;
