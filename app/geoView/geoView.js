@@ -19,8 +19,8 @@ angular.module('myApp.geoView', ['ngRoute'])
         });
     }])
 
-    .controller('geoViewCtrl', ['$scope', '$rootScope','InsertGeocoordService', '$firebaseAuth',
-        function($scope, $rootScope, InsertGeocoordService, $firebaseAuth){
+    .controller('geoViewCtrl', ['$scope', '$rootScope',
+        function($scope, $rootScope){
 //initialize variables
             $scope.dati = {};
             $scope.address= {};
@@ -30,17 +30,17 @@ angular.module('myApp.geoView', ['ngRoute'])
 
 //set the variable that is used in the main template to show the active button
             $rootScope.dati.currentView = "geoView";
-            var userId = $firebaseAuth().$getAuth().uid;
+            //var userId = $firebaseAuth().$getAuth().uid;
             $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qAQOEvZs2XlUUu3ziu-nrDX-WWZXap4";
             $scope.geo = navigator.geolocation.getCurrentPosition(function(position) {
 
                 $scope.pos.lat = position.coords.latitude;
                 $scope.pos.lng = position.coords.longitude;
 
-                console.log("userId utente da geoview:", userId);
-                $scope.address = {lat: $scope.pos.lat, lng: $scope.pos.lng};
-                InsertGeocoordService.insertNewcoordinate($scope.address, userId);
-                console.log("coordinate utente da geoview:", $scope.address);
+                //console.log("userId utente da geoview:", userId);
+               // $scope.address = {lat: $scope.pos.lat, lng: $scope.pos.lng};
+               // InsertGeocoordService.insertNewcoordinate($scope.address, userId);
+               // console.log("coordinate utente da geoview:", $scope.address);
 
             });
 

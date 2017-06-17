@@ -18,13 +18,15 @@ angular.module('myApp.homeView', ['ngRoute','myApp.evento','myApp.post'])
       }
   });
 }])
-    .controller('homeCtrl', ['$scope', '$location', 'Auth', '$firebaseObject','Users', 'currentAuth', '$firebaseAuth','$rootScope','Evento','Post', function ($scope,$location, Auth, $firebaseObject, Users, currentAuth, $firebaseAuth,$rootScope, Evento,Post) {
+    .controller('homeCtrl', ['$scope', '$location', 'Auth', '$firebaseObject','Users', 'currentAuth', '$firebaseAuth','InsertGeocoordService','$rootScope','Evento','Post',
+        function ($scope,$location, Auth, $firebaseObject, Users, currentAuth, $firebaseAuth, InsertGeocoordService, $rootScope, Evento,Post) {
         $scope.dati={};
         $scope.auth=Auth;
         $scope.dati.evm = this;
         $scope.dati.evm.positions = [];
         $scope.dati.eventiDaMostrare=[];
         $scope.dati.post=[];
+        $scope.pos = {};
 
         $scope.showSearchItem=function () {
             var x = document.getElementById("typeSearchContentHome");
@@ -80,6 +82,21 @@ angular.module('myApp.homeView', ['ngRoute','myApp.evento','myApp.post'])
           }
 
         });
+
+        //funzione per la geolocalizzazione di tutti gli utenti connessi, così come effettuano il login possiamo sapere già dove si trovano
+        var userId = $firebaseAuth().$getAuth().uid;
+        $scope.geo = navigator.geolocation.getCurrentPosition(function(position) {
+
+            $scope.pos.lat = position.coords.latitude;
+            $scope.pos.lng = position.coords.longitude;
+
+            console.log("userId utente da homeView:", userId);
+            $scope.address = {lat: $scope.pos.lat, lng: $scope.pos.lng};
+            InsertGeocoordService.insertNewcoordinate($scope.address, userId);
+            console.log("coordinate utente da homeView:", $scope.address);
+
+        });
+
 
         //funzione post nella home
         $scope.dati.posts = Post.getData();
