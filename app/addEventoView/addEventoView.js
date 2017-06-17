@@ -44,15 +44,8 @@ angular.module('myApp.addEventoView', ['ngRoute'])
                     $scope.dati.error = "Hai dimenticato di inserire informazioni importanti!";
                 }
             };
-            //initialize the function that will be called when a new file will be specified by the user
-           // ctrl.onChange = function onChange(fileList) {
-             //   $scope.fileToUpload = fileList[0];
-            //};
-            //function that will create the new record  in the Firebase storage
-           // var mese=$scope.dati.data.getMonth();
-            //mese=mese+1;
 
-           // var giorno=$scope.dati.data.getDay();
+
             console.log($scope.dati.data);
             $scope.finalEventoAddition = function()
             {

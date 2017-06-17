@@ -2,5 +2,10 @@
 <h1>{{dati.userPost}}</h1>
 
 <p>{{dati.post.contenuto}}</p>
+    <span><button class="mi piace">Mi Piace</button><button class="commenta" ng-click="commenta()">Commenta</button></span>
+    <div class="container" ><li class="media" ng-repeat="commenti in dati.post.commenti"></div>
+    <div id="commento"><input type="text" class="textComment" id="textComment" placeholder="Scrivi cosa pensi" ng-model="post.newComment" />
+                        <button ng-submit="salvacommento()" ng-click="closeCommento()"></button>
+    </div>
 
 </div>

@@ -23,13 +23,32 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post'])
     // followed by the function itself.
     //When using this type of annotation, take care to keep the annotation array
     // in sync with the parameters in the function declaration.
-.controller('singlePostViewCtrl', ['$scope', '$rootScope', '$routeParams', 'SinglePost','UsersChatService',
-    function($scope, $rootScope, $routeParams, SinglePost,UsersChatService) {
+.controller('singlePostViewCtrl', ['$scope', '$rootScope', '$routeParams', 'SinglePost','UsersChatService','$firebaseStorage',
+    function($scope, $rootScope, $routeParams, SinglePost,UsersChatService,$firebaseStorage) {
         //initialize variables
         $scope.dati = {};
+        $scope.post={};
 
-
+//per avere i dati del singolo post
         $scope.dati.post = SinglePost.getSinglePost($routeParams.postID);
         console.log( $scope.dati.post );
-        $scope.dati.userPost=UsersChatService.getUserInfo($scope.dati.post.userPost);
+        $scope.dati.post.$loaded().then(function () {
+            $scope.dati.userPost = UsersChatService.getUserInfo($scope.dati.post.userPost);
+
+            //funzione per commentare post:
+
+            //   1)mostra la finestra per inserire il commento
+            $scope.commenta = function () {
+                document.getElementById("commento").style.display = "flex";
+            };
+            //   2)chiude la finestra per inserire il commento dopo che si è premuto il tasto "commenta"
+            $scope.closeCommento = function () {
+                document.getElementById("commento").style.display = "none";
+            };
+//  3)   salva il commento nel database
+            $scope.salvaCommento = function () {
+                SinglePost.commentPost($scope.dati.post.id,$scope.post.newComment);
+                $scope.post.newComment="";
+            };
+        });
     }]);

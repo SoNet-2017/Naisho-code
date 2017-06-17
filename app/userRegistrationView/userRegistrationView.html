@@ -14,10 +14,10 @@
             <label for="txtSurname">Cognome*</label>
             <input type="text" class="form-control" id="txtSurname" placeholder="Inserisci il cognome" name="surname" ng-model="user.surname" />
         </div>
-        <div class="form-group">
+       <!-- <div class="form-group">
             <label for="txtEmail">Data di Nascita</label>
             <input type="date" class="form-control" id="txtDatadiNascita" placeholder="Inserisci Data di Nascita" name="DatadiNascita" ng-model="user.DataDiNascita" />
-        </div>
+        </div>-->
         <div class="form-group">
         <label for="selTipo">Tipologia utente</label>
         <select  class="form-control" id="selTipo" placeholder="sesso" name="sesso" ng-model="user.type" />
@@ -37,7 +37,7 @@
             <input type="email" class="form-control" id="txtEmail" placeholder="Inserisci email" name="email" ng-model="user.email" />
         </div>
         <div class="form-group">
-            <label for="txtPass">Password*</label>
+            <label for="txtPass">Password* (almeno 6 caratteri)</label>
             <input type="password" class="form-control" id="txtPass" placeholder="Password" name="password" ng-model="user.password" />
         </div>
         <div class="form-group">

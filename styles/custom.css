@@ -6,6 +6,16 @@ body{
     background-size: cover;
 
 }
+
+#condividi{
+    color:white;
+    margin-top:150px;
+    margin-left: 50%;
+    text-decoration-color: #3903FF;
+}
+#commento{
+    display: none;
+}
 /*#log {
 
      padding-top: 0px;

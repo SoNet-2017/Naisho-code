@@ -29,13 +29,17 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento'])
         $scope.dati = {};
         $scope.address=[];
         $scope.result=[];
+ var self=this;
+ self.eventoID=$routeParams.eventoID;
+console.log(self);
 
         $scope.dati.evm = this;
         $scope.dati.evm.positions = [];
         //set the variable that is used in the main template to show the active button
         //$rootScope.dati.currentView = "home";
         //get the information of the evento with Id like the one that was passed in the URL path
-        $scope.dati.evento = SingleEvento.getSingleEvento($routeParams.eventoID);
+        //$scope.dati.evento = SingleEvento.getSingleEvento($routeParams.eventoID);
+        $scope.dati.evento = SingleEvento.getSingleEvento(self);
         console.log("questo è l'evento Id da detailsView",$routeParams.eventoID);
         $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qAQOEvZs2XlUUu3ziu-nrDX-WWZXap4";
         //when the information about the pizza will be loaded, then the map will be created adding a marker in the location

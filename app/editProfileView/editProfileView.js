@@ -60,13 +60,12 @@ angular.module('myApp.editProfileView', ['ngRoute'])
 
     $scope.finalEdit = function()
     {
-        EditProfileService.editProfile($scope.dati.name,$scope.dati.surname, $scope.dati.DataDiNascita,$scope.dati.nuovapassword,$scope.dati.nuovapassword2,$scope.dati.buddista,$scope.dati.tutor, $scope.imgPath).then(function(ref) {
+        EditProfileService.editProfile($scope.dati.name,$scope.dati.surname, $scope.dati.nuovapassword,$scope.dati.nuovapassword2,$scope.dati.buddista,$scope.dati.tutor, $scope.imgPath).then(function(ref) {
             var userId = ref.key;
             UsersService.updateUser(userId);
             $scope.dati.feedback = "Il profilo è stato modificato corretamente";
             $scope.dati.name = "";
             $scope.dati.surname = "";
-            $scope.dati.DataDiNascita = "";
             $scope.dati.nuovapassword="";
             $scope.dati.nuovapassword2="";
             $scope.dati.buddista="";

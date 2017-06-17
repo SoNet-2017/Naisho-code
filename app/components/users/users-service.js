@@ -24,7 +24,7 @@ angular.module('myApp.users.usersService', [])
                 });
 
             },
-            registerNewUserInfo: function (userId, name, surname, email,Nascita, type,Buddista) {
+            registerNewUserInfo: function (userId, name, surname, email,type,Buddista) {
                 //add the user to list of users and set the logged value to true
                 var ref = firebase.database().ref().child("users").child(userId);
                 // create a synchronized array
@@ -32,7 +32,6 @@ angular.module('myApp.users.usersService', [])
                     name: name,
                     surname: surname,
                     email: email,
-                    Nascita: Nascita,
                     type: type,
                     buddista: Buddista
                 });

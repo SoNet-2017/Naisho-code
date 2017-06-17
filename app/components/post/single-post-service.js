@@ -10,7 +10,18 @@ angular.module('myApp.post.singlePostService', [])
                 // download the data into a local object
                 return $firebaseObject(ref);
                 console.log(ref);
+            },
+            commentPost: function (postId,newComment) {
+                var ref = firebase.database().ref().child("posts").child(postId).child("commenti");
+                var commentId = ref.key;
+                // download the data into a local object
+                return $firebaseArray(ref).add({
+                    commentId: commentId,
+                    commento:newComment
+                });
+
             }
+
         };
         return singlePostService;
     });

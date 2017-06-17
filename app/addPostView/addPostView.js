@@ -70,7 +70,7 @@ angular.module('myApp.addPostView', ['ngRoute'])
 
             $scope.finalPostAddition = function()
             {
-                InsertPostService.insertNewPost(  $scope.dati.contenuto).then(function(ref) {
+                InsertPostService.insertNewPost($scope.dati.contenuto).then(function(ref) {
                     var postId = ref.key;
 
                     InsertPostService.updatePost(postId);

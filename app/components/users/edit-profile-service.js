@@ -15,7 +15,6 @@ angular.module('myApp.users.EditProfileService', [])
                 ref.update({
                     name:name,
                     surname:surname,
-                    Nascita:DataDiNascita,
                     buddista: buddista,
                 });
                 user.updatePassword(nuovapassword).then(function() {
