@@ -1,10 +1,3 @@
-<!--
-    <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{googleMapsUrl}}" class="col-md-8">
-    <ng-map center="45.071087, 7.686567" zoom="12">
-        <marker ng-repeat="pos in dati.vm.positions" position="{{pos.lat}},{{pos.lng}}"></marker>
-    </ng-map>
-</div>
--->
 <div id="geoIcon">
 
     <h1><b>Trova Buddisti</b></h1>
@@ -18,28 +11,26 @@
 
     <ng-map center="{{pos.lat}}, {{pos.lng}}" zoom="12">
 
-        <marker position="{{pos.lat}},{{pos.lng}}"></marker>
-        <marker position="{{lat}},{{lng}}"></marker>
+        <marker position="{{pos.lat}},{{pos.lng}}" title="Tu sei qui" ></marker>
 
-        <!-- <div ng-repeat="user in Value=(dati.listaUtenti | filter:{logged:true} | filter:{$id: '!' + dati.userId})"
-              ng-options="user.address for (user.$id , user.address) in Value" >
-          <marker position="{{user.address.lat}},{{user.address.lng}}">></marker>
-         </div>-->
+        <marker position="{{lat}},{{lng}}" title="{{nome}}"></marker>
+
+
       </ng-map>
+
+    <body>
+    <h5> <b>Opzioni di ricerca:</b>
+        <button  ng-click="tutti()">Buddisti e Tutor</button>
+        <button  ng-click="buddisti()">Solo Buddisti</button>
+        <button  ng-click="tutor()">Solo Tutor</button>
+    </h5>
+
+    </body>
 
 
 
 
   </div>
 
-
-  <!--<div id="profilo2">
-      <div class="row">
-          <div class="col-xs-12">
-
-          </div>
-      </div>
-
-  </div>-->
 
 

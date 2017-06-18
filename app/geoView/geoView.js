@@ -36,47 +36,55 @@ angular.module('myApp.geoView', ['ngRoute'])
             $rootScope.dati.currentView = "geoView";
 
             $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qAQOEvZs2XlUUu3ziu-nrDX-WWZXap4";
+
             $scope.geo = navigator.geolocation.getCurrentPosition(function(position) {
 
                 $scope.pos.lat = position.coords.latitude;
                 $scope.pos.lng = position.coords.longitude;
-
-                //console.log("userId utente da geoview:", userId);
-               // $scope.address = {lat: $scope.pos.lat, lng: $scope.pos.lng};
-               // InsertGeocoordService.insertNewcoordinate($scope.address, userId);
-               // console.log("coordinate utente da geoview:", $scope.address);
 
             });
 
             $scope.dati.listaUtenti = UserList.getListOfUsers();
             $scope.dati.userId = $firebaseAuth().$getAuth().uid;
             $scope.dati.listaUtenti.$loaded().then(function () {
-                for (var i=0;i<$scope.dati.listaUtenti.length; i++){
-                    if ($scope.dati.userId!== $scope.dati.listaUtenti[i].$id && $scope.dati.listaUtenti[i].logged===true){
-                        //for (var b=0;i<($scope.dati.listaUtenti.length*2); b=+2){
-                        $scope.lat=$scope.dati.listaUtenti[i].address.lat;
-                        $scope.lng=$scope.dati.listaUtenti[i].address.lng;
+                $scope.tutti = function() {
+                    for (var i=0;i<$scope.dati.listaUtenti.length; i++){
+                        if ($scope.dati.userId!== $scope.dati.listaUtenti[i].$id && $scope.dati.listaUtenti[i].logged===true){
 
-                console.log("lat e lng di tutti", $scope.lat, $scope.lng);
-                //$scope.dati.vm.positions.push({address: address});
-                    //}
-                }}});
+                            $scope.lat=$scope.dati.listaUtenti[i].address.lat;
+                            $scope.lng=$scope.dati.listaUtenti[i].address.lng;
+                            $scope.nome=$scope.dati.listaUtenti[i].name  +' '+  $scope.dati.listaUtenti[i].surname;
 
-           // console.log("vediamo cosa è dati.listaUtenti:",  $scope.dati.listaUtenti);
-           // var c=$scope.listaUtenti.$keyAt($scope.listaUtenti[1]);
-          //  console.log("quanto vale $scope.listaUtenti.length", c);
+                            console.log("lat e lng di tutti", $scope.lat, $scope.lng);
+                        }}};
 
-          // for (var i=0;i<$scope.listaUtenti.length; i++){
-            //   console.log("quanto vale $scope.dati.availableUsers.length", $scope.dati.availableUsers.length);
-            //    if ($scope.userId!== $scope.dati.availableUsers.$keyAt(i).$id) {
-            //        console.log("siamo dentro l'if");
-             //      $scope.lat[i]=$scope.dati.availableUsers.$keyAt(i).address.lat;
-             //      $scope.lng[i]=$scope.dati.availableUsers.$keyAt(i).address.lng;
-             //      console.log("vediamo cosa salva il for:",  $scope.lat[i],$scope.lng[i]);
+                $scope.buddisti = function() {
+                    for (var i=0;i<$scope.dati.listaUtenti.length; i++){
+                        if ($scope.dati.userId!== $scope.dati.listaUtenti[i].$id
+                            && $scope.dati.listaUtenti[i].logged===true
+                            && $scope.dati.listaUtenti[i].buddista==='si'){
 
-              // }
-           // }
+                            $scope.lat=$scope.dati.listaUtenti[i].address.lat;
+                            $scope.lng=$scope.dati.listaUtenti[i].address.lng;
+                            $scope.nome=$scope.dati.listaUtenti[i].name +' '+ $scope.dati.listaUtenti[i].surname;
 
+                            console.log("lat e lng di tutti", $scope.lat, $scope.lng);
+                        }}};
+
+                $scope.tutor = function() {
+                    for (var i=0;i<$scope.dati.listaUtenti.length; i++){
+                        if ($scope.dati.userId!== $scope.dati.listaUtenti[i].$id
+                            && $scope.dati.listaUtenti[i].logged===true
+                            && $scope.dati.listaUtenti[i].buddista==='no'){
+
+                            $scope.lat=$scope.dati.listaUtenti[i].address.lat;
+                            $scope.lng=$scope.dati.listaUtenti[i].address.lng;
+                            $scope.nome=$scope.dati.listaUtenti[i].name +' '+ $scope.dati.listaUtenti[i].surname;
+
+                            console.log("lat e lng di tutti", $scope.lat, $scope.lng);
+                        }}};
+
+            });
         }]);
 
 
