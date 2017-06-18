@@ -30,11 +30,12 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post','myApp.users'])
         $scope.post={};
 
 //per avere i dati del singolo post
-        console.log($routeParams.postID)
+        console.log("sei qui",$routeParams.postID)
         $scope.dati.post = SinglePost.getSinglePost($routeParams.postID);
         console.log( $scope.dati.post );
         $scope.dati.post.$loaded().then(function () {
             $scope.dati.userPost = UsersChatService.getUserInfo($scope.dati.post.userPost);
+            console.log("questo è dati.userPost:", $scope.dati.userPost);
 
             //funzione per commentare post:
 
