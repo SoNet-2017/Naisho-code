@@ -7,7 +7,7 @@
 -->
 <div id="geoIcon">
 
-    <h1><b>Trova Buddisti</b></h1>
+    <h1><b>Trova gli altri Buddisti vicino a te!</b></h1>
     <h4 style="font-weight:bold"></h4>
 
 </div>
@@ -19,7 +19,7 @@
     <ng-map center="{{pos.lat}}, {{pos.lng}}" zoom="12">
 
         <marker position="{{pos.lat}},{{pos.lng}}"></marker>
-        <marker position="{{lat}},{{lng}}"></marker>
+        <marker position="{{lat}},{{lng}}" ></marker>
 
         <!-- <div ng-repeat="user in Value=(dati.listaUtenti | filter:{logged:true} | filter:{$id: '!' + dati.userId})"
               ng-options="user.address for (user.$id , user.address) in Value" >
