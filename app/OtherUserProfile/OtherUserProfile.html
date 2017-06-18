@@ -1,0 +1,50 @@
+<div id="otherProfile">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header">
+                <h1>{{dati.recipient.name}} {{dati.recipient.surname}}  {{dati.recipient.email}}</h1>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="buttonOtherProfile">
+        <div>
+            <div id="tutorDiv" >
+                <button ng-click="removeTutor(tutors.id)" type="submit" class="btn btn-info" style="float: right;">Non essere più tutor</button></div>
+            <div ng-if="tutors.tutor.userId != dati.userId.$id && tutors.tutored != dati.recipient.userId">
+                <button id="tutorButton"  ng-click="CreateTutor();" type="submit" class="btn btn-primary" ng-if="" style="float: right;">Diventa tutor</button>
+            </div>
+        </div>
+        <div>
+            <div id="tutoredDiv" >
+
+                <button ng-click="removeTutor(tutors.id)" type="submit" class="btn btn-info" style="float: right;">Non farmi più da tutor</button></div>
+            <div ng-if="tutors.tutored.userId != dati.userId.$id && tutors.tutor != dati.recipient.userId">
+                <button id="tutoredButton"  ng-click="CreateTutored();" type="submit" class="btn btn-primary" ng-if="" style="float: right;">Fammi da tutor</button>
+            </div>
+        </div>
+        <div>
+            <div id="friendDiv" >
+                <button ng-click="removeFriendship(friends.id)" type="submit" class="btn btn-info" style="float: right;">Rimuovi dagli amici</button></div>
+            <div ng-if="friends.src.userId != dati.userId.$id && friends.dest != dati.recipient.userId">
+                <button id="friendsButton"  ng-click="CreateFriendship();" type="submit" class="btn btn-primary" ng-if="" style="float: right;">Richiedi Amicizia</button>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<div id="otherProfileInfo">
+    <h4>Post</h4>
+    <div ng-repeat="post in dati.post" ng-if ="dati.recipient.userId == post.UserPost" >
+
+    </div>
+</div>
+
+
+
+

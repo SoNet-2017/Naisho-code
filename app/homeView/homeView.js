@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.homeView', ['ngRoute','myApp.evento','myApp.post'])
+angular.module('myApp.homeView', ['ngRoute','myApp.evento','myApp.post','myApp.users'])
 
               .config(['$routeProvider', function($routeProvider) {
                   $routeProvider.when('/homeView', {
@@ -18,8 +18,8 @@ angular.module('myApp.homeView', ['ngRoute','myApp.evento','myApp.post'])
       }
   });
 }])
-    .controller('homeCtrl', ['$scope', '$location', 'Auth', '$firebaseObject','Users', 'currentAuth', '$firebaseAuth','InsertGeocoordService','$rootScope','Evento','Post',
-        function ($scope,$location, Auth, $firebaseObject, Users, currentAuth, $firebaseAuth, InsertGeocoordService, $rootScope, Evento,Post) {
+    .controller('homeCtrl', ['$scope', '$location', 'Auth', '$firebaseObject','Users', 'currentAuth', '$firebaseAuth','InsertGeocoordService','$rootScope','Evento','Post','UsersChatService',
+        function ($scope,$location, Auth, $firebaseObject, Users, currentAuth, $firebaseAuth, InsertGeocoordService, $rootScope, Evento,Post,UsersChatService) {
         $scope.dati={};
         $scope.auth=Auth;
         $scope.dati.evm = this;
@@ -100,6 +100,17 @@ angular.module('myApp.homeView', ['ngRoute','myApp.evento','myApp.post'])
 
         //funzione post nella home
         $scope.dati.posts = Post.getData();
+            $scope.dati.posts.$loaded().then(function () {
+                for (var i=0;i< $scope.dati.posts.length; i++){
+                    console.log($scope.dati.posts[i].userPost);
+                    $scope.dati.posts[i].info = UsersChatService.getUserInfo($scope.dati.posts[i].userPost);
+                    console.log($scope.dati.posts[i].info);
+                    //$scope.dati.posts[i].userName = UsersChatService.getUserName($scope.dati.posts[i].userPost);
+                  //  console.log($scope.dati.posts[i].userName);
+                    //console.log($scope.user.name );
+                }
+
+            });
 
 //funzione post nella home
   //      $scope.dati.forum = Forum.getData();

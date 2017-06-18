@@ -33,7 +33,7 @@ angular.module('myApp.geoView', ['ngRoute'])
 
 
 //set the variable that is used in the main template to show the active button
-            $rootScope.dati.currentView = "geoView";
+
 
             $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qAQOEvZs2XlUUu3ziu-nrDX-WWZXap4";
 

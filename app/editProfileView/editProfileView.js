@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.editProfileView', ['ngRoute'])
+angular.module('myApp.editProfileView', ['ngRoute','myApp.users'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/editProfile', {
@@ -13,6 +13,7 @@ angular.module('myApp.editProfileView', ['ngRoute'])
     $scope.user={};
     $scope.dati = {};
     $scope.dati.feedback = "";
+    $scope.dati.userId = currentAuth.uid;
     var ctrl = this;
     $scope.fileToUpload = null;
     $scope.imgPath= "";
@@ -63,6 +64,7 @@ angular.module('myApp.editProfileView', ['ngRoute'])
         EditProfileService.editProfile($scope.dati.name,$scope.dati.surname, $scope.dati.nuovapassword,$scope.dati.nuovapassword2,$scope.dati.buddista,$scope.dati.tutor, $scope.imgPath).then(function(ref) {
             var userId = ref.key;
             UsersService.updateUser(userId);
+
             $scope.dati.feedback = "Il profilo è stato modificato corretamente";
             $scope.dati.name = "";
             $scope.dati.surname = "";

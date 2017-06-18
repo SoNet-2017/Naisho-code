@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.singlePostView', ['ngRoute','myApp.post'])
+angular.module('myApp.singlePostView', ['ngRoute','myApp.post','myApp.users'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/singlePost/:postID', {
@@ -30,6 +30,7 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post'])
         $scope.post={};
 
 //per avere i dati del singolo post
+        console.log($routeParams.postID)
         $scope.dati.post = SinglePost.getSinglePost($routeParams.postID);
         console.log( $scope.dati.post );
         $scope.dati.post.$loaded().then(function () {
@@ -50,5 +51,20 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post'])
                 SinglePost.commentPost($scope.dati.post.id,$scope.post.newComment);
                 $scope.post.newComment="";
             };
+
+
+            //funzione mi "piace"
+
+            $scope.miPiace= function () {
+                var b=document.getElementById("miPiace");
+               // if(b.attr('disabled')==="false"){
+                 b.style.backgroundColor="#3903FF";
+                //b.innerHTML = "Non mi Piace Più";
+            //}
+                //else {b.style.backgroundColor="gray";
+                //    b.innerHTML = "Mi Piace";
+                  //  b.attr('disabled')==="true";
+                //}
+            }
         });
     }]);

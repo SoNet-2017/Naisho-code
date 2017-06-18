@@ -49,6 +49,12 @@ angular.module('myApp.addEventoView', ['ngRoute'])
             console.log($scope.dati.data);
             $scope.finalEventoAddition = function()
             {
+                var mese=new Date(document.getElementById('txtData').value).getMonth();
+                mese=mese+1;
+                var giorno=new Date(document.getElementById('txtData').value).getDay();
+
+                    console.log(mese);
+                console.log(giorno);
                 InsertEventoService.insertNewEvento( $scope.dati.titolo, $scope.dati.descrizione, $scope.dati.citta,$scope.dati.indirizzo, giorno, mese, $scope.dati.ora).then(function(ref) {
                     var eventoId = ref.key;
 

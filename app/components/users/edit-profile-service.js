@@ -16,14 +16,13 @@ angular.module('myApp.users.EditProfileService', [])
                     name:name,
                     surname:surname,
                     buddista: buddista,
+                    tutor:tutor,
+                    img_url: imgPath
                 });
                 user.updatePassword(nuovapassword).then(function() {
                     // Update successful.
                 });
-                ref.set({
-                    tutor:tutor,
-                    img_url: imgPath,
-                });
+
             }
         };
         return EditProfileService;
