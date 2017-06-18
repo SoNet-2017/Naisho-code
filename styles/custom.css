@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'brook23';
+    src: url('../styles/brook23.ttf') format('truetype');;
+}
+
 body{
     background: url(../images/sfondosulrosso.png) no-repeat 50% 0 fixed;height: 0px;position:relative;
     -webkit-background-size: cover;
@@ -122,6 +127,7 @@ input.form-control {
 /*home*/
 .w3-top{
     overflow: visible;
+
 }
 
 .geobudda{
@@ -308,9 +314,10 @@ div.media-body {
     align-content: space-between;
     }
 #frasedelgiorno{
+    font-family: brook23;
     padding-top: 1em;
     color:white;
-    font-size: 15px;
+    font-size: 20px;
     font-style: italic;
 }
 
