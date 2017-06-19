@@ -17,7 +17,9 @@ body{
     margin-top:150px;
     margin-left: 50%;
     color: #3903FF;
-}
+    font-size: 15px;
+    text-decoration: double;
+  }
 #commento{
     display: none;
     width:100%;
@@ -329,10 +331,8 @@ div.media-body {
 
 }
 
-
-
 #eventi {
-    top: 30%;
+    top: 33%;
     left: 5%;
     width: 90%;
     min-height: 15%;
@@ -353,11 +353,22 @@ div.media-body {
     border-radius: 15px;
     margin-left: 10%;
     align-content: center;
+    padding-left:3%;
 }
 
 #detailPost h1{
-    alignment: center;
-    color: black;
+     alignment: center;
+     color: black;
+     padding-top:3%;
+ }
+/*bottoni mi piace e commenta*/
+#detailPost button{
+    margin:3%;
+    border-radius: 5px;
+    background: #bbbbbb;
+}
+ul {
+    list-style-type: none;
 }
 
 #mappa{

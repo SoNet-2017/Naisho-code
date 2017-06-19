@@ -57,15 +57,20 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post','myApp.users'])
             //funzione mi "piace"
 
             $scope.miPiace= function () {
+                //per cambiare colore
                 var b=document.getElementById("miPiace");
-               // if(b.attr('disabled')==="false"){
-                 b.style.backgroundColor="#3903FF";
-                //b.innerHTML = "Non mi Piace Più";
-            //}
-                //else {b.style.backgroundColor="gray";
-                //    b.innerHTML = "Mi Piace";
-                  //  b.attr('disabled')==="true";
-                //}
+                console.log(b);
+                if(b.style.backgroundColor="#bbbbbb")
+                {console.log("sono qui");
+                    b.style.backgroundColor="#9acae5";
+                    b.innerHTML = "Non mi Piace Più";
+                    console.log(b.style.backgroundColor);
+            }
+                else  if(b.style.backgroundColor="#9acae5"){
+                   console.log("ora sono qui");
+                   b.style.backgroundColor="#bbbbbb";
+                   b.innerHTML = "Mi Piace";
+               }
             }
         });
     }]);

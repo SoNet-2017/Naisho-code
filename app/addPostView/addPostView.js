@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.addPostView', ['ngRoute'])
+angular.module('myApp.addPostView', ['ngRoute','myApp.post'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/addPost', {
