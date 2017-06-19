@@ -41,6 +41,7 @@ angular.module('myApp', [
     'myApp.userRegistrationView',
     'myApp.usersListView',
 
+
 ])
 
     .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

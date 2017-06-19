@@ -795,3 +795,10 @@ h2{
     margin-top: 5px;
     }
 
+/*bottoni calendario*/
+#calendarButton button{
+    border-radius: 5px;
+    }
+#calendarButton {
+   width: 15%;
+}

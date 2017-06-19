@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.calendarView', ['ngRoute'])
+angular.module('myApp.calendarView', ['ngRoute','myApp.evento'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/calendar/', {
@@ -18,10 +18,10 @@ angular.module('myApp.calendarView', ['ngRoute'])
             }
         })
     }])
-    .controller('calendarViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth',
-        function($scope, $rootScope, $routeParams, currentAuth){
+    .controller('calendarViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth','Evento',
+        function($scope, $rootScope, $routeParams, currentAuth,Evento){
             //initialize variables
-            $scope.dati = {};
+
 
 
         }]);
