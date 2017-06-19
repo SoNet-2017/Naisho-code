@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'brook23';
+    font-family: 'Walt_Disney_Script';
     src: url('../styles/brook23.ttf') format('truetype');;
 }
 
@@ -783,4 +783,14 @@ h2{
     color: #3903FF;
     margin-top: 5px;
     }
+
+
+
+/*calendario*/
+.nuovoevento-forum{
+    margin-left: 50px;
+    margin-top:60px;
+}
+
+
 

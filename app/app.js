@@ -40,7 +40,7 @@ angular.module('myApp', [
     'myApp.userProfileView',
     'myApp.userRegistrationView',
     'myApp.usersListView',
-
+    'myApp.users.usersListService'
 ])
 
     .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
@@ -62,12 +62,11 @@ angular.module('myApp', [
 
         //set the variable that is used in the main template to show the active button
         $rootScope.dati = {};
-        $scope.auth=Auth;
-       //creare una funzione per richiamare questo $firebaseAuth().$getAuth().CurrentUser)
+        $scope.auth = Auth;
+        //creare una funzione per richiamare questo $firebaseAuth().$getAuth().CurrentUser)
         //if ($firebaseAuth().$getAuth()!=null)
         //{console.log("ciao"+$firebaseAuth().$getAuth().CurrentUser);}
-        $scope.isLogged = function()
-        {
+        $scope.isLogged = function () {
             if ($firebaseAuth().$getAuth())
                 return true;
             else
@@ -79,7 +78,7 @@ angular.module('myApp', [
             Users.registerLogout($firebaseAuth().$getAuth().uid);
             //sign out
             $firebaseAuth().$signOut();
-            $firebaseAuth().$onAuthStateChanged(function(firebaseUser) {
+            $firebaseAuth().$onAuthStateChanged(function (firebaseUser) {
                 if (firebaseUser) {
                     console.log("User is yet signed in as:", firebaseUser.uid);
                 } else {
@@ -93,21 +92,80 @@ angular.module('myApp', [
         // menu a comparsa
         $scope.show = function () {
             //document.getElementById("menu").style.left = "0px";
-            document.getElementById("menu").style.display="flex";
+            document.getElementById("menu").style.display = "flex";
         };
-        $scope.close= function()  {
+        $scope.close = function () {
             //document.getElementById("menu").style.left = "-250px";
-            document.getElementById("menu").style.display="none";
+            document.getElementById("menu").style.display = "none";
         };
-        $scope.search=function(){
-            
+
+
+        //barra di ricerca
+        /*$scope.search=function()
+
+
+           /* document.getElementById("search").style.display="flex"
+            app.controller('autoCompleteController',['$scope',function($scope){
+
+                &scope.location="components/users/users-list-service.js";
+
+            }]);
+            app.directive('autoCompleteDirective',function($http){
+                return{
+                    restrict:'A',
+                    scope:{
+                        url:'@'
+                    },
+                    link:function(scope,elm,attrs){
+                        elm.autocomplete({
+                            source:function(request,response) {
+                                $http({method: 'jsonp', url: scope.url,params:{q:request.term}}).success(function (data) {
+                                    response(data);
+
+                                })
+                            },
+                            minLength:3
+
+
+
+                        })
+                    }
+                }
+
+            });}*/
+
+
+                /*.factory('UserList', function($firebaseArray) {
+                    var userListService = {
+                        getListOfUsers: function () {
+                            //get the list of users
+                            var ref = firebase.database().ref().child("users");
+                            // download the data into a local object
+                            return $firebaseArray(ref);
+                        }
+                    };
+                    return userListService;
+
+
+            $scope.dati.listaUtenti = UserList.getListOfUsers();
+            $scope.dati.userId = $firebaseAuth().$getAuth().uid;
+            $scope.dati.listaUtenti.$loaded().then(function () {
+                $scope.tutti = function() {
+                    for (var i=0;i<$scope.dati.listaUtenti.length; i++){
+
+                            $scope.nome=$scope.dati.listaUtenti[i].name  +' '+  $scope.dati.listaUtenti[i].surname;
+
+                            console.log( $scope.nome, $scope.surname);
+                        }}});
+
+        });
 
 
 
 
 
-        };
-    }]);
+        };;*/
+    }])
 /*.config(function($routeProvider){
  $routeProvider.when("/utenti",{...})
  .when("/utenti/:userId",{...})
