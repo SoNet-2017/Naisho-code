@@ -23,5 +23,4 @@ angular.module('myApp.calendarView', ['ngRoute','myApp.evento'])
             //initialize variables
 
 
-
         }]);
