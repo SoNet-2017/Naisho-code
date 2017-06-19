@@ -24,5 +24,5 @@ angular.module('myApp.post.insertPostService', [])
                 });
             }
         };
-        return InsertEventoService;
+        return InsertPostService;
     });
