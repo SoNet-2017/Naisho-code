@@ -465,6 +465,12 @@ img.media-object{
     color:black;
     line-height: inherit;
 }
+#profilo2 h1{
+    font-size: initial;
+    padding-top:5px;
+    color:black;
+    line-height: inherit;
+}
  h1{
      padding-top: 75px;
      color: white;
