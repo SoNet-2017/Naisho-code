@@ -1,9 +1,9 @@
 'use strict'
 
-angular.module('myApp.users.usersTutorService', [])
+angular.module('myApp.users.usersTutor', [])
 
     .factory('UsersTutorService', function usersTutorService($firebaseArray, $firebaseObject) {
-        var NewUsersTutorService = {
+        var UsersTutorService = {
             getTutors: function() {
                 var ref = firebase.database().ref().child("tutors");
                 return $firebaseArray(ref);
@@ -37,6 +37,6 @@ angular.module('myApp.users.usersTutorService', [])
                 refDel.remove();
             }
         };
-        return NewUsersTutorService;
+        return UsersTutorService;
     });
 

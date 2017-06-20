@@ -9,7 +9,7 @@ angular.module('myApp.editProfileView', ['ngRoute','myApp.users'])
   });
 }])
 
-.controller('editProfileViewCtrl', ['$scope', '$rootScope', 'Auth', 'Users', '$location','EditProfileService','$firebaseStorage','UsersService', function($scope, $rootScope, Auth, Users, $location, EditProfileService,$firebaseStorage,UsersService) {
+.controller('editProfileViewCtrl', ['$scope', '$rootScope', 'Auth', 'Users', '$location','$firebaseStorage','UsersService','EditProfileService', function($scope, $rootScope, Auth, Users, $location,$firebaseStorage,UsersService, EditProfileService) {
     $scope.user={};
     $scope.dati = {};
     $scope.dati.feedback = "";

@@ -13,7 +13,7 @@ angular.module('myApp.evento.insertEventoService', [])
                     id: id,
                     title: titolo,
                     Descrizione: descrizione,
-                    Citta: citta,
+                    Città: citta,
                     Indirizzo: indirizzo,
                     Giorno: giorno,
                     Mese:mese,
