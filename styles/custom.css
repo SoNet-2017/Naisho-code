@@ -351,7 +351,7 @@ div.media-body {
     border-radius: 15px;
     margin-left: 10%;
 }
-#detailPost{
+#detailPost, #detailForum{
     margin-top:100px;
     font-size:20px;
     background: white;
@@ -359,6 +359,7 @@ div.media-body {
     margin-left: 10%;
     align-content: center;
     padding-left:3%;
+    padding-bottom:5px;
 }
 
 #detailPost h1{
@@ -374,6 +375,20 @@ div.media-body {
 }
 ul {
     list-style-type: none;
+}
+#detailForum h1{
+    alignment: center;
+    color: black;
+    padding-top:3%;
+}
+#commentiForum{
+    min-height:200px;
+    background: white;
+    border-radius: 15px;
+    margin-left: 10%;
+    align-content: center;
+    padding:3%;
+    margin-top:5px;
 }
 
 #mappa{

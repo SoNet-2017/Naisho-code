@@ -29,5 +29,5 @@ angular.module('myApp.singleForumView', ['ngRoute','myApp.forum'])
         $scope.dati = {};
 
         $scope.dati.forum = SingleForum.getSingleForum($routeParams.forumID);
-
+console.log($scope.dati.forum);
     }]);
