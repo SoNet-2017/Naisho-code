@@ -145,7 +145,7 @@ input.form-control {
     margin-left:0px;
     line-height:1px;
     height:50px;
-    
+
 
 }
 #geoIcon{
@@ -850,19 +850,28 @@ h2{
    margin-top:20px;
 }
 
-#calendario{
+.calendario{
     margin-left: 10px;
     margin-top: 0px;
     padding-left: 10px;
     padding-bottom: 10px;
     float: left;
     width: 75%;
-    height:600px;
+    height:400px;
     background-color:#FFF;
     position: relative;
     display: flex;
-    float :left;
     border-radius: 15px;
+
+
 }
+#dp{
+    height:400px;
+}
+
+
+
+
+
 
 
