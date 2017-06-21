@@ -135,16 +135,15 @@ input.form-control {
 .geobudda{
     font-family: "Helvetica";
     font-size:10px;
-
     color: #fff;
     margin-top:5px;
     margin-left:6px;
     line-height:2px;
 }
 #geoIcon{
-    margin-top:25px;
+    margin-top:5px;
     hspace:10px;
-
+    color: #fff;
 }
 
 
