@@ -2,7 +2,7 @@
 
 angular.module('myApp.users.usersFriendsService', [])
 
-    .factory('UsersFriendsService', function usersFriendsService($firebaseArray, $firebaseObject) {
+    .factory('UsersFriends', function usersFiendsService($firebaseArray, $firebaseObject) {
         var UsersFriendsService = {
             getFriends: function() {
                 var ref = firebase.database().ref().child("friends");
@@ -37,6 +37,6 @@ angular.module('myApp.users.usersFriendsService', [])
                 refDel.remove();
             }
         };
-        return NewUsersFriendsService;
+        return UsersFriendsService;
     });
 

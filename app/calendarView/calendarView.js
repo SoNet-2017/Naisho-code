@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.calendarView', ['ngRoute'])
+angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/calendar/', {
@@ -18,10 +18,56 @@ angular.module('myApp.calendarView', ['ngRoute'])
             }
         })
     }])
-    .controller('calendarViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth',
-        function($scope, $rootScope, $routeParams, currentAuth){
-            //initialize variables
-            $scope.dati = {};
+    .controller('calendarViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth','Evento',
+        function($scope, $rootScope, $routeParams, currentAuth,Evento){
+
+        // per scegliere come data di partenza la data odierna
+            var dato = new Date();
+            var a =dato.getDate();
+            if (String(a).length == 1) {
+                a = "0"+a;
+            }
+            //console.log(a);
+            var b=dato.getMonth();
+            b=b+1;
+            if (String(b).length == 1) {
+                b = "0"+b;
+            }
+var data= dato.getFullYear()+"-"+b+"-"+a;
+            console.log(data);
+
+        $scope.config = {
+                startDate: data,
+                viewType: "Week"
+            };
+            $scope.events = Evento.getData();
+            console.log( $scope.events);
 
 
-        }]);
+
+            $scope.add = function() {
+                $scope.events.push(
+                    {
+                        start: new DayPilot.Date("2014-09-01T10:00:00"),
+                        end: new DayPilot.Date("2014-09-01T12:00:00"),
+                        id: DayPilot.guid(),
+                        text: "Simple Event"
+                    }
+                );
+            };
+
+            $scope.move = function() {
+                var event = $scope.events[0];
+                event.start = event.start.addDays(1);
+                event.end = event.end.addDays(1);
+            };
+
+            $scope.rename = function() {
+                $scope.events[0].text = "New name";
+            };
+
+            $scope.message = function() {
+                $scope.dp.message("Hi");
+            };
+
+    }]);

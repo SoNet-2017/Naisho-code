@@ -26,10 +26,10 @@ angular.module('myApp.OtherUserProfile', ['ngRoute','myApp.users','myApp.post'])
 
        $scope.dati.userId = UsersFriendsService.getUserInfo(currentAuth.uid);
        $scope.dati.otherUserId = $routeParams.otherUserId;
-
+       console.log($scope.dati.otherUserId);
 
        $scope.dati.recipient = UsersFriendsService.getUserInfo($scope.dati.otherUserId);
-
+console.log($scope.dati.recipient);
        // dati amicizie
        $scope.dati.friends = UsersFriendsService.getFriends();
        // dati tutor

@@ -135,16 +135,15 @@ input.form-control {
 .geobudda{
     font-family: "Helvetica";
     font-size:10px;
-
     color: #fff;
     margin-top:5px;
     margin-left:6px;
     line-height:2px;
 }
 #geoIcon{
-    margin-top:25px;
+    margin-top:5px;
     hspace:10px;
-
+    color: #fff;
 }
 
 
@@ -350,8 +349,21 @@ div.media-body {
     background: white;
     border-radius: 15px;
     margin-left: 10%;
+    margin-right: 10%;
 }
-#detailPost{
+#detail h1{
+    alignment: center;
+    padding-left: 35%;
+    color: black;
+    padding-top:3%;
+}
+#detail p{
+    alignment: center;
+    color: black;
+    padding-left:3%;
+}
+
+#detailPost,#detailForum{
     margin-top:100px;
     font-size:20px;
     background: white;
@@ -359,6 +371,7 @@ div.media-body {
     margin-left: 10%;
     align-content: center;
     padding-left:3%;
+    padding-bottom:5px;
 }
 
 #detailPost h1{
@@ -375,7 +388,20 @@ div.media-body {
 ul {
     list-style-type: none;
 }
-
+#detailForum h1{
+    alignment: center;
+   color: black;
+   padding-top:3%;
+}
+#commentiForum{
+    min-height:200px;
+    background: white;
+    border-radius: 15px;
+    margin-left: 10%;
+    align-content: center;
+    padding:3%;
+     margin-top:5px;
+ }
 #mappa{
     margin-top:10%;
     height:150px;
@@ -460,6 +486,12 @@ img.media-object{
     height:30em;
 }
 #profilo1 h1{
+    font-size: initial;
+    padding-top:5px;
+    color:black;
+    line-height: inherit;
+}
+#profilo2 h1{
     font-size: initial;
     padding-top:5px;
     color:black;
@@ -805,28 +837,61 @@ h2{
 /*calendario*/
 .nuovoevento-forum{
     margin-left: 10px;
-    margin-top:60px;
+    margin-top:30px;
+    margin-right: 200px;
     line-height:20px;
-   width:20%;
+    width:20%;
     float:left;
+    display:block;
 
 }
-#newEvent{
-   margin-top:20px;
+
+
+
+
+
+#newEvent,#newForum{
+   margin-top:10px;
+
+
 }
 
-#calendario{
-    margin-left: 10px;
-    margin-top: 0px;
+.calendario{
+    margin-left: 0%;
+    margin-top: -140px;
     padding-left: 10px;
     padding-bottom: 10px;
-    float: left;
+    float: right;
     width: 75%;
-    height:600px;
+    margin-right:40px;
+    height:400px;
     background-color:#FFF;
     position: relative;
-    display: flex;
-    float :left;
+    border-radius: 15px;
+    display:block;
+
+}
+.calendar_default_cornerright_inner{
     border-radius: 15px;
 }
+.calendar_default_cornerright{
+    border-radius: 15px;
+}
+.calendar_default_main{
+    border-radius: 15px;
+}
+/*.calendar_default_main{
+    width: 5px;
+    height:40px;
 
+}
+.calendar_default_event_inner{
+    width: 5px;
+    height:40px;
+
+
+}
+#dp{
+    width: 100%;
+    height:40px;
+}*/
