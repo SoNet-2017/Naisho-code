@@ -30,6 +30,7 @@ angular.module('myApp', [
     'myApp.detailsView',
     'myApp.editProfileView',
     'myApp.geoView',
+    'myApp.searchView',
     'myApp.homeView',
     'myApp.loginView',
     'myApp.OtherUserProfile',
@@ -56,12 +57,15 @@ angular.module('myApp', [
             }
         });
     }])
-    .controller('MainCtrl',  ['$scope', '$rootScope', '$firebaseAuth', '$location', 'Auth', 'Users', function($scope, $rootScope, $firebaseAuth, $location, Auth, Users) {
+    .controller('MainCtrl',  ['$scope', '$rootScope', '$firebaseAuth', '$location', 'Auth', 'Users','UserList',
+        function($scope, $rootScope, $firebaseAuth, $location, Auth, Users, UserList) {
         //this controller only declares a function to get information about the user status (logged in / out)
         //it is used to show menu buttons only when the user is logged
 
         //set the variable that is used in the main template to show the active button
         $rootScope.dati = {};
+        $scope.cerca={};
+        $scope.tutti={};
         $scope.auth = Auth;
         //creare una funzione per richiamare questo $firebaseAuth().$getAuth().CurrentUser)
         //if ($firebaseAuth().$getAuth()!=null)
@@ -101,38 +105,39 @@ angular.module('myApp', [
 
 
         //barra di ricerca
-        /*$scope.search=function()
+
+                   /*$scope.search=function()
 
 
-           /* document.getElementById("search").style.display="flex"
-            app.controller('autoCompleteController',['$scope',function($scope){
+               /* document.getElementById("search").style.display="flex"
+                app.controller('autoCompleteController',['$scope',function($scope){
 
-                &scope.location="components/users/users-list-service.js";
+                    &scope.location="components/users/users-list-service.js";
 
-            }]);
-            app.directive('autoCompleteDirective',function($http){
-                return{
-                    restrict:'A',
-                    scope:{
-                        url:'@'
-                    },
-                    link:function(scope,elm,attrs){
-                        elm.autocomplete({
-                            source:function(request,response) {
-                                $http({method: 'jsonp', url: scope.url,params:{q:request.term}}).success(function (data) {
-                                    response(data);
+                }]);
+                app.directive('autoCompleteDirective',function($http){
+                    return{
+                        restrict:'A',
+                        scope:{
+                            url:'@'
+                        },
+                        link:function(scope,elm,attrs){
+                            elm.autocomplete({
+                                source:function(request,response) {
+                                    $http({method: 'jsonp', url: scope.url,params:{q:request.term}}).success(function (data) {
+                                        response(data);
 
-                                })
-                            },
-                            minLength:3
+                                    })
+                                },
+                                minLength:3
 
 
 
-                        })
+                            })
+                        }
                     }
-                }
 
-            });}*/
+                });}*/
 
 
                 /*.factory('UserList', function($firebaseArray) {
@@ -165,7 +170,7 @@ angular.module('myApp', [
 
 
         };;*/
-    }])
+    }]);
 /*.config(function($routeProvider){
  $routeProvider.when("/utenti",{...})
  .when("/utenti/:userId",{...})
