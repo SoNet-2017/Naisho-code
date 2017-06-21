@@ -132,20 +132,34 @@ input.form-control {
 
 }
 
-.geobudda{
+
+
+
+
+.w3-bar-item{
     font-family: "Helvetica";
     font-size:10px;
-
+   text-aligh:center;
     color: #fff;
     margin-top:5px;
-    margin-left:6px;
-    line-height:2px;
-}
-#geoIcon{
-    margin-top:25px;
-    hspace:10px;
+    margin-left:0px;
+    line-height:1px;
+    height:50px;
+    
 
 }
+#geoIcon{
+    margin-top:15px;
+    margin-left:10px;
+
+
+
+
+
+}
+
+
+
 
 
 
