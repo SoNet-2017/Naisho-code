@@ -5,7 +5,7 @@ angular.module('myApp.OtherUserProfile', ['ngRoute','myApp.users','myApp.post'])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/OtherUser/:otherUserId', {
             templateUrl: 'OtherUserProfile/OtherUserProfile.html',
-            controller: 'OtherUserCtrl',
+            controller: 'OtherUserProfileCtrl',
             resolve: {
                 // controller will not be loaded until $requireSignIn resolves
                 // Auth refers to our $firebaseAuth wrapper in the factory below
@@ -19,13 +19,12 @@ angular.module('myApp.OtherUserProfile', ['ngRoute','myApp.users','myApp.post'])
         })
     }])
 
-   .controller('OtherUserCtrl',['$scope','$rootScope','$routeParams','currentAuth','UsersFriends','UsersTutor', 'UserList',
-   function ($scope, $rootScope, $routeParams, currentAuth, UsersFriends,UsersTutor,  UserList) {
+   .controller('OtherUserProfileCtrl',['$scope','$rootScope','$routeParams','currentAuth','UsersFriendsService','UsersTutorService', 'UserList',
+   function ($scope, $rootScope, $routeParams, currentAuth, UsersFriendsService,UsersTutorService,  UserList) {
 
        $scope.dati = {};
 
        $scope.dati.userId = UsersFriendsService.getUserInfo(currentAuth.uid);
-       console.log($scope.dati.userId);
        $scope.dati.otherUserId = $routeParams.otherUserId;
        console.log($scope.dati.otherUserId);
 

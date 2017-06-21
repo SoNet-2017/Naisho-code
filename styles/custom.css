@@ -350,8 +350,21 @@ div.media-body {
     background: white;
     border-radius: 15px;
     margin-left: 10%;
+    margin-right: 10%;
 }
-#detailPost, #detailForum{
+#detail h1{
+    alignment: center;
+    padding-left: 35%;
+    color: black;
+    padding-top:3%;
+}
+#detail p{
+    alignment: center;
+    color: black;
+    padding-left:3%;
+}
+
+#detailPost,#detailForum{
     margin-top:100px;
     font-size:20px;
     background: white;
@@ -378,8 +391,8 @@ ul {
 }
 #detailForum h1{
     alignment: center;
-    color: black;
-    padding-top:3%;
+   color: black;
+   padding-top:3%;
 }
 #commentiForum{
     min-height:200px;
@@ -388,9 +401,8 @@ ul {
     margin-left: 10%;
     align-content: center;
     padding:3%;
-    margin-top:5px;
-}
-
+     margin-top:5px;
+ }
 #mappa{
     margin-top:10%;
     height:150px;
@@ -826,23 +838,28 @@ h2{
 /*calendario*/
 .nuovoevento-forum{
     margin-left: 10px;
-    margin-top:60px;
+    margin-top:30px;
+    margin-right: 200px;
     line-height:20px;
-   width:20%;
-    float:left;
+    width:350px;
 
 }
+.nuovoevento-forum div{
+    padding-right: 200px;
+    float:left;
+}
+
 #newEvent{
-   margin-top:20px;
+   margin-top:10px;
 }
 
 #calendario{
-    margin-left: 10px;
+    margin-left: 35%;
     margin-top: 0px;
     padding-left: 10px;
     padding-bottom: 10px;
     float: left;
-    width: 75%;
+    width: 60%;
     height:600px;
     background-color:#FFF;
     position: relative;
@@ -850,5 +867,4 @@ h2{
     float :left;
     border-radius: 15px;
 }
-
 
