@@ -23,6 +23,9 @@ angular.module('myApp.addEventoView', ['ngRoute','myApp.evento'])
         function($scope, $rootScope, InsertEventoService, $firebaseStorage) {
             //initialize variables
             $scope.dati = {};
+
+
+
             //set the variable that is used in the main template to show the active button
             //$rootScope.dati.currentView = "addPizza";
             $scope.dati.feedback = "";
@@ -51,15 +54,19 @@ angular.module('myApp.addEventoView', ['ngRoute','myApp.evento'])
             {
                 var mese=new Date(document.getElementById('txtData').value).getMonth();
                 mese=mese+1;
+                if (String(mese).length == 1) {
+                    mese = "0"+mese;
+                }
                 var giorno=new Date(document.getElementById('txtData').value).getDate();
                 if (String(giorno).length == 1) {
                     giorno = "0"+giorno;
                 }
                 var anno=new Date(document.getElementById('txtData').value).getFullYear();
-                var data=anno+"-"+mese+"-"+giorno;
+                var date=anno+"-"+mese+"-"+giorno;
                     console.log(mese);
                 console.log(giorno);
-                InsertEventoService.insertNewEvento( $scope.dati.titolo, $scope.dati.descrizione, $scope.dati.citta,$scope.dati.indirizzo, giorno, mese, $scope.dati.ora, $scope.dati.data).then(function(ref) {
+                console.log(date);
+                InsertEventoService.insertNewEvento( $scope.dati.titolo, $scope.dati.descrizione, $scope.dati.citta,$scope.dati.indirizzo, giorno, mese, $scope.dati.ora, date).then(function(ref) {
                     var eventoId = ref.key;
 
                     InsertEventoService.updateEvento(eventoId);

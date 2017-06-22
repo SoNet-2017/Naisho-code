@@ -44,7 +44,7 @@ var data= dato.getFullYear()+"-"+b+"-"+a;
             console.log( $scope.events);
 
 
-
+/*
             $scope.add = function() {
                 $scope.events.push(
                     {
@@ -69,5 +69,5 @@ var data= dato.getFullYear()+"-"+b+"-"+a;
             $scope.message = function() {
                 $scope.dp.message("Hi");
             };
-
+ */
     }]);

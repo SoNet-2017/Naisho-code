@@ -23,7 +23,9 @@
         </div>
         <div class="form-group">
             <label for="txtData">Data</label>
-            <input type="date" class="form-control" id="txtData" placeholder="Inserisci la data" name="ora" ng-model="dati.data" pattern="dd/MM/YYYY"/>
+            <input type="date" class="form-control" id="txtData" placeholder="Inserisci la data" name="data" ng-model="dati.data" pattern="dd/MM/YYYY"  ng-required="true"/>
+            <input type="hidden" datepicker-popup="dd/MM/YYYY" ng-model="dati.data" is-open="opened" ng-required="true" close-text="Close" />
+
         </div>
         <div class="form-group">
             <label for="txtOra">Ora</label>
