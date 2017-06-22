@@ -31,7 +31,7 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento'])
         $scope.result=[];
 
         $scope.dati.evm = this;
-        $scope.dati.evm.positions = [];
+        $scope.dati.evm.position = [];
         //set the variable that is used in the main template to show the active button
         //$rootScope.dati.currentView = "home";
         //get the information of the evento with Id like the one that was passed in the URL path
@@ -55,11 +55,11 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento'])
                 },
                     $scope.cambia=function (results, status) {
                     if (status === google.maps.GeocoderStatus.OK) {
-                        $scope.dati.positions = {lat: results.geometry.location.lat() , lng: results.geometry.location.lng()};
+                        $scope.dati.position = {lat: results.geometry.location.lat() , lng: results.geometry.location.lng()};
                     }
                 });
             }
-            $scope.dati.evm.positions.push({Indirizzo: $scope.dati.positions});
+            $scope.dati.evm.position.push({Indirizzo: $scope.dati.position});
             console.log($scope.address);
         });
     }]);

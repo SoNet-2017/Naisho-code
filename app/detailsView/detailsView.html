@@ -1,6 +1,6 @@
 <div id="mappa" map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{googleMapsUrl}}" class="col-md-8">
     <ng-map center="45.071087, 7.686567" zoom="12">
-        <marker ng-repeat="pos in dati.evm.positions" position="{{pos.address}}"></marker>
+        <marker position="{{address}}"></marker>
     </ng-map>
 </div>
 <div id="detail">
