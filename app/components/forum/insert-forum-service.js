@@ -5,12 +5,11 @@ angular.module('myApp.forum.insertForumService', [])
 
     .factory('InsertForumService', function($firebaseArray) {
         var InsertForumService = {
-            insertNewForum: function (id,titolo,argomento) {
+            insertNewForum: function (titolo,argomento) {
                 //add the user to list of users and set the logged value to true
                 var ref = firebase.database().ref().child("forum");
                 // create a synchronized array
                 return $firebaseArray(ref).$add({
-                    id: id,
                     titolo: titolo,
                    argomento: argomento
                 });

@@ -47,7 +47,7 @@ angular.module('myApp.addForumView', ['ngRoute'])
             $scope.finalForumAddition = function()
             {
                 InsertForumService.insertNewForum( $scope.dati.titolo, $scope.dati.argomento).then(function(ref) {
-                    var eventoId = ref.key;
+                    var forumId = ref.key;
 
                     InsertForumService.updateForum(forumId);
                     $scope.dati.feedback = "Congratulazioni, hai creato un forum";

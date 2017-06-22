@@ -5,12 +5,11 @@ angular.module('myApp.post.insertPostService', [])
 
     .factory('InsertPostService', function($firebaseArray) {
         var InsertPostService = {
-            insertNewPost: function (id, contenuto,userPost) {
+            insertNewPost: function (contenuto,userPost) {
 
                 var ref = firebase.database().ref().child("posts");
                 // create a synchronized array
                 return $firebaseArray(ref).$add({
-                    id: id,
                     contenuto: contenuto,
                     userPost: userPost
                 });
@@ -20,7 +19,7 @@ angular.module('myApp.post.insertPostService', [])
                 var ref = firebase.database().ref().child("posts").child(postId);
 
                 ref.update({
-                    "id": postID
+                    "id": postId
                 });
             }
         };

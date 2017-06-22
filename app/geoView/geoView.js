@@ -19,8 +19,8 @@ angular.module('myApp.geoView', ['ngRoute'])
         });
     }])
 
-    .controller('geoViewCtrl', ['$scope', '$rootScope','$firebaseAuth','$routeParams','UserList',
-        function($scope, $rootScope, $firebaseAuth, $routeParams, UserList){
+    .controller('geoViewCtrl', ['$scope', '$rootScope','$firebaseAuth','$routeParams','UserList','UsersChatService',
+        function($scope, $rootScope, $firebaseAuth, $routeParams, UserList,UsersChatService){
 //initialize variables
             $scope.dati = {};
             $scope.address= {};
@@ -83,6 +83,7 @@ angular.module('myApp.geoView', ['ngRoute'])
 
                             console.log("lat e lng di tutti", $scope.lat, $scope.lng);
                         }}};
+
 
             });
         }]);

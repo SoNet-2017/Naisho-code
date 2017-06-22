@@ -19,18 +19,18 @@ angular.module('myApp.addPostView', ['ngRoute','myApp.post'])
         
     }])
 
-    .controller('addPostViewCtrl', ['$scope', '$rootScope', 'InsertPostService', '$firebaseStorage',
-        function($scope, $rootScope, InsertPostService, $firebaseStorage) {
-            //initialize variables
+    .controller('addPostViewCtrl', ['$scope', '$rootScope', 'InsertPostService', '$firebaseStorage','$firebaseAuth',
+        function($scope, $rootScope, InsertPostService, $firebaseStorage,$firebaseAuth) {
             $scope.dati = {};
-
+            var userPost= $firebaseAuth().$getAuth().uid;
+            console.log(userPost);
             $scope.dati.feedback = "";
             var ctrl = this;
             $scope.fileToUpload = null;
             $scope.imgPath= "";
 
             //define the function that will actually create a new record in the database
-            $scope.addEvento = function() {
+            $scope.addPost = function() {
                 //check if the user inserted all the required information
                 if ($scope.dati.contenuto!= undefined && $scope.dati.contenuto!="" ) {
                     $scope.dati.error = "";
@@ -70,7 +70,7 @@ angular.module('myApp.addPostView', ['ngRoute','myApp.post'])
 
             $scope.finalPostAddition = function()
             {
-                InsertPostService.insertNewPost($scope.dati.contenuto).then(function(ref) {
+                InsertPostService.insertNewPost($scope.dati.contenuto,userPost).then(function(ref) {
                     var postId = ref.key;
 
                     InsertPostService.updatePost(postId);

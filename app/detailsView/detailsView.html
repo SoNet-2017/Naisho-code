@@ -1,5 +1,5 @@
 <div id="mappa" map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{googleMapsUrl}}" class="col-md-8">
-    <ng-map center="45.071087, 7.686567" zoom="12">
+    <ng-map center="{{address}}" zoom="12">
         <marker position="{{address}}"></marker>
     </ng-map>
 </div>
