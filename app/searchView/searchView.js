@@ -28,6 +28,8 @@ angular.module('myApp.searchView', ['ngRoute','myApp.forum','myApp.post','myApp.
         function($scope, $routeParams, Forum, Post, UserList, Evento ) {
             //initialize variables
             $scope.dati = {};
+            $scope.risultato={};
+            $scope.risultati={};
 
             $scope.dati.forum = Forum.getData();
             console.log($scope.dati.forum);
@@ -35,6 +37,33 @@ angular.module('myApp.searchView', ['ngRoute','myApp.forum','myApp.post','myApp.
            console.log( $scope.dati.posts );
             $scope.dati.listaUtenti = UserList.getListOfUsers();
             console.log( $scope.dati.listaUtenti );
+
+            $scope.dati.listaUtenti.$loaded().then(function () {
+               $scope.input= function () {
+
+                                   for (var i=0;i<$scope.dati.listaUtenti.length; i++){
+                        if ($scope.dati.ricerca === $scope.dati.listaUtenti[i].name){
+
+                            $scope.risultato=$scope.dati.listaUtenti[i].name;
+
+                        }
+                        if ($scope.dati.ricerca === $scope.dati.listaUtenti[i].surname){
+
+                            $scope.risultato=$scope.dati.listaUtenti[i].surname;
+
+                        }
+                        if ($scope.dati.ricerca === $scope.dati.listaUtenti[i].email){
+
+                            $scope.risultato=$scope.dati.listaUtenti[i].email;
+
+                        }
+                                       console.log( $scope.dati.ricerca );
+
+                                   }}});
            $scope.dati.evento = Evento.getData();
            console.log( $scope.dati.listaUtenti );
+
+            $scope.risultati=function(){
+                document.getElementById("contenitore").innerHTML = $scope.risultato;
+            };
         }]);
