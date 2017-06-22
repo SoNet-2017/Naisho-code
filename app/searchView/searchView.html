@@ -1,0 +1,22 @@
+<div id="searchIcon">
+
+    <h1><b>Ecco una lista di quello che hai cercato</b></h1>
+    <h4 style="font-weight:bold"></h4>
+
+    
+</div>
+
+    <input type="text" name="ricerca" ng-model="dati.ricerca" ng-click="input()" />
+<button type="submit" ng-click="risultati()" class="btn btn-success center-block">Cerca</button>
+
+
+<div id="contenitoreRisultati">
+    <p id="contenitore"></p>
+</div>
+
+
+
+<!-- <div ng-repeat="ricerca in dati | Filter: search"><em>{{ricerca.dati}}</em></div>
+<ul ng-repeat="(key, value) in dati | orderByPriority | filter:search">
+        <li><a href="{{ key }}">{{ value}}</a></li>
+    </ul>-->

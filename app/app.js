@@ -30,6 +30,7 @@ angular.module('myApp', [
     'myApp.detailsView',
     'myApp.editProfileView',
     'myApp.geoView',
+    'myApp.searchView',
     'myApp.homeView',
     'myApp.loginView',
     'myApp.OtherUserProfile',
