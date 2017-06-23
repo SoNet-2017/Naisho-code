@@ -4,7 +4,7 @@
 angular.module('myApp.post', [
     'myApp.post.postService',
     'myApp.post.singlePostService',
-    'myApp.post.insertPostService'
-])
+    'myApp.post.insertPostService',
+    ])
 
 .value('version', '0.1');

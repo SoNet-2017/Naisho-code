@@ -23,16 +23,16 @@
 
     <div class="w3-container" id="eventi" >
         <ul class="media-list" id="elencoEventi">
-            <li class="media" ng-repeat="evento in dati.eventiDaMostrare">
-                <a href="#!/details/{{evento.id}}">
-                    <div  class="eventiHome">
-                        <h4 class="media-heading"><strong>{{evento.title}}</strong></h4>
-                        <p>{{evento.Giorno}} - {{evento.Mese}}</p>
-                    </div>
-                </a>
-            </li>
-        </ul>
-    </div>
+    <li class="media" ng-repeat="evento in dati.eventiDaMostrare">
+        <a href="#!/details/{{evento.id}}">
+            <div  class="eventiHome">
+                <h4 class="media-heading"><strong>{{evento.title}}</strong></h4>
+                <p>{{evento.Giorno}} - {{evento.Mese}}</p>
+            </div>
+        </a>
+    </li>
+</ul>
+</div>
     <br>
         <button id="condividi"> <a href="#!/addPost"> Condividi</a></button>
     <br>
@@ -41,7 +41,10 @@
         <a href="#!/singlePost/{{post.id}}">
             <div  class="postHome">
                 <h4 class="media-heading"><strong>{{post.info.name}} {{post.info.surname}} </strong></h4>
-                <p>{{post.contenuto}}</p>
+                <p>{{post.contenuto}} </p>
+                <img class="media-object" ng-src="../{{post.img_url}}" alt="{{post.img_alt}}" ng-if="!(post.img_url.includes('https://firebasestorage.googleapis.com')) && post.img_url!=''">
+                <img class="media-object" ng-src="{{post.img_url}}" alt="{{post.img_alt}}" ng-if="post.img_url.includes('https://firebasestorage.googleapis.com')">
+                <img ng-if="post.img_url == ''">
                 <!--<span><button class="mi piace">Mi Piace</button><button class="commenta">Commenta</button></span>-->
             </div>
         </a>

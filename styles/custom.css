@@ -279,6 +279,7 @@ input.form-control {
 
 #bodyHome{
     margin-top: 100px;
+    overflow:auto;
 }
 
 
@@ -404,7 +405,7 @@ ul {
  }
 #mappa{
     margin-top:10%;
-    height:150px;
+    height:250px;
     width:80%;
     margin-left:10%;
 }
@@ -880,6 +881,7 @@ h2{
 .calendar_default_main{
     border-radius: 15px;
 }
+
 /*.calendar_default_main{
     width: 5px;
     height:40px;

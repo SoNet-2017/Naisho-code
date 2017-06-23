@@ -1,7 +1,18 @@
 <div id="detailPost">
-    <a href="#!/OtherUser/{{dati.post.userPost}}" > <h1> {{dati.userPost.name}}  {{dati.userPost.surname}}</h1></a>
+    <a  ng-if="dati.userPost.id===$commentatore.id"   href="#!/userProfile" > <h1> {{dati.userPost.name}}  {{dati.userPost.surname}}</h1></a>
+    <a  ng-if="dati.userPost.id!=$commentatore.id"   href="#!/OtherUser/{{dati.post.userPost}}" > <h1> {{dati.userPost.name}}  {{dati.userPost.surname}}</h1></a>
 
 <p>{{dati.post.contenuto}}</p>
+    <img class="media-object" ng-src="../{{dati.post.img_url}}" alt="{{dati-post.img_alt}}" ng-if="!(dati.post.img_url.includes('https://firebasestorage.googleapis.com')) && dati.post.img_url!=''">
+    <img class="media-object" ng-src="{{dati.post.img_url}}" alt="{{dati.post.img_alt}}" ng-if="dati.post.img_url.includes('https://firebasestorage.googleapis.com')">
+    <img ng-if="post.img_url == ''">
+    <ul class="media-list" id="elencoCommenti">
+        <li class="media" ng-repeat="commento in commentiDaMostrare">
+                    <p>{{commento.info.name}} {{commento.info.surname}}: {{commento.commento}}</p>
+
+        </li>
+    </ul>
+</div>
     <span><button ng-click="miPiace()" id="miPiace" >Mi Piace</button><button class="commenta" ng-click="commenta()">Commenta</button></span>
     <div class="container" ><li class="media" ng-repeat="commenti in dati.post.commenti"></div>
     <div id="commento"><input type="text" class="textComment" id="textComment" placeholder="Scrivi cosa pensi" ng-model="post.newComment" />

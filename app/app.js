@@ -22,6 +22,7 @@ angular.module('myApp', [
     'myApp.calendarView',
     'myApp.chatView',
     'myApp.authentication',
+    //'myApp.commento',
     'myApp.evento',
     'myApp.fileUpload',
     'myApp.forum',

@@ -5,13 +5,14 @@ angular.module('myApp.post.insertPostService', [])
 
     .factory('InsertPostService', function($firebaseArray) {
         var InsertPostService = {
-            insertNewPost: function (contenuto,userPost) {
+            insertNewPost: function (contenuto,userPost,imgPath) {
 
                 var ref = firebase.database().ref().child("posts");
                 // create a synchronized array
                 return $firebaseArray(ref).$add({
                     contenuto: contenuto,
-                    userPost: userPost
+                    userPost: userPost,
+                    img_url: imgPath,
                 });
             },
             updatePost: function (postId) {
@@ -24,4 +25,26 @@ angular.module('myApp.post.insertPostService', [])
             }
         };
         return InsertPostService;
+
+       var InsertCommentoService = {
+            insertNewCommento: function (contenuto,idPost,idCommentatore) {
+
+                var ref = firebase.database().ref().child("commenti");
+                // create a synchronized array
+                return $firebaseArray(ref).$add({
+                    contenuto: contenuto,
+                    idPost: idPost,
+                    idCommentatore: idCommentatore,
+                });
+            },
+            updateCommento: function (commentoId) {
+
+                var ref = firebase.database().ref().child("commenti").child(commentoId);
+
+                ref.update({
+                    "id": commentoId
+                });
+            }
+        };
+        return InsertCommentoService;
     });
