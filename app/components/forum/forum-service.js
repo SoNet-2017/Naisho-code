@@ -9,7 +9,13 @@ angular.module('myApp.forum.forumService', [])
                 var ref = firebase.database().ref().child("forum");
                 // download the data into a local object
                 return $firebaseArray(ref);
+            },
+            getCommentData: function () {
+                var ref = firebase.database().ref().child("commentiForum");
+                // download the data into a local object
+                return $firebaseArray(ref);
             }
+
         };
         return forumService;
     });

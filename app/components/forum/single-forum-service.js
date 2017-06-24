@@ -9,7 +9,15 @@ angular.module('myApp.forum.singleForumService', [])
                 var ref = firebase.database().ref().child("forum").child(forumId);
                 // download the data into a local object
                 return $firebaseObject(ref);
-            }
-        };
+            },
+
+            getSingleForumComments: function (commentId) {
+            var ref = firebase.database().ref().child("commentiForum").child(commentId);
+            // download the data into a local object
+            return $firebaseObject(ref);
+            console.log(ref);
+        }
+
+    };
         return singleForumService;
     });

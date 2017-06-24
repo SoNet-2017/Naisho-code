@@ -11,7 +11,7 @@ angular.module('myApp.forum.insertForumService', [])
                 // create a synchronized array
                 return $firebaseArray(ref).$add({
                     titolo: titolo,
-                   argomento: argomento
+                    argomento: argomento
                 });
             },
             updateForum: function (forumId) {
@@ -21,7 +21,27 @@ angular.module('myApp.forum.insertForumService', [])
                 ref.update({
                     "id": forumId
                 });
-            }
-        };
+            },
+
+            insertNewCommento: function (contenuto,idForum,idCommentatore) {
+
+            var ref = firebase.database().ref().child("commentiForum");
+            // create a synchronized array
+            return $firebaseArray(ref).$add({
+                commento: contenuto,
+                forum: idForum,
+                idCommentatore: idCommentatore,
+            });
+        },
+        updateCommento: function (commentoId) {
+
+            var ref = firebase.database().ref().child("commentiForum").child(commentoId);
+
+            ref.update({
+                "id": commentoId
+            });
+        }
+
+    };
         return InsertForumService;
     });

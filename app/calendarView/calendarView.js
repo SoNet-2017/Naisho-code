@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento'])
+angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento','myApp.forum'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/calendar/', {
@@ -18,9 +18,11 @@ angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento'])
             }
         })
     }])
-    .controller('calendarViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth','Evento',
-        function($scope, $rootScope, $routeParams, currentAuth,Evento){
-
+    .controller('calendarViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth','Evento','Forum',
+        function($scope, $rootScope, $routeParams, currentAuth,Evento,Forum){
+            $scope.dati={};
+        //per i forum
+            $scope.dati.forum=Forum.getData();
         // per scegliere come data di partenza la data odierna
             var dato = new Date();
             var a =dato.getDate();
