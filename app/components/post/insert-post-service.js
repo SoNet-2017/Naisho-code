@@ -22,18 +22,15 @@ angular.module('myApp.post.insertPostService', [])
                 ref.update({
                     "id": postId
                 });
-            }
-        };
-        return InsertPostService;
+            },
 
-       var InsertCommentoService = {
             insertNewCommento: function (contenuto,idPost,idCommentatore) {
 
                 var ref = firebase.database().ref().child("commenti");
                 // create a synchronized array
                 return $firebaseArray(ref).$add({
-                    contenuto: contenuto,
-                    idPost: idPost,
+                    commento: contenuto,
+                    post: idPost,
                     idCommentatore: idCommentatore,
                 });
             },
@@ -45,6 +42,11 @@ angular.module('myApp.post.insertPostService', [])
                     "id": commentoId
                 });
             }
+
         };
-        return InsertCommentoService;
+        return InsertPostService;
+
+      // var InsertCommentoService = {
+       // };
+       // return InsertCommentoService;
     });

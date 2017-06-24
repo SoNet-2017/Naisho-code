@@ -13,10 +13,11 @@
         </li>
     </ul>
 </div>
-    <span><button ng-click="miPiace()" id="miPiace" >Mi Piace</button><button class="commenta" ng-click="commenta()">Commenta</button></span>
-    <div class="container" ><li class="media" ng-repeat="commenti in dati.post.commenti"></div>
-    <div id="commento"><input type="text" class="textComment" id="textComment" placeholder="Scrivi cosa pensi" ng-model="post.newComment" />
-                        <button ng-submit="salvacommento()" ng-click="closeCommento()">Salva Commento</button>
+    <span><button ng-click="miPiace()" id="miPiace" >Mi Piace</button>
+        <button class="commenta" ng-click="commenta()">Commenta</button>
+    </span>
+        <div id="commento"  ><input type="text" class="textComment" id="textComment" placeholder="Scrivi cosa pensi" ng-model="post.newComment" />
+                        <button ng-click="salvaCommento();closeCommento(); ">Salva Commento</button>
     </div>
 
 </div>

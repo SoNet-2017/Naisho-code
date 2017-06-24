@@ -23,8 +23,8 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post','myApp.users'])
     // followed by the function itself.
     //When using this type of annotation, take care to keep the annotation array
     // in sync with the parameters in the function declaration.
-.controller('singlePostViewCtrl', ['$scope', '$rootScope', '$routeParams', 'SinglePost','UsersChatService','$firebaseStorage','currentAuth','Post',
-    function($scope, $rootScope, $routeParams, SinglePost,UsersChatService,$firebaseStorage,currentAuth,Post) {
+.controller('singlePostViewCtrl', ['$scope', '$rootScope', '$routeParams', 'SinglePost','UsersChatService','$firebaseStorage','currentAuth','Post','InsertPostService',
+    function($scope, $rootScope, $routeParams, SinglePost,UsersChatService,$firebaseStorage,currentAuth,Post,InsertPostService) {
      //   'Commento','InsertCommentoService',
         //,Commento,InsertCommentoService
         //initialize variables
@@ -33,12 +33,12 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post','myApp.users'])
         $scope.commenti={};
         $scope.commentiDaMostrare=[];
 //per avere i dati del singolo post
-        console.log("sei qui",$routeParams.postID);
+       // console.log("sei qui",$routeParams.postID);
         $scope.dati.post = SinglePost.getSinglePost($routeParams.postID);
-        console.log( $scope.dati.post );
+       // console.log( $scope.dati.post );
         //commenti ai post:
        $scope.commenti=Post.getCommentData();
-         console.log($scope.commenti);
+      // console.log($scope.commenti);
 
         $scope.dati.post.$loaded().then(function () {
             $scope.dati.userPost = UsersChatService.getUserInfo($scope.dati.post.userPost);
@@ -59,7 +59,7 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post','myApp.users'])
                if( $scope.commenti[i].post===$scope.dati.post.id){
              var info=UsersChatService.getUserInfo($scope.commenti[i].idCommentatore);
              var cognome=UsersChatService.getUserInfo($scope.commenti[i].idCommentatore);
-             $scope.commentiDaMostrare.push({commento:$scope.commenti[i].commento,info:info})
+             $scope.commentiDaMostrare.push({commento:$scope.commenti[i].commento,info:info});
              };
            }
 
@@ -75,10 +75,11 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post','myApp.users'])
             $scope.closeCommento = function () {
                 document.getElementById("commento").style.display = "none";
             };
-//  3)   salva il commento nel database
+            //  3)   salva il commento nel database
             $scope.salvaCommento = function () {
               //  InsertCommentoService.insertNewCommento($scope.dati.post.id,$scope.post.newComment, idCommentatore);
-                SinglePost.commentPost($scope.dati.post.id,$scope.post.newComment, idCommentatore,$scope.commentatore.name,$scope.commentatore.surname);
+                console.log($scope.post.newComment,$scope.dati.post.id, idCommentatore);
+                InsertPostService.insertNewCommento($scope.post.newComment,$scope.dati.post.id,idCommentatore);
                 $scope.post.newComment="";
             };
 
