@@ -43,6 +43,7 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post','myApp.users'])
         $scope.dati.post.$loaded().then(function () {
             $scope.dati.userPost = UsersChatService.getUserInfo($scope.dati.post.userPost);
             var idCommentatore = currentAuth.uid;
+            $scope.idCommentatore=idCommentatore;
             $scope.commentatore=UsersChatService.getUserInfo(currentAuth.uid);
             console.log("id del commentatore:" ,idCommentatore);
             console.log("questo è info fi chi ha messo il post dati.userPost:", $scope.dati.userPost);

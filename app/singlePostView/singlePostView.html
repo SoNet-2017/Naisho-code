@@ -1,11 +1,14 @@
 <div id="detailPost">
-    <a  ng-if="dati.userPost.id===$commentatore.id"   href="#!/userProfile" > <h1> {{dati.userPost.name}}  {{dati.userPost.surname}}</h1></a>
-    <a  ng-if="dati.userPost.id!=$commentatore.id"   href="#!/OtherUser/{{dati.post.userPost}}" > <h1> {{dati.userPost.name}}  {{dati.userPost.surname}}</h1></a>
+    <a  ng-if="dati.userPost.id===idCommentatore"   href="#!/userProfile" > <h1> {{dati.userPost.name}}  {{dati.userPost.surname}}</h1></a>
+    <a  ng-if="dati.userPost.id!=idCommentatore"   href="#!/OtherUser/{{dati.post.userPost}}" > <h1> {{dati.userPost.name}}  {{dati.userPost.surname}}</h1></a>
 
 <p>{{dati.post.contenuto}}</p>
-    <img class="media-object" ng-src="../{{dati.post.img_url}}" alt="{{dati-post.img_alt}}" ng-if="!(dati.post.img_url.includes('https://firebasestorage.googleapis.com')) && dati.post.img_url!=''">
-    <img class="media-object" ng-src="{{dati.post.img_url}}" alt="{{dati.post.img_alt}}" ng-if="dati.post.img_url.includes('https://firebasestorage.googleapis.com')">
-    <img ng-if="post.img_url == ''">
+    <!--
+        <img class="media-object" ng-src="../{{post.img_url}}" alt="{{post.img_alt}}" ng-if="!(post.img_url.includes('https://firebasestorage.googleapis.com')) && post.img_url!=''">
+     -->
+    <p ng-if="!(post.img_url.includes('https://firebasestorage.googleapis.com')) && post.img_url!=''"></p>
+    <img class="media-object" ng-src="{{post.img_url}}" alt="{{post.img_alt}}" ng-if="post.img_url.includes('https://firebasestorage.googleapis.com')">
+    <p ng-if="post.img_url == ''"></p>
     <ul class="media-list" id="elencoCommenti">
         <li class="media" ng-repeat="commento in commentiDaMostrare">
                     <p>{{commento.info.name}} {{commento.info.surname}}: {{commento.commento}}</p>
@@ -13,7 +16,7 @@
         </li>
     </ul>
 </div>
-    <span><button ng-click="miPiace()" id="miPiace" >Mi Piace</button>
+    <span class="mipiace-commenta"><button ng-click="miPiace()" id="miPiace" >Mi Piace</button>
         <button class="commenta" ng-click="commenta()">Commenta</button>
     </span>
         <div id="commento"  ><input type="text" class="textComment" id="textComment" placeholder="Scrivi cosa pensi" ng-model="post.newComment" />

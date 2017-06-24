@@ -23,7 +23,9 @@ body{
 #commento{
     display: none;
     width:100%;
-    heigth:150px;
+    min-heigth:150px;
+    margin-left:10%;
+    margin-top:15px;
 }
 /*#log {<li class="media" ng-repeat="post in dati.posts">
         <a href="#!/singlePost/{{post.Id}}">
@@ -386,6 +388,9 @@ div.media-body {
     border-radius: 5px;
     background: #bbbbbb;
 }
+span.mipiace-commenta{
+    margin-left:10%;
+    }
 ul {
     list-style-type: none;
 }
