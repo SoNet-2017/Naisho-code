@@ -49,7 +49,7 @@ angular.module('myApp.editProfileView', ['ngRoute','myApp.users'])
                     });
                     uploadTask.$error(function (error) {
                         $scope.dati.error = error + " Non hai inserito alcuna immagine";
-                        //add the pizza in any case (without the image)
+                        //edit profile in any case (without the image)
                         $scope.finalEdit();
                     });
                 }
@@ -73,7 +73,7 @@ angular.module('myApp.editProfileView', ['ngRoute','myApp.users'])
 
     $scope.finalEdit = function()
     {
-        EditProfileService.editProfile($scope.dati.name,$scope.dati.surname, $scope.dati.nuovapassword,$scope.dati.nuovapassword2,$scope.dati.buddista,$scope.dati.tutor, $scope.imgPath).then(function() {
+        EditProfileService.editProfile( $scope.dati.userId,$scope.dati.name,$scope.dati.surname, $scope.dati.nuovapassword,$scope.dati.buddista,$scope.dati.tutor, $scope.imgPath).then(function() {
 
             Users.updateUser($scope.dati.userId);
 
@@ -84,6 +84,7 @@ angular.module('myApp.editProfileView', ['ngRoute','myApp.users'])
             $scope.dati.nuovapassword2="";
             $scope.dati.buddista="";
             $scope.dati.tutor="";
+            $scope.imgPath="";
         });
     }
 }]);

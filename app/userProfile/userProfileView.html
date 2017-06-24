@@ -7,8 +7,7 @@
             <div class="page-header">
                 <img class="media-object" ng-src="{{dati.user.img_url}}" alt="immagine del profilo"  ng-if="dati.user.img_url.includes('https://firebasestorage.googleapis.com')">
                 <img src="../images/user.png" id="userIcon" alt="immagine del profilo" ng-if="!dati.user.img_url.includes('https://firebasestorage.googleapis.com')" >
-                {{dati.user.img_url}}
-            <h1>{{dati.user.name}} <br>{{dati.user.surname}} <br> {{dati.user.email}} </h1>
+                <h1>{{dati.user.name}} <br>{{dati.user.surname}} <br> {{dati.user.email}} </h1>
             </div>
         <div class="clear"></div>
             <div id="profile-bar">
