@@ -23,8 +23,8 @@ angular.module('myApp.singleForumView', ['ngRoute','myApp.forum'])
     // followed by the function itself.
     //When using this type of annotation, take care to keep the annotation array
     // in sync with the parameters in the function declaration.
-.controller('singleForumViewCtrl', ['$scope', '$rootScope', '$routeParams', 'SingleForum','UsersChatService','$firebaseStorage','currentAuth','Forum','InsertForumService',
-    function($scope, $rootScope, $routeParams, SingleForum,UsersChatService,$firebaseStorage,currentAuth,Forum,InsertForumService) {
+.controller('singleForumViewCtrl', ['$scope', '$rootScope', '$routeParams','$window', 'SingleForum','UsersChatService','$firebaseStorage','currentAuth','Forum','InsertForumService',
+    function($scope, $rootScope, $routeParams,$window, SingleForum,UsersChatService,$firebaseStorage,currentAuth,Forum,InsertForumService) {
         //initialize variables
         $scope.dati = {};
         $scope.commenti={};
@@ -67,6 +67,8 @@ angular.module('myApp.singleForumView', ['ngRoute','myApp.forum'])
                 console.log($scope.forum.newComment,$scope.dati.forum.id, idCommentatore);
                 InsertForumService.insertNewCommento($scope.forum.newComment,$scope.dati.forum.id,idCommentatore);
                 $scope.forum.newComment="";
+                $window.location.reload();
+
             };
 
 

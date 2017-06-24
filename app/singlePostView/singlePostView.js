@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('myApp.singlePostView', ['ngRoute','myApp.post','myApp.users'])
-//,'myApp.commento'
+
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/singlePost/:postID', {
     templateUrl: 'singlePostView/singlePostView.html',
@@ -16,22 +16,18 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post','myApp.users'])
           }]
 
       }
-  })
+  });
 }])
-//Inline Array Annotation
-    //Here we pass an array whose elements consist of a list of strings (the names of the dependencies)
-    // followed by the function itself.
-    //When using this type of annotation, take care to keep the annotation array
-    // in sync with the parameters in the function declaration.
-.controller('singlePostViewCtrl', ['$scope', '$rootScope', '$routeParams', 'SinglePost','UsersChatService','$firebaseStorage','currentAuth','Post','InsertPostService',
-    function($scope, $rootScope, $routeParams, SinglePost,UsersChatService,$firebaseStorage,currentAuth,Post,InsertPostService) {
-     //   'Commento','InsertCommentoService',
-        //,Commento,InsertCommentoService
+
+.controller('singlePostViewCtrl', ['$scope', '$rootScope', '$routeParams','$window', 'SinglePost','UsersChatService','$firebaseStorage','currentAuth','Post','InsertPostService',
+    function($scope, $rootScope, $routeParams,$window, SinglePost,UsersChatService,$firebaseStorage,currentAuth,Post,InsertPostService) {
+
         //initialize variables
         $scope.dati = {};
         $scope.post={};
         $scope.commenti={};
         $scope.commentiDaMostrare=[];
+
 //per avere i dati del singolo post
        // console.log("sei qui",$routeParams.postID);
         $scope.dati.post = SinglePost.getSinglePost($routeParams.postID);
@@ -82,6 +78,7 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post','myApp.users'])
                 console.log($scope.post.newComment,$scope.dati.post.id, idCommentatore);
                 InsertPostService.insertNewCommento($scope.post.newComment,$scope.dati.post.id,idCommentatore);
                 $scope.post.newComment="";
+                $window.location.reload();
             };
 
 

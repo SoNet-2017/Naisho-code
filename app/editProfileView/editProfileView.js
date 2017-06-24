@@ -3,21 +3,33 @@
 angular.module('myApp.editProfileView', ['ngRoute','myApp.users'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/editProfile', {
+    $routeProvider.when('/editProfile', {
     templateUrl: 'editProfileView/editProfileView.html',
-    controller: 'editProfileViewCtrl'
+    controller: 'editProfileViewCtrl',
+      resolve: {
+          // controller will not be loaded until $requireSignIn resolves
+          // Auth refers to our $firebaseAuth wrapper in the factory below
+          "currentAuth": ["Auth", function(Auth) {
+              // $requireSignIn returns a promise so the resolve waits for it to complete
+              // If the promise is rejected, it will throw a $routeChangeError (see above)
+              return Auth.$requireSignIn();
+          }]
+
+      }
   });
 }])
 
-.controller('editProfileViewCtrl', ['$scope', '$rootScope', 'Auth', 'Users', '$location','EditProfileService','$firebaseStorage','UsersService', function($scope, $rootScope, Auth, Users, $location, EditProfileService,$firebaseStorage,UsersService) {
+.controller('editProfileViewCtrl', ['$scope', '$rootScope', 'Users', '$firebaseStorage','EditProfileService',
+    function($scope, $rootScope, Users, $firebaseStorage,  EditProfileService) {
     $scope.user={};
     $scope.dati = {};
     $scope.dati.feedback = "";
-    $scope.dati.userId = currentAuth.uid;
+    $scope.dati.userId = firebase.auth().currentUser.uid;
     var ctrl = this;
     $scope.fileToUpload = null;
     $scope.imgPath= "";
 
+    console.log(firebase.auth().currentUser.uid);
 
         $scope.salvamodifiche = function() {
             //check if the user inserted all the required information
@@ -61,9 +73,9 @@ angular.module('myApp.editProfileView', ['ngRoute','myApp.users'])
 
     $scope.finalEdit = function()
     {
-        EditProfileService.editProfile($scope.dati.name,$scope.dati.surname, $scope.dati.nuovapassword,$scope.dati.nuovapassword2,$scope.dati.buddista,$scope.dati.tutor, $scope.imgPath).then(function(ref) {
-            var userId = ref.key;
-            UsersService.updateUser(userId);
+        EditProfileService.editProfile($scope.dati.name,$scope.dati.surname, $scope.dati.nuovapassword,$scope.dati.nuovapassword2,$scope.dati.buddista,$scope.dati.tutor, $scope.imgPath).then(function() {
+
+            Users.updateUser($scope.dati.userId);
 
             $scope.dati.feedback = "Il profilo è stato modificato corretamente";
             $scope.dati.name = "";
