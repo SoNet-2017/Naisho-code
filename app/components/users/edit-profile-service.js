@@ -16,10 +16,14 @@ angular.module('myApp.users.EditProfileService', [])
                     img_url: imgPath
                 });
 
-                 user.updatePassword(nuovapassword).then(function() {
-                    // Update successful.
+                 user.updatePassword(nuovapassword);
+            },
+            cambiaImg: function ( userId,imgPath) {
+                var ref = firebase.database().ref().child("users").child(userId);
+                // create a synchronized array
+                ref.update({
+                    img_url: imgPath
                 });
-
             }
         };
         return EditProfileService;

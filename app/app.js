@@ -20,6 +20,7 @@ angular.module('myApp', [
     'myApp.addForumView',
     'myApp.addPostView',
     'myApp.calendarView',
+    'myApp.changeImageView',
     'myApp.chatView',
     'myApp.authentication',
     'myApp.evento',

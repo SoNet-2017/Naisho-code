@@ -631,6 +631,21 @@ h3{
     box-shadow: 0px 0px 14px #1f97b7;
 }
 
+#cambia-immagine{
+    width:50%;
+    background-color: rgba(255,255,255,0.5);
+    margin-top: 15%;
+    border-radius:15px;
+    text-align: center;
+    align-content: center;
+    padding:15px;
+}
+#cambia-immagine button{
+    margin-top: 45px;
+    margin-left: 25px;
+    border-right: 10px;
+    margin-right: 10%;
+}
 
 
 
@@ -838,8 +853,6 @@ h2{
     margin-top: 5px;
     }
 
-
-
 /*calendario*/
 .nuovoevento-forum{
     margin-left: 10px;
@@ -851,9 +864,6 @@ h2{
     display:block;
 
 }
-
-
-
 
 
 #newEvent,#newForum{
