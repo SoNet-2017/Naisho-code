@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.singlePostView', ['ngRoute','myApp.post','myApp.users'])
+angular.module('myApp.singlePostView', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/singlePost/:postID', {

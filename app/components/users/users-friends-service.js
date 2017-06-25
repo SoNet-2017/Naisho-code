@@ -2,8 +2,8 @@
 
 angular.module('myApp.users.usersFriendsService', [])
 
-    .factory('UsersFriends', function usersFiendsService($firebaseArray, $firebaseObject) {
-        var UsersFriendsService = {
+    .factory('UsersFriends', function usersFriendsService($firebaseArray, $firebaseObject) {
+        var NewUsersFriendsService = {
             getFriends: function() {
                 var ref = firebase.database().ref().child("friends");
                 return $firebaseArray(ref);
@@ -13,14 +13,13 @@ angular.module('myApp.users.usersFriendsService', [])
                 var userRef = firebase.database().ref().child("users").child(userId);
                 return $firebaseObject(userRef);
             },
-            //per una nuova richiesta di amicizia
-            insertNewUsersFriendship: function (src, dest,  button) {
+            insertNewFriendship: function (friend1, friend2,  button) {
                 //add the critica to list of critucs and set the logged value to true
                 var ref = firebase.database().ref().child("friends");
                 // create a synchronized array
                 return $firebaseArray(ref).$add({
-                    src: src,
-                    dest: dest,
+                    friend1: friend1,
+                    friend2: friend2,
                     button: button
                 });
             },
@@ -32,11 +31,10 @@ angular.module('myApp.users.usersFriendsService', [])
                     id: friendshipId
                 });
             },
-            deleteFriend : function (friendshipId) {
-                var refDel = firebase.database().ref().child("follows").child(friendshipId);
+            deleteFriendship: function (friendshipId) {
+                var refDel = firebase.database().ref().child("friends").child(friendshipId);
                 refDel.remove();
             }
         };
-        return UsersFriendsService;
+        return NewUsersFriendsService;
     });
-
