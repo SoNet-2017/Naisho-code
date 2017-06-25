@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('myApp.editProfileView', ['ngRoute','myApp.users'])
+angular.module('myApp.changeImageView', ['ngRoute','myApp.users'])
 
 .config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/editProfile', {
-    templateUrl: 'editProfileView/editProfileView.html',
-    controller: 'editProfileViewCtrl',
+    $routeProvider.when('/changeImg', {
+    templateUrl: 'changeImageView/changeImageView.html',
+    controller: 'changeImageViewCtrl',
       resolve: {
           // controller will not be loaded until $requireSignIn resolves
           // Auth refers to our $firebaseAuth wrapper in the factory below
@@ -19,9 +19,8 @@ angular.module('myApp.editProfileView', ['ngRoute','myApp.users'])
   });
 }])
 
-.controller('editProfileViewCtrl', ['$scope', '$rootScope', 'Users', '$firebaseStorage','EditProfileService',
+.controller('changeImageViewCtrl', ['$scope', '$rootScope', 'Users', '$firebaseStorage','EditProfileService',
     function($scope, $rootScope, Users, $firebaseStorage,  EditProfileService) {
-    $scope.user={};
     $scope.dati = {};
     $scope.dati.feedback = "";
     $scope.dati.userId = firebase.auth().currentUser.uid;
@@ -31,10 +30,7 @@ angular.module('myApp.editProfileView', ['ngRoute','myApp.users'])
 
     console.log(firebase.auth().currentUser.uid);
 
-        $scope.salvamodifiche = function() {
-            //check if the user inserted all the required information
-            if ($scope.dati.nuovapassword!= undefined && $scope.dati.nuovapassword===$scope.dati.nuovapassword2 && $scope.dati.name!= undefined && $scope.dati.name!="" && $scope.dati.surname!=undefined && $scope.dati.surname!="") {
-                $scope.dati.error = "";
+        $scope.changeImg = function() {
                 //try to upload the image: if no image was specified, we create a new pizza without an image
                 if ($scope.fileToUpload != null) {
                     //get the name of the file
@@ -45,24 +41,18 @@ angular.module('myApp.editProfileView', ['ngRoute','myApp.users'])
                     var uploadTask = $scope.storage.$put($scope.fileToUpload);
                     uploadTask.$complete(function (snapshot) {
                         $scope.imgPath = snapshot.downloadURL;
-                        $scope.finalEdit();
+                        $scope.finalChange();
                     });
                     uploadTask.$error(function (error) {
                         $scope.dati.error = error + " Non hai inserito alcuna immagine";
                         //edit profile in any case (without the image)
-                        $scope.finalEdit();
+                        $scope.finalChange();
                     });
                 }
-                else {
-                    //do not add the image
-                    $scope.finalEdit();
-
-                }
-            }
-            else
+                else
             {
                 //write an error message to the user
-                $scope.dati.error = "Hai dimenticato di inserire delle informazioni richieste!";
+                $scope.dati.error = "Non hai inserito alcuna immagine!";
             }
         };
 
@@ -71,19 +61,13 @@ angular.module('myApp.editProfileView', ['ngRoute','myApp.users'])
         $scope.fileToUpload = fileList[0];
     };
 
-    $scope.finalEdit = function()
+    $scope.finalChange = function()
     {
-        EditProfileService.editProfile( $scope.dati.userId,$scope.dati.name,$scope.dati.surname, $scope.dati.nuovapassword,$scope.dati.buddista,$scope.dati.tutor, $scope.imgPath).then(function() {
+        EditProfileService.cambiaImg( $scope.dati.userId, $scope.imgPath).then(function() {
 
             Users.updateUser($scope.dati.userId);
 
-            $scope.dati.feedback = "Il profilo è stato modificato corretamente";
-            $scope.dati.name = "";
-            $scope.dati.surname = "";
-            $scope.dati.nuovapassword="";
-            $scope.dati.nuovapassword2="";
-            $scope.dati.buddista="";
-            $scope.dati.tutor="";
+            $scope.dati.feedback = "L'immagine è stata caricata corretamente";
             $scope.imgPath="";
         });
     }

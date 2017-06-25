@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.userProfileView', ['ngRoute','myApp.forum'])
+angular.module('myApp.userProfileView', ['ngRoute','myApp.forum','myApp.users'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/userProfile', {

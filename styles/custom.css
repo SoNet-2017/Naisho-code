@@ -375,6 +375,7 @@ div.media-body {
     align-content: center;
     padding-left:3%;
     padding-bottom:5px;
+
 }
 
 #detailPost h1{
@@ -393,6 +394,16 @@ span.mipiace-commenta{
     }
 ul {
     list-style-type: none;
+}
+#commentiPost{
+    margin-top:20px;
+    background: white;
+    border-radius: 15px;
+    margin-left: 10%;
+    align-content: center;
+    padding-left:3%;
+    padding-bottom:5px;
+    padding-top: 15px;
 }
 #detailForum h1{
     alignment: center;
@@ -631,6 +642,21 @@ h3{
     box-shadow: 0px 0px 14px #1f97b7;
 }
 
+#cambia-immagine{
+    width:50%;
+    background-color: rgba(255,255,255,0.5);
+    margin-top: 15%;
+    border-radius:15px;
+    text-align: center;
+    align-content: center;
+    padding:15px;
+}
+#cambia-immagine button{
+    margin-top: 45px;
+    margin-left: 25px;
+    border-right: 10px;
+    margin-right: 10%;
+}
 
 
 
@@ -838,8 +864,6 @@ h2{
     margin-top: 5px;
     }
 
-
-
 /*calendario*/
 .nuovoevento-forum{
     margin-left: 10px;
@@ -851,9 +875,6 @@ h2{
     display:block;
 
 }
-
-
-
 
 
 #newEvent,#newForum{
@@ -912,5 +933,22 @@ h2{
 #forumCalendar h1 {
     padding-top:0px;
     color:black;
+}
+
+/*storico preghiere*/
+#contenitorePreghiere{
+    margin-top: 150px;
+    margin-left:20%;
+}
+
+#contenitorePreghiere tr,td{
+    color:white;
+    alignment: center;
+    padding-right: 50px;
+
+}
+#contenitorePreghiere table{
+    margin-left: 200px;
+    padding:20px;
 }
 

@@ -33,7 +33,8 @@ angular.module('myApp.users.usersService', [])
                     surname: surname,
                     email: email,
                     type: type,
-                    buddista: Buddista
+                    buddista: Buddista,
+                    img_url: ""
                 });
             },
 

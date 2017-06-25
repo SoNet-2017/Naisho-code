@@ -51,7 +51,7 @@ angular.module('myApp.homeView', ['ngRoute','myApp.evento','myApp.post','myApp.u
         }
         //console.log(b);
         var c= a+b;
-        //console.log(c);
+        console.log(c);
         var ref = firebase.database().ref().child("frasi/"+c+"");
         $scope.soka = $firebaseObject(ref);
         $scope.soka.$loaded().then(function () {
@@ -72,16 +72,20 @@ angular.module('myApp.homeView', ['ngRoute','myApp.evento','myApp.post','myApp.u
                 $scope.dati.evm.positions.push({lat: lat, lng: lng});
             }
         });
-       // console.log($scope.dati.eventi);
+        console.log($scope.dati.eventi);
         $scope.dati.eventi.$loaded().then(function () {
           for (var i=0;i< $scope.dati.eventi.length; i++){
-              if (b<=$scope.dati.eventi[i].Mese) {
+            //  console.log($scope.dati.eventi[i].Mese);
+             // console.log($scope.dati.eventi[i].Giorno);
+              if (b<$scope.dati.eventi[i].Mese)
+                  $scope.dati.eventiDaMostrare.push($scope.dati.eventi[i])
+              else if(b===$scope.dati.eventi[i].Mese){
                 if(a<=$scope.dati.eventi[i].Giorno)
                 $scope.dati.eventiDaMostrare.push($scope.dati.eventi[i])
             }
           }
-
         });
+            //console.log($scope.dati.eventiDaMostrare);
 
         //funzione per la geolocalizzazione di tutti gli utenti connessi, così come effettuano il login possiamo sapere già dove si trovano
         var userId = $firebaseAuth().$getAuth().uid;
