@@ -3,7 +3,7 @@
 angular.module('myApp.users.usersTutorsService', [])
 
     .factory('UsersTutorsService', function usersTutorService($firebaseArray, $firebaseObject) {
-        var UsersTutorsService = {
+        var NewUsersTutorService = {
             getTutors: function() {
                 var ref = firebase.database().ref().child("tutors");
                 return $firebaseArray(ref);
@@ -13,9 +13,8 @@ angular.module('myApp.users.usersTutorsService', [])
                 var userRef = firebase.database().ref().child("users").child(userId);
                 return $firebaseObject(userRef);
             },
-            insertNewUsersTutored: function (tutor, tutored, button) {
-                // quando faccio richiesta per essere tutor io sono tutor e otherUser è tutored,
-                //quando faccio richiesta per avere un tutor io sono tutored e l'altro è tutor
+            insertNewTutor: function (tutor, tutored,  button) {
+                //add the critica to list of critucs and set the logged value to true
                 var ref = firebase.database().ref().child("tutors");
                 // create a synchronized array
                 return $firebaseArray(ref).$add({
@@ -24,7 +23,7 @@ angular.module('myApp.users.usersTutorsService', [])
                     button: button
                 });
             },
-            updateUsersTutored: function (tutorId) {
+            updateUsersTutor: function (tutorId) {
                 //add the user to list of users and set the logged value to true
                 var ref = firebase.database().ref().child("tutors").child(tutorId);
                 // create a synchronized array
@@ -37,6 +36,5 @@ angular.module('myApp.users.usersTutorsService', [])
                 refDel.remove();
             }
         };
-        return UsersTutorService;
+        return NewUsersTutorService;
     });
-

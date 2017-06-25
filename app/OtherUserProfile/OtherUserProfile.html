@@ -2,6 +2,9 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="page-header">
+                <img class="media-object" ng-src="{{dati.recipient.img_url}}" alt="immagine del profilo"  ng-if="dati.recipient.img_url.includes('https://firebasestorage.googleapis.com')">
+                <img src="../images/user.png" id="userIcon" alt="immagine del profilo" ng-if="!dati.recipient.img_url.includes('https://firebasestorage.googleapis.com')" >
+
                 <h1>{{dati.recipient.name}} {{dati.recipient.surname}}  {{dati.recipient.email}}</h1>
             </div>
 
@@ -10,26 +13,16 @@
 
     <div id="buttonOtherProfile">
         <div>
-            <div id="tutorDiv" >
-                <button ng-click="removeTutor(tutors.id)" type="submit" class="btn btn-info" style="float: right;">Non essere più tutor</button></div>
-            <div ng-if="tutors.tutor.userId != dati.userId.$id && tutors.tutored != dati.recipient.userId">
-                <button id="tutorButton"  ng-click="CreateTutor();" type="submit" class="btn btn-primary" ng-if="" style="float: right;">Diventa tutor</button>
-            </div>
+            <button id="becameFriends" ng-if= "dati.notYetFriends" ng-click="CreateFriendship()"  type="submit" class="btn btn-primary"  style="float: right;">Aggiungi agli amici</button>
+            <button ng-if="dati.yetFriends " ng-click="removeFriendship(dati.Friend)" type="submit" class="btn btn-info" style="float: right;">Elimina dagli amici</button>
         </div>
         <div>
-            <div id="tutoredDiv" >
-
-                <button ng-click="removeTutor(tutors.id)" type="submit" class="btn btn-info" style="float: right;">Non farmi più da tutor</button></div>
-            <div ng-if="tutors.tutored.userId != dati.userId.$id && tutors.tutor != dati.recipient.userId">
-                <button id="tutoredButton"  ng-click="CreateTutored();" type="submit" class="btn btn-primary" ng-if="" style="float: right;">Fammi da tutor</button>
-            </div>
+            <button id="becameTutor" ng-if= "dati.notYetTutor" ng-click="BecameTutor()"  type="submit" class="btn btn-primary"  style="float: right;">Chiedi di diventare tutor</button>
+            <button ng-if="dati.yetTutor " ng-click="removeTutor(dati.Tutor)" type="submit" class="btn btn-info" style="float: right;">Non essere più tutor</button>
         </div>
         <div>
-            <div id="friendDiv" >
-                <button ng-click="removeFriendship(friends.id)" type="submit" class="btn btn-info" style="float: right;">Rimuovi dagli amici</button></div>
-            <div ng-if="friends.src.userId != dati.userId.$id && friends.dest != dati.recipient.userId">
-                <button id="friendsButton"  ng-click="CreateFriendship();" type="submit" class="btn btn-primary" ng-if="" style="float: right;">Richiedi Amicizia</button>
-            </div>
+            <button id="becameTutored" ng-if= "dati.notYetTutored" ng-click="BecameTutored()"  type="submit" class="btn btn-primary"  style="float: right;">Chiedi di essere seguito</button>
+            <button ng-if="dati.yetTutored " ng-click="removeTutor(dati.Tutoreded)" type="submit" class="btn btn-info" style="float: right;">Non essere più seguito</button>
         </div>
 
     </div>
@@ -40,11 +33,16 @@
 
 <div id="otherProfileInfo">
     <h4>Post</h4>
-    <div ng-repeat="post in dati.post" ng-if ="dati.recipient.userId == post.UserPost" >
+    <div id="postOtherProfile" ng-repeat="post in postDaMostrare"  >
+        <a href="#!/singlePost/{{post.id}}">
+            <div>
+                {{post.contenuto}}
+                <p ng-if="!(post.img_url.includes('https://firebasestorage.googleapis.com')) && post.img_url!=''"></p>
+                <img class="media-object" ng-src="{{post.img_url}}" alt="{{post.img_alt}}" ng-if="post.img_url.includes('https://firebasestorage.googleapis.com')">
+                <p ng-if="post.img_url == ''"></p>
+            </div>
+        </a>
+        <br>
 
     </div>
 </div>
-
-
-
-
