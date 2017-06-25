@@ -6,10 +6,12 @@
     
 </div>
 
-    <input type="text" name="ricerca" ng-model="dati.ricerca" />
+    <input type="text" name="ricerca" ng-model="dati.ricerca"  />
 
 <button type="submit" ng-click="input()" class="btn btn-success center-block">Cerca</button>
-{{risultato}}
+<a  ng-if="dati.userpost===myID"   href="#!/userProfile" >{{risultato}}</a>
+<a  ng-if="dati.userpost!=myID"   href="#!/OtherUser/{{dati.userpost}}" > {{risultato}}</h1></a>
+
 
 
 

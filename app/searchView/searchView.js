@@ -32,15 +32,18 @@ angular.module('myApp.searchView', ['ngRoute','myApp.forum','myApp.post','myApp.
     // followed by the function itself.
     //When using this type of annotation, take care to keep the annotation array
     // in sync with the parameters in the function declaration.
-    .controller('searchViewCtrl', ['$scope','$routeParams', 'Forum', 'Post', 'UserList', 'Evento',
-        function($scope, $routeParams, Forum, Post, UserList, Evento) {
+    .controller('searchViewCtrl', ['$scope','$routeParams', 'Forum', 'Post', 'UserList', 'Evento','currentAuth',
+        function($scope, $routeParams, Forum, Post, UserList, Evento, currentAuth) {
 
 
             //initialize variables
             $scope.dati = {};
             $scope.risultato={};
             $scope.risultati={};
+            //$scope.nome = {};
+           // $scope.cognome = {};
 
+            $scope.myID=currentAuth.uid;
 
 
             $scope.dati.forum = Forum.getData();
@@ -51,35 +54,50 @@ angular.module('myApp.searchView', ['ngRoute','myApp.forum','myApp.post','myApp.
             console.log( $scope.dati.listaUtenti );
 
             $scope.dati.listaUtenti.$loaded().then(function () {
+                $scope.dati.posts.$loaded().then(function () {
                 $scope.input = function () {
+
+                    //console.log($scope.dati.ricerca);
+                    //console.log("cosa sto cercando è un array di:",$scope.dati.ricerca.length);
                     $scope.dati.ricerca.split(" ");
-                    for (var i=0;i<$scope.dati.listaUtenti.length; i++){
-                                       $scope.nome=$scope.dati.listaUtenti[i].name;
-                                       $scope.nome.split(" ");
-                                       $scope.cognome=$scope.dati.listaUtenti[i].surname;
-                                       $scope.cognome.split(" ");
-                     for (var a=0, b=0, c=0;a<$scope.nome.length, b<$scope.cognome.length, c<$scope.dati.ricerca.length; a++ , b++, c++){
+                    for (var i = 0; i < $scope.dati.listaUtenti.length; i++) {
+                        $scope.nome = $scope.dati.listaUtenti[i].name;
+                        $scope.nome.split(" ");
+                        $scope.cognome = $scope.dati.listaUtenti[i].surname;
+                        $scope.cognome.split(" ");
+                        console.log($scope.nome, $scope.cognome);
+                        for (var a = 0, b = 0, c = 0,d=0;
+                             a < $scope.nome.length, b < $scope.cognome.length, c < $scope.dati.ricerca.length, d < $scope.dati.posts.length;
+                             a++ , b++, c++, d++) {
 
-                        if (($scope.dati.ricerca[c] === $scope.nome[a])||
-                            ($scope.dati.ricerca[c] === $scope.cognome[b])||
-                            ($scope.dati.ricerca[c] === $scope.dati.listaUtenti[i].email))
-                        {
+                            if ((($scope.dati.ricerca[c] === $scope.nome[a]) ||
+                                ($scope.dati.ricerca[c] === $scope.cognome[b]) ||
+                                ($scope.dati.ricerca[c] === $scope.dati.listaUtenti[i].email)) || //c'è da vedere questo perchè con l'and se non pubblicano neanche un post allora non li trovi
+                                $scope.dati.posts[d].userPost===$scope.dati.listaUtenti[i].$id) {
 
-                            $scope.risultato=$scope.dati.listaUtenti[i].name + ' '+
-                                $scope.dati.listaUtenti[i].surname + ' '+
-                                $scope.dati.listaUtenti[i].email ;
+                                $scope.risultato = $scope.dati.listaUtenti[i].name + ' ' +
+                                    $scope.dati.listaUtenti[i].surname + ' ' +
+                                    $scope.dati.listaUtenti[i].email;
+                                $scope.dati.userpost= $scope.dati.posts[d].userPost;
+
+                            }
 
                         }
-
-                                   }
                         console.log("$scope.dati.listaUtenti.length", $scope.dati.listaUtenti.length);
-                        console.log("numeri effettivi di cicli", i );}
-                                   console.log( $scope.dati.ricerca );
-                                   console.log( $scope.risultato);
+                        console.log("numeri effettivi di cicli", i);
+                    }
+                    console.log($scope.dati.ricerca);
+                    console.log($scope.risultato);
 
-                                   
+
+
                     //return $scope.risultato;
-                }});
+                } })});
+
+            //Azzero le variabili di ricerca
+            $scope.risultato={};
+            //$scope.nome={};
+            //$scope.cognome={};
            $scope.dati.evento = Evento.getData();
            console.log( $scope.dati.listaUtenti );
 
