@@ -924,3 +924,20 @@ h2{
     color:black;
 }
 
+/*storico preghiere*/
+#contenitorePreghiere{
+    margin-top: 150px;
+    margin-left:20%;
+}
+
+#contenitorePreghiere tr,td{
+    color:white;
+    alignment: center;
+    padding-right: 50px;
+
+}
+#contenitorePreghiere table{
+    margin-left: 200px;
+    padding:20px;
+}
+

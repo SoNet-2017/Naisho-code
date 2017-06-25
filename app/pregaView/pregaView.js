@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.pregaView', ['ngRoute','myApp.users','myApp.prega'])
+angular.module('myApp.pregaView', ['ngRoute','myApp.users','myApp.prega','myApp.post'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/pregaView/', {
@@ -18,9 +18,10 @@ angular.module('myApp.pregaView', ['ngRoute','myApp.users','myApp.prega'])
             }
         })
     }])
-    .controller('pregaViewCtrl', ['$scope','Users','InsertPregaService',
-        function($scope, Users,InsertPregaService){
+    .controller('pregaViewCtrl', ['$scope','Users','InsertPregaService','InsertPostService',
+        function($scope, Users,InsertPregaService,InsertPostService){
             //initialize variables
+            $scope.dati.feedback = "";
            // id user attuale
             $scope.userId = firebase.auth().currentUser.uid;
             console.log($scope.userId );
@@ -139,7 +140,7 @@ angular.module('myApp.pregaView', ['ngRoute','myApp.users','myApp.prega'])
 
 
         $scope.salva= function(){
-           
+
             var durata=ore+":"+minuti+":"+secondi;
             console.log(durata);
             InsertPregaService.insertNewPreghiera( $scope.userId, data, durata).then(function(ref) {
@@ -149,5 +150,18 @@ angular.module('myApp.pregaView', ['ngRoute','myApp.users','myApp.prega'])
                 $scope.dati.feedback = "La preghiera è stata salvata";
             });
         }
+
+            $scope.pubblica= function(){
+
+                var durata=ore+":"+minuti+":"+secondi;
+                var contenuto="Ho appena praticato"+" "+durata;
+                console.log(contenuto);
+                InsertPostService.insertNewPost(contenuto,$scope.userId).then(function(ref) {
+                    var postId = ref.key;
+
+                    InsertPostService.updatePost(postId);
+                    $scope.dati.feedback = "Il post è stato condiviso";
+                });
+            }
 
     }]);

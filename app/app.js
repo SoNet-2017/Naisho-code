@@ -37,6 +37,7 @@ angular.module('myApp', [
     'myApp.loginView',
     'myApp.OtherUserProfile',
     'myApp.pregaView',
+    'myApp.preghiereView',
     'myApp.singleForumView',
     'myApp.singlePostView',
     'myApp.tutorView',

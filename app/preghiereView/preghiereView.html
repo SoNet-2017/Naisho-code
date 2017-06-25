@@ -1,0 +1,8 @@
+        <div class="w3-container" id="contenitorePreghiere">
+            <h2>Storico delle tue preghiere</h2>
+            <table id="elencoPreghiere">
+                <tr><td>Data</td><td>Durata</td></tr>
+                <tr  ng-repeat="preghiera in preghiereDaMostrare"><td>{{preghiera.data}}</td><td>{{preghiera.durata}}</td></tr>
+            </table>
+
+        </div>

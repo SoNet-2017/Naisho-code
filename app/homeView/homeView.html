@@ -23,16 +23,16 @@
 
     <div class="w3-container" id="eventi" >
         <ul class="media-list" id="elencoEventi">
-    <li class="media" ng-repeat="event in dati.eventiDaMostrare">
-        <a href="#!/details/{{evento.id}}">
-            <div  class="eventiHome">
-                <h4 class="media-heading"><strong>{{event.title}}</strong></h4>
-                <p>{{event.Giorno}} - {{event.Mese}}</p>
-            </div>
-        </a>
-    </li>
-</ul>
-</div>
+            <li class="media" ng-repeat="event in dati.eventiDaMostrare">
+                 <a href="#!/details/{{event.id}}">
+                     <div  class="eventiHome">
+                         <h4 class="media-heading"><strong>{{event.title}}</strong></h4>
+                            <p>{{event.Giorno}} - {{event.Mese}}</p>
+                     </div>
+                 </a>
+            </li>
+        </ul>
+    </div>
     <br>
         <button id="condividi"> <a href="#!/addPost"> Condividi</a></button>
     <br>

@@ -1,4 +1,7 @@
 <link rel="stylesheet" href="../styles/custom.css"/>
+
+<div class="alert alert-success alert-dismissible" role="alert" ng-if="dati.feedback">{{ dati.feedback }}</div>
+
 <h3><b>Prega</b></h3>
 <div id="immaginegong">
 <img src="../images/imggong.png">
@@ -20,6 +23,6 @@
 <!--</audio>-->
 <div class="salva-visualizza-pubblica" id="salva-visualizza-pubblica">
         <a ng-click="salva()"> <img src="../images/iconacalendarioaggiungi.png" id="salva" >Salva sul calendario</a><br>
-        <a href="#!editcalendarView" ><img src="../images/iconacalendariostorico.png"id="visualizza">Visualizza lo storico delle tue preghiere</a><br>
-        <a href="#!addPost" ><img src="../images/iconapubblicabianca.png" id="pubblica"> Pubblica</a>
+        <a href="#!preghiereView" ><img src="../images/iconacalendariostorico.png"id="visualizza">Visualizza lo storico delle tue preghiere</a><br>
+        <a ng-click="pubblica()" ><img src="../images/iconapubblicabianca.png" id="pubblica"> Pubblica</a>
 </div>
