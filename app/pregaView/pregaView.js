@@ -154,9 +154,10 @@ angular.module('myApp.pregaView', ['ngRoute','myApp.users','myApp.prega','myApp.
             $scope.pubblica= function(){
 
                 var durata=ore+":"+minuti+":"+secondi;
-                var contenuto="Ho appena praticato"+" "+durata;
+                var contenuto="Ho appena praticato per questo tempo:"+" "+durata;
                 console.log(contenuto);
-                InsertPostService.insertNewPost(contenuto,$scope.userId).then(function(ref) {
+                var url="";
+                InsertPostService.insertNewPost(contenuto,$scope.userId,url).then(function(ref) {
                     var postId = ref.key;
 
                     InsertPostService.updatePost(postId);

@@ -31,9 +31,11 @@ angular.module('myApp.singleForumView', ['ngRoute','myApp.forum'])
         $scope.commentiDaMostrare=[];
 
         $scope.commenti=Forum.getCommentData();
+        console.log($scope.commenti);
         $scope.dati.forum = SingleForum.getSingleForum($routeParams.forumID);
         console.log($scope.dati.forum);
 
+        $scope.commenti.$loaded().then(function () {
         $scope.dati.forum.$loaded().then(function () {
             var idCommentatore = currentAuth.uid;
             $scope.commentatore=UsersChatService.getUserInfo(currentAuth.uid);
@@ -71,6 +73,7 @@ angular.module('myApp.singleForumView', ['ngRoute','myApp.forum'])
 
             };
 
+        });
 
         });
 

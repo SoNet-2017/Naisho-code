@@ -34,8 +34,8 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post','myApp.users'])
        // console.log( $scope.dati.post );
         //commenti ai post:
        $scope.commenti=Post.getCommentData();
-      // console.log($scope.commenti);
-
+       console.log($scope.commenti);
+        $scope.commenti.$loaded().then(function (){
         $scope.dati.post.$loaded().then(function () {
             $scope.dati.userPost = UsersChatService.getUserInfo($scope.dati.post.userPost);
             var idCommentatore = currentAuth.uid;
@@ -52,7 +52,7 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post','myApp.users'])
 
        //commenti al post:
            for (var i = 0; i < $scope.commenti.length; i++) {
-                  console.log($scope.commenti[i]);
+                 // console.log($scope.commenti[i]);
                if( $scope.commenti[i].post===$scope.dati.post.id){
              var info=UsersChatService.getUserInfo($scope.commenti[i].idCommentatore);
              var cognome=UsersChatService.getUserInfo($scope.commenti[i].idCommentatore);
@@ -100,5 +100,8 @@ angular.module('myApp.singlePostView', ['ngRoute','myApp.post','myApp.users'])
                    b.innerHTML = "Mi Piace";
                }
             }
+
         });
+        });
+
     }]);
