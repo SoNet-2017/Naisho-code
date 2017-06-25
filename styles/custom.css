@@ -375,6 +375,7 @@ div.media-body {
     align-content: center;
     padding-left:3%;
     padding-bottom:5px;
+
 }
 
 #detailPost h1{
@@ -393,6 +394,16 @@ span.mipiace-commenta{
     }
 ul {
     list-style-type: none;
+}
+#commentiPost{
+    margin-top:20px;
+    background: white;
+    border-radius: 15px;
+    margin-left: 10%;
+    align-content: center;
+    padding-left:3%;
+    padding-bottom:5px;
+    padding-top: 15px;
 }
 #detailForum h1{
     alignment: center;

@@ -9,8 +9,8 @@
     <p ng-if="!(post.img_url.includes('https://firebasestorage.googleapis.com')) && post.img_url!=''"></p>
     <img class="media-object" ng-src="{{post.img_url}}" alt="{{post.img_alt}}" ng-if="post.img_url.includes('https://firebasestorage.googleapis.com')">
     <p ng-if="post.img_url == ''"></p>
-
-
+</div>
+<div id="commentiPost">
     <ul class="media-list" id="elencoCommenti">
         <li class="media" ng-repeat="commento in commentiDaMostrare">
                     <p>{{commento.info.name}} {{commento.info.surname}}: {{commento.commento}}</p>
