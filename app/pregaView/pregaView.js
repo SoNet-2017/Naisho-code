@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.pregaView', ['ngRoute'])
+angular.module('myApp.pregaView', ['ngRoute','myApp.users','myApp.prega'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/pregaView/', {
@@ -18,11 +18,12 @@ angular.module('myApp.pregaView', ['ngRoute'])
             }
         })
     }])
-    .controller('pregaViewCtrl', ['$scope',
-        function($scope){
+    .controller('pregaViewCtrl', ['$scope','Users','InsertPregaService',
+        function($scope, Users,InsertPregaService){
             //initialize variables
-           // $scope.dati = {};
-
+           // id user attuale
+            $scope.userId = firebase.auth().currentUser.uid;
+            console.log($scope.userId );
             /*cronometro*/
             var centesimi = 0;
             var secondi = 0;
@@ -34,6 +35,23 @@ angular.module('myApp.pregaView', ['ngRoute'])
             document.getElementById("Secondi").innerHTML = ":00";
             document.getElementById("Minuti").innerHTML = ":00";
             document.getElementById("Ore").innerHTML = "00";
+
+            //data:
+            var mese=new Date().getMonth();
+            mese=mese+1;
+            if (String(mese).length == 1) {
+                mese = "0"+mese;
+            }
+            var giorno=new Date().getDate();
+            if (String(giorno).length == 1) {
+                giorno = "0"+giorno;
+            }
+            var anno=new Date().getFullYear();
+            var data=anno+"-"+mese+"-"+giorno;
+
+            console.log(data);
+
+
             $scope.cronometro =function() {
                 if (centesimi < 99) {
                     centesimi++;
@@ -100,7 +118,7 @@ angular.module('myApp.pregaView', ['ngRoute'])
     document.getElementById("Continuare").disabled = true;
     document.getElementById("Ripartire").disabled = true;
 };
-
+// suono GONG
             var status = 0;
             $scope.Play=function(id) {
                 var audio = $("#"+id);
@@ -119,5 +137,17 @@ angular.module('myApp.pregaView', ['ngRoute'])
 
             };
 
+
+        $scope.salva= function(){
+           
+            var durata=ore+":"+minuti+":"+secondi;
+            console.log(durata);
+            InsertPregaService.insertNewPreghiera( $scope.userId, data, durata).then(function(ref) {
+                var preghieraId = ref.key;
+
+                InsertPregaService.updatePreghiera(preghieraId);
+                $scope.dati.feedback = "La preghiera è stata salvata";
+            });
+        }
 
     }]);

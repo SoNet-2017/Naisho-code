@@ -27,6 +27,7 @@ angular.module('myApp', [
     'myApp.fileUpload',
     'myApp.forum',
     'myApp.post',
+    'myApp.prega',
     'myApp.users',
     'myApp.detailsView',
     'myApp.editProfileView',
