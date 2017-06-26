@@ -966,7 +966,7 @@ h2{
     margin-left: 200px;
     padding:20px;
 }
-.container:before {
+.containerpreg:before {
     content:"";
     position:absolute;
     top:130px;
@@ -987,16 +987,5 @@ h2{
 
 
 
-/*contenitore preghiere in calendario*/
-#preghiera{
 
-    background-color: white;
-    min-height:100px;
-    margin-top:30px;
-    border-radius:15px;
-
-    margin-left:2.5%;
-    width:95%;
-
-}
 
