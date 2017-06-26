@@ -900,7 +900,7 @@ h2{
     width: 75%;
     margin-right:40px;
     height:400px;
-    background-color:#FFF;
+    background-color:#FFFFFF;
     position: relative;
     border-radius: 15px;
     display:block;
@@ -937,11 +937,18 @@ h2{
     min-height:50px;
     margin-top:20px;
     border-radius:15px;
+
+    margin-left:2.5%;
+    width:95%;
+
 }
 #forumCalendar h1 {
     padding-top:0px;
     color:black;
+
 }
+
+
 
 /*storico preghiere*/
 #contenitorePreghiere{
@@ -958,5 +965,20 @@ h2{
 #contenitorePreghiere table{
     margin-left: 200px;
     padding:20px;
+}
+
+
+
+/*contenitore preghiere in calendario*/
+#preghiera{
+
+    background-color: white;
+    min-height:100px;
+    margin-top:30px;
+    border-radius:15px;
+
+    margin-left:2.5%;
+    width:95%;
+
 }
 
