@@ -957,7 +957,7 @@ h2{
 }
 
 #contenitorePreghiere tr,td{
-    color:white;
+    color:black;
     alignment: center;
     padding-right: 50px;
 
@@ -965,6 +965,24 @@ h2{
 #contenitorePreghiere table{
     margin-left: 200px;
     padding:20px;
+}
+.container:before {
+    content:"";
+    position:absolute;
+    top:130px;
+    right:250px;
+    width:900px;
+    height:900px;
+    background:url(../images/pergamenapreghiere.png) no-repeat;
+    z-index: -1;/*sfondo sotto la scritta*/
+
+}
+#elencoPreghiere{
+
+    margin-top:100px;
+    font: 20px/35px Helvetica, Sans-Serif;
+
+
 }
 
 
