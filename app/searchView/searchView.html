@@ -6,22 +6,26 @@
     
 </div>
 
-    <input type="text" name="ricerca" ng-model="dati.ricerca"  />
+    <input type="text" name="ricerca" ng-model="dati.ricercaa"  />
 
 <button type="submit" ng-click="input()" class="btn btn-success center-block">Cerca</button>
-<a  ng-if="dati.userpost===myID"   href="#!/userProfile" >{{risultato}}</a>
-<a  ng-if="dati.userpost!=myID"   href="#!/OtherUser/{{dati.userpost}}" > {{risultato}}</h1></a>
+<a  ng-if="dati.userpost===myID"   href="#!/userProfile" >{{risultato}} </a>
+<a  ng-if="dati.userpost!=myID && risultato!=' '"
+    href="#!/OtherUser/{{dati.userpost}}" > {{risultato}}</h1></a>
+<a  ng-if="risultato ===' '" >Non ho trovato niente su Naisho, prova ad effettuare una altra ricerca</a>
 
 
 
 
-<div id="contenitoreRisultati">
+
+
+
+<!--
+ <div id="contenitoreRisultati">
     <p id="contenitore"></p>
 </div>
 
-
-
-<!-- <div ng-repeat="ricerca in dati | Filter: search"><em>{{ricerca.dati}}</em></div>
+<div ng-repeat="ricerca in dati | Filter: search"><em>{{ricerca.dati}}</em></div>
 <ul ng-repeat="(key, value) in dati | orderByPriority | filter:search">
         <li><a href="{{ key }}">{{ value}}</a></li>
     </ul>-->
