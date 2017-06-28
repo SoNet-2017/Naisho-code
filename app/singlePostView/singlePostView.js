@@ -26,6 +26,7 @@ angular.module('myApp.singlePostView', ['ngRoute'])
         $scope.dati = {};
         $scope.post={};
         $scope.commenti={};
+        $scope.id={};
         $scope.commentiDaMostrare=[];
 
 //per avere i dati del singolo post
@@ -34,7 +35,7 @@ angular.module('myApp.singlePostView', ['ngRoute'])
        // console.log( $scope.dati.post );
         //commenti ai post:
        $scope.commenti=Post.getCommentData();
-       console.log($scope.commenti);
+      // console.log($scope.commenti);
         $scope.commenti.$loaded().then(function (){
         $scope.dati.post.$loaded().then(function () {
             $scope.dati.userPost = UsersChatService.getUserInfo($scope.dati.post.userPost);
@@ -42,12 +43,13 @@ angular.module('myApp.singlePostView', ['ngRoute'])
             $scope.idCommentatore=idCommentatore;
             $scope.commentatore=UsersChatService.getUserInfo(currentAuth.uid);
             console.log("id del commentatore:" ,idCommentatore);
-            console.log("questo è info fi chi ha messo il post dati.userPost:", $scope.dati.userPost);
-
+            console.log("questo è info di chi ha messo il post dati.userPost:", $scope.dati.userPost);
+            // id di chi ha messo il post
+            //console.log($scope.dati.userPost.$id);
 //dati dell'user che ha messo il post:
-       $scope.dati.user = UsersChatService.getUserInfo($scope.dati.post.userPost);
-       console.log($scope.dati.post.userPost)
-       console.log("questo è dati:", $scope.dati.user);
+     //  $scope.dati.user = UsersChatService.getUserInfo($scope.dati.post.userPost);
+     //  console.log($scope.dati.post.userPost)
+     //  console.log("questo è dati:", $scope.dati.user);
 
 
        //commenti al post:

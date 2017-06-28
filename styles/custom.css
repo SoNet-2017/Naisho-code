@@ -390,7 +390,8 @@ div.media-body {
     background: #bbbbbb;
 }
 span.mipiace-commenta{
-    margin-left:10%;
+    margin-left:15%;
+    margin-top:10px;
     }
 ul {
     list-style-type: none;

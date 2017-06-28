@@ -1,6 +1,6 @@
 <div id="detailPost">
-    <a  ng-if="dati.userPost.id===idCommentatore"   href="#!/userProfile" > <h1> {{dati.userPost.name}}  {{dati.userPost.surname}}</h1></a>
-    <a  ng-if="dati.userPost.id!=idCommentatore"   href="#!/OtherUser/{{dati.post.userPost}}" > <h1> {{dati.userPost.name}}  {{dati.userPost.surname}}</h1></a>
+    <a  ng-if="dati.userPost.$id===idCommentatore"   href="#!/userProfile" > <h1> {{dati.userPost.name}}  {{dati.userPost.surname}}</h1></a>
+    <a  ng-if="dati.userPost.$id!=idCommentatore"   href="#!/OtherUser/{{dati.post.userPost}}" > <h1> {{dati.userPost.name}}  {{dati.userPost.surname}}</h1></a>
 
 <p>{{dati.post.contenuto}}</p>
     <!--
@@ -10,6 +10,13 @@
     <img class="media-object" ng-src="{{post.img_url}}" alt="{{post.img_alt}}" ng-if="post.img_url.includes('https://firebasestorage.googleapis.com')">
     <p ng-if="post.img_url == ''"></p>
 </div>
+<br>
+<span class="mipiace-commenta"><button ng-click="miPiace()" id="miPiace" >Mi Piace</button>
+        <button class="commenta" ng-click="commenta()">Commenta</button>
+    </span>
+<div id="commento"  ><input type="text" class="textComment" id="textComment" placeholder="Scrivi cosa pensi" ng-model="post.newComment" />
+    <button ng-click="salvaCommento();closeCommento(); ">Salva Commento</button>
+</div>
 <div id="commentiPost">
     <ul class="media-list" id="elencoCommenti">
         <li class="media" ng-repeat="commento in commentiDaMostrare">
@@ -18,11 +25,4 @@
         </li>
     </ul>
 </div>
-    <span class="mipiace-commenta"><button ng-click="miPiace()" id="miPiace" >Mi Piace</button>
-        <button class="commenta" ng-click="commenta()">Commenta</button>
-    </span>
-        <div id="commento"  ><input type="text" class="textComment" id="textComment" placeholder="Scrivi cosa pensi" ng-model="post.newComment" />
-                        <button ng-click="salvaCommento();closeCommento(); ">Salva Commento</button>
-    </div>
 
-</div>
