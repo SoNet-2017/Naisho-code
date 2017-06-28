@@ -17,11 +17,11 @@
             <button ng-if="dati.yetFriends " ng-click="removeFriendship(dati.Friend)" type="submit" class="btn btn-info" style="float: right;">Elimina dagli amici</button>
         </div>
         <div>
-            <button id="becameTutor" ng-if= "dati.notYetTutor" ng-click="BecameTutor()"  type="submit" class="btn btn-primary"  style="float: right;">Chiedi di diventare tutor</button>
+            <button id="becameTutor" ng-if= "dati.notYetTutor" ng-click="becameTutor()"  type="submit" class="btn btn-primary"  style="float: right;">Chiedi di diventare tutor</button>
             <button ng-if="dati.yetTutor " ng-click="removeTutor(dati.Tutor)" type="submit" class="btn btn-info" style="float: right;">Non essere più tutor</button>
         </div>
         <div>
-            <button id="becameTutored" ng-if= "dati.notYetTutored" ng-click="BecameTutored()"  type="submit" class="btn btn-primary"  style="float: right;">Chiedi di essere seguito</button>
+            <button id="becameTutored" ng-if= "dati.notYetTutored" ng-click="becameTutored()"  type="submit" class="btn btn-primary"  style="float: right;">Chiedi di essere seguito</button>
             <button ng-if="dati.yetTutored " ng-click="removeTutor(dati.Tutoreded)" type="submit" class="btn btn-info" style="float: right;">Non essere più seguito</button>
         </div>
 
