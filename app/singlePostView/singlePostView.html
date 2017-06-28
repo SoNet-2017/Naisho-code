@@ -11,7 +11,8 @@
     <p ng-if="dati.post.img_url == ''"></p>
 </div>
 <br>
-<span class="mipiace-commenta"><button ng-click="miPiace()" id="miPiace" >Mi Piace</button>
+<span class="mipiace-commenta"> <button ng-click="miPiace()" id="miPiace" >Mi Piace</button>
+       <!-- <button ng-click="nonMiPiacePiu()" id="nonMiPiace" >Non mi piace più</button>-->
         <button class="commenta" ng-click="commenta()">Commenta</button>
     </span>
 <div id="commento"  ><input type="text" class="textComment" id="textComment" placeholder="Scrivi cosa pensi" ng-model="post.newComment" />
