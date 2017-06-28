@@ -32,10 +32,10 @@ angular.module('myApp.preghiereView', ['ngRoute','myApp.prega'])
                 console.log($scope.preghiere);
                 for (var i=0;i< $scope.preghiere.length; i++){
                      //console.log($scope.preghiere[i]);
-                     //console.log($scope.preghiere[i].userId);
-                    if ($scope.preghiere[i].userId===$scope.userId)
+                     console.log($scope.preghiere[i].userId);
+                    if ($scope.preghiere[i].userId===$scope.userId){
                         console.log("sono qui")
-                        $scope.preghiereDaMostrare.push($scope.preghiere[i])
+                        $scope.preghiereDaMostrare.push($scope.preghiere[i]);}
                 }
             });
             console.log($scope.preghiereDaMostrare);

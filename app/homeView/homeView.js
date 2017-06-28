@@ -85,7 +85,7 @@ angular.module('myApp.homeView', ['ngRoute','myApp.evento','myApp.post','myApp.u
             }
           }
         });
-            //console.log($scope.dati.eventiDaMostrare);
+            console.log($scope.dati.eventiDaMostrare);
 
         //funzione per la geolocalizzazione di tutti gli utenti connessi, così come effettuano il login possiamo sapere già dove si trovano
         var userId = $firebaseAuth().$getAuth().uid;
