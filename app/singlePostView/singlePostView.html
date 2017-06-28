@@ -6,9 +6,9 @@
     <!--
         <img class="media-object" ng-src="../{{post.img_url}}" alt="{{post.img_alt}}" ng-if="!(post.img_url.includes('https://firebasestorage.googleapis.com')) && post.img_url!=''">
      -->
-    <p ng-if="!(post.img_url.includes('https://firebasestorage.googleapis.com')) && post.img_url!=''"></p>
-    <img class="media-object" ng-src="{{post.img_url}}" alt="{{post.img_alt}}" ng-if="post.img_url.includes('https://firebasestorage.googleapis.com')">
-    <p ng-if="post.img_url == ''"></p>
+    <p ng-if="!(dati.post.img_url.includes('https://firebasestorage.googleapis.com')) && dati.post.img_url!=''"></p>
+    <img class="media-object" ng-src="{{dati.post.img_url}}" alt="{{post.img_alt}}" ng-if="dati.post.img_url.includes('https://firebasestorage.googleapis.com')">
+    <p ng-if="dati.post.img_url == ''"></p>
 </div>
 <br>
 <span class="mipiace-commenta"><button ng-click="miPiace()" id="miPiace" >Mi Piace</button>
