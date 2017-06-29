@@ -86,22 +86,37 @@ angular.module('myApp.singlePostView', ['ngRoute'])
 
             //funzione mi "piace"
 
-            $scope.miPiace= function () {
+           // $scope.miPiace= function () {
                 //per cambiare colore
-                var b=document.getElementById("miPiace");
-                console.log(b);
-                if(b.style.backgroundColor="#bbbbbb")
-                {console.log("sono qui");
-                    b.style.backgroundColor="#9acae5";
-                    b.innerHTML = "Non mi Piace Più";
-                    console.log(b.style.backgroundColor);
+             //   var b=document.getElementById("miPiace");
+               // console.log(b);
+                //if(b.style.backgroundColor="#bbbbbb")
+             //   {console.log("sono qui");
+               //     b.style.backgroundColor="#9acae5";
+                //    b.innerHTML = "Non mi Piace Più";
+               //     console.log(b.style.backgroundColor);
+           // }
+           //     else  if(b.style.backgroundColor="#9acae5"){
+           //        console.log("ora sono qui");
+           //        b.style.backgroundColor="#bbbbbb";
+           //        b.innerHTML = "Mi Piace";
+           //    }
+           // }
+            $scope.dati.like = true;
+            $scope.dati.notLike = false;
+
+            $scope.miPiace= function () {
+                $scope.dati.like = false;
+                $scope.dati.notLike = true;
+
             }
-                else  if(b.style.backgroundColor="#9acae5"){
-                   console.log("ora sono qui");
-                   b.style.backgroundColor="#bbbbbb";
-                   b.innerHTML = "Mi Piace";
-               }
+
+            $scope.nonMiPiace= function () {
+                $scope.dati.like = true;
+                $scope.dati.notLike = false;
+
             }
+
 
         });
         });

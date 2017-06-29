@@ -11,7 +11,9 @@
     <p ng-if="dati.post.img_url == ''"></p>
 </div>
 <br>
-<span class="mipiace-commenta"> <button ng-click="miPiace()" id="miPiace" >Mi Piace</button>
+<span class="mipiace-commenta"> <button  ng-if= "dati.like"  ng-click="miPiace()" id="miPiace" >Mi Piace</button>
+                      <button ng-if="dati.notLike" ng-click="nonMiPiace()" id="nonMiPiace">Non mi piace più</button>
+
        <!-- <button ng-click="nonMiPiacePiu()" id="nonMiPiace" >Non mi piace più</button>-->
         <button class="commenta" ng-click="commenta()">Commenta</button>
     </span>
