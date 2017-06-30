@@ -9,17 +9,29 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
 
+#ContainerHome{
+    margin-top:75px;
+    background-attachment:scroll;
+    }
+
+#ContainerHome div{
+    background-attachment:scroll;
+    margin-bottom: 10px;
 }
 
 #condividi{
     color:white;
-    margin-top:150px;
+   /* margin-top:150px;*/
+   /* bottom:60%;*/
     margin-left: 50%;
     color: #3903FF;
     font-size: 15px;
     text-decoration: double;
   }
+
+
 #commento{
     display: none;
     width:100%;
@@ -27,39 +39,7 @@ body{
     margin-left:10%;
     margin-top:15px;
 }
-/*#log {<li class="media" ng-repeat="post in dati.posts">
-        <a href="#!/singlePost/{{post.Id}}">
-            <div  class="postHome">
-                <h4 class="media-heading"><strong>{{post.userPost}}</strong></h4>
-                <p>{{post.contenuto}}</p>
-                <!--<span><button class="mi piace">Mi Piace</button><button class="commenta">Commenta</button></span>-->
-            </div>
-        </a>
-    </li>
 
-     padding-top: 0px;
-      background-attachment:scroll;
-      background-repeat: no-repeat;
-      background-position: 0 0;
-      -moz-background-size: cover;
-      -webkit-background-size: cover;
-      background-size: cover;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-  }
-
-.login{
-    text-align: center;
-    margin-top: 15px;
-    margin-left: 20px;
-    background: #3903ff;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
-    border-radius: 15px;
-    width: 300px;
-}
-*/
 input.form-control {
     width: 300px;
     height: 46px;
@@ -87,42 +67,9 @@ input.form-control {
     background-color: rgb(255, 255, 255);
     font: bold 24px/45px Helvetica, Sans-Serif;
     letter-spacing: -1px;
-    margin-left:80%;} /*per spostare barra search*/
-/*
-#btlog {
-    width: auto;
-    height: 46px;
-    padding:0px;
-    border:0px;
-    background: #3903ff;
-    color: #FFFFFF;
-    font: bold 24px/45px Helvetica, Sans-Serif;
-    letter-spacing: -1px;
-}
-#registrazione {
-    padding-top: 0px;
-    background-attachment:scroll;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    background-size: cover;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}*/
-/* box registrazione*/
-/*
-#box{
-    padding-top: 15px;
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    margin-left: -160px;
-    width: 500px;
-    height: 900px;
-    padding-bottom: 60%;
-}*/
+    margin-left:80%;
+} /*per spostare barra search*/
+
 .alert{
     margin-top: 70px;
     width: inherit;
@@ -246,11 +193,6 @@ input.form-control {
     margin-right: 40px;/*per spostare logonaisho nella barra della home*/
     margin-top:10px;
 }
-#ContainerHome{
-    z-index:200;
-
-
-}
 
 #logoBarHome{
     position: absolute;
@@ -280,13 +222,17 @@ input.form-control {
 }
 
 #bodyHome{
-    margin-top: 100px;
     overflow:auto;
+    padding-top:15px;
+    /*top: 40%;*/
+    width: 90%;
+    min-height: 35%;
 }
 
 
 #bodyHome,#eventi{
-    position: fixed;
+   /* position: fixed;*/
+    margin-left:5%;
     background-color:white;
     z-index: +300;
     background-attachment:scroll;
@@ -311,39 +257,35 @@ div.media-body {
 
 
 #contenitoreFrase {
-    top: 75px;
-    left: 5%;
+    /*top: 75px;*/
+    margin-left: 5%;
     width: 90%;
-    height: 15%;
-    position: fixed;
+   /* height: 15%;*/
+   /* position: fixed;*/
     background-color: transparent;
     z-index: +300;
     background-attachment:scroll;
     text-align: center;
     align-content: space-between;
     }
+
 #frasedelgiorno{
     font-family: brook23;
     padding-top: 1em;
     color:white;
     font-size: 20px;
     font-style: italic;
-}
-
-#bodyHome {
-    top: 35%;
-    left: 5%;
-    width: 90%;
-    height: 45%;
-
+    text-align: center;
 }
 
 #eventi {
-    top: 33%;
-    left: 5%;
     width: 90%;
-    min-height: 15%;
+    min-height: 12%;
     }
+
+ul#elencoEventi li:first-child{
+    padding-top: 20px;
+}
 
 #detail{
     margin-top:30%;
@@ -472,11 +414,7 @@ img.media-object{
     padding: 5px;
 
 }
-/*#modificaProfilo{
-    color:white;
-    background-color:#3903ff ;
-}
-*/
+
 /*profilo personale*/
 
 .clear {
@@ -536,6 +474,7 @@ img.media-object{
 .clear1 {
     clear: both;
 }
+
 #prega1{
     margin-left: 10px;
     margin-top: 10px;
@@ -550,12 +489,14 @@ img.media-object{
     float :left;
     border-radius: 15px;
 }
+
 #prega1 h3{
     font-size: initial;
     padding-top:5px;
     color:black;
     line-height: inherit;
 }
+
 h3{
     padding-top: 75px;
     color: white;
@@ -563,35 +504,11 @@ h3{
     margin-left: 10px;
 }
 
-
-
 #immaginegong{
     margin-left: 15%;
     margin-top:8%;
-
-
 }
 
-/*
-#salva{
-    margin-left:50%;
-    margin-top:10%;
-    font-family: "Helvetica ", serif;
-    color:#FFFFFF;
-}
-#visualizza{
-     margin-left:70%;
-     margin-top:0%;
-     font-family: "Helvetica ", serif;
-     color:#FFFFFF;
- }
-#pubblica{
-    margin-left:80%;
-    margin-top:0%;
-    font-family: "Helvetica ", serif;
-    color:#FFFFFF;
-}
-*/
 .salva-visualizza-pubblica{
     font-family: "Helvetica ", serif;
     color:#FFFFFF;
@@ -639,8 +556,6 @@ h3{
 }
 
 
-
-
 .bottone:active{
     background-image: linear-gradient(#235dad, #1f97b7);
 }
@@ -663,10 +578,6 @@ h3{
     border-right: 10px;
     margin-right: 10%;
 }
-
-
-
-
 
 
 #changeImg {
@@ -734,11 +645,7 @@ form.frmLogin {
 .btn {
     margin-left: 145px;
     height:46.5px;/* altezza barra sotto search*/
-
 }
-
-
-
 
 .link {
     text-align: center;
@@ -779,8 +686,8 @@ h2{
     margin-left: 10px;
     letter-spacing:5px;
     text-decoration: none;
-
 }
+
 
 /*icona lente*/
 .btn{
@@ -871,6 +778,7 @@ h2{
     margin-top: 5px;
     margin-right: 10%;
     }
+
 #postOtherProfile{
     margin-left: 50px;
     font-size: 17px;
@@ -887,14 +795,11 @@ h2{
     width:20%;
     float:left;
     display:block;
-
 }
 
 
 #newEvent,#newForum{
    margin-top:10px;
-
-
 }
 
 .calendario{
@@ -910,33 +815,20 @@ h2{
     position: relative;
     border-radius: 15px;
     display:block;
-
 }
+
 .calendar_default_cornerright_inner{
     border-radius: 15px;
 }
+
 .calendar_default_cornerright{
     border-radius: 15px;
 }
+
 .calendar_default_main{
     border-radius: 15px;
 }
 
-/*.calendar_default_main{
-    width: 5px;
-    height:40px;
-
-}
-.calendar_default_event_inner{
-    width: 5px;
-    height:40px;
-
-
-}
-#dp{
-    width: 100%;
-    height:40px;
-}*/
 /*forum nella vista calendario*/
 #forumCalendar{
     background-color: white;
@@ -953,8 +845,6 @@ h2{
     color:black;
 
 }
-
-
 
 /*storico preghiere*/
 #contenitorePreghiere{
@@ -981,17 +871,9 @@ h2{
     height:900px;
     background:url(../images/pergamenapreghiere.png) no-repeat;
     z-index: -1;/*sfondo sotto la scritta*/
-
 }
-#elencoPreghiere{
 
+#elencoPreghiere{
     margin-top:100px;
     font: 20px/35px Helvetica, Sans-Serif;
-
-
 }
-
-
-
-
-

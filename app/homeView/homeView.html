@@ -1,25 +1,8 @@
-
-<!--<link rel="stylesheet" href="../styles1/custom1.css"/>-->
-
 <div id="ContainerHome">
 
-
- <!--
-    <div class="menu" id="menu">
-         <div class="closeButton"><a class="icon-close"></a></div>
-        <ul >
-            <li> <a href="#"> Profilo Personale <i ng-click="showPersonalProfile()" class="glyphicon glyphicon-user w3-large"></i> </a></li>
-            <li> <a href="#"> Prega <i ng-click="showPrega()" class="glyphicon glyphicon-user w3-large"></i> </a></li>
-            <li> <a href="#"> Calendario/Eventi/Forum <i ng-click="showCalendar()" class="glyphicon glyphicon-user w3-large"></i> </a></li>
-            <li> <a href="#"> Chat <i ng-click="showChat()" class="glyphicon glyphicon-user w3-large"></i> </a></li>
-            <li> <a href="#"> Tutor <i ng-click="showTutor()" class="glyphicon glyphicon-user w3-large"></i> </a></li>
-        </ul>
+    <div class="w3-container" id="contenitoreFrase">
+     <p id="fraseDelGiorno"></p>
     </div>
--->
-
-<div class="w3-container" id="contenitoreFrase">
-    <p id="fraseDelGiorno"></p>
-</div>
 
     <div class="w3-container" id="eventi" >
         <ul class="media-list" id="elencoEventi">
@@ -33,9 +16,11 @@
             </li>
         </ul>
     </div>
-    <br>
-        <button id="condividi"> <a href="#!/addPost"> Condividi</a></button>
-    <br>
+
+    <div class="w3-container" id="bCondividi">
+    <button id="condividi"> <a href="#!/addPost"> Condividi</a></button>
+    </div>
+
 <div class="w3-container" id="bodyHome" >
     <li class="media" ng-repeat="post in dati.posts">
         <a href="#!/singlePost/{{post.id}}">
@@ -52,16 +37,7 @@
             </div>
         </a>
     </li>
-<!--
-    <li class="media" ng-repeat="forum in dati.forum">
-        <a href="#!/singleForum/:{{forum.Id}}">
-            <div  class="postHome">
-                <h4 class="media-heading"><strong>{{forum.titolo}}</strong></h4>
-                <p>{{forum.argomento}}</p>
-            </div>
-        </a>
-    </li>
--->
+
 </div>
 
 
