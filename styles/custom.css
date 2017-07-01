@@ -877,3 +877,17 @@ h2{
     margin-top:100px;
     font: 20px/35px Helvetica, Sans-Serif;
 }
+
+#tutorPage{
+    margin-top:100px;
+}
+
+
+.pagina-tutor h4,p{
+    color: white;
+    margin-left: 15%;
+}
+.tutor {
+    color: #9acae5;
+    }
+
