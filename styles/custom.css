@@ -627,6 +627,7 @@ form.frmLogin {
     margin-left: -5%;
 }
 
+
 #titolo{
     font-family: Andalus;
     text-align: center;
@@ -890,4 +891,80 @@ h2{
 .tutor {
     color: #9acae5;
     }
+
+
+/*crea nuovo post*/
+/*bottone condividi*/
+
+.btn-success:hover {
+    color: #FFFFFF;/*colore scritta dentro il bottone*/
+    background-color: #235dad;
+    border-color:#08339d;
+}
+.btn {
+    border-radius: 15px;
+    background-color: #607cb7;
+}
+.btn center-block{
+    color: #fff; /*colore scritta dentro il bottone*/
+    background-color: #235dad;
+    border-color: #08339d;
+}
+
+
+a {
+    color: rgba(0, 7, 2, 0.98);
+    text-decoration: none;
+}
+#scrittaannulla{
+    color:#FFFFFF;
+    text-decoration: none;
+
+}
+#modifiche {
+    margin-left: 200px;
+    padding:20px;
+}
+.frmModifiche:before {
+    content:"";
+    position:absolute;
+    top:70px;
+    right:250px;
+    width:900px;
+    height:680px;
+    background:url(../images/postitpiuscuro.png) no-repeat;
+    transform:rotate(3deg);
+    z-index: -1;/*sfondo sotto la scritta*/
+}
+
+.form-group{
+    margin-top:100px;
+    font: 20px/35px Helvetica, Sans-Serif;
+
+}
+h2,strong {
+       font-weight: 700;
+    margin-left:10px;
+    margin-top: 100px;
+}
+
+#contenuto{
+    margin-left:160px;
+    margin-top:-40px;
+    color:rgba(17, 7, 6, 0.84);
+}
+#txtTitolo{
+    margin-left:160px;
+    width:550px;
+    height:100px;
+
+}
+#caricaimmag{
+    margin-left:200px;
+    color: rgba(17, 7, 6, 0.84);
+}
+.condividieannulla{
+    margin-left:250px;
+    margin-top:60px;
+}
 

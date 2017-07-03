@@ -96,7 +96,7 @@ angular.module('myApp.searchView', ['ngRoute','myApp.forum','myApp.post','myApp.
 
 
                     //return $scope.risultato;
-                } })});
+        }})});
 
             //Azzero le variabili di ricerca
             //$scope.risultato={};
