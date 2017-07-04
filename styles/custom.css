@@ -961,7 +961,7 @@ h2,strong {
     color:rgba(17, 7, 6, 0.84);
 }
 #txtTitolo{
-    margin-left:160px;
+   /* margin-left:160px;*/
     width:550px;
     height:100px;
 
