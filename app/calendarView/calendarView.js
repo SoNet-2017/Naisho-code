@@ -20,6 +20,8 @@ angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento','myApp
     }])
     .controller('calendarViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth','Evento','Forum',
         function($scope, $rootScope, $routeParams, currentAuth,Evento,Forum){
+        //eventi da mettere sul calendario
+            $scope.events=[];
             $scope.dati={};
         //per i forum
             $scope.dati.forum=Forum.getData();
@@ -38,14 +40,32 @@ angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento','myApp
 var data= dato.getFullYear()+"-"+b+"-"+a;
             console.log(data);
 
-        $scope.config = {
+            var dp=$scope.dp;
+       $scope.config = {
                 startDate: data,
-                viewType: "Week"
-            };
-            $scope.events = Evento.getData();
-            console.log( $scope.events);
+                viewType: "Week",
+                scrollToHour: 10,
+           };
 
+            $scope.eventi = Evento.getData();
+            console.log( $scope.eventi);
 
+            $scope.eventi.$loaded().then(function (){
+                for (var i=0;i< $scope.eventi.length; i++){
+                    console.log(($scope.eventi[i].start));
+                    var e = new DayPilot.Event({
+                        start: new DayPilot.Date($scope.eventi[i].start),
+                        end: new DayPilot.Date($scope.eventi[i].end),
+                        id: DayPilot.guid(),
+                        text: $scope.eventi[i].title,
+                       // allday: true
+                    });
+                    //console.log(e);
+                    $scope.events.push(e);
+                   console.log($scope.events);
+                }
+            });
+          //  console.log($scope.events);
 /*
             $scope.add = function() {
                 $scope.events.push(
