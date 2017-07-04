@@ -66,11 +66,9 @@ var data= dato.getFullYear()+"-"+b+"-"+a;
                     console.log(e.data);
                     $scope.events.push(e.data);
                    console.log($scope.events);
-
                 }
             });
-          //  console.log($scope.events);
-/*
+            /*
             $scope.add = function() {
                 $scope.events.push(
                     {
