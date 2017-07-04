@@ -17,7 +17,8 @@ angular.module('myApp.evento.insertEventoService', [])
                     Giorno: giorno,
                     Mese:mese,
                     Ora:ora,
-                    start:data
+                    start:data,
+                    end:data
                 });
             },
             updateEvento: function (eventoId) {
