@@ -847,7 +847,10 @@ h2{
 #forumCalendar h1 {
     padding-top:0px;
     color:black;
-
+}
+#forumCalendar p {
+    padding-top:10px;
+    color:black;
 }
 
 /*storico preghiere*/

@@ -53,14 +53,16 @@ var data= dato.getFullYear()+"-"+b+"-"+a;
             $scope.eventi.$loaded().then(function (){
                 for (var i=0;i< $scope.eventi.length; i++){
                     console.log(($scope.eventi[i].start));
-                    var e = new DayPilot.Event({
-                        start: new DayPilot.Date($scope.eventi[i].start),
-                        end: new DayPilot.Date($scope.eventi[i].end),
-                        id: DayPilot.guid(),
-                        text: $scope.eventi[i].title,
+                  var s=$scope.eventi[i].start+"T00:00:00";
+                  var f=$scope.eventi[i].end+"T00:00:00";
+                  var e = new DayPilot.Event({
+                          start:s,
+                          end:f,
+                          id: DayPilot.guid(),
+                          text: $scope.eventi[i].title,
                        // allday: true
-                    });
-                    //console.log(e);
+                   });
+                    console.log(e);
                     $scope.events.push(e);
                    console.log($scope.events);
                 }
