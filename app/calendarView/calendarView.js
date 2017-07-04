@@ -40,8 +40,9 @@ angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento','myApp
 var data= dato.getFullYear()+"-"+b+"-"+a;
             console.log(data);
 
-            var dp=$scope.dp;
-       $scope.config = {
+            var dp=document.getElementById("dp");
+            console.log(dp);
+             $scope.config = {
                 startDate: data,
                 viewType: "Week",
                 scrollToHour: 10,
@@ -62,9 +63,10 @@ var data= dato.getFullYear()+"-"+b+"-"+a;
                           text: $scope.eventi[i].title,
                        // allday: true
                    });
-                    console.log(e);
-                    $scope.events.push(e);
+                    console.log(e.data);
+                    $scope.events.push(e.data);
                    console.log($scope.events);
+
                 }
             });
           //  console.log($scope.events);
