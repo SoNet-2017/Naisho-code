@@ -25,10 +25,13 @@ body{
     color:white;
    /* margin-top:150px;*/
    /* bottom:60%;*/
-    margin-left: 50%;
-    color: #3903FF;
+    margin-left: 48%;
+    color: #607cb7;
     font-size: 15px;
     text-decoration: double;
+    width:100px;
+    height: 40px;
+
   }
 
 
@@ -279,6 +282,16 @@ div.media-body {
     font-size: 20px;
     font-style: italic;
     text-align: center;
+    margin-left:20px;
+}
+
+#condividi{
+    color: #fff; /*colore scritta dentro il bottone*/
+    border-color: #08339d;
+    border-radius: 15px;
+    background-color: #607cb7;
+
+
 }
 
 #eventi {
@@ -954,12 +967,12 @@ a {
 }
 h2,strong {
        font-weight: 700;
-    margin-left:10px;
+    margin-left:50px;
     margin-top: 100px;
 }
 
 #contenuto{
-    margin-left:160px;
+    margin-left:130px;
     margin-top:-40px;
     color:rgba(17, 7, 6, 0.84);
 }
@@ -969,12 +982,14 @@ h2,strong {
     height:100px;
 
 }
+
+
 #caricaimmag{
-    margin-left:200px;
+    margin-left:170px;
     color: rgba(17, 7, 6, 0.84);
 }
 .condividieannulla{
-    margin-left:250px;
+    margin-left:230px;
     margin-top:60px;
 }
 
