@@ -242,6 +242,9 @@ input.form-control {
 }
 
 /*eventi nella home*/
+.eventiHome p{
+    color: #3903ff;
+}
 
 ul#elencoEventi li{
     font-size: 15px;
@@ -878,11 +881,11 @@ h2{
     margin-top:100px;
     font: 20px/35px Helvetica, Sans-Serif;
 }
-
+/*
 #tutorPage{
     margin-top:100px;
 }
-
+*/
 
 .pagina-tutor h4,p{
     color: white;
@@ -891,7 +894,9 @@ h2{
 .tutor {
     color: #9acae5;
     }
-
+#bodyHome p{
+    color: #3903ff;
+}
 
 /*crea nuovo post*/
 /*bottone condividi*/

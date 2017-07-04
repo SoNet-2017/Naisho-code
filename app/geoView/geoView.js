@@ -75,7 +75,8 @@ angular.module('myApp.geoView', ['ngRoute'])
                     for (var i=0;i<$scope.dati.listaUtenti.length; i++){
                         if ($scope.dati.userId!== $scope.dati.listaUtenti[i].$id
                             && $scope.dati.listaUtenti[i].logged===true
-                            && $scope.dati.listaUtenti[i].buddista==='no'){
+                            //&& $scope.dati.listaUtenti[i].buddista==='no'
+                            && $scope.dati.listaUtenti[i].tutor==='si'){
 
                             $scope.lat=$scope.dati.listaUtenti[i].address.lat;
                             $scope.lng=$scope.dati.listaUtenti[i].address.lng;
