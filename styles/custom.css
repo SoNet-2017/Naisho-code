@@ -992,4 +992,19 @@ h2,strong {
     margin-left:230px;
     margin-top:60px;
 }
+h5{
+    color:white;
+    font-size:20px;
+    margin-top:80px;
+    margin-left: 20%;
+    width:20%;
+}
+.bottoniopzione{
+    margin-left:35%;
 
+}
+#buddaetutor,#solobudda,#solotutor{
+    border-radius: 15px;
+    height:50px;
+    width:150px;
+}
