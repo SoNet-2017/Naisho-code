@@ -247,6 +247,7 @@ input.form-control {
 /*eventi nella home*/
 .eventiHome p{
     color: #3903ff;
+    padding-left: 30%;
 }
 
 ul#elencoEventi li{

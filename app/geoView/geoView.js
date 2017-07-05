@@ -19,8 +19,8 @@ angular.module('myApp.geoView', ['ngRoute'])
         });
     }])
 
-    .controller('geoViewCtrl', ['$scope', '$rootScope','$firebaseAuth','$routeParams','UserList','UsersChatService',
-        function($scope, $rootScope, $firebaseAuth, $routeParams, UserList,UsersChatService){
+    .controller('geoViewCtrl', ['$scope', '$rootScope','$firebaseAuth','$routeParams','$window','UserList','UsersChatService',
+        function($scope, $rootScope, $firebaseAuth, $routeParams,$window, UserList,UsersChatService){
 //initialize variables
             $scope.dati = {};
             $scope.address= {};
@@ -56,7 +56,9 @@ angular.module('myApp.geoView', ['ngRoute'])
                             $scope.nome=$scope.dati.listaUtenti[i].name  +' '+  $scope.dati.listaUtenti[i].surname;
 
                             console.log("lat e lng di tutti", $scope.lat, $scope.lng);
-                        }}};
+                        }
+                        $window.location.reload();
+                    }};
 
                 $scope.buddisti = function() {
                     for (var i=0;i<$scope.dati.listaUtenti.length; i++){
@@ -69,7 +71,8 @@ angular.module('myApp.geoView', ['ngRoute'])
                             $scope.nome=$scope.dati.listaUtenti[i].name +' '+ $scope.dati.listaUtenti[i].surname;
 
                             console.log("lat e lng di tutti", $scope.lat, $scope.lng);
-                        }}};
+                        }$window.location.reload();
+                    }};
 
                 $scope.tutor = function() {
                     for (var i=0;i<$scope.dati.listaUtenti.length; i++){
@@ -83,7 +86,9 @@ angular.module('myApp.geoView', ['ngRoute'])
                             $scope.nome=$scope.dati.listaUtenti[i].name +' '+ $scope.dati.listaUtenti[i].surname;
 
                             console.log("lat e lng di tutti", $scope.lat, $scope.lng);
-                        }}};
+
+                        }
+                    }$window.location.reload(); };
 
 
             });
