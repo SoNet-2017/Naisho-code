@@ -323,6 +323,7 @@ ul#elencoEventi li:first-child{
     alignment: center;
     color: black;
     padding-left:3%;
+    padding-bottom:3%;
 }
 
 #detailPost,#detailForum{
@@ -1008,4 +1009,13 @@ h5{
     border-radius: 15px;
     height:50px;
     width:150px;
+}
+.inviti{
+    background-color: white;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+.invita-nonInvita{
+    margin-right: 50%;
 }
