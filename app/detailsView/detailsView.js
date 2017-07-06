@@ -34,10 +34,7 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento',])
         $scope.dati.evm = this;
         $scope.dati.evm.position = [];
         $scope.inviti=[];
-        //set the variable that is used in the main template to show the active button
-        //$rootScope.dati.currentView = "home";
-        //get the information of the evento with Id like the one that was passed in the URL path
-        //$scope.dati.evento = SingleEvento.getSingleEvento($routeParams.eventoID);
+
         $scope.dati.evento = SingleEvento.getSingleEvento($routeParams.eventoID);
 
        // console.log("questo è l'id dell'evento da detailsView",$routeParams.eventoID);
@@ -55,9 +52,8 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento',])
             for(var keySingleInvito in inviti) {
                 if (inviti[keySingleInvito].eventoId == $scope.dati.evento.$id) {
                     var p=Evento.getUserInfo(inviti[keySingleInvito].invitatoId)
-                    $scope.invitatiEvento.push(p);
-                    $scope.invitiId.push(inviti[keySingleInvito].$id);
-                   // console.log($scope.invitatiEvento);
+                    $scope.invitatiEvento.push({persona:p,invito_id: inviti[keySingleInvito].$id});
+                    console.log($scope.invitatiEvento);
                 }
             }
             var utenti = $scope.listaUtenti;
@@ -80,27 +76,18 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento',])
 
         });
 
-
-       // $scope.inviti.$loaded().then(function () {
-
-      //  });
-
-     //   $scope.listaUtenti.$loaded().then(function () {
-       //     $scope.dati.inviti=Evento.getInviti().$loaded().then(function(){
-
-         //   })
-        //})
-//invita
+        //invita
         $scope.Invita = function(invitatoId) {
             Evento.insertNewInvito($scope.dati.evento.$id,invitatoId,'Bottone disabilitato').then(function (ref) {
                 var invitoId = ref.key;
                 Evento.updateInvito(invitoId);
                 $window.location.reload();
-
             });
         };
+
         //rimozione invito
         $scope.removeInvito = function (invitoId) {
+            console.log(invitoId);
             Evento.deleteInvito(invitoId);
             $window.location.reload();
         };
@@ -109,7 +96,7 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento',])
         $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qAQOEvZs2XlUUu3ziu-nrDX-WWZXap4";
 
         $scope.dati.evento.$loaded().then(function () {
-            console.log($scope.dati.evento);
+            //console.log($scope.dati.evento);
             $scope.address = $scope.dati.evento.Indirizzo;
             // If adress is not supplied, use default value 'Ferrol, Galicia, Spain'
            // address = address || 'Ferrol, Galicia, Spain';
@@ -126,7 +113,7 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento',])
                 });
             }
             $scope.dati.evm.position.push({Indirizzo: $scope.dati.position});
-            console.log($scope.address);
+            //console.log($scope.address);
         });
 
 

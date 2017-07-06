@@ -1015,7 +1015,13 @@ h5{
     margin-left: 10%;
     margin-bottom: 20px;
     border-radius: 15px;
+    padding: 3%;
 }
+
+.inviti div{
+     padding: 2%;
+}
+
 .invita-nonInvita{
     margin-right: 50%;
 }
