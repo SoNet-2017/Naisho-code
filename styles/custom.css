@@ -620,6 +620,7 @@ h3{
     text-space: 10 px;
 }
 
+
   /*bisogna centrare le icone*/
 
 
@@ -1024,4 +1025,9 @@ h5{
 
 .invita-nonInvita{
     margin-right: 50%;
+}
+
+#img-profilo{
+    width: 200px;
+    height: 150px;
 }
