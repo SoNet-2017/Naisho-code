@@ -62,8 +62,10 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento',])
                 // console.log(utenti[keySingleUser].$id);
                 for (var invitati in inviti) {
                     //console.log( inviti[invitati].invitatoId);
-                    if (utenti[keySingleUser].$id == inviti[invitati].invitatoId)
-                        c = c + 1;
+                    if (inviti[invitati].eventoId == $scope.dati.evento.$id) {
+                        if (utenti[keySingleUser].$id == inviti[invitati].invitatoId)
+                            c = c + 1;
+                    }
                 }
                 //console.log(c);
                 if (c === 0) {
