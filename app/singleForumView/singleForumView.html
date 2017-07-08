@@ -2,17 +2,19 @@
 <h1>{{dati.forum.titolo}}</h1>
 
 <p>{{dati.forum.argomento}}</p>
+</div>
+<span class="mipiace-commenta"><button  ng-click="commenta()">Commenta</button></span>
 
+<div id="commento"  ><input type="text" class="textComment" id="textComment" placeholder="Scrivi cosa pensi" ng-model="forum.newComment" />
+    <button ng-click="salvaCommento();closeCommento(); ">Salva Commento</button>
+</div>
+<div class="w3-container" id="elencoCommentiForum">
     <ul class="media-list" id="elencoCommenti">
         <li class="media" ng-repeat="commento in commentiDaMostrare">
             <p>{{commento.info.name}} {{commento.info.surname}}: {{commento.commento}}</p>
 
         </li>
     </ul>
-    <span class="mipiace-commenta"><button  ng-click="commenta()">Commenta</button></span>
 
-    <div id="commento"  ><input type="text" class="textComment" id="textComment" placeholder="Scrivi cosa pensi" ng-model="forum.newComment" />
-        <button ng-click="salvaCommento();closeCommento(); ">Salva Commento</button>
-    </div>
 
 </div>

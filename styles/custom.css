@@ -332,6 +332,7 @@ ul#elencoEventi li:first-child{
     background: white;
     border-radius: 15px;
     margin-left: 10%;
+    margin-right: 10%;
     align-content: center;
     padding-left:3%;
     padding-bottom:15px;
@@ -728,6 +729,7 @@ h2{
 
 .userList p{
     color:black;
+    margin-left:2%;
 }
 
 #chat {
@@ -907,7 +909,7 @@ h2{
 
 
 .pagina-tutor h4,p{
-    color: white;
+
     margin-left: 15%;
 }
 .tutor {
@@ -1033,4 +1035,10 @@ h5{
 #calendarForum {
     margin-top: -30px;
     margin-left:45%;
+}
+#elencoCommentiForum{
+    background-color:white;
+    border-radius: 15px;
+    margin-left:10%;
+    margin-right: 10%;
 }

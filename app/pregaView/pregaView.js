@@ -140,29 +140,33 @@ angular.module('myApp.pregaView', ['ngRoute','myApp.users','myApp.prega','myApp.
 
 
         $scope.salva= function(){
+          if(ore!=0 || minuti!=0 || secondi!=0) {
+              var durata = ore + ":" + minuti + ":" + secondi;
+              console.log(durata);
+              InsertPregaService.insertNewPreghiera($scope.userId, data, durata).then(function (ref) {
+                  var preghieraId = ref.key;
 
-            var durata=ore+":"+minuti+":"+secondi;
-            console.log(durata);
-            InsertPregaService.insertNewPreghiera( $scope.userId, data, durata).then(function(ref) {
-                var preghieraId = ref.key;
+                  InsertPregaService.updatePreghiera(preghieraId);
+                  $scope.dati.feedback = "La preghiera è stata salvata";
+              });
+          }
+          else $scope.dati.feedback = "Devi prima avviare il cronometro per poter salvare la durata della preghiera!";
 
-                InsertPregaService.updatePreghiera(preghieraId);
-                $scope.dati.feedback = "La preghiera è stata salvata";
-            });
         }
 
-            $scope.pubblica= function(){
+            $scope.pubblica= function() {
+                if (ore != 0 || minuti != 0 || secondi != 0) {
+                    var durata = ore + ":" + minuti + ":" + secondi;
+                    var contenuto = "Ho appena praticato per questo tempo:" + " " + durata;
+                    console.log(contenuto);
+                    var url = "";
+                    InsertPostService.insertNewPost(contenuto, $scope.userId, url).then(function (ref) {
+                        var postId = ref.key;
 
-                var durata=ore+":"+minuti+":"+secondi;
-                var contenuto="Ho appena praticato per questo tempo:"+" "+durata;
-                console.log(contenuto);
-                var url="";
-                InsertPostService.insertNewPost(contenuto,$scope.userId,url).then(function(ref) {
-                    var postId = ref.key;
-
-                    InsertPostService.updatePost(postId);
-                    $scope.dati.feedback = "Il post è stato condiviso";
-                });
+                        InsertPostService.updatePost(postId);
+                        $scope.dati.feedback = "Il post con la durata della preghiera è stato condiviso!";
+                    });
+                }
+                else  $scope.dati.feedback = "Non puoi condivire un post senza la durara della preghiera!";
             }
-
     }]);
