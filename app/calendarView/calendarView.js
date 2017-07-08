@@ -21,7 +21,7 @@ angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento','myApp
     .controller('calendarViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth','Evento','Forum',
         function($scope, $rootScope, $routeParams, currentAuth,Evento,Forum){
         //eventi da mettere sul calendario
-            $scope.events=[];
+
             $scope.dati={};
         //per i forum
             $scope.dati.forum=Forum.getData();
@@ -37,37 +37,47 @@ angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento','myApp
             if (String(b).length == 1) {
                 b = "0"+b;
             }
-            var data= dato.getFullYear()+"-"+b+"-"+a;
-           // console.log(data);
 
-            var dp=document.getElementById("dp");
-            console.log(dp);
-             $scope.config = {
-                startDate: data,
-                viewType: "Week",
-                scrollToHour: 10,
-           };
+            var data= dato.getFullYear()+"-"+b+"-"+a;
+            console.log(data);
+
+            //var dp=document.getElementById("dp");
+            //console.log(dp);
+            //configurazione calendario dayPilot
+            // $scope.config = {
+            //    startDate: data,
+            //    viewType: "Week",
+            //    scrollToHour: 10,
+          // };
+            var dp = new DayPilot.Calendar("dp");
+            dp.viewType='Week';
+            dp.scrollToHour= 10;
+            dp.startDate = new DayPilot.Date(data);
+            console.log(dp.startDate);
+            dp.init();
 
             $scope.eventi = Evento.getData();
-            console.log( $scope.eventi);
+           // console.log( $scope.eventi);
 
+            //per ogni evento del database, creo un oggetto dayPilot.Event e lo metto nel'array "events"che viene passato al calendario
             $scope.eventi.$loaded().then(function (){
                 for (var i=0;i< $scope.eventi.length; i++){
-                    console.log(($scope.eventi[i].start));
-                  var s=$scope.eventi[i].start+"T00:00:00";
-                  var f=$scope.eventi[i].end+"T00:00:00";
-                  var e = new DayPilot.Event({
-                          start:s,
-                          end:f,
-                          id: DayPilot.guid(),
+                    //console.log($scope.eventi[i]);
+                    //console.log($scope.eventi[i].start);
+                         var s=$scope.eventi[i].start+"T00:00:00";
+                         var f=$scope.eventi[i].end+"T00:00:00";
+                         var e = new DayPilot.Event({
+                         start:s,
+                         end:f,
+                         id: DayPilot.guid(),
                           text: $scope.eventi[i].title,
                           resource:'E'
-                   });
+                  });
                     console.log(e);
-                    $scope.events.push(e);
-                   console.log($scope.events);
+                   // $scope.events.push(e);
+                    dp.events.add(e);
+                    console.log(dp.events);
                 }
-            });
-
+          });
 
     }]);

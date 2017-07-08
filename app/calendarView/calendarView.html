@@ -2,13 +2,11 @@
 <h3><b>Calendario</b></h3>
 <div class="nuovoevento-forum">
        <div> <a href="#!/addEvento" ><img src="../images/iconacalendarioaggiungi.png"><button id="newEvent" align="left">Crea Evento</button></a></div>
-        <div>   <a href="#!/addForumView" ><img src="../images/iconanuovoforum.png"><button id="newForum" align="left">Crea Forum</button></a></div>
+       <div>   <a href="#!/addForumView" ><img src="../images/iconanuovoforum.png"><button id="newForum" align="left">Crea Forum</button></a></div>
 </div>
-<div class="calendario"> <daypilot-calendar id="dp"  daypilot-config="config" events="events"  ></daypilot-calendar>
-
+<div class="calendario"> <!-- <daypilot-calendar id="dp"  daypilot-config="config" events="events"  ></daypilot-calendar>-->
+    <div id="dp"></div>
     <div class="calendar_default_main"></div>
-    <li class="medias" ng-repeat="event in dati.event">
-        <a href="#!/singleEvent/{{event.id}}">
 
 </div>
 <div style="clear:both;"></div>
@@ -32,9 +30,3 @@
     </li>
 
 </div>
-
-
-
-
-
-
