@@ -25,54 +25,51 @@ angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento','myApp
             $scope.dati={};
         //per i forum
             $scope.dati.forum=Forum.getData();
+
         // per scegliere come data di partenza la data odierna
+
             var dato = new Date();
             var a =dato.getDate();
+
             if (String(a).length == 1) {
-                a = "0"+a;
+               a = "0"+a;
             }
-            //console.log(a);
+
+           //console.log(a);
             var b=dato.getMonth();
             b=b+1;
             if (String(b).length == 1) {
-                b = "0"+b;
+               b = "0"+b;
             }
 
-            var data= dato.getFullYear()+"-"+b+"-"+a;
-            console.log(data);
+           var data= dato.getFullYear()+"-"+b+"-"+a;
+           console.log(data);
 
-            //var dp=document.getElementById("dp");
-            //console.log(dp);
             //configurazione calendario dayPilot
-            // $scope.config = {
-            //    startDate: data,
-            //    viewType: "Week",
-            //    scrollToHour: 10,
-          // };
+
             var dp = new DayPilot.Calendar("dp");
             dp.viewType='Week';
             dp.scrollToHour= 10;
-            dp.startDate = new DayPilot.Date(data);
+            dp.startDate = DayPilot.Date(data);
             console.log(dp.startDate);
-            dp.init();
+
 
             $scope.eventi = Evento.getData();
-           // console.log( $scope.eventi);
-
+            console.log( $scope.eventi);
+            dp.init();
             //per ogni evento del database, creo un oggetto dayPilot.Event e lo metto nel'array "events"che viene passato al calendario
             $scope.eventi.$loaded().then(function (){
                 for (var i=0;i< $scope.eventi.length; i++){
                     //console.log($scope.eventi[i]);
                     //console.log($scope.eventi[i].start);
-                         var s=$scope.eventi[i].start+"T00:00:00";
-                         var f=$scope.eventi[i].end+"T00:00:00";
-                         var e = new DayPilot.Event({
-                         start:s,
-                         end:f,
-                         id: DayPilot.guid(),
-                          text: $scope.eventi[i].title,
-                          resource:'E'
-                  });
+                    var s=$scope.eventi[i].start+"T"+$scope.eventi[i].Ora+":00";
+                    var e = new DayPilot.Event({
+                        start: new DayPilot.Date(s),
+                        end: new DayPilot.Date(s).addHours(5),
+                        id: DayPilot.guid(),
+                        text: $scope.eventi[i].title,
+                         });
+
                     console.log(e);
                    // $scope.events.push(e);
                     dp.events.add(e);
@@ -80,4 +77,4 @@ angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento','myApp
                 }
           });
 
-    }]);
+        }]);
