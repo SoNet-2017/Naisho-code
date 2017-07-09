@@ -19,8 +19,8 @@ angular.module('myApp.geoView', ['ngRoute'])
         });
     }])
 
-    .controller('geoViewCtrl', ['$scope', '$rootScope','$firebaseAuth','$routeParams','$window','UserList','UsersChatService',
-        function($scope, $rootScope, $firebaseAuth, $routeParams,$window, UserList,UsersChatService){
+    .controller('geoViewCtrl', ['$scope', '$rootScope','$firebaseAuth','$routeParams','$window','$location','UserList','UsersChatService',
+        function($scope, $rootScope, $firebaseAuth, $routeParams,$window,$location, UserList,UsersChatService){
 //initialize variables
             $scope.dati = {};
             $scope.address= {};
@@ -60,6 +60,7 @@ angular.module('myApp.geoView', ['ngRoute'])
                             var lat = $scope.lat = $scope.dati.listaUtenti[i].address.lat;
                             var lng = $scope.lng = $scope.dati.listaUtenti[i].address.lng;
                             var person = UsersChatService.getUserInfo($scope.dati.listaUtenti[i].$id);
+                            //var si=false;
                             $scope.dati.vm.posBudd.push({lat: lat, lng: lng, info: person});
                             $scope.dati.vm.positions.push({lat: lat, lng: lng, info: person});
                             console.log("lat e lng Buddisti", $scope.dati.vm.posBudd);
@@ -68,6 +69,7 @@ angular.module('myApp.geoView', ['ngRoute'])
                             var lat = $scope.lat = $scope.dati.listaUtenti[i].address.lat;
                             var lng = $scope.lng = $scope.dati.listaUtenti[i].address.lng;
                             var person = UsersChatService.getUserInfo($scope.dati.listaUtenti[i].$id);
+                           // var si=false;
                             $scope.dati.vm.posTutor.push({lat: lat, lng: lng, info: person});
                             $scope.dati.vm.positions.push({lat: lat, lng: lng, info: person});
                             console.log("lat e lng Tutor", $scope.dati.vm.posTutor)
@@ -76,6 +78,8 @@ angular.module('myApp.geoView', ['ngRoute'])
                             var lat = $scope.lat = $scope.dati.listaUtenti[i].address.lat;
                             var lng = $scope.lng = $scope.dati.listaUtenti[i].address.lng;
                             var person = UsersChatService.getUserInfo($scope.dati.listaUtenti[i].$id);
+                            //var si=false;
+                           // $scope.dati.vm.positions.push({lat: lat, lng: lng, info: person,si:si});
                             $scope.dati.vm.positions.push({lat: lat, lng: lng, info: person});
                             console.log("lat e lng di tutti", $scope.dati.vm.positions);
                         }
@@ -98,7 +102,8 @@ angular.module('myApp.geoView', ['ngRoute'])
                     $scope.showAll=false;
                     $scope.showBudd=false;
                     $scope.showTutor=true;
-               };
+                };
+
             });
         }]);
 

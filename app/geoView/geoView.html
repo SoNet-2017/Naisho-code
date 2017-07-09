@@ -13,15 +13,17 @@
 
         <marker position="{{pos.lat}},{{pos.lng}}" title="Tu sei qui" ></marker>
 
-        <marker ng-if="showAll==true"   ng-repeat="pos in dati.vm.positions"   position="{{pos.lat}},{{pos.lng}}" title="{{pos.info.name}} {{pos.info.surname}}">
-            <!--
-                    <a  ng-if="pos.info.$id===dati.userId"   href="#!/userProfile" ></a>
-                    <a  ng-if="pos.info.$id!=dati.userId"    href="#!/OtherUser/{{pos.info.$id}}"></a>
-                    -->
+        <marker ng-if="showAll==true"  ng-repeat="pos in dati.vm.positions"    position="{{pos.lat}},{{pos.lng}}" title="Nome: {{pos.info.name}},   Cognome: {{pos.info.surname}},  {{pos.info.type}}">
+          <!-- <div ng-if="pos.si==true" id="infoMappa">
+                    <a  ng-if="pos.info.$id===dati.userId"   href="#!/userProfile" >Nome: {{pos.info.name}}, Cognome: {{pos.info.surname}}</a>
+                    <a  ng-if="pos.info.$id!=dati.userId"    href="#!/OtherUser/{{pos.info.$id}}">Nome: {{pos.info.name}}, Cognome: {{pos.info.surname}}</a>
+                    {{pos.info.type}}
+           </div>
+        --->
         </marker>
 
-        <marker ng-if="showBudd==true"  ng-repeat="pos in dati.vm.posBudd"    position="{{pos.lat}},{{pos.lng}}" title="{{pos.info.name}} {{pos.info.surname}}"></marker>
-        <marker ng-if="showTutor==true" ng-repeat="pos in dati.vm.posTutor"   position="{{pos.lat}},{{pos.lng}}" title="{{pos.info.name}} {{pos.info.surname}}"></marker>
+        <marker ng-if="showBudd==true"  ng-repeat="pos in dati.vm.posBudd"    position="{{pos.lat}},{{pos.lng}}" title="Nome:  {{pos.info.name}},   Cognome: {{pos.info.surname}},  {{pos.info.type}}"></marker>
+        <marker ng-if="showTutor==true" ng-repeat="pos in dati.vm.posTutor"   position="{{pos.lat}},{{pos.lng}}" title="Nome:  {{pos.info.name}},   Cognome: {{pos.info.surname}},  {{pos.info.type}}"></marker>
 
     </ng-map>
 
