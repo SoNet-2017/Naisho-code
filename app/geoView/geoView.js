@@ -41,7 +41,7 @@ angular.module('myApp.geoView', ['ngRoute'])
 
                 $scope.pos.lat = position.coords.latitude;
                 $scope.pos.lng = position.coords.longitude;
-
+                console.log("my position", $scope.pos.lat, $scope.pos.lng);
             });
 
             $scope.dati.listaUtenti = UserList.getListOfUsers();
@@ -57,7 +57,7 @@ angular.module('myApp.geoView', ['ngRoute'])
 
                             console.log("lat e lng di tutti", $scope.lat, $scope.lng);
                         }
-                    }$window.location.reload();
+                    }
                 };
 
                 $scope.buddisti = function() {
@@ -72,7 +72,7 @@ angular.module('myApp.geoView', ['ngRoute'])
 
                             console.log("lat e lng di tutti", $scope.lat, $scope.lng);
                         }
-                    }$window.location.reload();
+                    }
                 };
 
                 $scope.tutor = function() {
@@ -89,7 +89,7 @@ angular.module('myApp.geoView', ['ngRoute'])
                             console.log("lat e lng di tutti", $scope.lat, $scope.lng);
 
                         }
-                    }$window.location.reload();
+                    }
                };
             });
         }]);
