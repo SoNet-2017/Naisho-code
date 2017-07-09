@@ -29,16 +29,21 @@ angular.module('myApp.geoView', ['ngRoute'])
             $scope.coordinate = {};
             $scope.lat = {};
             $scope.lng = {};
+            $scope.dati.vm = this;
+            $scope.dati.vm.positions = []; // array con posizioni di tutti
+            $scope.dati.vm.posBudd = [];   // array con posizioni solo buddisti
+            $scope.dati.vm.posTutor = [];  // array con posizioni solo tutor
 
-
-
-//set the variable that is used in the main template to show the active button
+            //variabili per dedicede cosa mostrare sulla mappa, inizialmente tutte "false", si mostra solo la posizione dell'user
+            $scope.showAll=false;
+            $scope.showBudd=false;
+            $scope.showTutor=false;
 
 
             $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qAQOEvZs2XlUUu3ziu-nrDX-WWZXap4";
 
+            //posizione user
             $scope.geo = navigator.geolocation.getCurrentPosition(function(position) {
-
                 $scope.pos.lat = position.coords.latitude;
                 $scope.pos.lng = position.coords.longitude;
                 console.log("my position", $scope.pos.lat, $scope.pos.lng);
@@ -47,49 +52,52 @@ angular.module('myApp.geoView', ['ngRoute'])
             $scope.dati.listaUtenti = UserList.getListOfUsers();
             $scope.dati.userId = $firebaseAuth().$getAuth().uid;
             $scope.dati.listaUtenti.$loaded().then(function () {
-                $scope.tutti = function() {
-                    for (var i=0;i<$scope.dati.listaUtenti.length; i++){
-                        if ($scope.dati.userId!== $scope.dati.listaUtenti[i].$id && $scope.dati.listaUtenti[i].logged===true){
-
-                            $scope.lat=$scope.dati.listaUtenti[i].address.lat;
-                            $scope.lng=$scope.dati.listaUtenti[i].address.lng;
-                            $scope.nome=$scope.dati.listaUtenti[i].name  +' '+  $scope.dati.listaUtenti[i].surname;
-
-                            console.log("lat e lng di tutti", $scope.lat, $scope.lng);
+                //per ogni utente della lista controllo se è buddista e se è tutor,
+                // a seconda delle variabili lo metto nell'array solo buddisti, in quello solo tutor o in quello contenente tutti
+                for (var i=0;i<$scope.dati.listaUtenti.length; i++){
+                    if ($scope.dati.userId!== $scope.dati.listaUtenti[i].$id && $scope.dati.listaUtenti[i].logged===true) {
+                        if ($scope.dati.listaUtenti[i].buddista === 'Sì') {
+                            var lat = $scope.lat = $scope.dati.listaUtenti[i].address.lat;
+                            var lng = $scope.lng = $scope.dati.listaUtenti[i].address.lng;
+                            var person = UsersChatService.getUserInfo($scope.dati.listaUtenti[i].$id);
+                            $scope.dati.vm.posBudd.push({lat: lat, lng: lng, info: person});
+                            $scope.dati.vm.positions.push({lat: lat, lng: lng, info: person});
+                            console.log("lat e lng Buddisti", $scope.dati.vm.posBudd);
+                        }
+                        else if ($scope.dati.listaUtenti[i].tutor === 'Sì') {
+                            var lat = $scope.lat = $scope.dati.listaUtenti[i].address.lat;
+                            var lng = $scope.lng = $scope.dati.listaUtenti[i].address.lng;
+                            var person = UsersChatService.getUserInfo($scope.dati.listaUtenti[i].$id);
+                            $scope.dati.vm.posTutor.push({lat: lat, lng: lng, info: person});
+                            $scope.dati.vm.positions.push({lat: lat, lng: lng, info: person});
+                            console.log("lat e lng Tutor", $scope.dati.vm.posTutor)
+                        }
+                        else {
+                            var lat = $scope.lat = $scope.dati.listaUtenti[i].address.lat;
+                            var lng = $scope.lng = $scope.dati.listaUtenti[i].address.lng;
+                            var person = UsersChatService.getUserInfo($scope.dati.listaUtenti[i].$id);
+                            $scope.dati.vm.positions.push({lat: lat, lng: lng, info: person});
+                            console.log("lat e lng di tutti", $scope.dati.vm.positions);
                         }
                     }
+                }
+
+                $scope.tutti = function() {
+                    $scope.showAll=true;
+                    $scope.showBudd=false;
+                    $scope.showTutor=false;
                 };
 
                 $scope.buddisti = function() {
-                    for (var i=0;i<$scope.dati.listaUtenti.length; i++){
-                        if ($scope.dati.userId!== $scope.dati.listaUtenti[i].$id
-                            && $scope.dati.listaUtenti[i].logged===true
-                            && $scope.dati.listaUtenti[i].buddista==='Sì'){
-
-                            $scope.lat=$scope.dati.listaUtenti[i].address.lat;
-                            $scope.lng=$scope.dati.listaUtenti[i].address.lng;
-                            $scope.nome=$scope.dati.listaUtenti[i].name +' '+ $scope.dati.listaUtenti[i].surname;
-
-                            console.log("lat e lng di tutti", $scope.lat, $scope.lng);
-                        }
-                    }
+                    $scope.showAll=false;
+                    $scope.showBudd=true;
+                    $scope.showTutor=false;
                 };
 
-                $scope.tutor = function() {
-                    for (var i=0;i<$scope.dati.listaUtenti.length; i++){
-                        if ($scope.dati.userId!== $scope.dati.listaUtenti[i].$id
-                            && $scope.dati.listaUtenti[i].logged===true
-                            //&& $scope.dati.listaUtenti[i].buddista==='no'
-                            && $scope.dati.listaUtenti[i].tutor==='Sì'){
-
-                            $scope.lat=$scope.dati.listaUtenti[i].address.lat;
-                            $scope.lng=$scope.dati.listaUtenti[i].address.lng;
-                            $scope.nome=$scope.dati.listaUtenti[i].name +' '+ $scope.dati.listaUtenti[i].surname;
-
-                            console.log("lat e lng di tutti", $scope.lat, $scope.lng);
-
-                        }
-                    }
+                $scope.solotutor = function() {
+                    $scope.showAll=false;
+                    $scope.showBudd=false;
+                    $scope.showTutor=true;
                };
             });
         }]);

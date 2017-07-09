@@ -13,18 +13,24 @@
 
         <marker position="{{pos.lat}},{{pos.lng}}" title="Tu sei qui" ></marker>
 
-        <marker position="{{lat}},{{lng}}" title="{{nome}}">
-
+        <marker ng-if="showAll==true"   ng-repeat="pos in dati.vm.positions"   position="{{pos.lat}},{{pos.lng}}" title="{{pos.info.name}} {{pos.info.surname}}">
+            <!--
+                    <a  ng-if="pos.info.$id===dati.userId"   href="#!/userProfile" ></a>
+                    <a  ng-if="pos.info.$id!=dati.userId"    href="#!/OtherUser/{{pos.info.$id}}"></a>
+                    -->
         </marker>
 
-      </ng-map>
+        <marker ng-if="showBudd==true"  ng-repeat="pos in dati.vm.posBudd"    position="{{pos.lat}},{{pos.lng}}" title="{{pos.info.name}} {{pos.info.surname}}"></marker>
+        <marker ng-if="showTutor==true" ng-repeat="pos in dati.vm.posTutor"   position="{{pos.lat}},{{pos.lng}}" title="{{pos.info.name}} {{pos.info.surname}}"></marker>
+
+    </ng-map>
 
     <h5> <b>Opzioni di ricerca:</b></h5>
 
 <div class="bottoniopzione">
         <button  ng-click="tutti()" id="buddaetutor">Buddisti e Tutor</button>
         <button  ng-click="buddisti()" id="solobudda">Solo Buddisti</button>
-        <button  ng-click="tutor()" id="solotutor">Solo Tutor</button>
+        <button  ng-click="solotutor()" id="solotutor">Solo Tutor</button>
 </div>
 
 </div>
