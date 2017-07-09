@@ -32,56 +32,53 @@ angular.module('myApp.searchView', ['ngRoute','myApp.forum','myApp.post','myApp.
     // followed by the function itself.
     //When using this type of annotation, take care to keep the annotation array
     // in sync with the parameters in the function declaration.
-    .controller('searchViewCtrl', ['$scope','$routeParams', 'Forum', 'Post', 'UserList', 'Evento','currentAuth',
-        function($scope, $routeParams, Forum, Post, UserList, Evento, currentAuth) {
+    .controller('searchViewCtrl', ['$scope','$routeParams', 'Forum', 'Post', 'UserList', 'Evento','currentAuth','$window',
+        function($scope, $routeParams, Forum, Post, UserList, Evento, currentAuth,$window) {
 
 
             //initialize variables
             $scope.dati = {};
             $scope.risultato={};
-            $scope.risultati={};
+            $scope.risultati=[];
             $scope.nome = {};
             $scope.cognome = {};
 
             $scope.myID=currentAuth.uid;
 
             $scope.dati.evento = Evento.getData();
-            console.log( $scope.dati.evento );
+            //console.log( $scope.dati.evento );
             $scope.dati.forum = Forum.getData();
-            console.log($scope.dati.forum);
-           $scope.dati.posts = Post.getData();
-           console.log( $scope.dati.posts );
+            //console.log($scope.dati.forum);
+            $scope.dati.posts = Post.getData();
+            //console.log( $scope.dati.posts );
             $scope.dati.listaUtenti = UserList.getListOfUsers();
-            console.log( $scope.dati.listaUtenti );
+            //console.log( $scope.dati.listaUtenti );
+            $scope.fine=false;
+
+            $scope.ricarica=function(){
+                $window.location.reload();
+            }
 
             $scope.dati.listaUtenti.$loaded().then(function () {
                 $scope.dati.posts.$loaded().then(function () {
-                $scope.input = function () {
-
-
+                $scope.cerca = function () {
                     $scope.dati.ricerca=$scope.dati.ricercaa.toLowerCase().split(" "); // ho dovuto fare cosi perchè altrimenti non si prende lo split
                     console.log($scope.dati.ricerca);
                     for (var i = 0; i < $scope.dati.listaUtenti.length; i++) {
                         $scope.nome = $scope.dati.listaUtenti[i].name.toLowerCase().split(" ");
-
+                        console.log($scope.nome);
                         $scope.cognome = $scope.dati.listaUtenti[i].surname.toLowerCase().split(" ");
-
+                        console.log($scope.cognome);
                         console.log($scope.nome, $scope.cognome);
-                        for (var a = 0, b = 0, c = 0, d = 0;
-                             a < $scope.nome.length, b < $scope.cognome.length, c < $scope.dati.ricerca.length, d < $scope.dati.posts.length;
-                             a++ , b++, c++, d++) {
-
-                            if (((String($scope.dati.ricerca[c]) === String($scope.nome[a])) ||
-                                (String($scope.dati.ricerca[c]) === String($scope.cognome[b])) ||
-                                (String($scope.dati.ricerca[c]) === String($scope.dati.listaUtenti[i].email))) && //c'è da vedere questo perchè con l'and se non pubblicano neanche un post allora non li trovi
-                                (String($scope.dati.posts[d].userPost) === String($scope.dati.listaUtenti[i].$id))) {
-
-                                $scope.risultato = $scope.dati.listaUtenti[i].name + ' ' +
-                                    $scope.dati.listaUtenti[i].surname + ' ' +
-                                    $scope.dati.listaUtenti[i].email;
-
-                                $scope.dati.userpost=$scope.dati.posts[d].userPost;
-                                console.log( "cosa salva come risultato di ricerca:",$scope.risultato);
+                        for (var c = 0; c < $scope.dati.ricerca.length;  c++) {
+                            if (((String($scope.dati.ricerca[c]) === String($scope.nome)) ||
+                                (String($scope.dati.ricerca[c]) === String($scope.cognome)) ||
+                                (String($scope.dati.ricerca[c]) === String($scope.dati.listaUtenti[i].email))) //c'è da vedere questo perchè con l'and se non pubblicano neanche un post allora non li trovi
+                                ) {
+                                var risultato = $scope.dati.listaUtenti[i].name + ' ' +$scope.dati.listaUtenti[i].surname + ' ' +  $scope.dati.listaUtenti[i].email;
+                                var id=$scope.dati.listaUtenti[i].$id;
+                                console.log( "cosa salva come risultato di ricerca:",risultato, id);
+                                $scope.risultati.push({risultato:risultato, id:id});
 
                             }
                             //else {$scope.risultato=" ";}
@@ -96,7 +93,11 @@ angular.module('myApp.searchView', ['ngRoute','myApp.forum','myApp.post','myApp.
 
 
                     //return $scope.risultato;
-        }})});
+        }
+                if ($scope.risultati.length<=0) $scope.fine=true;
+                }
+                )}
+                );
 
             //Azzero le variabili di ricerca
             //$scope.risultato={};
