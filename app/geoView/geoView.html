@@ -8,22 +8,70 @@
 
 <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{googleMapsUrl}}" class="google-maps">
 
+    <ng-map map-type-id="ROADMAP"  center="{{pos.lat}}, {{pos.lng}}" zoom="12">
 
-    <ng-map center="{{pos.lat}}, {{pos.lng}}" zoom="12">
-
-        <marker position="{{pos.lat}},{{pos.lng}}" title="Tu sei qui" ></marker>
-
-        <marker ng-if="showAll==true"  ng-repeat="pos in dati.vm.positions"    position="{{pos.lat}},{{pos.lng}}" title="Nome: {{pos.info.name}},   Cognome: {{pos.info.surname}},  {{pos.info.type}}">
-          <!-- <div ng-if="pos.si==true" id="infoMappa">
-                    <a  ng-if="pos.info.$id===dati.userId"   href="#!/userProfile" >Nome: {{pos.info.name}}, Cognome: {{pos.info.surname}}</a>
-                    <a  ng-if="pos.info.$id!=dati.userId"    href="#!/OtherUser/{{pos.info.$id}}">Nome: {{pos.info.name}}, Cognome: {{pos.info.surname}}</a>
-                    {{pos.info.type}}
-           </div>
-        --->
+        <marker position="{{pos.lat}},{{pos.lng}}" title="Tu sei qui" >
+            <custom-marker id="foo0" position="{{pos.lat}},{{pos.lng}}">
+                <a  href="#!/userProfile">Tu sei qui!</a>
+            </custom-marker>
         </marker>
 
-        <marker ng-if="showBudd==true"  ng-repeat="pos in dati.vm.posBudd"    position="{{pos.lat}},{{pos.lng}}" title="Nome:  {{pos.info.name}},   Cognome: {{pos.info.surname}},  {{pos.info.type}}"></marker>
-        <marker ng-if="showTutor==true" ng-repeat="pos in dati.vm.posTutor"   position="{{pos.lat}},{{pos.lng}}" title="Nome:  {{pos.info.name}},   Cognome: {{pos.info.surname}},  {{pos.info.type}}"></marker>
+        <marker ng-if="showAll==true"  ng-repeat="pos in dati.vm.positions" id='{{pos.info.$id}}'  position="{{pos.lat}},{{pos.lng}}" title="Nome: {{pos.info.name}},   Cognome: {{pos.info.surname}},  {{pos.info.type}}"
+                icon="{
+               url:'../images/buddino.png',
+               scaledSize:[40,40]
+      }">
+            <!--
+            <custom-marker id="foo" position="{{pos.lat}},{{pos.lng}}" ng-click="closeCustomMarker()">
+                  <div class="foo">
+                      <a  ng-if="pos.info.$id===dati.userId"   href="#!/userProfile" >{{pos.info.name}} {{pos.info.surname}}</a>
+                      <a  ng-if="pos.info.$id!=dati.userId"    href="#!/OtherUser/{{pos.info.$id}}">{{pos.info.name}} {{pos.info.surname}}</a>
+                      <img width="64" height="64" ng-src="{{pos.info.img_url}}" alt="immagine del profilo"  ng-if="pos.info.img_url.includes('https://firebasestorage.googleapis.com')">
+                      {{pos.info.type}}
+                  </div>
+              </custom-marker>
+        -->
+        </marker>
+        <!--<info-window id="foo-iw">
+            <div ng-non-bindable="">
+                Nome: {{geoViewCtrl.pos.info.name}}<br/>
+                Cognome: {{geoViewCtrl.pos.info.surname}}<br/>
+                <a href="#!OtherUser/{{}}">Vedi profilo</a>
+            </div>
+        </info-window>
+-->
+        <marker ng-if="showBudd==true"  ng-repeat="pos in dati.vm.posBudd"    position="{{pos.lat}},{{pos.lng}}" title="Nome:  {{pos.info.name}},   Cognome: {{pos.info.surname}},  {{pos.info.type}}"
+                icon="{
+               url:'../images/buddino.png',
+               scaledSize:[40,40]
+      }">
+          <!--
+            <custom-marker id="foo1" position="{{pos.lat}},{{pos.lng}}" ng-click="closeCustomMarker()">
+                <div class="foo">
+                    <a  ng-if="pos.info.$id===dati.userId"   href="#!/userProfile" >{{pos.info.name}} {{pos.info.surname}}</a>
+                    <a  ng-if="pos.info.$id!=dati.userId"    href="#!/OtherUser/{{pos.info.$id}}"> {{pos.info.name}} {{pos.info.surname}}</a>
+                    <img width="64" height="64" ng-src="{{pos.info.img_url}}" alt="immagine del profilo"  ng-if="pos.info.img_url.includes('https://firebasestorage.googleapis.com')">
+                    {{pos.info.type}}
+                </div>
+            </custom-marker>
+            -->
+        </marker>
+
+        <marker ng-if="showTutor==true" ng-repeat="pos in dati.vm.posTutor"   position="{{pos.lat}},{{pos.lng}}" title="Nome:  {{pos.info.name}},   Cognome: {{pos.info.surname}},  {{pos.info.type}}"
+                icon="{
+               url:'../images/buddino.png',
+               scaledSize:[40,40]
+      }">
+           <!-- <custom-marker id="foo2" position="{{pos.lat}},{{pos.lng}}" ng-click="closeCustomMarker()">
+                <div class="foo">
+                    <a  ng-if="pos.info.$id===dati.userId"   href="#!/userProfile" > {{pos.info.name}} {{pos.info.surname}}</a>
+                    <a  ng-if="pos.info.$id!=dati.userId"    href="#!/OtherUser/{{pos.info.$id}}"> {{pos.info.name}} {{pos.info.surname}}</a>
+                    <img width="64" height="64" ng-src="{{pos.info.img_url}}" alt="immagine del profilo"  ng-if="pos.info.img_url.includes('https://firebasestorage.googleapis.com')">
+                    {{pos.info.type}}
+                </div>
+            </custom-marker>
+            -->
+        </marker>
 
     </ng-map>
 

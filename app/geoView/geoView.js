@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.geoView', ['ngRoute'])
+angular.module('myApp.geoView', ['ngRoute','ngMap'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/geoView/' , {
@@ -19,8 +19,8 @@ angular.module('myApp.geoView', ['ngRoute'])
         });
     }])
 
-    .controller('geoViewCtrl', ['$scope', '$rootScope','$firebaseAuth','$routeParams','$window','$location','UserList','UsersChatService',
-        function($scope, $rootScope, $firebaseAuth, $routeParams,$window,$location, UserList,UsersChatService){
+    .controller('geoViewCtrl', ['$scope', '$rootScope','$firebaseAuth','$routeParams','$window','$location','UserList','UsersChatService','NgMap',
+        function($scope, $rootScope, $firebaseAuth, $routeParams,$window,$location, UserList,UsersChatService,NgMap){
 //initialize variables
             $scope.dati = {};
             $scope.address= {};
@@ -48,6 +48,10 @@ angular.module('myApp.geoView', ['ngRoute'])
                 $scope.pos.lng = position.coords.longitude;
                 console.log("my position", $scope.pos.lat, $scope.pos.lng);
             });
+//disegnare sulla mappa
+            $scope.dati.vm.onMapOverlayCompleted = function(e){
+                console.log(e.type);
+            };
 
             $scope.dati.listaUtenti = UserList.getListOfUsers();
             $scope.dati.userId = $firebaseAuth().$getAuth().uid;
@@ -103,6 +107,23 @@ angular.module('myApp.geoView', ['ngRoute'])
                     $scope.showBudd=false;
                     $scope.showTutor=true;
                 };
+               // var f=document.getElementsByClassName("foo");
+               // var f=document.getElementsByTagName("custom-marker");
+               // NgMap.getMap().then(function(map) {
+               //     console.log(map);
+                //   $scope.showCustomMarker= function() {
+               //         console.log("ciao");
+               //        f.style.dispay="flex";
+               //         map.customMarkers.foo.setVisible(true);
+               //         map.customMarkers.foo.setPosition(this.getPosition());
+               //    };
+                //    $scope.closeCustomMarker= function() {
+               //         this.style.display = 'none';
+               //         f.style.dispay="flex";
+
+               //     };
+              //  });
+
 
             });
         }]);
