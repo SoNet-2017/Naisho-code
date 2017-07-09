@@ -57,29 +57,30 @@ angular.module('myApp.geoView', ['ngRoute'])
 
                             console.log("lat e lng di tutti", $scope.lat, $scope.lng);
                         }
-                        $window.location.reload();
-                    }};
+                    }$window.location.reload();
+                };
 
                 $scope.buddisti = function() {
                     for (var i=0;i<$scope.dati.listaUtenti.length; i++){
                         if ($scope.dati.userId!== $scope.dati.listaUtenti[i].$id
                             && $scope.dati.listaUtenti[i].logged===true
-                            && $scope.dati.listaUtenti[i].buddista==='si'){
+                            && $scope.dati.listaUtenti[i].buddista==='Sì'){
 
                             $scope.lat=$scope.dati.listaUtenti[i].address.lat;
                             $scope.lng=$scope.dati.listaUtenti[i].address.lng;
                             $scope.nome=$scope.dati.listaUtenti[i].name +' '+ $scope.dati.listaUtenti[i].surname;
 
                             console.log("lat e lng di tutti", $scope.lat, $scope.lng);
-                        }$window.location.reload();
-                    }};
+                        }
+                    }$window.location.reload();
+                };
 
                 $scope.tutor = function() {
                     for (var i=0;i<$scope.dati.listaUtenti.length; i++){
                         if ($scope.dati.userId!== $scope.dati.listaUtenti[i].$id
                             && $scope.dati.listaUtenti[i].logged===true
                             //&& $scope.dati.listaUtenti[i].buddista==='no'
-                            && $scope.dati.listaUtenti[i].tutor==='si'){
+                            && $scope.dati.listaUtenti[i].tutor==='Sì'){
 
                             $scope.lat=$scope.dati.listaUtenti[i].address.lat;
                             $scope.lng=$scope.dati.listaUtenti[i].address.lng;
@@ -88,9 +89,8 @@ angular.module('myApp.geoView', ['ngRoute'])
                             console.log("lat e lng di tutti", $scope.lat, $scope.lng);
 
                         }
-                    }$window.location.reload(); };
-
-
+                    }$window.location.reload();
+               };
             });
         }]);
 
