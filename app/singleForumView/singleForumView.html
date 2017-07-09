@@ -8,11 +8,16 @@
 <div id="commento"  ><input type="text" class="textComment" id="textComment" placeholder="Scrivi cosa pensi" ng-model="forum.newComment" />
     <button ng-click="salvaCommento();closeCommento(); ">Salva Commento</button>
 </div>
+
+<h2 class="commenti">Commenti:</h2>
 <div class="w3-container" id="elencoCommentiForum">
     <ul class="media-list" id="elencoCommenti">
         <li class="media" ng-repeat="commento in commentiDaMostrare">
-            <p>{{commento.info.name}} {{commento.info.surname}}: {{commento.commento}}</p>
-
+            <div class="commenti">
+            <a  ng-if="commento.info.$id===idCommentatore"   href="#!/userProfile" > <p> {{commento.info.name}} {{commento.info.surname}}: </p></a>
+            <a  ng-if="commento.info.$id!=idCommentatore"   href="#!/OtherUser/{{dati.post.userPost}}" > <p> {{commento.info.name}} {{commento.info.surname}}: </p></a>
+            <p>{{commento.commento}}</p>
+            </div>
         </li>
     </ul>
 
