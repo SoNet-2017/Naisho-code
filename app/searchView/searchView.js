@@ -81,7 +81,7 @@ angular.module('myApp.searchView', ['ngRoute','myApp.forum','myApp.post','myApp.
                                             String($scope.dati.ricerca[c]) === String($scope.dati.listaUtenti[i].email)) {
                                             var risultato = $scope.dati.listaUtenti[i].name + ' ' + $scope.dati.listaUtenti[i].surname + ' ' + $scope.dati.listaUtenti[i].email;
                                             var id = $scope.dati.listaUtenti[i].$id;
-                                            console.log("cosa salva come risultato di ricerca:", risultato, id);
+                                            //console.log("cosa salva come risultato di ricerca:", risultato, id);
                                             $scope.risultati.push({risultato: risultato, id: id});
                                         }
                                         //else {$scope.risultato=" ";}
@@ -92,34 +92,40 @@ angular.module('myApp.searchView', ['ngRoute','myApp.forum','myApp.post','myApp.
                                 for (var i = 0; i < $scope.dati.evento.length; i++) {
                                     $scope.titolo = $scope.dati.evento[i].title.toLowerCase().split(" ");
                                     $scope.descrizione = $scope.dati.evento[i].Descrizione.toLowerCase().split(" ");
-                                    console.log($scope.titolo);
-                                    console.log($scope.dati.ricerca.length);
+                                    //console.log($scope.titolo);
+                                    //console.log($scope.dati.ricerca.length);
                                     for (var c = 0; c < $scope.dati.ricerca.length; c++) {
                                         for (var j = 0; j < $scope.titolo.length; j++) {
                                             for (var f = 0; f < $scope.descrizione.length; f++) {
                                                 if (String($scope.dati.ricerca[c]) === String($scope.titolo[j]) ||
-                                                    String($scope.dati.ricerca[c]) === String($scope.descrizione[f])) {
+                                                    String($scope.dati.ricerca[c]) === String($scope.descrizione[f]) ) {
                                                     var risultato = $scope.dati.evento[i].title + ' ' + $scope.dati.evento[i].Citta + ' ' + $scope.dati.evento[i].start + ' ' + $scope.dati.evento[i].Descrizione;
                                                     var id = $scope.dati.evento[i].$id;
                                                     console.log("cosa salva come risultato di ricerca:", risultato, id);
+                                                    //console.log($scope.risultatiEventi.contains(id));
+                                                    if (!$scope.risultatiEventi.contains(id))
                                                     $scope.risultatiEventi.push({risultato: risultato, id: id});
                                                 }
                                             }
                                         }
                                     }
                                 }
-                                
+
                                 for (var i = 0; i < $scope.dati.forum.length; i++) {
                                     $scope.titolo = $scope.dati.forum[i].titolo.toLowerCase().split(" ");
-
-                                    console.log($scope.titolo);
+                                    $scope.argomento = $scope.dati.forum[i].argomento.toLowerCase().split(" ");
+                                   // console.log($scope.titolo);
                                     for (var c = 0; c < $scope.dati.ricerca.length; c++) {
                                         for (var j = 0; j < $scope.titolo.length; j++) {
-                                            if (String($scope.dati.ricerca[c]) === String($scope.titolo[j])) {
-                                                var risultato = $scope.dati.forum[i].titolo;
-                                                var id = $scope.dati.forum[i].$id;
-                                                console.log("cosa salva come risultato di ricerca:", risultato, id);
-                                                $scope.risultatiForum.push({risultato: risultato, id: id});
+                                            for (var f = 0; f < $scope.argomento.length; f++) {
+                                                if (String($scope.dati.ricerca[c]) === String($scope.titolo[j]) ||
+                                                    String($scope.dati.ricerca[c]) === String($scope.argomento[f])) {
+                                                    var risultato = $scope.dati.forum[i].titolo;
+                                                    var id = $scope.dati.forum[i].$id;
+                                                    // console.log("cosa salva come risultato di ricerca:", risultato, id);
+                                                    if (!$scope.risultatiForum.contains(id))
+                                                    $scope.risultatiForum.push({risultato: risultato, id: id});
+                                                }
                                             }
                                         }
                                     }
@@ -129,4 +135,12 @@ angular.module('myApp.searchView', ['ngRoute','myApp.forum','myApp.post','myApp.
                         })
                 })
             });
+            Array.prototype.contains = function(elem)
+            {
+                for (var i in this)
+                {
+                    if (this[i].id == elem) return true;
+                }
+                return false;
+            }
          }]);
