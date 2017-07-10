@@ -87,7 +87,7 @@ angular.module('myApp.pregaView', ['ngRoute','myApp.users','myApp.prega','myApp.
             $scope.start =function  () {
                 $scope.control = setInterval($scope.cronometro,10);
                 document.getElementById("Iniziare").disabled = true;
-
+    console.log(centesimi, secondi, minuti );
     document.getElementById("Fermarsi").disabled = false;
     document.getElementById("Continuare").disabled = true;
     document.getElementById("Ripartire").disabled = false;
@@ -105,11 +105,10 @@ angular.module('myApp.pregaView', ['ngRoute','myApp.users','myApp.prega','myApp.
             $scope.reset =function() {
     clearInterval($scope.control);
     clearInterval($scope.cronometro);
-    
-    var centesimi = 0;
-    var secondi= 0;
-    var minuti= 0;
-    var ore = 0;
+                centesimi = 0;
+                secondi= 0;
+                minuti= 0;
+                ore = 0;
     document.getElementById("Centesimi").innerHTML = ":00";
     document.getElementById("Secondi").innerHTML = ":00";
     document.getElementById("Minuti").innerHTML = ":00";
@@ -118,6 +117,7 @@ angular.module('myApp.pregaView', ['ngRoute','myApp.users','myApp.prega','myApp.
     document.getElementById("Fermarsi").disabled = true;
     document.getElementById("Continuare").disabled = true;
     document.getElementById("Ripartire").disabled = true;
+    console.log(centesimi, secondi, minuti);
 };
 // suono GONG
             var status = 0;
