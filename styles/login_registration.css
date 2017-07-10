@@ -1,5 +1,5 @@
 body{
-    background: url(../images/imgSfondo2.png) no-repeat 50% 0 fixed;height: 0px;position:relative;
+    background: url(../images/sfondoperregistrazione.png) no-repeat 50% 0 fixed;height: 0px;position:relative;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -352,7 +352,7 @@ form.frmLogin {
 }
 
 .logoNaisho{
-    content:url("../images/sfondoperregistrazione.png");
+    /*content:url("../images/logonaisho2.png");*/
     height: 190px;
     width: 350px;
     margin-left: -5%;
