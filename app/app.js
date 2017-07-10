@@ -98,83 +98,15 @@ angular.module('myApp', [
             //document.getElementById("menu").style.left = "0px";
             document.getElementById("menu").style.display = "flex";
         };
-        $scope.close = function () {
+        $scope.closeMenu = function () {
             //document.getElementById("menu").style.left = "-250px";
             document.getElementById("menu").style.display = "none";
         };
 
 
-        //barra di ricerca
-        /*$scope.search=function()
 
-
-           /* document.getElementById("search").style.display="flex"
-            app.controller('autoCompleteController',['$scope',function($scope){
-
-                &scope.location="components/users/users-list-service.js";
-
-            }]);
-            app.directive('autoCompleteDirective',function($http){
-                return{
-                    restrict:'A',
-                    scope:{
-                        url:'@'
-                    },
-                    link:function(scope,elm,attrs){
-                        elm.autocomplete({
-                            source:function(request,response) {
-                                $http({method: 'jsonp', url: scope.url,params:{q:request.term}}).success(function (data) {
-                                    response(data);
-
-                                })
-                            },
-                            minLength:3
-
-
-
-                        })
-                    }
-                }
-
-            });}*/
-
-
-                /*.factory('UserList', function($firebaseArray) {
-                    var userListService = {
-                        getListOfUsers: function () {
-                            //get the list of users
-                            var ref = firebase.database().ref().child("users");
-                            // download the data into a local object
-                            return $firebaseArray(ref);
-                        }
-                    };
-                    return userListService;
-
-
-            $scope.dati.listaUtenti = UserList.getListOfUsers();
-            $scope.dati.userId = $firebaseAuth().$getAuth().uid;
-            $scope.dati.listaUtenti.$loaded().then(function () {
-                $scope.tutti = function() {
-                    for (var i=0;i<$scope.dati.listaUtenti.length; i++){
-
-                            $scope.nome=$scope.dati.listaUtenti[i].name  +' '+  $scope.dati.listaUtenti[i].surname;
-
-                            console.log( $scope.nome, $scope.surname);
-                        }}});
-
-        });
-
-
-
-
-
-        };;*/
     }]);
-/*.config(function($routeProvider){
- $routeProvider.when("/utenti",{...})
- .when("/utenti/:userId",{...})
- .otherwise({redirectTo:"/utenti"});
- })*/
+
 
 
 
