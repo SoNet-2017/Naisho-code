@@ -1056,5 +1056,20 @@ h2.commenti {
 }
 div.foo{
     background-color: rgba(255, 255, 255, 0.35);
+}
 
+#searchDiv{
+    margin-left:20%;
+    align-content: center;
+    padding:25px;
+}
+#campoRicerca{
+    width:75%;
+    margin-left:2%;
+    margin-bottom:2%;
+}
+#searchDiv p{
+    font-size: 20px;
+    margin-left:2%;
+    color:whitesmoke;
 }
