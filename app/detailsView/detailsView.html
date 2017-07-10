@@ -14,3 +14,20 @@
 
 <p>{{dati.evento.Ora}}</p>
 </div>
+<h2>Invitati:</h2>
+<div class="inviti" class="w3-container">
+    <div ng-repeat="user in testValue=(invitatiEvento | filter:{$id: '!' + dati.userId})">
+        <a href="#!/OtherUser/{{user.persona.$id}}">{{user.persona.name}} {{user.persona.surname}}</a>
+        <button class="invita-nonInvita" id="rimuovi-invito" ng-click="removeInvito(user.invito_id)" type="submit" class="btn btn-info">Rimuovi invito</button>
+    </div>
+    <strong> <p ng-if="invitatiEvento.length<=0">Non ci sono altri utenti invitati</p></strong>
+
+</div>
+    <h2>Invita:</h2>
+<div class="inviti" class="w3-container">
+    <div ng-repeat="user in testValue=(nonInvitatiEvento | filter:{$id: '!' + dati.userId})">
+        <a href="#!/OtherUser/{{user.$id}}">{{user.name}} {{user.surname}}</a>
+        <button class="invita-nonInvita" id="invita" ng-click="Invita(user.$id)"  type="submit" class="btn btn-primary">Invita</button>
+    </div>
+
+</div>

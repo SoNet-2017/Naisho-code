@@ -12,12 +12,13 @@ angular.module('myApp.evento.insertEventoService', [])
                 return $firebaseArray(ref).$add({
                     title: titolo,
                     Descrizione: descrizione,
-                    Città: citta,
+                    Citta: citta,
                     Indirizzo: indirizzo,
                     Giorno: giorno,
                     Mese:mese,
                     Ora:ora,
-                    start:data
+                    start:data,
+                    end:data
                 });
             },
             updateEvento: function (eventoId) {

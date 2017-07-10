@@ -20,56 +20,61 @@ angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento','myApp
     }])
     .controller('calendarViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth','Evento','Forum',
         function($scope, $rootScope, $routeParams, currentAuth,Evento,Forum){
+        //eventi da mettere sul calendario
+
             $scope.dati={};
         //per i forum
             $scope.dati.forum=Forum.getData();
+
         // per scegliere come data di partenza la data odierna
+
             var dato = new Date();
             var a =dato.getDate();
+
             if (String(a).length == 1) {
-                a = "0"+a;
+               a = "0"+a;
             }
-            //console.log(a);
+
+           //console.log(a);
             var b=dato.getMonth();
             b=b+1;
             if (String(b).length == 1) {
-                b = "0"+b;
+               b = "0"+b;
             }
-var data= dato.getFullYear()+"-"+b+"-"+a;
-            console.log(data);
 
-        $scope.config = {
-                startDate: data,
-                viewType: "Week"
-            };
-            $scope.events = Evento.getData();
-            console.log( $scope.events);
+           var data= dato.getFullYear()+"-"+b+"-"+a;
+           console.log(data);
+
+            //configurazione calendario dayPilot
+
+            var dp = new DayPilot.Calendar("dp");
+            dp.viewType='Week';
+            dp.scrollToHour= 10;
+            dp.startDate = DayPilot.Date(data);
+            console.log(dp.startDate);
 
 
-/*
-            $scope.add = function() {
-                $scope.events.push(
-                    {
-                        start: new DayPilot.Date("2014-09-01T10:00:00"),
-                        end: new DayPilot.Date("2014-09-01T12:00:00"),
+            $scope.eventi = Evento.getData();
+            console.log( $scope.eventi);
+            dp.init();
+            //per ogni evento del database, creo un oggetto dayPilot.Event e lo metto nel'array "events"che viene passato al calendario
+            $scope.eventi.$loaded().then(function (){
+                for (var i=0;i< $scope.eventi.length; i++){
+                    //console.log($scope.eventi[i]);
+                    //console.log($scope.eventi[i].start);
+                    var s=$scope.eventi[i].start+"T"+$scope.eventi[i].Ora+":00";
+                    var e = new DayPilot.Event({
+                        start: new DayPilot.Date(s),
+                        end: new DayPilot.Date(s).addHours(5),
                         id: DayPilot.guid(),
-                        text: "Simple Event"
-                    }
-                );
-            };
+                        text: $scope.eventi[i].title,
+                         });
 
-            $scope.move = function() {
-                var event = $scope.events[0];
-                event.start = event.start.addDays(1);
-                event.end = event.end.addDays(1);
-            };
+                    console.log(e);
+                   // $scope.events.push(e);
+                    dp.events.add(e);
+                    console.log(dp.events);
+                }
+          });
 
-            $scope.rename = function() {
-                $scope.events[0].text = "New name";
-            };
-
-            $scope.message = function() {
-                $scope.dp.message("Hi");
-            };
- */
-    }]);
+        }]);

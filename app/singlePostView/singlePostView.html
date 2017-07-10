@@ -6,22 +6,28 @@
     <!--
         <img class="media-object" ng-src="../{{post.img_url}}" alt="{{post.img_alt}}" ng-if="!(post.img_url.includes('https://firebasestorage.googleapis.com')) && post.img_url!=''">
      -->
-    <p ng-if="!(post.img_url.includes('https://firebasestorage.googleapis.com')) && post.img_url!=''"></p>
-    <img class="media-object" ng-src="{{post.img_url}}" alt="{{post.img_alt}}" ng-if="post.img_url.includes('https://firebasestorage.googleapis.com')">
-    <p ng-if="post.img_url == ''"></p>
+    <p ng-if="!(dati.post.img_url.includes('https://firebasestorage.googleapis.com')) && dati.post.img_url!=''"></p>
+    <img class="media-object" ng-src="{{dati.post.img_url}}" alt="{{post.img_alt}}" ng-if="dati.post.img_url.includes('https://firebasestorage.googleapis.com')">
+    <p ng-if="dati.post.img_url == ''"></p>
 </div>
 <br>
-<span class="mipiace-commenta"><button ng-click="miPiace()" id="miPiace" >Mi Piace</button>
+    <span class="mipiace-commenta">
+        <button ng-if= "dati.notLike" type="submit" ng-click="miPiace()" id="miPiace" >Mi Piace</button>
+        <button ng-if="dati.like" type="submit" ng-click="nonMiPiace(dati.likes)" id="nonMiPiace">Non mi piace più</button>
         <button class="commenta" ng-click="commenta()">Commenta</button>
     </span>
 <div id="commento"  ><input type="text" class="textComment" id="textComment" placeholder="Scrivi cosa pensi" ng-model="post.newComment" />
     <button ng-click="salvaCommento();closeCommento(); ">Salva Commento</button>
 </div>
+<h2 class="commenti">Commenti:</h2>
 <div id="commentiPost">
     <ul class="media-list" id="elencoCommenti">
         <li class="media" ng-repeat="commento in commentiDaMostrare">
-                    <p>{{commento.info.name}} {{commento.info.surname}}: {{commento.commento}}</p>
-
+            <div class="commenti">
+            <a  ng-if="commento.info.$id===idCommentatore"   href="#!/userProfile" > <p> {{commento.info.name}} {{commento.info.surname}}: </p></a>
+            <a  ng-if="commento.info.$id!=idCommentatore"   href="#!/OtherUser/{{dati.post.userPost}}" > <p> {{commento.info.name}} {{commento.info.surname}}: </p></a>
+            <p>{{commento.commento}}</p>
+            </div>
         </li>
     </ul>
 </div>

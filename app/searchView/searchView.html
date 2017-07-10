@@ -1,20 +1,30 @@
-<div id="searchIcon">
-
-    <h1><b>Ecco una lista di quello che hai cercato</b></h1>
+<div id="searchDiv">
+    <h1><b>Cerca</b></h1>
     <h4 style="font-weight:bold"></h4>
 
-    
+
+<input type="text" name="ricerca" class="form-control" id="campoRicerca" placeholder="Cerca un utente, un forum o un evento" ng-model="dati.ricercaa" />
+<button type="submit" ng-click="cerca()" class="btn btn-success center-block">Cerca</button>
+
+<div>
+    <h1><b>Ecco una lista di quello che hai cercato:</b></h1>
+    <li ng-repeat="ris in risultati">
+        <a  ng-if="ris.id===myID"   href="#!/userProfile" >{{ris.risultato}}</a>
+        <a  ng-if="ris.id!=myID && ris!=' '"
+         href="#!/OtherUser/{{ris.id}}" > {{ris.risultato}}</a>
+    </li>
+    <li ng-repeat="ris in risultatiEventi">
+        <a href="#!/details/{{ris.id}}" > {{ris.risultato}}</a>
+    </li>
+    <li ng-repeat="ris in risultatiForum">
+        <a href="#!/singleForum/{{ris.id}}" > {{ris.risultato}}</a>
+    </li>
+    <p  ng-if="fine==true" >Non ho trovato niente su Naisho, prova ad effettuare un'altra ricerca</p>
 </div>
 
-    <input type="text" name="ricerca" ng-model="dati.ricercaa"  />
+<button type="submit" ng-click="ricarica()" class="btn btn-success center-block">Fai una nuova ricerca</button>
 
-<button type="submit" ng-click="input()" class="btn btn-success center-block">Cerca</button>
-<a  ng-if="dati.userpost===myID"   href="#!/userProfile" >{{risultato}} </a>
-<a  ng-if="dati.userpost!=myID && risultato!=' '"
-    href="#!/OtherUser/{{dati.userpost}}" > {{risultato}}</h1></a>
-<a  ng-if="risultato ===' '" >Non ho trovato niente su Naisho, prova ad effettuare una altra ricerca</a>
-
-
+</div>
 
 
 

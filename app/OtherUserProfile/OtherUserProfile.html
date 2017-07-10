@@ -14,15 +14,15 @@
     <div id="buttonOtherProfile">
         <div>
             <button id="becameFriends" ng-if= "dati.notYetFriends" ng-click="CreateFriendship()"  type="submit" class="btn btn-primary"  style="float: right;">Aggiungi agli amici</button>
-            <button ng-if="dati.yetFriends " ng-click="removeFriendship(dati.Friend)" type="submit" class="btn btn-info" style="float: right;">Elimina dagli amici</button>
+            <button ng-if="dati.yetFriends " ng-click="removeFriendship(dati.Friends)" type="submit" class="btn btn-info" style="float: right;">Elimina dagli amici</button>
         </div>
         <div>
             <button id="becameTutor" ng-if= "dati.notYetTutor" ng-click="becameTutor()"  type="submit" class="btn btn-primary"  style="float: right;">Chiedi di diventare tutor</button>
-            <button ng-if="dati.yetTutor " ng-click="removeTutor(dati.Tutor)" type="submit" class="btn btn-info" style="float: right;">Non essere più tutor</button>
+            <button ng-if="dati.yetTutor " ng-click="removeTutor(dati.Tutors)" type="submit" class="btn btn-info" style="float: right;">Non essere più tutor</button>
         </div>
         <div>
             <button id="becameTutored" ng-if= "dati.notYetTutored" ng-click="becameTutored()"  type="submit" class="btn btn-primary"  style="float: right;">Chiedi di essere seguito</button>
-            <button ng-if="dati.yetTutored " ng-click="removeTutor(dati.Tutoreded)" type="submit" class="btn btn-info" style="float: right;">Non essere più seguito</button>
+            <button ng-if="dati.yetTutored " ng-click="removeTutor(dati.Tutors)" type="submit" class="btn btn-info" style="float: right;">Non essere più seguito</button>
         </div>
 
     </div>

@@ -84,24 +84,73 @@ angular.module('myApp.singlePostView', ['ngRoute'])
             };
 
 
-            //funzione mi "piace"
+            //funzione mi piace
+            //per avere tutti i like
+            $scope.dati.likes=Post.getLike();
+            console.log($scope.dati.likes);
+
+            $scope.dati.like = false;
+            $scope.dati.likes.$loaded().then(function(){
+                var likes = $scope.dati.likes;
+                for (var keySingleLike in likes) {
+                    if (!angular.isFunction(keySingleLike)) {
+                        if (!angular.isFunction(likes[keySingleLike]))
+                        {
+                            if (likes[keySingleLike]!=undefined && likes[keySingleLike].postId!=undefined) {
+                                if ($routeParams.postID == likes[keySingleLike].postId) {
+                                    if (idCommentatore== likes[keySingleLike].userId) {
+                                        $scope.dati.notLike = false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+
+            $scope.dati.notLike = true;
+
+            $scope.dati.likes.$loaded().then(function(){
+                var likes = $scope.dati.likes;
+                for (var keySingleLike in likes) {
+                    if (!angular.isFunction(keySingleLike)) {
+                        if (!angular.isFunction(likes[keySingleLike])) {
+                            if (likes[keySingleLike]!=undefined && likes[keySingleLike].postId!=undefined) {
+                                if ($routeParams.postID== likes[keySingleLike].postId) {
+                                    if (idCommentatore== likes[keySingleLike].userId) {
+                                        $scope.dati.likes = likes[keySingleLike].id;
+                                        console.log($scope.dati.likes);
+                                        $scope.dati.like = true;
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                return false;});
 
             $scope.miPiace= function () {
-                //per cambiare colore
-                var b=document.getElementById("miPiace");
-                console.log(b);
-                if(b.style.backgroundColor="#bbbbbb")
-                {console.log("sono qui");
-                    b.style.backgroundColor="#9acae5";
-                    b.innerHTML = "Non mi Piace Più";
-                    console.log(b.style.backgroundColor);
+                    Post.insertNewLike($routeParams.postID,idCommentatore,'Bottone disabilitato').then(function (ref) {
+                    var likeId = ref.key;
+                    Post.updateLike(likeId);
+                    $scope.dati.like = false;
+                    $scope.dati.notLike = true;
+                    $window.location.reload();
+
+                });
             }
-                else  if(b.style.backgroundColor="#9acae5"){
-                   console.log("ora sono qui");
-                   b.style.backgroundColor="#bbbbbb";
-                   b.innerHTML = "Mi Piace";
-               }
+
+            $scope.nonMiPiace= function (likeId) {
+
+               Post.deleteLike(likeId);
+                $scope.dati.like = true;
+                $scope.dati.notLike = false;
+                $window.location.reload();
+
             }
+
 
         });
         });

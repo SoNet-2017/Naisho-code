@@ -67,7 +67,7 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
                    if (!angular.isFunction(friends[keySingleFriend]))
                    {
                        if (friends[keySingleFriend]!=undefined && friends[keySingleFriend].friend1!=undefined) {
-                           if ($scope.dati.userId.$id == friends[keySingleFriend].friend1.userId) {
+                           if ($scope.dati.userId.$id == friends[keySingleFriend].friend1) {
                                if ($scope.dati.recipient.$id == friends[keySingleFriend].friend2) {
                                    $scope.dati.notYetFriends = false;
                                }
@@ -86,7 +86,7 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
                    if (!angular.isFunction(tutors[keySingleTutor]))
                    {
                        if (tutors[keySingleTutor]!=undefined && tutors[keySingleTutor].tutor!=undefined) {
-                           if ($scope.dati.userId.$id == tutors[keySingleTutor].tutor.userId) {
+                           if ($scope.dati.userId.$id == tutors[keySingleTutor].tutor) {
                                if ($scope.dati.recipient.$id == tutors[keySingleTutor].tutored) {
                                    $scope.dati.notYetTutor = false;
                                }
@@ -105,7 +105,7 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
                    if (!angular.isFunction(tutors[keySingleTutor]))
                    {
                        if (tutors[keySingleTutor]!=undefined && tutors[keySingleTutor].tutored!=undefined) {
-                           if ($scope.dati.userId.$id == tutors[keySingleTutor].tutored.userId) {
+                           if ($scope.dati.userId.$id == tutors[keySingleTutor].tutored) {
                                if ($scope.dati.recipient.$id == tutors[keySingleTutor].tutor) {
                                    $scope.dati.notYetTutored = false;
                                }
@@ -126,7 +126,7 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
                if (!angular.isFunction(keySingleFriend)) {
                    if (!angular.isFunction(friends[keySingleFriend])) {
                        if (friends[keySingleFriend]!=undefined && friends[keySingleFriend].friend1!=undefined) {
-                           if ($scope.dati.userId.$id == friends[keySingleFriend].friend1.userId) {
+                           if ($scope.dati.userId.$id == friends[keySingleFriend].friend1) {
                                if ($scope.dati.recipient.$id == friends[keySingleFriend].friend2) {
                                    $scope.dati.Friends = friends[keySingleFriend].id;
                                    console.log($scope.dati.Friends);
@@ -147,7 +147,7 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
                if (!angular.isFunction(keySingleTutor)) {
                    if (!angular.isFunction(tutors[keySingleTutor])) {
                        if (tutors[keySingleTutor]!=undefined && tutors[keySingleTutor].tutor!=undefined) {
-                           if ($scope.dati.userId.$id == tutors[keySingleTutor].tutor.userId) {
+                           if ($scope.dati.userId.$id == tutors[keySingleTutor].tutor) {
                                if ($scope.dati.recipient.$id == tutors[keySingleTutor].tutored) {
                                    $scope.dati.Tutors = tutors[keySingleTutor].id;
                                    console.log($scope.dati.Tutors);
@@ -165,12 +165,14 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
 
        $scope.dati.tutors.$loaded().then(function(){
            var tutors = $scope.dati.tutors;
+           //console.log(tutors);
            for (var keySingleTutor in tutors) {
                if (!angular.isFunction(keySingleTutor)) {
                    if (!angular.isFunction(tutors[keySingleTutor])) {
                        if (tutors[keySingleTutor]!=undefined && tutors[keySingleTutor].tutored!=undefined) {
-                           if ($scope.dati.userId.$id == tutors[keySingleTutor].tutored.userId) {
+                           if ($scope.dati.userId.$id == tutors[keySingleTutor].tutored) {
                                if ($scope.dati.recipient.$id == tutors[keySingleTutor].tutor) {
+                                   console.log(tutors[keySingleTutor].id);
                                    $scope.dati.Tutors = tutors[keySingleTutor].id;
                                    console.log($scope.dati.Tutors);
                                    $scope.dati.yetTutored = true;
@@ -191,7 +193,7 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
                UsersFriends.updateUsersFriends(friendshipId);
                $scope.dati.notFriends = false;
                $scope.dati.yetFriends =true;
-
+               $window.location.reload();
 
            });
        };
@@ -200,6 +202,7 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
            UsersFriends.deleteFriendship(friendshipId);
            $scope.dati.notYetFriends = true;
            $scope.dati.yetFriends =false;
+           $window.location.reload();
        };
        // richiesta per fare da tutor
        $scope.becameTutor = function() {
@@ -208,7 +211,7 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
                UsersTutorsService.updateUsersTutor(tutorId);
                $scope.dati.notYetTutor = false;
                $scope.dati.yetTutor =true;
-
+               $window.location.reload();
 
            });
        };
@@ -217,6 +220,7 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
            UsersTutorsService.deleteTutor(tutorId);
            $scope.dati.notYetTutor = true;
            $scope.dati.yetTutor =false;
+           $window.location.reload();
        };
 
        // richiesta per avere un tutor
@@ -226,7 +230,7 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
                UsersTutorsService.updateUsersTutor(tutorId);
                $scope.dati.notYetTutored = false;
                $scope.dati.yetTutored =true;
-
+               $window.location.reload();
 
            });
        };
@@ -235,6 +239,7 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
            UsersTutorsService.deleteTutor(tutorId);
            $scope.dati.notYetTutored = true;
            $scope.dati.yetTutored =false;
+           $window.location.reload();
        };
 
    }]);

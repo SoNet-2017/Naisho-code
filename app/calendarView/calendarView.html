@@ -1,14 +1,13 @@
 <link rel="stylesheet" href="../styles/custom.css"/>
 <h3><b>Calendario</b></h3>
-
-
-
 <div class="nuovoevento-forum">
        <div> <a href="#!/addEvento" ><img src="../images/iconacalendarioaggiungi.png"><button id="newEvent" align="left">Crea Evento</button></a></div>
-        <div>   <a href="#!/addForumView" ><img src="../images/iconanuovoforum.png"><button id="newForum" align="left">Crea Forum</button></a></div>
+       <div>   <a href="#!/addForumView" ><img src="../images/iconanuovoforum.png"><button id="newForum" align="left">Crea Forum</button></a></div>
 </div>
-<div class="calendario"><daypilot-calendar id="dp" config="config" events="events"  ></daypilot-calendar>
+<div class="calendario"> <!-- <daypilot-calendar id="dp"  daypilot-config="config" events="events"  ></daypilot-calendar>-->
+    <div id="dp"></div>
     <div class="calendar_default_main"></div>
+
 </div>
 <div style="clear:both;"></div>
 <div class="calendar_default_cornerright_inner"></div>
@@ -17,12 +16,12 @@
 
 
 
-<h1>Forum Recenti</h1>
+<h1 id="calendarForum">Forum Recenti</h1>
 <div id="forumCalendar" class="container">
 
     <li class="media" ng-repeat="forum in dati.forum">
         <a href="#!/singleForum/{{forum.id}}">
-            <div  class="forumHome">
+            <div >
                 <h4 class="media-heading"><strong>{{forum.titolo}}</strong></h4>
                 <p>{{forum.argomento}}</p>
                 <!--<span><button class="mi piace">Mi Piace</button><button class="commenta">Commenta</button></span>-->
@@ -31,9 +30,3 @@
     </li>
 
 </div>
-
-
-
-
-
-
