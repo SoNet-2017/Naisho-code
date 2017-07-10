@@ -306,12 +306,12 @@ ul#elencoEventi li:first-child{
 
 #detail{
     margin-top:30%;
-    width:inherit;
-    font-size:20px;
+    max-width:50%;
+    font-size:15px;
     background: white;
     border-radius: 15px;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left:25%;
+
 }
 #detail h1{
     alignment: center;
@@ -323,7 +323,7 @@ ul#elencoEventi li:first-child{
     alignment: center;
     color: black;
     padding-left:3%;
-    padding-bottom:3%;
+    padding-bottom:1%;
 }
 
 #detailPost,#detailForum{
@@ -970,9 +970,9 @@ a {
 
 }
 h2,strong {
-       font-weight: 700;
-    margin-left:50px;
-    margin-top: 100px;
+    font-weight: 700;
+    margin-left:10%;
+    margin-top: 50px;
 }
 
 #contenuto{
@@ -1018,10 +1018,11 @@ h5{
     margin-bottom: 20px;
     border-radius: 15px;
     padding: 3%;
+    width:40%;
 }
 
 .inviti div{
-     padding: 2%;
+    padding: 1%;
 }
 
 .invita-nonInvita{
@@ -1069,6 +1070,11 @@ div.foo{
     margin-bottom:2%;
 }
 #searchDiv p{
+     font-size: 20px;
+     margin-left:2%;
+     color:whitesmoke;
+ }
+#searchDiv a{
     font-size: 20px;
     margin-left:2%;
     color:whitesmoke;
