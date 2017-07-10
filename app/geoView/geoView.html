@@ -31,16 +31,15 @@
                   </div>
               </custom-marker>
               
-        --> <info-window id="bar" visible-on-marker="foo">
+        --> <info-window id="bar" visible-on-marker="foo" position="{{pos.lat}},{{pos.lng}}">
             <div ng-non-bindable>
                 <div id="siteNotice"></div>
-                <h1 id="firstHeading" class="firstHeading">utente</h1>
+                <h1 id="firstHeading" class="firstHeading">Utente</h1>
                 <div id="bodyContent">
-                    <p> <img id="img-profilo" ng-src="{{dati.user.img_url}}" alt="immagine del profilo"
-                             ng-if="dati.user.img_url.includes('https://firebasestorage.googleapis.com')">
-                        <img src="../images/user.png" id="userIcon" alt="immagine del profilo"
-                             ng-if="!dati.user.img_url.includes('https://firebasestorage.googleapis.com')" >
-                        <b><a href="#!/userProfile">{{pos.info.name}} {{pos.info.surname}} </a> </b></p>
+                    <p> <img id="img-profilo" ng-src="{{pos.info.img_url}}" alt="immagine del profilo"
+                             ng-if="pos.info.img_url.includes('https://firebasestorage.googleapis.com')">
+                        <br>
+                        <b><a href="#!/OtherUser/{{pos.info.$id}}">{{pos.info.name}} {{pos.info.surname}} </a> </b></p>
                     <p> {{pos.info.type}}
 
                     </p>
