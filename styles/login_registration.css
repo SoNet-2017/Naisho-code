@@ -352,10 +352,11 @@ form.frmLogin {
 }
 
 .logoNaisho{
-    content:url("../images/logonaisho2.png");
+    content:url("../images/sfondoperregistrazione.png");
     height: 190px;
     width: 350px;
     margin-left: -5%;
+    margin-top:40px;
 }
 
 #titolo{
@@ -447,6 +448,8 @@ input.form-control {
 
 .link a:link{
     color: #ffffff;
+    font-wight:bold;
+    font-size:16px;
 }
 
 .link2 a:link{
