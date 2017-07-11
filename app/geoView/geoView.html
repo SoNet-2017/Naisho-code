@@ -97,7 +97,30 @@
         <button  ng-click="buddisti()" id="solobudda">Solo Buddisti</button>
         <button  ng-click="solotutor()" id="solotutor">Solo Tutor</button>
 </div>
+    <ng-map default-style="true" center="41,-87" zoom="3">
+        <marker id='{{dati.vm.shop.id}}' position="{{dati.vm.shop.position}}"
+                ng-repeat="shop in dati.vm.shops"
+                on-click="dati.vm.showDetail(shop)">
+        </marker>
 
+        <info-window id="foo-iw">
+            <div ng-non-bindable="">
+                id: {{dati.vm.shop.id}}<br/>
+                name: {{dati.vm.shop.name}}<br/>
+                Position 1: {{dati.vm.shop.position}}<br/>
+                Position 2: {{anchor.getPosition()}}<br/>
+                Position 3: {{dati.vm.map.markers[dati.vm.shop.id].getPosition()}}<br/>
+                <a href="#" ng-click="dati.vm.clicked()">Click Here</a>
+            </div>
+        </info-window>
+    </ng-map>
+
+    <button ng-click="dati.vm.showDetail(e, dati.vm.shop)">
+        show InfoWindow of the shop
+    </button>
+    <button ng-click="dati.vm.hideDetail(e, dati.vm.shop)">
+        Hide InfoWindow of the shop
+    </button>
 </div>
 
 
