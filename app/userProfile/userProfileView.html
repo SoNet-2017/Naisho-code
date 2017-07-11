@@ -15,11 +15,15 @@
         <a href="#!changeImg" id="changeImg">Cambia immagine</a>
 
         <a href="#!editProfile" ><i class="glyphicon glyphicon-pencil" id="edit"> Modifica Profilo</i></a>
-        <a href="#!pregaView" ><img src="../images/iconapregablu.png" id="prega"> Prega</a>
-        <a href="#!tutorView" ><img src="../images/iconatutorblu.png" id="tutor"> Tutor</a>
+                <div class="clear"></div>
+                <br>
+                <br>
+            </div>
+                <a href="#!pregaView" class="prega-tutor"><img class="prega-tutor" src="../images/iconapregablu.png" id="prega"> Prega</a>
+                <a href="#!tutorView" class="prega-tutor"><img class="prega-tutor" src="../images/iconatutorblu.png" id="tutor"> Tutor</a>
 
        <!-- <a href="#" ng-click="logout()" class="w3-bar-item w3-button"><i class="glyphicon glyphicon-off"></i> Disconnetti</a> -->
-            </div>
+
         </div>
     </div>
 
@@ -33,10 +37,19 @@
                     <div  class="forumHome">
                         <h4 class="media-heading"><strong>{{forum.titolo}}</strong></h4>
                         <p>{{forum.argomento}}</p>
-                        <!--<span><button class="mi piace">Mi Piace</button><button class="commenta">Commenta</button></span>-->
                     </div>
                 </a>
     </li>
+    <h1><strong>Eventi</strong></h1>
+    <li class="media" ng-repeat="evento in dati.eventiDaMostrare">
+        <a href="#!/details/{{evento.id}}">
+            <div  class="forumHome">
+                <h4 class="media-heading"><strong>{{evento.title}} {{evento.start}}</strong></h4>
+                <p>{{evento.descrizione}}</p>
+            </div>
+        </a>
+    </li>
+
 
 </div>
 
