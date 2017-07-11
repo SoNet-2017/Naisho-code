@@ -41,6 +41,7 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
 
 
             $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qAQOEvZs2XlUUu3ziu-nrDX-WWZXap4";
+
             //var vm = this;
             NgMap.getMap().then(function(map) {
                 console.log('map', map);
@@ -52,7 +53,7 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
             };
 
             $scope.dati.vm.shops = [
-                {id:'foo', name: 'FOO SHOP', position:[41,-87]}
+                {id:'foo', name: 'FOO SHOP', position:[41,-87]},
                 //{id:'bar', name: 'BAR SHOP', position:[42,-86]}
             ];
             $scope.dati.vm.shop = $scope.dati.vm.shops[0];
