@@ -43,29 +43,29 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
             $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qAQOEvZs2XlUUu3ziu-nrDX-WWZXap4";
 
             //var vm = this;
-            NgMap.getMap().then(function(map) {
-                console.log('map', map);
-                $scope.dati.vm.map = map;
-            });
+         //   NgMap.getMap().then(function(map) {
+          //      console.log('map', map);
+          //      $scope.dati.vm.map = map;
+          //  });
 
-            $scope.dati.vm.clicked = function() {
-                alert('Clicked a link inside infoWindow');
-            };
+          //  $scope.dati.vm.clicked = function() {
+          //      alert('Clicked a link inside infoWindow');
+          //  };
 
-            $scope.dati.vm.shops = [
-                {id:'foo', name: 'FOO SHOP', position:[41,-87]},
+            //$scope.dati.vm.shops = [
+              //  {id:'foo', name: 'FOO SHOP', position:[41,-87]},
                 //{id:'bar', name: 'BAR SHOP', position:[42,-86]}
-            ];
-            $scope.dati.vm.shop = $scope.dati.vm.shops[0];
+            //];
+            //$scope.dati.vm.shop = $scope.dati.vm.shops[0];
 
-            $scope.dati.vm.showDetail = function(e, shop) {
-                $scope.dati.vm.shop = shop;
-                $scope.dati.vm.map.showInfoWindow('foo-iw', shop.id);
-            };
+           // $scope.dati.vm.showDetail = function(e, shop) {
+           //     $scope.dati.vm.shop = shop;
+           //     $scope.dati.vm.map.showInfoWindow('foo-iw', shop.id);
+           // };
 
-            $scope.dati.vm.hideDetail = function() {
-                $scope.dati.vm.map.hideInfoWindow('foo-iw');
-            };
+          //  $scope.dati.vm.hideDetail = function() {
+            //    $scope.dati.vm.map.hideInfoWindow('foo-iw');
+           // };
 
             //posizione user
             $scope.geo = navigator.geolocation.getCurrentPosition(function(position) {
