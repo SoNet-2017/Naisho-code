@@ -80,6 +80,7 @@ input.form-control {
 .alert{
     margin-top: 70px;
     width: inherit;
+    max-width:50%;
 }
 
 /*home*/
