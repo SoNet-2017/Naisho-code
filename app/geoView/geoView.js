@@ -40,7 +40,7 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
             $scope.showTutor=false;
 
 
-            $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qAQOEvZs2XlUUu3ziu-nrDX-WWZXap4";
+            $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNCEGiw6oGAE68EpQTMrInl9t4bnkzoc4";
 
             //var vm = this;
          //   NgMap.getMap().then(function(map) {
