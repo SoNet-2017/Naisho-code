@@ -47,7 +47,7 @@ angular.module('myApp.evento.eventoService', [])
                 var refDel = firebase.database().ref().child("inviti").child(invitoId);
                 refDel.remove();
             },
-
+ 
             getUserInfo: function(userId) {
                 var userRef = firebase.database().ref().child("users").child(userId);
                 return $firebaseObject(userRef);
