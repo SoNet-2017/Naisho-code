@@ -1,5 +1,5 @@
 body{
-    background: url(../images/BUDDACONLOGO.png) no-repeat 50% 0 fixed;height: 0px;position:relative;
+    background: url(../images/sfondoperregistrazione.png) no-repeat 50% 0 fixed;height: 0px;position:relative;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -351,12 +351,12 @@ form.frmLogin {
     margin-left: 20%;
 }
 
-.logoNaisho {
+.logoNaisho{
     /*content:url("../images/logonaisho2.png");*/
     height: 190px;
     width: 350px;
     margin-left: -5%;
-    margin-top: 40px;
+    margin-top:40px;
 }
 
 #titolo{
@@ -448,6 +448,8 @@ input.form-control {
 
 .link a:link{
     color: #ffffff;
+    font-wight:bold;
+    font-size:16px;
 }
 
 .link2 a:link{

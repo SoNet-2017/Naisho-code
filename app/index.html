@@ -23,13 +23,21 @@
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
-
     <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
     <!-- jQuery and Google Maps lib -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../lib/ng-map.min.js"></script>
     <script src="../lib/angular-google-maps-geocoder.js"></script>
+    <!--
+    <script src="../lib/info-window.js"></script>
+    <script src="../lib/marker.js"></script>
+    <script src="../lib/custom-marker.js"></script>
+    <script src="../lib/ng-map-pool.js"></script>
+    <script src="../lib/ng-map.js"></script>
+    <script src="../lib/ng-map.no-dependency.js"></script>
+    <script src="../lib/ng-map.debug.js"></script>
+-->
 
     <script src="app.js"></script>
     <script src="homeView/homeView.js"></script>
@@ -101,7 +109,7 @@
     <script src="components/users/users-friends-service.js"></script>
     <script src="components/users/users-tutors-service.js"></script>
 
-
+    <script src="newsView/newsView.js"></script>
     <script src="searchView/searchView.js"></script>
 
 <!-- calendario-->
@@ -125,21 +133,21 @@
 
 
 
-        <!--<  <li> <a class="menu" id="menuButton" ng-click="show()" ><img src="../images/menù40-45.png" ></a>  </li>-->
+
         <a class="w3-bar-item w3-button" id="menuButton" ng-click="show()" ><i class="glyphicon glyphicon-menu-hamburger w3-large"></i></a>
-        <!--   <li> <a class="casa" id="homeIcon" href="#!/home"><img src="../images/iconacasa.png" ></a>  </li>-->
-      <a class="w3-bar-item w3-button" id="homeIcon" href="#!/home" ><i class="glyphicon glyphicon-home w3-large" ></i></a>
-        <!--<a class="w3-bar-item w3-button" id="userIcon"><i class="glyphicon glyphicon-user w3-large"></i></a>-->
-        <!-- <li> <a class="notifica" id="newPsIcon" ><img src="../images/campanello.png" ></a>  </li>-->
 
-       <a class="w3-bar-item w3-button" id="searchIcon" href="#!/searchView" ><i class="glyphicon glyphicon-bell w3-large"></i></a>
+        <a class="w3-bar-item w3-button" id="homeIcon" href="#!/home" ><i class="glyphicon glyphicon-home w3-large" ></i></a>
+
+        <a class="w3-bar-item w3-button" id="searchIcon" href="#!/searchView" ><i class="glyphicon glyphicon-search w3-large"></i></a>
+
+        <a class="w3-bar-item w3-button" id="newsIcon" href="#!/newsView" ><i class="glyphicon glyphicon-bell w3-large"></i></a>
+
         <a class="w3-bar-item w3-button" id="geoIcon" href="#!/geoView"><img src="../images/buddino30.png"  width="30" height="30" ><br>Trova Buddisti</a>
-        <!--  id="newPsIcon"  <a class="w3-bar-item w3-button" id="geoIcon"  href="#!geoView" ><i class="glyphicon glyphicon-map-marker w3-large"></i></a>-->
-           <a ng-click="logout()" class="w3-bar-item w3-button"  id="OffIcon" ><i class="glyphicon glyphicon-off w3-large"></i></a>
+
+        <a ng-click="logout()" class="w3-bar-item w3-button"  id="OffIcon" ><i class="glyphicon glyphicon-off w3-large"></i></a>
             <!--  <a ng-click="logout()" class="esci"  id="OffIcon" ><img src="../images/logout4045.png"></a>-->
-
-
-         <form id="search" >
+<!--
+     <form id="search" >
              <div class="input-group">
                  <input type="text" class="form-control" placeholder="Search">
                  <div class="input-group-btn">
@@ -149,8 +157,8 @@
                  </div>
              </div>
          </form>
-
-         <div id="logoBarImgContainerHome" >
+-->
+                 <div id="logoBarImgContainerHome" >
              <img class="w3-content" id="logoBarImgHome" alt="logo">
          </div>
          <div class="menu" id="menu">
