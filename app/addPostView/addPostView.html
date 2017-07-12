@@ -3,9 +3,8 @@
     <div class="alert alert-success alert-dismissible" role="alert" ng-if="dati.feedback">{{ dati.feedback }}</div>
     <div class="alert alert-danger alert-dismissible" role="alert" ng-if="dati.error">{{ dati.error }}</div>
     <h2>Crea un nuovo post</h2>
-    <form class="frmModifiche" role="form" ng-submit="addPost()" id="modifiche">
-
-
+    <div id="modifiche">
+    <form class="frmModifiche" role="form" ng-submit="addPost()">
         <div class="form-group">
 
             <label for="txtTitolo" id="contenuto">Contenuto</label>
@@ -17,8 +16,9 @@
             <file-upload on-change="$ctrl.onChange">
             </file-upload>
         </div>
-<div class="condividieannulla">
+<div class="condividieannulla" id="condividieannulla">
         <button type="submit" class="btn btn-success center-block">Condividi</button>
         <button type="reset" class="btn center-block" ><a href="#!homeView"id="scrittaannulla"> Annulla</a></button></div>
     </form>
+    </div>
 </div>

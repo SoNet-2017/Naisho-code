@@ -95,28 +95,28 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento',])
         };
 
 
-        $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qAQOEvZs2XlUUu3ziu-nrDX-WWZXap4";
+       // $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNCEGiw6oGAE68EpQTMrInl9t4bnkzoc4";
 
-        $scope.dati.evento.$loaded().then(function () {
+        //$scope.dati.evento.$loaded().then(function () {
             //console.log($scope.dati.evento);
-            $scope.address = $scope.dati.evento.Indirizzo;
+          //  $scope.address = $scope.dati.evento.Indirizzo;
             // If adress is not supplied, use default value 'Ferrol, Galicia, Spain'
            // address = address || 'Ferrol, Galicia, Spain';
             // Initialize the Geocoder
-            $scope.geocoder = new google.maps.Geocoder();
-            if ($scope.geocoder) {
-                $scope.geocoder.geocode({
-                    'address': $scope.address
-                },
-                    $scope.cambia=function (results, status) {
-                    if (status === google.maps.GeocoderStatus.OK) {
-                        $scope.dati.position = {lat: results.geometry.location.lat() , lng: results.geometry.location.lng()};
-                    }
-                });
-            }
-            $scope.dati.evm.position.push({Indirizzo: $scope.dati.position});
+           // $scope.geocoder = new google.map.Geocoder();
+           // if ($scope.geocoder) {
+           //     $scope.geocoder.geocode({
+           //         'address': $scope.address
+           //     },
+           //         $scope.cambia=function (results, status) {
+           //         if (status === google.map.GeocoderStatus.OK) {
+           //             $scope.dati.position = {lat: results.geometry.location.lat() , lng: results.geometry.location.lng()};
+           //         }
+           //     });
+           // }
+           // $scope.dati.evm.position.push({Indirizzo: $scope.dati.position});
             //console.log($scope.address);
-        });
+        //});
 
 
     }]);

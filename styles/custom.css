@@ -310,7 +310,7 @@ ul#elencoEventi li:first-child{
 }
 
 #detail{
-    margin-top:30%;
+    margin-top:10%;
     max-width:50%;
     font-size:15px;
     background: white;
@@ -320,7 +320,7 @@ ul#elencoEventi li:first-child{
 }
 #detail h1{
     alignment: center;
-    padding-left: 35%;
+    padding-left: 30%;
     color: black;
     padding-top:3%;
 }
@@ -377,6 +377,7 @@ ul {
     padding-left:3%;
     padding-bottom:5px;
     padding-top: 15px;
+    overflow: auto;
 }
 #detailForum h1{
     alignment: center;
@@ -424,9 +425,9 @@ img.media-object{
 
 .frmModifiche{
     margint-top:75px;
-    margin-left:35%;
     width: inherit;
     padding: inherit;
+    transform:rotate(-3deg);
 }
 
 .frmModifiche h2{
@@ -660,12 +661,12 @@ form.frmLogin {
     margin-left: 20%;
 }
 
-.logoNaisho{
+/*.logoNaisho{
     content:url("../images/logonaisho2.png");
     height: 200px;
     width: 350px;
     margin-left: -5%;
-}
+}*/
 
 
 #titolo{
@@ -973,11 +974,8 @@ a {
     text-decoration: none;
 
 }
+
 #modifiche {
-    margin-left: 200px;
-    padding:20px;
-}
-.frmModifiche:before {
     content:"";
     position:absolute;
     top:70px;
@@ -987,7 +985,11 @@ a {
     background:url(../images/postitpiuscuro.png) no-repeat;
     transform:rotate(3deg);
     z-index: -1;/*sfondo sotto la scritta*/
+    margin-left: 200px;
+    padding:20px;
+
 }
+
 
 .form-group{
     margin-top:100px;
@@ -1005,21 +1007,24 @@ h2 {
 }
 
 #contenuto{
-    margin-left:130px;
-    margin-top:-40px;
+    margin-left:3%;
     color:rgba(17, 7, 6, 0.84);
 }
 #txtTitolo{
    /* margin-left:160px;*/
     width:550px;
     height:100px;
-
+    margin-top: 5%;
+    margin-left:3%;
 }
 
 
 #caricaimmag{
-    margin-left:170px;
+    margin-left:7%;
     color: rgba(17, 7, 6, 0.84);
+}
+#condividieannulla{
+    margin-left:15%;
 }
 .condividieannulla{
     margin-left:230px;
@@ -1072,7 +1077,9 @@ h5{
     border-radius: 15px;
     margin-left:10%;
     margin-right: 10%;
+    overflow: auto;
 }
+
 div.commenti {
      background-color: rgba(29,74,249,0.15);
      border-radius: 10px;
@@ -1112,4 +1119,10 @@ img.imgPost{
     margin-left:15%;
     width:120px;
     height:100px
+}
+
+#cerca{
+    float:right;
+    width:20%;
+    margin-top:20%;
 }
