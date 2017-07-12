@@ -1,0 +1,72 @@
+body{
+    background: url(../images/BUDDACONLOGO.png) no-repeat 50% 0 fixed;height: 0px;position:relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+#log{
+
+    padding-top: 0px;
+    background-attachment:scroll;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+form.frmLogin {
+    margin-right: 20%;
+    margin-left: 20%;
+}
+.logoNaisho{
+    /*content:url("../images/logonaisho2.png");*/
+    height: 190px;
+    width: 350px;
+    margin-left: -5%;
+    margin-top:40px;
+}
+#titolo{
+    font-family: Andalus;
+    text-align: center;
+    font-size: 40px;
+    color : #ffffff;
+
+}
+.form-group {
+    margin-top: 15px;
+    margin-left: 30px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    color: #FFFFFF;
+}
+.login{
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 20px;
+    background: #3903ff;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    width: 300px;
+}
+#btlog {
+    width: auto;
+    height: 46px;
+    padding:0px;
+    border:0px;
+    background: #3903ff;
+    color: #FFFFFF;
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    letter-spacing: -1px;
+}
+.link {
+    text-align: center;
+    padding-top: 38.5px;
+    color:white;
+}
