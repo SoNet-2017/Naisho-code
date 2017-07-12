@@ -5,8 +5,6 @@
     <h2>Crea un nuovo post</h2>
     <div id="modifiche">
     <form class="frmModifiche" role="form" ng-submit="addPost()">
-
-
         <div class="form-group">
 
             <label for="txtTitolo" id="contenuto">Contenuto</label>
@@ -18,7 +16,7 @@
             <file-upload on-change="$ctrl.onChange">
             </file-upload>
         </div>
-<div class="condividieannulla">
+<div class="condividieannulla" id="condividieannulla">
         <button type="submit" class="btn btn-success center-block">Condividi</button>
         <button type="reset" class="btn center-block" ><a href="#!homeView"id="scrittaannulla"> Annulla</a></button></div>
     </form>
