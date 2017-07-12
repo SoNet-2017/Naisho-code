@@ -20,8 +20,6 @@
                 icon="{
                url:'../images/puntinaanuovobudda.png',
                scaledSize:[50,50]}" > <!--ng-click="dati.vm.showDetail(pos)"-->
-
-              
        </marker>
         <!--<info-window id="bar"  position="{{pos.lat}},{{pos.lng}}">
             <div ng-non-bindable="">
@@ -42,16 +40,13 @@
         <marker ng-if="showBudd==true"  ng-repeat="pos in dati.vm.posBudd"    position="{{pos.lat}},{{pos.lng}}" title="Nome:  {{pos.info.name}},   Cognome: {{pos.info.surname}},  {{pos.info.type}}"
                 icon="{
                url:'../images/puntinaanuovobudda.png',
-               scaledSize:[50,50]
-      }">
-
+               scaledSize:[50,50] }">
         </marker>
 
         <marker ng-if="showTutor==true" ng-repeat="pos in dati.vm.posTutor"   position="{{pos.lat}},{{pos.lng}}" title="Nome:  {{pos.info.name}},   Cognome: {{pos.info.surname}},  {{pos.info.type}}"
                 icon="{
                url:'../images/puntinaanuovobudda.png',
-               scaledSize:[50,50]
-      }">
+               scaledSize:[50,50]  }">
         </marker>
 
     </ng-map>
