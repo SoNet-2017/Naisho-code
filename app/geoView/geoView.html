@@ -19,11 +19,12 @@
         <marker ng-if="showAll==true"  ng-repeat="pos in dati.vm.positions" id='{{pos.info.$id}}'  position="{{pos.lat}},{{pos.lng}}" title="Nome: {{pos.info.name}},   Cognome: {{pos.info.surname}},  {{pos.info.type}}"
                 icon="{
                url:'../images/puntinaanuovobudda.png',
-               scaledSize:[50,50]}" > <!--ng-click="dati.vm.showDetail(pos)"-->
+               scaledSize:[50,50]}"
+                on-click="dati.vm.showDetail(pos)"> <!--ng-click="dati.vm.showDetail(pos)"-->
 
               
        </marker>
-        <!--<info-window id="bar"  position="{{pos.lat}},{{pos.lng}}">
+        <info-window id="foo-iw"  position="{{pos.lat}},{{pos.lng}}">
             <div ng-non-bindable="">
                 <div id="siteNotice"></div>
                 <h1 id="firstHeading" class="firstHeading">Utente</h1>
@@ -38,12 +39,13 @@
                 </div>
             </div>
         </info-window>
--->
+
         <marker ng-if="showBudd==true"  ng-repeat="pos in dati.vm.posBudd"    position="{{pos.lat}},{{pos.lng}}" title="Nome:  {{pos.info.name}},   Cognome: {{pos.info.surname}},  {{pos.info.type}}"
                 icon="{
                url:'../images/puntinaanuovobudda.png',
                scaledSize:[50,50]
-      }">
+      }"
+                on-click="dati.vm.showDetail(pos)">
 
         </marker>
 
@@ -51,7 +53,8 @@
                 icon="{
                url:'../images/puntinaanuovobudda.png',
                scaledSize:[50,50]
-      }">
+      }"
+                on-click="dati.vm.showDetail(pos)">
         </marker>
 
     </ng-map>

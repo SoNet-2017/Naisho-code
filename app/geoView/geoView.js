@@ -74,9 +74,7 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
                 console.log("my position", $scope.pos.lat, $scope.pos.lng);
             });
 //disegnare sulla mappa
-            $scope.dati.vm.onMapOverlayCompleted = function(e){
-                console.log(e.type);
-            };
+
 
             $scope.dati.listaUtenti = UserList.getListOfUsers();
             $scope.dati.userId = $firebaseAuth().$getAuth().uid;
@@ -138,7 +136,11 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
                //     dati.vm.shop = shop;
                //     dati.vm.map.showInfoWindow('foo-iw', shop.id);
                // };
-
+                $scope.dati.vm.showDett = function(e){
+                    console.log(e.type);
+                    // $scope.dati.vm.positions = shop;
+                    $scope.dati.vm.map.showInfoWindow('foo-iw', $scope.dati.vm.positions);
+                };
             });
         }]);
 
