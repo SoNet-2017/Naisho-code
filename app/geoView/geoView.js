@@ -119,6 +119,7 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
                                 console.log("lat e lng Tutor", $scope.dati.vm.posTutor);
                             });
                         }
+                        
                         else {
                             lat[$scope.dati.listaUtenti[i].$id] = $scope.lat = $scope.dati.listaUtenti[i].address.lat;
                             lng[$scope.dati.listaUtenti[i].$id] = $scope.lng = $scope.dati.listaUtenti[i].address.lng;
