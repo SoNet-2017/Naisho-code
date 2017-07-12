@@ -64,7 +64,9 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
                             var lat = $scope.lat = $scope.dati.listaUtenti[i].address.lat;
                             var lng = $scope.lng = $scope.dati.listaUtenti[i].address.lng;
                             var person = UsersChatService.getUserInfo($scope.dati.listaUtenti[i].$id);
-                            //var si=false;
+                            //se è anche tutor lo metto nel vettore tutor oltre a vettori buddista e tutti
+                            if($scope.dati.listaUtenti[i].tutor === 'Sì')
+                            {$scope.dati.vm.posTutor.push({lat: lat, lng: lng, info: person});}
                             $scope.dati.vm.posBudd.push({lat: lat, lng: lng, info: person});
                             $scope.dati.vm.positions.push({lat: lat, lng: lng, info: person});
                             console.log("lat e lng Buddisti", $scope.dati.vm.posBudd);
@@ -107,23 +109,10 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
                     $scope.showBudd=false;
                     $scope.showTutor=true;
                 };
-               // var f=document.getElementsByClassName("foo");
-               // var f=document.getElementsByTagName("custom-marker");
-               // NgMap.getMap().then(function(map) {
-               //     console.log(map);
-                //   $scope.showCustomMarker= function() {
-               //         console.log("ciao");
-               //        f.style.dispay="flex";
-               //         map.customMarkers.foo.setVisible(true);
-               //         map.customMarkers.foo.setPosition(this.getPosition());
-               //    };
-                //    $scope.closeCustomMarker= function() {
-               //         this.style.display = 'none';
-               //         f.style.dispay="flex";
-
-               //     };
-              //  });
-
+               // $scope.dati.vm.showDetail = function(e, shop) {
+               //     dati.vm.shop = shop;
+               //     dati.vm.map.showInfoWindow('foo-iw', shop.id);
+               // };
 
             });
         }]);
