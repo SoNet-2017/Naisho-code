@@ -95,7 +95,7 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento',])
         };
 
 
-        $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qAQOEvZs2XlUUu3ziu-nrDX-WWZXap4";
+        $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6qAQOEvZs2XlUUu3ziu-nrDX-WWZXap4"; 
 
         $scope.dati.evento.$loaded().then(function () {
             //console.log($scope.dati.evento);

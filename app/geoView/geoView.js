@@ -134,10 +134,6 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
                     $scope.showBudd=false;
                     $scope.showTutor=true;
                 };
-               // $scope.dati.vm.showDetail = function(e, shop) {
-               //     dati.vm.shop = shop;
-               //     dati.vm.map.showInfoWindow('foo-iw', shop.id);
-               // };
 
             });
         }]);
