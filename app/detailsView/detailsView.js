@@ -103,13 +103,13 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento',])
             // If adress is not supplied, use default value 'Ferrol, Galicia, Spain'
            // address = address || 'Ferrol, Galicia, Spain';
             // Initialize the Geocoder
-            $scope.geocoder = new google.maps.Geocoder();
+            $scope.geocoder = new google.map.Geocoder();
             if ($scope.geocoder) {
                 $scope.geocoder.geocode({
                     'address': $scope.address
                 },
                     $scope.cambia=function (results, status) {
-                    if (status === google.maps.GeocoderStatus.OK) {
+                    if (status === google.map.GeocoderStatus.OK) {
                         $scope.dati.position = {lat: results.geometry.location.lat() , lng: results.geometry.location.lng()};
                     }
                 });

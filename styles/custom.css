@@ -978,7 +978,7 @@ a {
     margin-left: 200px;
     padding:20px;
 }
-.frmModifiche:before {
+#modifiche {
     content:"";
     position:absolute;
     top:70px;
@@ -988,6 +988,9 @@ a {
     background:url(../images/postitpiuscuro.png) no-repeat;
     transform:rotate(3deg);
     z-index: -1;/*sfondo sotto la scritta*/
+}
+#modifiche{
+
 }
 
 .form-group{
