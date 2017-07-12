@@ -43,10 +43,11 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
             $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNCEGiw6oGAE68EpQTMrInl9t4bnkzoc4";
 
             //var vm = this;
-         //   NgMap.getMap().then(function(map) {
-          //      console.log('map', map);
-          //      $scope.dati.vm.map = map;
-          //  });
+            NgMap.getMap().then(function(map) {
+                console.log('map', map);
+                $scope.dati.vm.map = map;
+            });
+
 
           //  $scope.dati.vm.clicked = function() {
           //      alert('Clicked a link inside infoWindow');
@@ -81,38 +82,53 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
             $scope.dati.listaUtenti = UserList.getListOfUsers();
             $scope.dati.userId = $firebaseAuth().$getAuth().uid;
             $scope.dati.listaUtenti.$loaded().then(function () {
+                var isTutor = [];
+                var person = [];
+                var lat = [];
+                var lng = [];
                 //per ogni utente della lista controllo se è buddista e se è tutor,
                 // a seconda delle variabili lo metto nell'array solo buddisti, in quello solo tutor o in quello contenente tutti
                 for (var i=0;i<$scope.dati.listaUtenti.length; i++){
                     if ($scope.dati.userId!== $scope.dati.listaUtenti[i].$id && $scope.dati.listaUtenti[i].logged===true) {
                         if ($scope.dati.listaUtenti[i].buddista === 'Sì') {
-                            var lat = $scope.lat = $scope.dati.listaUtenti[i].address.lat;
-                            var lng = $scope.lng = $scope.dati.listaUtenti[i].address.lng;
-                            var person = UsersChatService.getUserInfo($scope.dati.listaUtenti[i].$id);
-                            //se è anche tutor lo metto nel vettore tutor oltre a vettori buddista e tutti
-                            if($scope.dati.listaUtenti[i].tutor === 'Sì')
-                            {$scope.dati.vm.posTutor.push({lat: lat, lng: lng, info: person});}
-                            $scope.dati.vm.posBudd.push({lat: lat, lng: lng, info: person});
-                            $scope.dati.vm.positions.push({lat: lat, lng: lng, info: person});
-                            console.log("lat e lng Buddisti", $scope.dati.vm.posBudd);
+                            lat[$scope.dati.listaUtenti[i].$id] = $scope.lat = $scope.dati.listaUtenti[i].address.lat;
+                            lng[$scope.dati.listaUtenti[i].$id] = $scope.lng = $scope.dati.listaUtenti[i].address.lng;
+                            person[$scope.dati.listaUtenti[i].$id] = UsersChatService.getUserInfo($scope.dati.listaUtenti[i].$id);
+
+                            isTutor[$scope.dati.listaUtenti[i].$id] = $scope.dati.listaUtenti[i].tutor;
+                            person[$scope.dati.listaUtenti[i].$id].$loaded().then(function (personPar) {
+                                //se è anche tutor lo metto nel vettore tutor oltre a vettori buddista e tutti
+                                if(isTutor[personPar.$id] === 'Sì')
+                                {
+                                    $scope.dati.vm.posTutor.push({lat: lat[personPar.$id], lng: lng[personPar.$id], info: person[personPar.$id]});
+                                }
+                                $scope.dati.vm.posBudd.push({lat: lat[personPar.$id], lng: lng[personPar.$id], info: person[personPar.$id]});
+                                $scope.dati.vm.positions.push({lat: lat[personPar.$id], lng: lng[personPar.$id], info: person[personPar.$id]});
+                                console.log("lat e lng Buddisti", $scope.dati.vm.posBudd);
+                            });
                         }
                         else if ($scope.dati.listaUtenti[i].tutor === 'Sì') {
-                            var lat = $scope.lat = $scope.dati.listaUtenti[i].address.lat;
-                            var lng = $scope.lng = $scope.dati.listaUtenti[i].address.lng;
-                            var person = UsersChatService.getUserInfo($scope.dati.listaUtenti[i].$id);
+                            lat[$scope.dati.listaUtenti[i].$id] = $scope.lat = $scope.dati.listaUtenti[i].address.lat;
+                            lng[$scope.dati.listaUtenti[i].$id] = $scope.lng = $scope.dati.listaUtenti[i].address.lng;
+                            person[$scope.dati.listaUtenti[i].$id] = UsersChatService.getUserInfo($scope.dati.listaUtenti[i].$id);
                            // var si=false;
-                            $scope.dati.vm.posTutor.push({lat: lat, lng: lng, info: person});
-                            $scope.dati.vm.positions.push({lat: lat, lng: lng, info: person});
-                            console.log("lat e lng Tutor", $scope.dati.vm.posTutor)
+                            person[$scope.dati.listaUtenti[i].$id].$loaded().then(function (personPar) {
+                                $scope.dati.vm.posTutor.push({lat: lat[personPar.$id], lng: lng[personPar.$id], info: person[personPar.$id]});
+                                $scope.dati.vm.positions.push({lat: lat[personPar.$id], lng: lng[personPar.$id], info: person[personPar.$id]});
+                                console.log("lat e lng Tutor", $scope.dati.vm.posTutor);
+                            });
                         }
                         else {
-                            var lat = $scope.lat = $scope.dati.listaUtenti[i].address.lat;
-                            var lng = $scope.lng = $scope.dati.listaUtenti[i].address.lng;
-                            var person = UsersChatService.getUserInfo($scope.dati.listaUtenti[i].$id);
-                            //var si=false;
-                           // $scope.dati.vm.positions.push({lat: lat, lng: lng, info: person,si:si});
-                            $scope.dati.vm.positions.push({lat: lat, lng: lng, info: person});
-                            console.log("lat e lng di tutti", $scope.dati.vm.positions);
+                            lat[$scope.dati.listaUtenti[i].$id] = $scope.lat = $scope.dati.listaUtenti[i].address.lat;
+                            lng[$scope.dati.listaUtenti[i].$id] = $scope.lng = $scope.dati.listaUtenti[i].address.lng;
+                            person[$scope.dati.listaUtenti[i].$id] = UsersChatService.getUserInfo($scope.dati.listaUtenti[i].$id);
+
+                            person[$scope.dati.listaUtenti[i].$id].$loaded().then(function (personPar) {
+                                //var si=false;
+                                // $scope.dati.vm.positions.push({lat: lat, lng: lng, info: person,si:si});
+                                $scope.dati.vm.positions.push({lat: lat[personPar.$id], lng: lng[personPar.$id], info: person[personPar.$id]});
+                                console.log("lat e lng di tutti", $scope.dati.vm.positions);
+                            });
                         }
                     }
                 }

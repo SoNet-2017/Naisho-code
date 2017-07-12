@@ -63,7 +63,7 @@ angular.module('myApp.changeImageView', ['ngRoute','myApp.users'])
 
     $scope.finalChange = function()
     {
-        EditProfileService.cambiaImg( $scope.dati.userId, $scope.imgPath).then(function() {
+        EditProfileService.cambiaImg( $scope.dati.userId, $scope.imgPath).$loaded().then(function() {
 
             Users.updateUser($scope.dati.userId);
 
