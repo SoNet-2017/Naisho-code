@@ -310,7 +310,7 @@ ul#elencoEventi li:first-child{
 }
 
 #detail{
-    margin-top:30%;
+    margin-top:10%;
     max-width:50%;
     font-size:15px;
     background: white;
@@ -320,7 +320,7 @@ ul#elencoEventi li:first-child{
 }
 #detail h1{
     alignment: center;
-    padding-left: 35%;
+    padding-left: 30%;
     color: black;
     padding-top:3%;
 }
