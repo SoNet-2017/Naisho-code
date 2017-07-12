@@ -1,5 +1,5 @@
 body{
-    background: url(../images/imgSfondo2.png) no-repeat 50% 0 fixed;height: 0px;position:relative;
+    background: url(../images/BUDDACONLOGO.png) no-repeat 50% 0 fixed;height: 0px;position:relative;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -351,11 +351,12 @@ form.frmLogin {
     margin-left: 20%;
 }
 
-.logoNaisho{
-    content:url("../images/logonaisho2.png");
-    height: 200px;
+.logoNaisho {
+    /*content:url("../images/logonaisho2.png");*/
+    height: 190px;
     width: 350px;
     margin-left: -5%;
+    margin-top: 40px;
 }
 
 #titolo{
