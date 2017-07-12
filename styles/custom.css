@@ -14,7 +14,7 @@ body{
 #ContainerHome{
     margin-top:75px;
     background-attachment:scroll;
-    }  
+    }
 
 #ContainerHome div{
     background-attachment:scroll;
@@ -1104,12 +1104,12 @@ div.foo{
 }
 
 #searchDiv{
-    margin-left:20%;
+    margin-left:5%;
     align-content: center;
     padding:25px;
 }
 #campoRicerca{
-    width:75%;
+    width:42%;
     margin-left:2%;
     margin-bottom:2%;
 }
@@ -1131,6 +1131,24 @@ img.imgPost{
 
 #cerca{
     float:right;
-    width:20%;
-    margin-top:20%;
+    width:30%;
+    margin-top:10%;
+    margin-right:60px;
+
+}
+.btn-success {
+    color: #FFFFFF;
+    background-color: #235dad;
+    border-color: #08339d;
+    margin-left:280px;
+}
+.fainuovaricerca{
+    color: #FFFFFF;
+    background-color: #235dad;
+    border-color: #08339d;
+    border-radius:15px;
+    width:200px;
+    height:40px;
+    margin-left:890px;
+    margin-top:-3.5%;
 }
