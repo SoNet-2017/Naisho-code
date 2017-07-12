@@ -424,11 +424,12 @@ img.media-object{
 }
 
 .frmModifiche{
-    margint-top:75px;
-    width: inherit;
-    padding: inherit;
-    transform:rotate(-3deg);
-}
+    margint-top:3%;
+    position:absolute;
+    width:90%;
+    height:680px;
+    margin-left:20%;
+    }
 
 .frmModifiche h2{
     margin-top: 75px;
@@ -438,7 +439,13 @@ img.media-object{
     float: left;
     margin-left: 75px;
     padding: 5px;
-
+}
+#addPost {
+    transform: rotate(-3deg);
+    margin-left:3%;
+}
+#addPost #txtTitolo {
+    margin-left:3%;
 }
 
 /*profilo personale*/
@@ -992,10 +999,10 @@ a {
 
 
 .form-group{
-    margin-top:100px;
+    margin-top:3%;
     font: 20px/35px Helvetica, Sans-Serif;
-
 }
+
 strong {
     font-weight: 700;
     margin-top: 100px;
@@ -1008,6 +1015,7 @@ h2 {
 
 #contenuto{
     margin-left:3%;
+    margin-top:10%;
     color:rgba(17, 7, 6, 0.84);
 }
 #txtTitolo{
@@ -1015,7 +1023,7 @@ h2 {
     width:550px;
     height:100px;
     margin-top: 5%;
-    margin-left:3%;
+
 }
 
 
