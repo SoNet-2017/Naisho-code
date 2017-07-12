@@ -74,10 +74,6 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
                 $scope.pos.lng = position.coords.longitude;
                 console.log("my position", $scope.pos.lat, $scope.pos.lng);
             });
-//disegnare sulla mappa
-            $scope.dati.vm.onMapOverlayCompleted = function(e){
-                console.log(e.type);
-            };
 
             $scope.dati.listaUtenti = UserList.getListOfUsers();
             $scope.dati.userId = $firebaseAuth().$getAuth().uid;
@@ -100,10 +96,10 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
                                 //se è anche tutor lo metto nel vettore tutor oltre a vettori buddista e tutti
                                 if(isTutor[personPar.$id] === 'Sì')
                                 {
-                                    $scope.dati.vm.posTutor.push({lat: lat[personPar.$id], lng: lng[personPar.$id], info: person[personPar.$id]});
+                                    $scope.dati.vm.posTutor.push({lat: lat[personPar.$id], lng: lng[personPar.$id], id: person[personPar.$id].$id, name:person[personPar.$id].name,surname:person[personPar.$id].surname});
                                 }
-                                $scope.dati.vm.posBudd.push({lat: lat[personPar.$id], lng: lng[personPar.$id], info: person[personPar.$id]});
-                                $scope.dati.vm.positions.push({lat: lat[personPar.$id], lng: lng[personPar.$id], info: person[personPar.$id]});
+                                $scope.dati.vm.posBudd.push({lat: lat[personPar.$id], lng: lng[personPar.$id], id: person[personPar.$id].$id, name:person[personPar.$id].name,surname:person[personPar.$id].surname});
+                                $scope.dati.vm.positions.push({lat: lat[personPar.$id], lng: lng[personPar.$id], id: person[personPar.$id].$id, name:person[personPar.$id].name,surname:person[personPar.$id].surname});
                                 console.log("lat e lng Buddisti", $scope.dati.vm.posBudd);
                             });
                         }
@@ -114,8 +110,8 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
                            // var si=false;
                             person[$scope.dati.listaUtenti[i].$id].$loaded().then(function (personPar) {
                                 $scope.dati.vm.posTutor.push({lat: lat[personPar.$id], lng: lng[personPar.$id],
-                                    name: person[personPar.$id].name, surname: person[personPar.$id].surname});
-                                $scope.dati.vm.positions.push({lat: lat[personPar.$id], lng: lng[personPar.$id], info: person[personPar.$id]});
+                                   id:person[personPar.$id].$id, name: person[personPar.$id].name, surname: person[personPar.$id].surname});
+                                $scope.dati.vm.positions.push({lat: lat[personPar.$id], lng: lng[personPar.$id], id: person[personPar.$id].$id, name:person[personPar.$id].name,surname:person[personPar.$id].surname});
                                 console.log("lat e lng Tutor", $scope.dati.vm.posTutor);
                             });
                         }
