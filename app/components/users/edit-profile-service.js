@@ -17,13 +17,15 @@ angular.module('myApp.users.EditProfileService', [])
                 });
 
                  user.updatePassword(nuovapassword);
+           return true;
             },
-            cambiaImg: function ( userId,imgPath) {
+            cambiaImg: function (userId,imgPath) {
                 var ref = firebase.database().ref().child("users").child(userId);
                 // create a synchronized array
                 ref.update({
                     img_url: imgPath
                 });
+                return true;
             }
         };
         return EditProfileService;

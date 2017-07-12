@@ -73,7 +73,7 @@ angular.module('myApp.editProfileView', ['ngRoute','myApp.users'])
 
     $scope.finalEdit = function()
     {
-        EditProfileService.editProfile( $scope.dati.userId,$scope.dati.name,$scope.dati.surname, $scope.dati.nuovapassword,$scope.dati.buddista,$scope.dati.tutor, $scope.imgPath).then(function() {
+        EditProfileService.editProfile( $scope.dati.userId,$scope.dati.name,$scope.dati.surname, $scope.dati.nuovapassword,$scope.dati.buddista,$scope.dati.tutor, $scope.imgPath);
 
             Users.updateUser($scope.dati.userId);
 
@@ -85,6 +85,5 @@ angular.module('myApp.editProfileView', ['ngRoute','myApp.users'])
             $scope.dati.buddista="";
             $scope.dati.tutor="";
             $scope.imgPath="";
-        });
-    }
+           }
 }]);

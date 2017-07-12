@@ -1,9 +1,9 @@
 <div  ng-controller="changeImageViewCtrl as $ctrl">
-    <div class="alert alert-success alert-dismissible" role="alert" ng-if="dati.feedback">{{ dati.feedback }}</div>
-    <div class="alert alert-danger alert-dismissible" role="alert" ng-if="dati.error">{{ dati.error }}</div>
-<div id="editProfile">
+    <div id="editProfile">
     <form class="frmModifiche" role="form" ng-submit="changeImg()">
         <h2> Cambia la tua immagine del profilo</h2>
+        <div class="alert alert-success alert-dismissible" role="alert" ng-if="dati.feedback">{{ dati.feedback }}</div>
+        <div class="alert alert-danger alert-dismissible" role="alert" ng-if="dati.error">{{ dati.error }}</div>
         <div id="cambia-immagine">
             <label>Carica l'immagine dal tuo computer</label>
             <file-upload on-change="$ctrl.onChange">
@@ -14,6 +14,7 @@
         <button type="reset" class="btn center-block"><a href="#!userProfile">Annulla</a> </button>
         <br>
         </div>
+
 
     </form>
 </div>
