@@ -257,7 +257,7 @@ input.form-control {
     background-attachment:scroll;
     text-align: justify;
     align-content: space-between;
-    border-radius: 15px; 
+    border-radius: 15px;
 }
 /*eventi nella home*/
 p.eventiHome{
@@ -1059,6 +1059,7 @@ h5{
 }
 .bottoniopzione{
     margin-left:35%;
+    margin-top:-3%;
 
 }
 #buddaetutor,#solobudda,#solotutor{
