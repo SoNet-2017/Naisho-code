@@ -9,6 +9,8 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+
 }
 
 #ContainerHome{
@@ -238,17 +240,25 @@ input.form-control {
 }
 
 
-#bodyHome,#eventi{
+#bodyHome{
    /* position: fixed;*/
     margin-left:5%;
-    background-color:white;
+    background-color: rgba(255, 255, 255, 0.6);
     z-index: +300;
     background-attachment:scroll;
     text-align: justify;
     align-content: space-between;
     border-radius: 15px;
 }
-
+#eventi{
+    margin-left:5%;
+    background-color: rgba(255, 255, 255, 0.81);
+    z-index: +300;
+    background-attachment:scroll;
+    text-align: justify;
+    align-content: space-between;
+    border-radius: 15px; 
+}
 /*eventi nella home*/
 p.eventiHome{
     color: #3903ff;
@@ -294,9 +304,9 @@ div.media-body {
 
 #condividi{
     color: #fff; /*colore scritta dentro il bottone*/
-    border-color: #08339d;
+    border-color: #6a99e2;
     border-radius: 15px;
-    background-color: #607cb7;
+    background-color: #739ab7;
 
 
 }
@@ -475,7 +485,7 @@ img.media-object{
     margin-right: 10px;
     float: left;
     width: 65%;
-    background-color:#FFF;
+    background-color: rgba(255, 255, 255, 0.61);
     display:block;
     border-radius: 15px;
     height:33em;
@@ -879,7 +889,7 @@ form.frmLogin {
 
 /*forum nella vista calendario*/
 #forumCalendar{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.6);
     min-height:50px;
     max-height:250px;
     margin-top:20px;
@@ -1158,7 +1168,7 @@ button.fainuovaricerca {
 }
 
 #calendarioInviti{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
     min-height:50px;
     max-height:250px;
     margin-top:20px;
