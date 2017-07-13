@@ -1186,5 +1186,13 @@ button.fainuovaricerca {
     }
 #divInvita{
     margin-left: 55%;
-
+}
+#otherProfileInfo h1{
+    font-size: initial;
+    padding-top:5px;
+    color: #337ab7;
+    line-height: inherit;
+}
+#otherProfileInfo li{
+   margin-left:-95%;
 }

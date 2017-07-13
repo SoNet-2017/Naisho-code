@@ -19,12 +19,13 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
         })
     }])
 
-   .controller('OtherUserProfileCtrl',['$scope','$rootScope','$routeParams','$window','currentAuth','UsersFriends','UsersTutorsService','Post',
-   function ($scope, $rootScope, $routeParams,$window, currentAuth, UsersFriends,UsersTutorsService,Post) {
+   .controller('OtherUserProfileCtrl',['$scope','$rootScope','$routeParams','$window','currentAuth','UsersFriends','UsersTutorsService','Post','Evento','SingleEvento',
+   function ($scope, $rootScope, $routeParams,$window, currentAuth, UsersFriends,UsersTutorsService,Post,Evento,SingleEvento) {
 
        $scope.dati = {};
        $scope.post=[];
        $scope.postDaMostrare=[];
+       $scope.invitato=[];
 
        //dati current user
        $scope.dati.userId = UsersFriends.getUserInfo(currentAuth.uid);
@@ -243,5 +244,16 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
            $scope.dati.yetTutored =false;
            $window.location.reload();
        };
+
+       $scope.dati.inviti = Evento.getInviti();
+       console.log( $scope.dati.inviti );
+       $scope.dati.inviti.$loaded().then(function (){
+           for (var i=0;i< $scope.dati.inviti.length; i++){
+               if($scope.dati.inviti[i].invitatoId==$scope.dati.otherUserId ){
+                   var evento=SingleEvento.getSingleEvento($scope.dati.inviti[i].eventoId);
+                   $scope.invitato.push(evento);
+               }
+           }
+       });
 
    }]);
