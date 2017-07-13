@@ -28,15 +28,16 @@
     </li>
 </div>
 
-<h1 id="calendarInviti">Inviti a eventi</h1>
+<h1 id="calendarInviti">Eventi in programma</h1>
 <div id="calendarioInviti" class="container">
-    <li  ng-repeat="inviti in invitato">
-        <a href="#!/details/{{inviti.$id}}">
-            <div >
-                <h4 class="media-heading"><strong>{{inviti.title}}</strong></h4>
-                <p>{{inviti.descrizione}}</p>
+    <li class="media" ng-repeat="evento in dati.eventiDaMostrare">
+        <a href="#!/details/{{evento.id}}">
+            <div  class="forumHome">
+                <h4 class="media-heading"><strong>{{evento.title}} {{evento.start}}</strong></h4>
+                <p>{{evento.descrizione}}</p>
             </div>
         </a>
     </li>
-    <p ng-if="invitato.length<=0">Non hai nessun invito a eventi</p>
+    <p ng-if="dati.eventiDaMostrare.length<=0">Non ci sono eventi in programma"</p>
+
 </div>

@@ -18,37 +18,26 @@ angular.module('myApp.userProfileView', ['ngRoute','myApp.forum','myApp.users'])
   })
 }])
 
-.controller('userProfileCtrl', ['$scope', '$rootScope', 'UsersChatService', 'Users', 'currentAuth', '$firebaseAuth', '$location','Forum','Evento',
-    function($scope, $rootScope, UsersChatService, Users, currentAuth, $firebaseAuth, $location, Forum,Evento) {
+.controller('userProfileCtrl', ['$scope', '$rootScope', 'UsersChatService', 'Users', 'currentAuth', '$firebaseAuth', '$location','Forum','Evento','SingleEvento',
+    function($scope, $rootScope, UsersChatService, Users, currentAuth, $firebaseAuth, $location, Forum,Evento,SingleEvento) {
     $scope.dati={};
-
-   // $rootScope.dati.currentView = "userProfile";
+        // eventi a cui sono invitato
+        $scope.invitato=[];
+        var id = currentAuth.uid;
     $scope.dati.user = UsersChatService.getUserInfo(currentAuth.uid);
     $scope.dati.forum=Forum.getData();
     $scope.dati.eventi=Evento.getData();
-    $scope.dati.eventiDaMostrare=[];
 
-    var dato = new Date();
-    var a =dato.getDate();
-    if (String(a).length == 1) {
-            a = "0"+a;
-        }
-        var b=dato.getMonth();
-        b=b+1;
-        if (String(b).length == 1) {
-            b = "0"+b;
-        }
-    $scope.dati.eventi.$loaded().then(function () {
-            for (var i=0;i< $scope.dati.eventi.length; i++){
-                if (b<$scope.dati.eventi[i].Mese)
-                    $scope.dati.eventiDaMostrare.push($scope.dati.eventi[i])
-                else if(b===$scope.dati.eventi[i].Mese){
-                    if(a<=$scope.dati.eventi[i].Giorno)
-                        $scope.dati.eventiDaMostrare.push($scope.dati.eventi[i])
+        $scope.dati.inviti = Evento.getInviti();
+        console.log( $scope.dati.inviti );
+        $scope.dati.inviti.$loaded().then(function (){
+            for (var i=0;i< $scope.dati.inviti.length; i++){
+                if($scope.dati.inviti[i].invitatoId==id){
+                    var evento=SingleEvento.getSingleEvento($scope.dati.inviti[i].eventoId);
+                    $scope.invitato.push(evento);
                 }
             }
-    });
-
+        });
 
 
 }]);

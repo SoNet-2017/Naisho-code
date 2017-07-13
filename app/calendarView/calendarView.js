@@ -18,13 +18,12 @@ angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento','myApp
             }
         })
     }])
-    .controller('calendarViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth','Evento','Forum','SingleEvento',
-        function($scope, $rootScope, $routeParams, currentAuth,Evento,Forum,SingleEvento){
+    .controller('calendarViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth','Evento','Forum',
+        function($scope, $rootScope, $routeParams, currentAuth,Evento,Forum){
 
-        // eventi a cui sono invitato
-            $scope.invitato=[];
-
-            $scope.dati={};
+           $scope.dati={};
+            $scope.dati.eventi=Evento.getData();
+            $scope.dati.eventiDaMostrare=[];
         //per i forum
             $scope.dati.forum=Forum.getData();
             //id mio
@@ -81,14 +80,24 @@ angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento','myApp
                 }
           });
 
-            $scope.dati.inviti = Evento.getInviti();
-            console.log( $scope.dati.inviti );
-            $scope.dati.inviti.$loaded().then(function (){
-                for (var i=0;i< $scope.dati.inviti.length; i++){
-                if($scope.dati.inviti[i].invitatoId==id){
-                    var evento=SingleEvento.getSingleEvento($scope.dati.inviti[i].eventoId);
-                    $scope.invitato.push(evento);
-                     }
+            var dato = new Date();
+            var a =dato.getDate();
+            if (String(a).length == 1) {
+                a = "0"+a;
+            }
+            var b=dato.getMonth();
+            b=b+1;
+            if (String(b).length == 1) {
+                b = "0"+b;
+            }
+            $scope.dati.eventi.$loaded().then(function () {
+                for (var i=0;i< $scope.dati.eventi.length; i++){
+                    if (b<$scope.dati.eventi[i].Mese)
+                        $scope.dati.eventiDaMostrare.push($scope.dati.eventi[i])
+                    else if(b===$scope.dati.eventi[i].Mese){
+                        if(a<=$scope.dati.eventi[i].Giorno)
+                            $scope.dati.eventiDaMostrare.push($scope.dati.eventi[i])
+                    }
                 }
             });
 
