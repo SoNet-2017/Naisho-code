@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="page-header">
-                <img class="media-object" ng-src="{{dati.recipient.img_url}}" alt="immagine del profilo"  ng-if="dati.recipient.img_url.includes('https://firebasestorage.googleapis.com')">
+                <img class="media-object" id="imgOther" ng-src="{{dati.recipient.img_url}}" alt="immagine del profilo"  ng-if="dati.recipient.img_url.includes('https://firebasestorage.googleapis.com')">
                 <img src="../images/user.png" id="userIcon" alt="immagine del profilo" ng-if="!dati.recipient.img_url.includes('https://firebasestorage.googleapis.com')" >
 
                 <h1>{{dati.recipient.name}} {{dati.recipient.surname}}  {{dati.recipient.email}}</h1>
@@ -43,6 +43,17 @@
             </div>
         </a>
         <br>
-
     </div>
+    <p id="otherP"ng-if="postDaMostrare.length==0">{{dati.recipient.name}} {{dati.recipient.surname}} non ha ancora pubblicato nessun contenuto</p>
+
+    <h1><strong>Inviti a eventi:</strong></h1>
+    <li  ng-repeat="inviti in invitato">
+        <a href="#!/details/{{inviti.$id}}">
+            <div >
+                <h4 class="media-heading"><strong>{{inviti.title}}</strong></h4>
+                <p>{{inviti.descrizione}}</p>
+            </div>
+        </a>
+    </li>
+    <p ng-if="invitato.length<=0">Non ha nessun invito a evento</p>
 </div>

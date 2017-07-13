@@ -491,7 +491,7 @@ img.media-object{
 #profilo2 h1{
     font-size: initial;
     padding-top:5px;
-    color:black;
+    color: #337ab7;
     line-height: inherit;
 }
  h1{
@@ -725,10 +725,6 @@ form.frmLogin {
     width: 30px;
 }
 
-h2{
-    color: #FFFFFF;
-    margin-left: 120px;
-   }
 
 .w3-large{
     color:#FFFFFF;
@@ -797,6 +793,7 @@ h2{
 #otherProfile h1{
     color:black;
     alignment: center;
+    margin-top:-10%;
 }
 
 #otherProfileInfo{
@@ -884,12 +881,14 @@ h2{
 #forumCalendar{
     background-color: white;
     min-height:50px;
+    max-height:250px;
     margin-top:20px;
     border-radius:15px;
     padding-top: 20px;
     margin-left:2.5%;
     width:95%;
     margin-bottom: 20px;
+    overflow: auto;
 
 }
 
@@ -1012,6 +1011,8 @@ h2 {
     font-weight: 700;
     margin-top: 100px;
     margin-left: 10%;
+    color: #FFFFFF;
+    /*margin-left: 120px;*/
 }
 
 #contenuto{
@@ -1072,7 +1073,7 @@ h5{
     margin-right: 50%;
 }
 
-#img-profilo{
+#img-profilo,#imgOther{
     width: 220px;
     height: 170px;
  }
@@ -1151,9 +1152,47 @@ button.fainuovaricerca {
     width:200px;
     height:40px;
     margin-left:890px;
-    margin-top:-3.5%;
-    position:fixed;
+    }
+#otherP{
+    margin-left:10%;
 }
 
+#calendarioInviti{
+    background-color: white;
+    min-height:50px;
+    max-height:250px;
+    margin-top:20px;
+    border-radius:15px;
+    padding-top: 20px;
+    margin-left:2.5%;
+    width:95%;
+    margin-bottom: 20px;
+    overflow: auto;
 
+}
 
+#calendarioInviti p {
+    padding-top:10px;
+    color:black;
+}
+#calendarInviti{
+    margin-left: 45%;
+}
+
+#txtInvita{
+    margin-top:-19%;
+    margin-left:55%;
+    position:relative;
+    }
+#divInvita{
+    margin-left: 55%;
+}
+#otherProfileInfo h1{
+    font-size: initial;
+    padding-top:5px;
+    color: #337ab7;
+    line-height: inherit;
+}
+#otherProfileInfo li{
+   margin-left:-95%;
+}

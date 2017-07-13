@@ -40,15 +40,16 @@
                     </div>
                 </a>
     </li>
-    <h1><strong>Eventi</strong></h1>
-    <li class="media" ng-repeat="evento in dati.eventiDaMostrare">
-        <a href="#!/details/{{evento.id}}">
-            <div  class="forumHome">
-                <h4 class="media-heading"><strong>{{evento.title}} {{evento.start}}</strong></h4>
-                <p>{{evento.descrizione}}</p>
+    <h1><strong>Inviti a eventi:</strong></h1>
+    <li  ng-repeat="inviti in invitato">
+        <a href="#!/details/{{inviti.$id}}">
+            <div >
+                <h4 class="media-heading"><strong>{{inviti.title}}</strong></h4>
+                <p>{{inviti.descrizione}}</p>
             </div>
         </a>
     </li>
+    <p ng-if="invitato.length<=0">Non hai nessun invito a evento</p>
 
 
 </div>

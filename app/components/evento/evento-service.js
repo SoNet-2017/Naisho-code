@@ -23,13 +23,14 @@ angular.module('myApp.evento.eventoService', [])
                 return $firebaseArray(ref);
 
             },
-            insertNewInvito: function (eventoId, invitatoId, bottone) {
+            insertNewInvito: function (eventoId, invitatoId,invitante, bottone) {
                 //add the user to list of users and set the logged value to true
                 var ref = firebase.database().ref().child("inviti");
                 // create a synchronized array
                 return $firebaseArray(ref).$add({
                     eventoId: eventoId,
                     invitatoId: invitatoId,
+                    invitanteId: invitante,
                     invitato:true,
                     Bottone: bottone,
 
