@@ -725,10 +725,6 @@ form.frmLogin {
     width: 30px;
 }
 
-h2{
-    color: #FFFFFF;
-    margin-left: 120px;
-   }
 
 .w3-large{
     color:#FFFFFF;
@@ -1015,6 +1011,8 @@ h2 {
     font-weight: 700;
     margin-top: 100px;
     margin-left: 10%;
+    color: #FFFFFF;
+    /*margin-left: 120px;*/
 }
 
 #contenuto{
@@ -1179,5 +1177,14 @@ button.fainuovaricerca {
 }
 #calendarInviti{
     margin-left: 45%;
+}
+
+#txtInvita{
+    margin-top:-19%;
+    margin-left:55%;
+    position:relative;
+    }
+#divInvita{
+    margin-left: 55%;
 
 }

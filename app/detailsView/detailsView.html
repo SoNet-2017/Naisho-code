@@ -24,8 +24,8 @@
     <strong> <p ng-if="invitatiEvento.length<=0">Non ci sono altri utenti invitati</p></strong>
 
 </div>
-    <h2>Invita:</h2>
-<div class="inviti" class="w3-container">
+    <h2 id="txtInvita">Invita:</h2>
+<div class="inviti" id="divInvita" class="w3-container">
     <div ng-repeat="user in testValue=(nonInvitatiEvento | filter:{$id: '!' + dati.userId})">
         <a href="#!/OtherUser/{{user.$id}}">{{user.name}} {{user.surname}}</a>
         <button class="invita-nonInvita" id="invita" ng-click="Invita(user.$id)"  type="submit" class="btn btn-primary">Invita</button>
