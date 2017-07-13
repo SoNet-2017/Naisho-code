@@ -1,40 +1,41 @@
-<div class="w3-container" id="tutorPage">
-    <div class="container-fluid">
+<!--<div class="w3-container" id="tutorPage">-->
+    <div class="container-fluid1" align="left">
         <strong> <h2>Sei amico di:</h2></strong>
         <li class="pagina-tutor"  ng-if="amiciView.length>0" ng-repeat="friendsV in amiciView">
             <a  href="#!/OtherUser/{{friendsV.$id}}">
                 <div class="pagina-tutor" >
-                    <h4 >{{friendsV.name}} {{friendsV.surname}}</h4>
+                    <h4 >{{friendsV.name}} {{friendsV.surname}}</h4></a>
 
-                </div>
-            </a>
+
+    </div>
         </li>
         <strong> <p class="pagina-tutor" ng-if="amiciView.length<=0">Non hai ancora nessun amico, trovali <a class="tutor" href="#!/geoView">qui!</a></p></strong>
-    </div>
 
-    <div class="container-fluid">
+</div>
+    <div class="container-fluid2">
         <strong><h2>Sei tutor di:</h2></strong>
         <li class="pagina-tutor"ng-repeat="tutoredV in tutoredView">
             <a   href="#!/OtherUser/{{tutoredV.$id}}">
                 <div class="pagina-tutor" >
-                    <h4 >{{tutoredV.name}} {{tutoredV.surname}} </h4>
-                </div>
-            </a>
+                    <h4 >{{tutoredV.name}} {{tutoredV.surname}} </h4> </a>
+
+    </div>
         </li>
         <strong> <p class="pagina-tutor" ng-if="tutoredView.length<=0">Aiuta altri buddisti facendogli da tutor! Trovali dalla <a class="tutor" href="#!/geoView">mappa!</a></p></strong>
-    </div>
 
-    <div class="container-fluid">
+</div>
+    <div class="container-fluid3">
         <strong><h2>I tuoi tutor sono:</h2></strong>
         <li class="pagina-tutor" ng-repeat="tutorsV in tutorsView">
             <a   href="#!/OtherUser/{{tutorsV.$id}}">
                 <div class="pagina-tutor" >
                     <h4>{{tutorsV.name}} {{tutorsV.surname}} </h4>
+
                 </div>
-                <div style="clear:both;"></div>
             </a>
         </li>
         <strong> <p class="pagina-tutor" ng-if="tutorsView.length<=0">Non hai ancora nessun tutor. Se ne hai bisogno puoi trovarli <a class="tutor" href="#!/geoView"> qui</a></p></strong>
     </div>
-</div>
 
+</div>
+<div style="clear:both;"></div>
