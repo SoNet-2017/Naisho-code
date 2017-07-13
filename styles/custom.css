@@ -174,9 +174,9 @@ input.form-control {
     display: flex;
 }
 
-
+/*6692c4*/
 #topBarHome{
-    background-color: transparent;
+    background-color: #7c9bc4;
     border-radius:15px;
     /*Per posizionare il contenuto*/
     display:flex;
@@ -440,7 +440,7 @@ img.media-object{
     width:90%;
     height:680px;
     margin-left:35%;
-    } 
+    }
 
 .frmModifiche h2{
     margin-top: 120px;
