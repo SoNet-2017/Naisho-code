@@ -52,7 +52,7 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento',])
             for(var keySingleInvito in inviti) {
                 if (inviti[keySingleInvito].eventoId == $scope.dati.evento.$id) {
                     var p=Evento.getUserInfo(inviti[keySingleInvito].invitatoId)
-                    $scope.invitatiEvento.push({persona:p,invito_id: inviti[keySingleInvito].$id});
+                    $scope.invitatiEvento.push({persona:p,invito_id: inviti[keySingleInvito].$id, invitante_id:inviti[keySingleInvito].invitanteId});
                     console.log($scope.invitatiEvento);
                 }
             }
@@ -80,7 +80,7 @@ angular.module('myApp.detailsView', ['ngRoute','myApp.evento',])
 
         //invita
         $scope.Invita = function(invitatoId) {
-            Evento.insertNewInvito($scope.dati.evento.$id,invitatoId,'Bottone disabilitato').then(function (ref) {
+            Evento.insertNewInvito($scope.dati.evento.$id,invitatoId,$scope.dati.userId ,'Bottone disabilitato').then(function (ref) {
                 var invitoId = ref.key;
                 Evento.updateInvito(invitoId);
                 $window.location.reload();
