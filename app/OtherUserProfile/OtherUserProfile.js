@@ -44,6 +44,8 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
            for  (var i=0;i< $scope.post.length; i++){
                if ($scope.post[i].userPost===$scope.dati.otherUserId)
                    $scope.postDaMostrare.push($scope.post[i])
+               console.log($scope.postDaMostrare);
+               console.log($scope.postDaMostrare.length);
            }
        });
 

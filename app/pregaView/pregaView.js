@@ -22,6 +22,7 @@ angular.module('myApp.pregaView', ['ngRoute','myApp.users','myApp.prega','myApp.
         function($scope, Users,InsertPregaService,InsertPostService){
             //initialize variables
             $scope.dati.feedback = "";
+            $scope.dati.error = ""
            // id user attuale
             $scope.userId = firebase.auth().currentUser.uid;
             console.log($scope.userId );
@@ -102,7 +103,7 @@ angular.module('myApp.pregaView', ['ngRoute','myApp.users','myApp.prega','myApp.
     document.getElementById("Continuare").disabled = false;
 };
 
-            $scope.reset =function() {
+            $scope.resetta =function() {
     clearInterval($scope.control);
     clearInterval($scope.cronometro);
                 centesimi = 0;
@@ -150,7 +151,7 @@ angular.module('myApp.pregaView', ['ngRoute','myApp.users','myApp.prega','myApp.
                   $scope.dati.feedback = "La preghiera è stata salvata";
               });
           }
-          else $scope.dati.feedback = "Devi prima avviare il cronometro per poter salvare la durata della preghiera!";
+          else $scope.dati.error = "Devi prima avviare il cronometro per poter salvare la durata della preghiera!";
 
         }
 
@@ -162,11 +163,11 @@ angular.module('myApp.pregaView', ['ngRoute','myApp.users','myApp.prega','myApp.
                     var url = "";
                     InsertPostService.insertNewPost(contenuto, $scope.userId, url).then(function (ref) {
                         var postId = ref.key;
-
                         InsertPostService.updatePost(postId);
                         $scope.dati.feedback = "Il post con la durata della preghiera è stato condiviso!";
+
                     });
                 }
-                else  $scope.dati.feedback = "Non puoi condivire un post senza la durara della preghiera!";
+                else  $scope.dati.error = "Non puoi condivire un post senza la durara della preghiera!";
             }
     }]);

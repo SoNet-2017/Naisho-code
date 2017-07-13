@@ -797,6 +797,7 @@ h2{
 #otherProfile h1{
     color:black;
     alignment: center;
+    margin-top:-10%;
 }
 
 #otherProfileInfo{
@@ -884,12 +885,14 @@ h2{
 #forumCalendar{
     background-color: white;
     min-height:50px;
+    max-height:250px;
     margin-top:20px;
     border-radius:15px;
     padding-top: 20px;
     margin-left:2.5%;
     width:95%;
     margin-bottom: 20px;
+    overflow: auto;
 
 }
 
@@ -1072,7 +1075,7 @@ h5{
     margin-right: 50%;
 }
 
-#img-profilo{
+#img-profilo,#imgOther{
     width: 220px;
     height: 170px;
  }
@@ -1151,5 +1154,30 @@ button.fainuovaricerca {
     width:200px;
     height:40px;
     margin-left:890px;
-    margin-top:-3.5%;
+    }
+#otherP{
+    margin-left:10%;
+}
+
+#calendarioInviti{
+    background-color: white;
+    min-height:50px;
+    max-height:250px;
+    margin-top:20px;
+    border-radius:15px;
+    padding-top: 20px;
+    margin-left:2.5%;
+    width:95%;
+    margin-bottom: 20px;
+    overflow: auto;
+
+}
+
+#calendarioInviti p {
+    padding-top:10px;
+    color:black;
+}
+#calendarInviti{
+    margin-left: 45%;
+
 }

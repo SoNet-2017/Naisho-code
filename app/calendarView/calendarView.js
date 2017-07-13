@@ -18,14 +18,18 @@ angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento','myApp
             }
         })
     }])
-    .controller('calendarViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth','Evento','Forum',
-        function($scope, $rootScope, $routeParams, currentAuth,Evento,Forum){
-        //eventi da mettere sul calendario
+    .controller('calendarViewCtrl', ['$scope', '$rootScope', '$routeParams', 'currentAuth','Evento','Forum','SingleEvento',
+        function($scope, $rootScope, $routeParams, currentAuth,Evento,Forum,SingleEvento){
+
+        // eventi a cui sono invitato
+            $scope.invitato=[];
 
             $scope.dati={};
         //per i forum
             $scope.dati.forum=Forum.getData();
-
+            //id mio
+            var id = currentAuth.uid;
+            console.log(id);
         // per scegliere come data di partenza la data odierna
 
             var dato = new Date();
@@ -43,7 +47,7 @@ angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento','myApp
             }
 
            var data= dato.getFullYear()+"-"+b+"-"+a;
-           console.log(data);
+          // console.log(data);
 
             //configurazione calendario dayPilot
 
@@ -51,11 +55,11 @@ angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento','myApp
             dp.viewType='Week';
             dp.scrollToHour= 10;
             dp.startDate = DayPilot.Date(data);
-            console.log(dp.startDate);
+            //console.log(dp.startDate);
 
 
             $scope.eventi = Evento.getData();
-            console.log( $scope.eventi);
+           // console.log( $scope.eventi);
             dp.init();
             //per ogni evento del database, creo un oggetto dayPilot.Event e lo metto nel'array "events"che viene passato al calendario
             $scope.eventi.$loaded().then(function (){
@@ -70,11 +74,22 @@ angular.module('myApp.calendarView', ['ngRoute','daypilot','myApp.evento','myApp
                         text: $scope.eventi[i].title,
                          });
 
-                    console.log(e);
+                    //console.log(e);
                    // $scope.events.push(e);
                     dp.events.add(e);
-                    console.log(dp.events);
+                    //console.log(dp.events);
                 }
           });
+
+            $scope.dati.inviti = Evento.getInviti();
+            console.log( $scope.dati.inviti );
+            $scope.dati.inviti.$loaded().then(function (){
+                for (var i=0;i< $scope.dati.inviti.length; i++){
+                if($scope.dati.inviti[i].invitatoId==id){
+                    var evento=SingleEvento.getSingleEvento($scope.dati.inviti[i].eventoId);
+                    $scope.invitato.push(evento);
+                     }
+                }
+            });
 
         }]);

@@ -92,19 +92,23 @@ angular.module('myApp.searchView', ['ngRoute','myApp.forum','myApp.post','myApp.
                                 for (var i = 0; i < $scope.dati.evento.length; i++) {
                                     $scope.titolo = $scope.dati.evento[i].title.toLowerCase().split(" ");
                                     $scope.descrizione = $scope.dati.evento[i].Descrizione.toLowerCase().split(" ");
+                                    $scope.citta=$scope.dati.evento[i].Citta.toLowerCase().split(" ");
                                     //console.log($scope.titolo);
                                     //console.log($scope.dati.ricerca.length);
                                     for (var c = 0; c < $scope.dati.ricerca.length; c++) {
                                         for (var j = 0; j < $scope.titolo.length; j++) {
                                             for (var f = 0; f < $scope.descrizione.length; f++) {
-                                                if (String($scope.dati.ricerca[c]) === String($scope.titolo[j]) ||
-                                                    String($scope.dati.ricerca[c]) === String($scope.descrizione[f]) ) {
-                                                    var risultato = $scope.dati.evento[i].title + ' ' + $scope.dati.evento[i].Citta + ' ' + $scope.dati.evento[i].start + ' ' + $scope.dati.evento[i].Descrizione;
-                                                    var id = $scope.dati.evento[i].$id;
-                                                    console.log("cosa salva come risultato di ricerca:", risultato, id);
-                                                    //console.log($scope.risultatiEventi.contains(id));
-                                                    if (!$scope.risultatiEventi.contains(id))
-                                                    $scope.risultatiEventi.push({risultato: risultato, id: id});
+                                                for (var g = 0; g < $scope.citta.length; g++) {
+                                                    if (String($scope.dati.ricerca[c]) === String($scope.titolo[j]) ||
+                                                        String($scope.dati.ricerca[c]) === String($scope.descrizione[f]) ||
+                                                        String($scope.dati.ricerca[c]) === String($scope.citta[g])) {
+                                                        var risultato = $scope.dati.evento[i].title + ' ' + $scope.dati.evento[i].Citta + ' ' + $scope.dati.evento[i].start + ' ' + $scope.dati.evento[i].Descrizione;
+                                                        var id = $scope.dati.evento[i].$id;
+                                                        console.log("cosa salva come risultato di ricerca:", risultato, id);
+                                                        //console.log($scope.risultatiEventi.contains(id));
+                                                        if (!$scope.risultatiEventi.contains(id))
+                                                            $scope.risultatiEventi.push({risultato: risultato, id: id});
+                                                    }
                                                 }
                                             }
                                         }

@@ -14,8 +14,6 @@
 <div class="calendar_default_cornerright"></div>
 
 
-
-
 <h1 id="calendarForum">Forum Recenti</h1>
 <div id="forumCalendar" class="container">
 
@@ -28,5 +26,17 @@
             </div>
         </a>
     </li>
+</div>
 
+<h1 id="calendarInviti">Inviti a eventi</h1>
+<div id="calendarioInviti" class="container">
+    <li  ng-repeat="inviti in invitato">
+        <a href="#!/details/{{inviti.$id}}">
+            <div >
+                <h4 class="media-heading"><strong>{{inviti.title}}</strong></h4>
+                <p>{{inviti.descrizione}}</p>
+            </div>
+        </a>
+    </li>
+    <p ng-if="invitato.length<=0">Non hai nessun invito a eventi</p>
 </div>
