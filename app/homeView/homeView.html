@@ -21,24 +21,24 @@
     <button id="condividi"> <a href="#!/addPost"> Condividi</a></button>
     </div>
 
-<div class="w3-container" id="bodyHome" >
+
     <li class="media" ng-repeat="post in dati.posts">
         <a href="#!/singlePost/{{post.id}}">
-            <div  class="postHome">
+            <div class="w3-container ">
+            <div  class="postHome" id="bodyHome">
                 <h4 class="media-heading"><strong>{{post.info.name}} {{post.info.surname}} </strong></h4>
                 <p>{{post.contenuto}} </p>
-                <!--
-                <img class="media-object" ng-src="../{{post.img_url}}" alt="{{post.img_alt}}" ng-if="!(post.img_url.includes('https://firebasestorage.googleapis.com')) && post.img_url!=''">
-                -->
+
                 <p ng-if="!(post.img_url.includes('https://firebasestorage.googleapis.com')) && post.img_url!=''"></p>
                 <img  class="imgPost" ng-src="{{post.img_url}}" alt="{{post.img_alt}}" ng-if="post.img_url.includes('https://firebasestorage.googleapis.com')">
                 <p ng-if="post.img_url == ''"></p>
-                <!--<span><button class="mi piace">Mi Piace</button><button class="commenta">Commenta</button></span>-->
+
+            </div>
             </div>
         </a>
     </li>
 
-</div>
+
 
 
 </div>
