@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="../styles/custom.css"/>
 
-<div class="alert alert-success alert-dismissible" role="alert" ng-if="dati.feedback">{{ dati.feedback }}</div>
 
-<h3><b>Prega</b></h3>
+<h3><b>Prega</b></h3> <div class="alert alert-success alert-dismissible" role="alert" ng-if="dati.feedback">{{ dati.feedback }}</div>
+ <div class="alert alert-danger alert-dismissible" role="alert" ng-if="dati.error">{{ dati.error }}</div>
 <div id="immaginegong">
 <img src="../images/imggong.png">
 </div>
@@ -18,11 +18,13 @@
         <input type="button"  class ="bottone"   id="Iniziare" value="Inizia &#9658;" ng-click="start(); Play('sound1')">
         <input type="button" class="bottone" id="Fermarsi" value="Interrompi &#8718;" ng-click="stop()" disabled>
         <input type="button" class="bottone" id="Continuare" value="Riprendi &#8634;" ng-click="start(); Play('sound1')" disabled>
-        <input type="button" class="bottone" id="Ripartire" value="Reset &#8635;" ng-click="reset()" disabled>
+        <input type="button" class="bottone" id="Ripartire" value="Reset &#8635;" ng-click="resetta()" disabled>
    </div>
 <!--</audio>-->
+
 <div class="salva-visualizza-pubblica" id="salva-visualizza-pubblica">
-        <a ng-click="salva()"> <img src="../images/iconacalendarioaggiungi.png" id="salva" >Salva sul calendario</a><br>
+        <a ng-click="salva();"> <img src="../images/iconacalendarioaggiungi.png" id="salva" >Salva la durata </a><br>
         <a href="#!preghiereView" ><img src="../images/iconacalendariostorico.png"id="visualizza">Visualizza lo storico delle tue preghiere</a><br>
-        <a ng-click="pubblica()" ><img src="../images/iconapubblicabianca.png" id="pubblica"> Pubblica</a>
+        <a ng-click="pubblica();" ><img src="../images/iconapubblicabianca.png" id="pubblica">Pubblica</a>
 </div>
+

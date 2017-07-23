@@ -48,8 +48,6 @@ angular.module('myApp.addEventoView', ['ngRoute','myApp.evento'])
                 }
             };
 
-
-            console.log($scope.dati.data);
             $scope.finalEventoAddition = function()
             {
                 var mese=new Date(document.getElementById('txtData').value).getMonth();

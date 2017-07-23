@@ -14,8 +14,6 @@
 <div class="calendar_default_cornerright"></div>
 
 
-
-
 <h1 id="calendarForum">Forum Recenti</h1>
 <div id="forumCalendar" class="container">
 
@@ -28,5 +26,18 @@
             </div>
         </a>
     </li>
+</div>
+
+<h1 id="calendarInviti">Eventi in programma</h1>
+<div id="calendarioInviti" class="container">
+    <li class="media" ng-repeat="evento in dati.eventiDaMostrare">
+        <a href="#!/details/{{evento.id}}">
+            <div  class="forumHome">
+                <h4 class="media-heading"><strong>{{evento.title}} {{evento.start}}</strong></h4>
+                <p>{{evento.descrizione}}</p>
+            </div>
+        </a>
+    </li>
+    <p ng-if="dati.eventiDaMostrare.length<=0">Non ci sono eventi in programma"</p>
 
 </div>
