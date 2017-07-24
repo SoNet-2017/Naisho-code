@@ -85,7 +85,8 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
                 //per ogni utente della lista controllo se è buddista e se è tutor,
                 // a seconda delle variabili lo metto nell'array solo buddisti, in quello solo tutor o in quello contenente tutti
                 for (var i=0;i<$scope.dati.listaUtenti.length; i++){
-                    if ($scope.dati.userId!== $scope.dati.listaUtenti[i].$id && $scope.dati.listaUtenti[i].logged===true) {
+                    if ($scope.dati.userId!= $scope.dati.listaUtenti[i].$id && $scope.dati.listaUtenti[i].logged===true) {
+                        
                         if ($scope.dati.listaUtenti[i].buddista === 'Sì') {
                             lat[$scope.dati.listaUtenti[i].$id] = $scope.lat = $scope.dati.listaUtenti[i].address.lat;
                             lng[$scope.dati.listaUtenti[i].$id] = $scope.lng = $scope.dati.listaUtenti[i].address.lng;
@@ -117,6 +118,8 @@ angular.module('myApp.geoView', ['ngRoute','ngMap'])
                         }
                         
                         else {
+
+
                             lat[$scope.dati.listaUtenti[i].$id] = $scope.lat = $scope.dati.listaUtenti[i].address.lat;
                             lng[$scope.dati.listaUtenti[i].$id] = $scope.lng = $scope.dati.listaUtenti[i].address.lng;
                             person[$scope.dati.listaUtenti[i].$id] = UsersChatService.getUserInfo($scope.dati.listaUtenti[i].$id);
