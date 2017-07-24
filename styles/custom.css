@@ -817,6 +817,7 @@ form.frmLogin {
     border-radius: 15px;
     height:40em;
     text-decoration-color: black;
+    overflow: auto;
 }
 
 #otherProfileInfo h4{

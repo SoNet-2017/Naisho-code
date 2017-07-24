@@ -23,6 +23,16 @@ angular.module('myApp.users.usersTutorsService', [])
                     button: button
                 });
             },
+            insertNewTutored: function (tutor, tutored,  button) {
+                //add the critica to list of critucs and set the logged value to true
+                var ref = firebase.database().ref().child("tutors");
+                // create a synchronized array
+                return $firebaseArray(ref).$add({
+                    tutor: tutor,
+                    tutored: tutored,
+                    button: button
+                });
+            },
             updateUsersTutor: function (tutorId) {
                 //add the user to list of users and set the logged value to true
                 var ref = firebase.database().ref().child("tutors").child(tutorId);

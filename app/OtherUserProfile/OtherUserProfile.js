@@ -191,14 +191,16 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
 
        // creazione amicizia
        $scope.CreateFriendship = function() {
+           if($scope.dati.userId.$id!=$routeParams.otherUserId){
            UsersFriends.insertNewFriendship($scope.dati.userId.$id,$routeParams.otherUserId,'Bottone disabilitato').then(function (ref) {
                var friendshipId = ref.key;
                UsersFriends.updateUsersFriends(friendshipId);
                $scope.dati.notFriends = false;
-               $scope.dati.yetFriends =true;
+               $scope.dati.yetFriends = true;
                $window.location.reload();
 
            });
+           }
        };
        //rimozione amicizia
        $scope.removeFriendship = function (friendshipId) {
@@ -209,14 +211,16 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
        };
        // richiesta per fare da tutor
        $scope.becameTutor = function() {
-           UsersTutorsService.insertNewTutor($scope.dati.userId.$id,$routeParams.otherUserId,'Bottone disabilitato').then(function (ref) {
-               var tutorId = ref.key;
-               UsersTutorsService.updateUsersTutor(tutorId);
-               $scope.dati.notYetTutor = false;
-               $scope.dati.yetTutor =true;
-               $window.location.reload();
+           if($scope.dati.userId.$id!=$routeParams.otherUserId) {
+               UsersTutorsService.insertNewTutor($scope.dati.userId.$id, $routeParams.otherUserId, 'Bottone disabilitato').then(function (ref) {
+                   var tutorId = ref.key;
+                   UsersTutorsService.updateUsersTutor(tutorId);
+                   $scope.dati.notYetTutor = false;
+                   $scope.dati.yetTutor = true;
+                   $window.location.reload();
 
-           });
+               });
+           }
        };
        //rimozione tutor
        $scope.removeTutor = function (tutorId) {
@@ -228,14 +232,15 @@ angular.module('myApp.OtherUserProfile', ['ngRoute'])
 
        // richiesta per avere un tutor
        $scope.becameTutored = function() {
-           UsersTutorsService.insertNewTutor($routeParams.otherUserId,$scope.dati.userId.$id,'Bottone disabilitato').then(function (ref) {
-               var tutorId = ref.key;
-               UsersTutorsService.updateUsersTutor(tutorId);
-               $scope.dati.notYetTutored = false;
-               $scope.dati.yetTutored =true;
-               $window.location.reload();
-
-           });
+           if($scope.dati.userId.$id!=$routeParams.otherUserId) {
+               UsersTutorsService.insertNewTutored($routeParams.otherUserId, $scope.dati.userId.$id, 'Bottone disabilitato').then(function (ref) {
+                   var tutorId = ref.key;
+                   UsersTutorsService.updateUsersTutor(tutorId);
+                   $scope.dati.notYetTutored = false;
+                   $scope.dati.yetTutored = true;
+                   $window.location.reload();
+               });
+           }
        };
        //rimozione tutor
        $scope.removeTutored = function (tutorId) {
