@@ -72,7 +72,7 @@ angular.module('myApp.homeView', ['ngRoute','myApp.evento','myApp.post','myApp.u
                 $scope.dati.evm.positions.push({lat: lat, lng: lng});
             }
         });
-        console.log($scope.dati.eventi);
+        //console.log($scope.dati.eventi);
         $scope.dati.eventi.$loaded().then(function () {
           for (var i=0;i< $scope.dati.eventi.length; i++){
             //  console.log($scope.dati.eventi[i].Mese);
@@ -94,10 +94,10 @@ angular.module('myApp.homeView', ['ngRoute','myApp.evento','myApp.post','myApp.u
             $scope.pos.lat = position.coords.latitude;
             $scope.pos.lng = position.coords.longitude;
 
-            console.log("userId utente da homeView:", userId);
+           // console.log("userId utente da homeView:", userId);
             $scope.address = {lat: $scope.pos.lat, lng: $scope.pos.lng};
             InsertGeocoordService.insertNewcoordinate($scope.address, userId);
-            console.log("coordinate utente da homeView:", $scope.address);
+           // console.log("coordinate utente da homeView:", $scope.address);
 
         });
 
@@ -106,9 +106,9 @@ angular.module('myApp.homeView', ['ngRoute','myApp.evento','myApp.post','myApp.u
         $scope.dati.posts = Post.getData();
             $scope.dati.posts.$loaded().then(function () {
                 for (var i=0;i< $scope.dati.posts.length; i++){
-                    console.log($scope.dati.posts[i].userPost);
+                    //console.log($scope.dati.posts[i].userPost);
                     $scope.dati.posts[i].info = UsersChatService.getUserInfo($scope.dati.posts[i].userPost);
-                    console.log("questo è dati.posts.info",$scope.dati.posts[i].info);
+                   // console.log("questo è dati.posts.info",$scope.dati.posts[i].info);
                     //$scope.dati.posts[i].userName = UsersChatService.getUserName($scope.dati.posts[i].userPost);
                   //  console.log($scope.dati.posts[i].userName);
                     //console.log($scope.user.name );
