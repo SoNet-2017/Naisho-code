@@ -32,10 +32,10 @@
 
 
 <div id="otherProfileInfo">
-    <h4>Post</h4>
+    <h4><strong>Post</strong></h4>
     <div id="postOtherProfile" ng-repeat="post in postDaMostrare"  >
         <a href="#!/singlePost/{{post.id}}">
-            <div>
+            <div id="singleComment">
                 {{post.contenuto}}
                 <p ng-if="!(post.img_url.includes('https://firebasestorage.googleapis.com')) && post.img_url!=''"></p>
                 <img class="media-object" ng-src="{{post.img_url}}" alt="{{post.img_alt}}" ng-if="post.img_url.includes('https://firebasestorage.googleapis.com')">
@@ -45,8 +45,9 @@
         <br>
     </div>
     <p id="otherP"ng-if="postDaMostrare.length==0">{{dati.recipient.name}} {{dati.recipient.surname}} non ha ancora pubblicato nessun contenuto</p>
-
-    <h1><strong>Inviti a eventi:</strong></h1>
+</div>
+<div id="otherProfileInfo2">
+    <h4><strong>Inviti a eventi:</strong></h4>
     <li  ng-repeat="inviti in invitato">
         <a href="#!/details/{{inviti.$id}}">
             <div >

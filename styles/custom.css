@@ -812,7 +812,7 @@ form.frmLogin {
 }
 
 #otherProfileInfo{
-    margin-top: 85px;
+    margin-top: 90px;
     margin-left: 20px;
     margin-right: 10px;
     float: left;
@@ -820,7 +820,7 @@ form.frmLogin {
     background-color:#FFF;
     display:block;
     border-radius: 15px;
-    height:40em;
+    height:18em;
     text-decoration-color: black;
     overflow: auto;
 }
@@ -847,7 +847,8 @@ form.frmLogin {
     margin-left: 50px;
     font-size: 17px;
     padding-top:12px;
-}
+    margin-right: 3%;
+   }
 
 
 /*calendario*/
@@ -1093,6 +1094,7 @@ h5{
 #img-profilo,#imgOther{
     width: 220px;
     height: 170px;
+    margin-left: 15%;
  }
 
 #calendarForum {
@@ -1283,4 +1285,41 @@ p.comm{
 
 #detailPost p{
     padding-left:3%;
+}
+
+#otherProfileInfo2{
+    margin-top: 3%;
+    margin-left: 20px;
+    margin-right: 10px;
+    float: left;
+    width: 65%;
+    background-color:#FFF;
+    display:block;
+    border-radius: 15px;
+    height:18em;
+    text-decoration-color: black;
+    overflow: auto;
+}
+
+#otherProfileInfo2 h1{
+    font-size: initial;
+    padding-top:5px;
+    color: #337ab7;
+    line-height: inherit;
+}
+#otherProfileInfo2 li{
+    margin-left:-95%;
+}
+#otherProfileInfo2 h4{
+    font-size:20px;
+    margint-top:30px;
+    margin-left: 50%;
+    color:black;
+}
+
+#singleComment{
+    background-color: rgba(123,170,249,0.36);
+    border-radius: 10px;
+    padding:15px;
+    margin-top: auto;
 }
