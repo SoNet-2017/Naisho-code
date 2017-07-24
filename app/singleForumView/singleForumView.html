@@ -14,8 +14,8 @@
     <ul class="media-list" id="elencoCommenti">
         <li class="media" ng-repeat="commento in commentiDaMostrare">
             <div class="commenti">
-            <a  ng-if="commento.info.$id===idCommentatore"   href="#!/userProfile" > <p> {{commento.info.name}} {{commento.info.surname}}: </p></a>
-            <a  ng-if="commento.info.$id!=idCommentatore"   href="#!/OtherUser/{{dati.post.userPost}}" > <p> {{commento.info.name}} {{commento.info.surname}}: </p></a>
+            <a  ng-if="commento.info.$id===idCommentatore"   href="#!/userProfile" > <p class="comm"> {{commento.info.name}} {{commento.info.surname}}: </p></a>
+            <a  ng-if="commento.info.$id!=idCommentatore"   href="#!/OtherUser/{{dati.post.userPost}}" > <p class="comm"> {{commento.info.name}} {{commento.info.surname}}: </p></a>
             <p>{{commento.commento}}</p>
             </div>
         </li>

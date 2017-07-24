@@ -380,7 +380,7 @@ ul {
 }
 #commentiPost{
     margin-top:20px;
-    background: white;
+    background: transparent;
     border-radius: 15px;
     margin-left: 10%;
     margin-right: 10%;
@@ -391,10 +391,15 @@ ul {
     overflow: auto;
 }
 #detailForum h1{
-    alignment: center;
+   alignment: center;
    color: black;
    padding-top:3%;
 }
+
+#detailForum p{
+    padding-left:3%;
+}
+
 #commentiForum{
     min-height:200px;
     background: white;
@@ -402,7 +407,7 @@ ul {
     margin-left: 10%;
     align-content: center;
     padding:3%;
-     margin-top:5px;
+    margin-top:5px;
  }
 #mappa{
     margin-top:10%;
@@ -1095,19 +1100,19 @@ h5{
     margin-left:45%;
 }
 #elencoCommentiForum{
-    background-color:white;
-    border-radius: 15px;
+    background-color:transparent;
+    /*border-radius: 15px;*/
     margin-left:10%;
     margin-right: 10%;
     overflow: auto;
 }
 
 div.commenti {
-     background-color: rgba(29,74,249,0.15);
+     background-color: rgba(191, 233, 255, 0.79);
      border-radius: 10px;
      padding:5px;
      margin-right: 30px;
-    margin-top: 10px;
+     margin-top: 10px;
  }
 h2.commenti {
     margin-left:10%;
@@ -1270,4 +1275,12 @@ h1.userList{
 
 h4.forumHome{
     margin-left: 10%;
+}
+
+p.comm{
+    font-size: large;
+}
+
+#detailPost p{
+    padding-left:3%;
 }
