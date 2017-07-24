@@ -1,5 +1,5 @@
 <div class="userlist" id="userlist" >
-<h4>Utenti connessi: </h4>
+<h1 class="userList">Utenti connessi: </h1>
 <p ng-repeat="user in testValue=(dati.availableUsers | filter:{logged:true} | filter:{$id: '!' + dati.userId})">
     <a href="#!/chat/{{user.$id}}">{{user.name}} {{user.surname}} - {{user.email}}</a>
 </p>
@@ -7,7 +7,7 @@
 
 </div>
 <div class="userlist" id="userlist2">
-    <h4>Tutti gli utenti: </h4>
+    <h1 class="userList">Tutti gli utenti: </h1>
     <p ng-repeat="user in testValue=(dati.availableUsers  | filter:{$id: '!' + dati.userId})">
         <a href="#!/chat/{{user.$id}}"> {{user.name}} {{user.surname}} -{{user.email}}</a>
     </p>

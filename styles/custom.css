@@ -488,10 +488,10 @@ img.media-object{
     background-color: rgba(255, 255, 255, 0.61);
     display:block;
     border-radius: 15px;
-    height:33em;
+    height:17em;
     overflow: auto;
-
 }
+
 #profilo1 h1{
     font-size: initial;
     padding-top:5px;
@@ -906,6 +906,7 @@ form.frmLogin {
 #forumCalendar p {
     padding-top:10px;
     color:black;
+    margin-left:5%;
 }
 
 /*storico preghiere*/
@@ -1239,4 +1240,34 @@ profmic{
 
 div.pagina-tutor {
     margin-left: 15%;
+}
+
+h1.userList{
+    color:black;
+    font-size: x-large;
+    margin-top: 3%;
+}
+
+#profilo3{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 10px;
+    float: left;
+    width: 65%;
+    background-color: rgba(255, 255, 255, 0.61);
+    display:block;
+    border-radius: 15px;
+    height:16em;
+    overflow: auto;
+}
+
+#profilo3 h1{
+    font-size: initial;
+    padding-top:5px;
+    color: #337ab7;
+    line-height: inherit;
+}
+
+h4.forumHome{
+    margin-left: 10%;
 }
