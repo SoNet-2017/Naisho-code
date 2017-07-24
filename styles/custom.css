@@ -952,7 +952,7 @@ h4.pagina-tutor {
 p.pagina-tutor {
     margin-left: 15%;
 }
-li.pagina-tutor {
+span.pagina-tutor {
     margin-left: 15%;
 }
 .tutor {
@@ -1036,9 +1036,7 @@ h2 {
     width:550px;
     height:100px;
     margin-top: 5%;
-
 }
-
 
 #caricaimmag{
     margin-left:7%;
@@ -1138,7 +1136,7 @@ div.foo{
     color:whitesmoke;
 }
 img.imgPost{
-    margin-left:15%;
+    margin-left:10%;
     width:120px;
     height:100px
 }
@@ -1236,5 +1234,8 @@ profmic{
     margin-top: 100px;
     margin-left: 10%;
     color:black;
+}
 
+div.pagina-tutor {
+    margin-left: 15%;
 }
