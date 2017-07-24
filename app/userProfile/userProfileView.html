@@ -35,9 +35,8 @@
    <span class="media" ng-repeat="forum in dati.forum">
 
                     <div  class="forumHome">
-                        <profmic class="media-heading"><strong><a href="#!/singleForum/{{forum.id}}">{{forum.titolo}}:</a>
-                        </strong></profmic>
-                        <h4>{{forum.argomento}}... </h4>
+                        <profmic class="media-heading"><strong>{{forum.titolo}}:</strong></profmic>
+                        <h4><a href="#!/singleForum/{{forum.id}}">{{forum.argomento}}... </a></h4>
                     </div>
 
     </span>

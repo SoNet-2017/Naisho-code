@@ -17,27 +17,27 @@
 <h1 id="calendarForum">Forum Recenti</h1>
 <div id="forumCalendar" class="container">
 
-    <li class="media" ng-repeat="forum in dati.forum">
-        <a href="#!/singleForum/{{forum.id}}">
+    <span class="media" ng-repeat="forum in dati.forum">
+
             <div >
-                <h4 class="media-heading"><strong>{{forum.titolo}}</strong></h4>
-                <p>{{forum.argomento}}</p>
+                <profmic class="media-heading"><strong>{{forum.titolo}}:</strong></profmic>
+                <p><a href="#!/singleForum/{{forum.id}}">{{forum.argomento}}...</a></p>
                 <!--<span><button class="mi piace">Mi Piace</button><button class="commenta">Commenta</button></span>-->
             </div>
-        </a>
-    </li>
+
+    </span>
 </div>
 
 <h1 id="calendarInviti">Eventi in programma</h1>
 <div id="calendarioInviti" class="container">
-    <li class="media" ng-repeat="evento in dati.eventiDaMostrare">
-        <a href="#!/details/{{evento.id}}">
+    <span class="media" ng-repeat="evento in dati.eventiDaMostrare">
+
             <div  class="forumHome">
-                <h4 class="media-heading"><strong>{{evento.title}} {{evento.start}}</strong></h4>
+                <profmic class="media-heading"><strong><a href="#!/details/{{evento.id}}">{{evento.title}} {{evento.start}}</a></strong></profmic>
                 <p>{{evento.descrizione}}</p>
             </div>
-        </a>
-    </li>
+
+    </span>
     <p ng-if="dati.eventiDaMostrare.length<=0">Non ci sono eventi in programma"</p>
 
 </div>
