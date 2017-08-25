@@ -10,15 +10,13 @@ body{
     -o-background-size: cover;
     background-size: cover;
 
-
+    
 }
 
 #ContainerHome{
     margin-top:75px;
     background-attachment:scroll;
     background:url(../images/lotonero.png) repeat-y 50% ;position: relative;
-    
-
 }
 
 
